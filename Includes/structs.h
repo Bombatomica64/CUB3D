@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   functions.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:56:02 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/13 12:27:35 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:47:03 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,53 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <math.h>
+# include <functions.h>
 
-typedef struct s_vector
+# define ESC 53
+# define W 13
+# define A 0
+# define S 1
+# define D 2
+# define CAMERA_HEIGHT 1.0
+# define FOV 90
+# define SCREEN_WIDTH 1920
+# define SCREEN_HEIGHT 1080
+
+typedef struct s_pos
 {
 	double	x;
 	double	y;
 	double	z;
-}	t_vector;
+}	t_pos;
+
+typedef struct s_img
+{
+	void	*img;
+	int		height;
+	int		width;
+}	t_img;
+
+typedef struct s_player
+{
+	t_pos		pos; // 0, 50, 0
+	t_pos		dir; // 0, 50, 2
+	t_pos		plane; // 0, 1, 0
+}	t_player;
+
+typedef struct s_texture
+{
+	
+}	t_texture;
 
 typedef struct s_game
 {
-	void	*mlx;
-	void	*win;
-	char	**map;
+	void		*mlx;
+	void		*win;
+	char		**map;
+	int			map_width;
+	int			map_height;
+	t_player	player;
+	t_texture	texture;
 }	t_game;
 
 #endif

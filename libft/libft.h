@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli < lmicheli@student.42firenze.it>  +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/04/18 10:31:02 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:43:47 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,9 @@ char		*ft_skipstring(int offset, char *str);
 
 t_bool		ft_islimiter(char c);
 t_bool		ft_isquote(char c);
+
+//get_next_line2
+
+int			get_next_line2(int fd, char **line);
 
 #endif

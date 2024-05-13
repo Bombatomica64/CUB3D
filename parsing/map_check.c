@@ -1,36 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 12:03:28 by lmicheli          #+#    #+#             */
+/*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
 /*   Updated: 2024/05/13 17:58:31 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-int	main(int ac, char **av)
+static void	map_size(char *map_path, t_game *game)
 {
-	t_game	game;
+	int		fd;
+	char	*line;
+	int		i;
+	int		j;
 
-	if (ac != 2)
+	i = 0;
+	j++;
+	fd = open(map_path, O_RDONLY);
+	if (fd < 0)
+		err("Failed to open map file");
+	while (get_next_line2(fd, &line) > 0)
 	{
-		printf("Error\nWrong number of arguments\n");
-		return (1);
+		if (line[0] != '1')
+			j++;
+		if (line[0] == '1')
+			i++;
+		free(line);
 	}
-	game = init_game(av[1]);
-	if (!game.mlx)
-	{
-		printf("Error\nFailed to init mlx\n");
-		return (1);
-	}
-	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
-	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
-	mlx_hook(game.win, 17, 1L << 17, close_game, &game);
-	mlx_loop_hook(game.mlx, update, &game);
-	mlx_loop(game.mlx);
-	return (0);
+	game->map_height = i;
+	close(fd);
+}
+
+char	**parse_map(char *map_path, t_game *game)
+{
+	int		fd;
+	char	*line;
+	char	**map;
+	int		i;
+
+	i = 0;
+	map_size(map_path, game);
+	fd = open(map_path, O_RDONLY);
+	if (fd < 0)
+		err("Failed to open map file");
+	map = malloc(sizeof(char *));
 }

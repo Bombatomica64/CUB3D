@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/13 12:10:47 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/13 17:58:31 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ MLX_DIR = ./minilibx
 MLX = $(MLX_DIR)/libmlx.a
 MLXFLAGS = -lX11 -lXext -lm
 
-INCLUDES = includes/structs.h
+INCLUDES = includes/functions.h \
+			includes/functions.h
 
 PARSING = parsing/
 
