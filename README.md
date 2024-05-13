@@ -3,7 +3,27 @@
 
 ##TODO
 
-#MAP Parsing
+## MAP Parsing
+
+0 spazio camminabile  
+1 muro  
+N, S, E, W personaggio (solo 1 di questi per mappa) cambia solo il verso in cui guarda quando spawna  
+
+MAPPA: sempre in fondo al file
+
+  111111111          
+  100000001111          
+  100000000001          
+  10000N000001  
+  111111111111  
+
+la mappa puo anche non essere rettangolare  
+deve essere chiusa (con i muri) -> else return error  
+
+ELEMENTI: prima della mappa
+
+va bene tutto
+
 
 
 ## HOW THE FUCK DOES RAYCASTING WORK
