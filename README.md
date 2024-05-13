@@ -1,1 +1,10 @@
 # CUB3D
+
+
+##TODO
+
+#MAP Parsing
+
+
+## HOW THE FUCK DOES RAYCASTING WORK
+
