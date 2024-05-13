@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/13 18:11:41 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/13 18:23:52 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,7 @@ MLX_DIR = ./minilibx
 MLX = $(MLX_DIR)/libmlx.a
 MLXFLAGS = -lX11 -lXext -lm
 
-INCLUDES = Includes/functions.h \
-			Includes/structs.h
+INCLUDES = Includes/
 
 PARSING =	parsing/map_check.c \
 			parsing/var_init.c
@@ -47,7 +46,7 @@ clean:
 	
 fclean: clean
 	@make fclean -C $(FT_PRINTF)
-	@make fclean -C $(MLX_DIR)
+	@make clean -C $(MLX_DIR)
 	@rm -f $(NAME)
 	@echo "Fcleaned "$(NAME)" and fclean libft successfully!"
 	

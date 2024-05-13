@@ -6,13 +6,13 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/13 17:58:31 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/13 18:33:17 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-	plane(t_pos pos, t_pos dir, t_pos plane)
+void	plane(t_pos pos, t_pos dir, t_pos plane)
 {
-	
+	//TODO: Implement the function
 }
