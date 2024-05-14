@@ -24,7 +24,7 @@ ELEMENTI: prima della mappa
 
 va bene tutto
 
-##TO IMPLEMENT  
+## TO IMPLEMENT  
 An error function with this primitive : void err(char *err, t_game *game);  
 
 
