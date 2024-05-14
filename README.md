@@ -24,6 +24,8 @@ ELEMENTI: prima della mappa
 
 va bene tutto
 
+##TO IMPLEMENT
+An error function with this primitive : void err(char *err, t_game *game);  
 
 
 ## HOW THE FUCK DOES RAYCASTING WORK
