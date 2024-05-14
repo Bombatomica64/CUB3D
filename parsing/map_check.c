@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/14 10:25:11 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/14 10:39:14 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,14 @@ static void	file_size(char *map_path, t_game *game)
 	int		fd;
 	char	*line;
 	int		i;
-	int		j;
 
 	i = 0;
-	j++;
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
 		err("Failed to open map file");
 	while (get_next_line2(fd, &line) > 0)
 	{
-		if (line[0] != '1')
-			j++;
-		if (line[0] == '1')
-			i++;
+		i++;
 		free(line);
 	}
 	game->input.file_len = i;

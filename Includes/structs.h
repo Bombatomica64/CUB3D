@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/14 10:16:08 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/14 12:17:37 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <math.h>
-# include <functions.h>
+# include "../minilibx/mlx.h"
+# include "../libft/get_next_line_bonus.h"
+# include "../libft/ft_printf.h"
 
 # define ESC 53
 # define W 13
@@ -26,7 +28,7 @@
 # define S 1
 # define D 2
 # define CAMERA_HEIGHT 1.0
-# define FOV 90
+# define FOV 900
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080
 
