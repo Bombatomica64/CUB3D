@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/14 12:16:44 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/14 12:33:39 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ MLXFLAGS = -lX11 -lXext -lm
 INCLUDES =	Includes/ libft/
 
 PARSING =	parsing/map_check.c \
-			parsing/var_init.c
+			parsing/var_init.c \
+			parsing/splut.c 
 
 SRCS = srcs/main.c \
 		

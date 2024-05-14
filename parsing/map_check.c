@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/14 10:39:14 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/14 12:31:40 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,7 @@ char	**parse_map(char *map_path, t_game *game)
 		free(line);
 		i++;
 	}
+	map_and_txt[i] = NULL;
+	close(fd);
+	return (map_and_txt);
 }
