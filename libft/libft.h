@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/13 17:43:47 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/14 10:27:48 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,11 @@ t_bool		ft_isquote(char c);
 //get_next_line2
 
 int			get_next_line2(int fd, char **line);
+
+//matrix_utils.c
+
+int			ft_matrix_len(char **matrix);
+void		ft_free_matrix(char **matrix);
+char		**rem_from_matrix(char **matrix, int index);
 
 #endif
