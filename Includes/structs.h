@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/13 18:14:24 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/14 10:16:08 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,13 @@ typedef struct s_texture
 	t_img	es;
 }	t_texture;
 
+typedef struct s_input
+{
+	int		file_len;
+	int		fd;
+	char	*line;
+}	t_input;
+
 typedef struct s_game
 {
 	void		*mlx;
@@ -66,6 +73,7 @@ typedef struct s_game
 	char		**map;
 	int			map_width;
 	int			map_height;
+	t_input		input;
 	t_player	player;
 	t_texture	texture;
 }	t_game;
