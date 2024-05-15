@@ -1,0 +1,19 @@
+name: Clean Makefiles
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if needed
+  pull_request:
+
+jobs:
+  clean_makefiles:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Find Makefiles and clean
+      run: |
+        find . -name Makefile -execdir make fclean \;
