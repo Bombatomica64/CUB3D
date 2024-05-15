@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/14 12:52:28 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/14 16:55:47 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,24 @@ typedef struct s_player
 typedef struct s_texture
 {
 	char	**txts;
-	char	**txt_nm;
-	t_img	no;
-	t_img	su;
-	t_img	we;
-	t_img	es;
+	char	**txt_nm; //alloced in var_init.c
+	t_img	imgs[7];
 }	t_texture;
 
 typedef struct s_input
 {
 	int		file_len;
 	int		fd;
-	char	*line;
+	char	**map_and_txt;
 }	t_input;
+
+typedef struct s_curs
+{
+	int		i;
+	int		j;
+	int		k;
+	int		status;
+}	t_curs;
 
 typedef struct s_game
 {
