@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions.h                                        :+:      :+:    :+:   */
+/*   error_management.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/15 16:44:45 by lmicheli         ###   ########.fr       */
+/*   Created: 2024/05/15 16:42:14 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/15 16:42:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTIONS_H
-# define FUNCTIONS_H
+#include <functions.h>
 
-# include <structs.h>
-
-t_game	init_game(char *map_path);
-char	**parse_map(char *map_path, t_game *game);
-void	*put_xmp(void *mlx, char *filename, int *width, int *height);
-
-// error_management.c
-
-void	err(char *msg);
-
-// splut.c
-
-void	split_map(t_game *game);
-int		parse_line(char *line, t_game *game);
-
-#endif
+void	err(char *msg)
+{
+	printf("Error\n%s\n", msg);
+	exit(1);
+}
