@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 10:26:33 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/14 12:42:16 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:00:00 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ char	**add_to_matrix(char **matrix, char *line)
 	new_matrix = malloc(sizeof(char *) * (ft_matrix_len(matrix) + 2));
 	if (!new_matrix)
 		return (NULL);
+	if (!matrix)
+	{
+		new_matrix[0] = ft_strdup(line);
+		new_matrix[1] = NULL;
+		return (new_matrix);
+	}
 	while (matrix[i])
 	{
 		new_matrix[i] = ft_strdup(matrix[i]);
@@ -78,4 +84,20 @@ char	**add_to_matrix(char **matrix, char *line)
 	new_matrix[i + 1] = NULL;
 	ft_free_matrix(matrix);
 	return (new_matrix);
+}
+
+int	is_in_mtx(char *line, char **matrix)
+{
+	int	i;
+
+	i = 0;
+	if (!matrix)
+		return (-1);
+	while (matrix[i])
+	{
+		if (ft_strncmp(line, matrix[i], ft_strlen(matrix[i])) == 0)
+			return (1);
+		i++;
+	}
+	return (-1);
 }
