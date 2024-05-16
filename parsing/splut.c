@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:33:08 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 12:19:55 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:00:46 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,12 @@ int	parse_line(char *line, t_game *game)
 	i += skip_spaces2(line);
 	if (line[i] == '\0')
 		return (free(line), 0);
-	if (is_in_mtx(&line[i], game->texture.txt_nm) == 1
+	if (is_in_mtx(&line[i], game->txts.txt_nm) == 1
 		&& game->input.map_str == 0)
-		game->texture.txts = add_to_matrix(&game->texture.txts, line);
+		game->txts.txts = add_to_matrix(&game->txts.txts, line);
 	else if (ft_isinset(line[i], "01NSEW"))
 	{
 		game->map = add_to_matrix(&game->map, line);
-		print_matrix(game->map);
 		game->input.map_str = 1;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 10:49:32 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:00:58 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <math.h>
 # include "../minilibx/mlx.h"
+# include "../minilibx/mlx_int.h"
 # include "../libft/get_next_line_bonus.h"
 # include "../libft/ft_printf.h"
 
@@ -39,13 +40,6 @@ typedef struct s_pos
 	double	z;
 }	t_pos;
 
-typedef struct s_img
-{
-	void	*img;
-	int		height;
-	int		width;
-}	t_img;
-
 typedef struct s_player
 {
 	t_pos		pos; // 0, 50, 0
@@ -57,7 +51,7 @@ typedef struct s_texture
 {
 	char	**txts;
 	char	**txt_nm; //alloced in var_init.c
-	t_img	imgs[7];
+	t_img	imgs[6]; // 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = SKY, 5 = FLOOR
 }	t_texture;
 
 typedef struct s_input
@@ -85,7 +79,7 @@ typedef struct s_game
 	int			map_height;
 	t_input		input;
 	t_player	player;
-	t_texture	texture;
+	t_texture	txts;
 }	t_game;
 
 #endif

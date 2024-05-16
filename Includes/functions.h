@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 12:13:47 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:27:53 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	*put_xmp(void *mlx, char *filename, int *width, int *height);
 
 // error_management.c
 
-void	err(char *msg);
+int		err(char *msg);
+void	err_exit(char *msg, t_game *game);
 
 // splut.c
 

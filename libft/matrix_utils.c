@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 10:26:33 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 12:21:24 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 15:38:35 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ char	**add_to_matrix(char ***matrix, char *line)
 	}
 	while ((*matrix)[i])
 	{
-		printf("matrix[%d] = %s\n", i, (*matrix)[i]);
 		new_matrix[i] = ft_strdup((*matrix)[i]);
 		i++;
 	}
