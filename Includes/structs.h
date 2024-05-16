@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/15 16:36:12 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 10:49:32 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct s_input
 {
 	int		file_len;
 	int		fd;
-	t_bool	map_starts;
+	t_bool	map_str;
 	char	**map_and_txt;
 }	t_input;
 

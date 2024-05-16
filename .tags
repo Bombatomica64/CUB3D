@@ -25,6 +25,7 @@ AUTHOR	minilibx/man/man3/mlx_new_window.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 AUTHOR	minilibx/man/man3/mlx_pixel_put.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 BUFFER_SIZE	libft/get_next_line_bonus.h	/^#  define BUFFER_SIZE /;"	d
 CAMERA_HEIGHT	Includes/structs.h	/^# define CAMERA_HEIGHT /;"	d
+CC	Makefile	/^CC = cc -Wall -Wextra -Werror -g$/;"	m
 CC	libft/Makefile	/^CC = cc$/;"	m
 CC	minilibx/Makefile.mk	/^	CC = clang$/;"	m
 CC	minilibx/Makefile.mk	/^CC	= gcc$/;"	m
@@ -70,7 +71,7 @@ INC	minilibx/test/Makefile.mk	/^INC=%%%%$/;"	m
 INCLIB	minilibx/test/Makefile.mk	/^INCLIB=$(INC)\/..\/lib$/;"	m
 INCLUDE	minilibx/man/man1/mlx.1	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
 INCLUDE	minilibx/man/man3/mlx.3	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
-INCLUDES	Makefile	/^INCLUDES =	Includes\/ libft\/$/;"	m
+INCLUDES	Makefile	/^INCLUDES =	Includes\/$/;"	m
 LFLAGS	minilibx/test/Makefile.mk	/^LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm$/;"	m
 LIB	Makefile	/^LIB = libft\/libftprintf.a$/;"	m
 LIBFT_H	libft/libft.h	/^# define LIBFT_H$/;"	d
@@ -185,7 +186,6 @@ bpp1	minilibx/test/main.c	/^int	bpp1;$/;"	v	typeref:typename:int
 bpp2	minilibx/test/main.c	/^int	bpp2;$/;"	v	typeref:typename:int
 bpp3	minilibx/test/main.c	/^int	bpp3;$/;"	v	typeref:typename:int
 bpp4	minilibx/test/main.c	/^int	bpp4;$/;"	v	typeref:typename:int
-cc	Makefile	/^cc = cc -Wall -Wextra -Werror -g $/;"	m
 check	minilibx/Makefile.mk	/^check: all$/;"	t
 check_null	libft/ft_strtrim.c	/^static char	*check_null(char const *s1)$/;"	f	typeref:typename:char *	file:
 check_to_put	libft/ft_printf.c	/^int	check_to_put(char c, va_list lst)$/;"	f	typeref:typename:int
@@ -232,6 +232,7 @@ fclean	libft/Makefile	/^fclean: clean$/;"	t
 fd	Includes/structs.h	/^	int		fd;$/;"	m	struct:s_input	typeref:typename:int
 file_len	Includes/structs.h	/^	int		file_len;$/;"	m	struct:s_input	typeref:typename:int
 file_size	parsing/map_check.c	/^static void	file_size(char *map_path, t_game *game)$/;"	f	typeref:typename:void	file:
+files.associations	.vscode/settings.json	/^	"files.associations": {$/;"	o
 find_first	libft/str_utils2.c	/^int	find_first(char *str, char c)$/;"	f	typeref:typename:int
 find_last	libft/str_utils2.c	/^int	find_last(char *str, char c)$/;"	f	typeref:typename:int
 format	minilibx/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
@@ -361,12 +362,13 @@ make_number	libft/ft_unsigned_itoa.c	/^static char	*make_number(int num_len, lon
 map	Includes/structs.h	/^	char		**map;$/;"	m	struct:s_game	typeref:typename:char **
 map_and_txt	Includes/structs.h	/^	char	**map_and_txt;$/;"	m	struct:s_input	typeref:typename:char **
 map_height	Includes/structs.h	/^	int			map_height;$/;"	m	struct:s_game	typeref:typename:int
-map_starts	Includes/structs.h	/^	t_bool	map_starts;$/;"	m	struct:s_input	typeref:typename:t_bool
+map_str	Includes/structs.h	/^	t_bool	map_str;$/;"	m	struct:s_input	typeref:typename:t_bool
 map_width	Includes/structs.h	/^	int			map_width;$/;"	m	struct:s_game	typeref:typename:int
 mask	minilibx/mlx_int.h	/^	int		mask;$/;"	m	struct:s_event_list	typeref:typename:int
 mlx	Includes/structs.h	/^	void		*mlx;$/;"	m	struct:s_game	typeref:typename:void *
 mlx	minilibx/test/main.c	/^void	*mlx;$/;"	v	typeref:typename:void *
 mlx	minilibx/test/new_win.c	/^void *mlx;$/;"	v	typeref:typename:void *
+mlx.h	.vscode/settings.json	/^		"mlx.h": "c"$/;"	s	object:files.associations
 mlx_X_error	minilibx/mlx_new_image.c	/^int	mlx_X_error;$/;"	v	typeref:typename:int
 mlx_clear_window	minilibx/mlx_clear_window.c	/^int		mlx_clear_window(t_xvar *xvar,t_win_list *win)$/;"	f	typeref:typename:int
 mlx_col_name	minilibx/mlx_rgb.c	/^struct s_col_name mlx_col_name[] =$/;"	v	typeref:struct:s_col_name[]
@@ -520,7 +522,7 @@ txt_nm	Includes/structs.h	/^	char	**txt_nm; \/\/alloced in var_init.c$/;"	m	stru
 txts	Includes/structs.h	/^	char	**txts;$/;"	m	struct:s_texture	typeref:typename:char **
 type	minilibx/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typename:int
 use_xshm	minilibx/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
-val	Makefile	/^val: clean $(SRC)$/;"	t
+val	Makefile	/^val:$/;"	t
 visual	minilibx/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
 width	Includes/structs.h	/^	int		width;$/;"	m	struct:s_img	typeref:typename:int
 width	minilibx/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int

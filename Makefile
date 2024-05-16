@@ -6,19 +6,19 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/15 16:43:09 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/16 10:46:07 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
-cc = cc -Wall -Wextra -Werror -g 
+CC = cc -Wall -Wextra -Werror -g
 
 MLX_DIR = ./minilibx
 MLX = $(MLX_DIR)/libmlx.a
 MLXFLAGS = -lX11 -lXext -lm
 
-INCLUDES =	Includes/ libft/
+INCLUDES =	Includes/
 
 PARSING =	parsing/map_check.c \
 			parsing/var_init.c \
@@ -57,16 +57,16 @@ re: fclean all
 
 play:
 	@rm -f $(NAME)
-	@$(CC) $(SRC) $(LIB) -o $(NAME) -lreadline
+	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
 	@echo "\033[34mRe-compiled "$(NAME)" successfully!\033[0m"
 	@echo "\033[30mPlease work🙏\033[0m"
-	@./$(NAME)
+	@./$(NAME) maps/test.cub
 
-val: clean $(SRC)
+val:
 	@rm -f $(NAME)
-	@$(CC) $(SRC) $(LIB) -o $(NAME) -lreadline
+	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
 	@echo "\033[34mAre you ready for debugging?\033[0m 😈"
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=ignore_readline.supp -s --track-fds=yes ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s --track-fds=yes ./$(NAME) maps/test.cub
 
 
 .PHONY: all clean fclean re play val
