@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/16 10:46:07 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/16 17:52:17 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ INCLUDES =	Includes/
 
 PARSING =	parsing/map_check.c \
 			parsing/var_init.c \
-			parsing/splut.c 
+			parsing/splut.c \
+			parsing/color.c
 
 SRCS =	srcs/main.c \
 		srcs/put_images.c \

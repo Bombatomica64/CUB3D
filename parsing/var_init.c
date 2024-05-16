@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:13:53 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 16:44:26 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:31:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,23 @@ char	**texture_names(void)
 	return (txt_nm);
 }
 
-#include <sys/wait.h>
-
-t_img	get_img(char *path, t_game *game)
+t_img	get_floor(char *path, t_game *game, int nm)
 {
 	t_img	img;
+	t_color	color;
+	int		i;
 
+	if (ft_isdigit(path[0]))
+	{
+		i = 0;
+		color.r = ft_substr(path, i, ft_strchr(path, ',') - path);
+		i = ft_strchr(path, ',') - path + 1;
+		color.g = ft_substr(path, i, ft_strchr(path + i, ',') - path - i);
+		i = ft_strchr(path + i, ',') - path + 1;
+		color.b = ft_substr(path, i, ft_strchr(path + i, ',') - path - i);
+		// free(path);
+		path = create_color_file(color, game, nm);
+	}
 	img.image = mlx_xpm_file_to_image(game->mlx, path, &img.width, &img.height);
 	if (!img.image)
 		return (err("Failed to load texture : "), err(path), img);
@@ -62,15 +73,15 @@ void	get_textures(t_game *game)
 		if (ft_strncmp(&game->txts.txts[curs.i][curs.j], "NO", 2) == 0)
 			game->txts.imgs[0] = get_img(game->txts.txts[curs.i] + curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "SO", 2) == 0)
-			game->txts.imgs[1] = get_img(game->txts.txts[curs.i] + 3, game);
+			game->txts.imgs[1] = get_img(game->txts.txts[curs.i] + curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "WE", 2) == 0)
-			game->txts.imgs[2] = get_img(game->txts.txts[curs.i] + 3, game);
+			game->txts.imgs[2] = get_img(game->txts.txts[curs.i] + curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "EA", 2) == 0)
-			game->txts.imgs[3] = get_img(game->txts.txts[curs.i] + 3, game);
-		// else if (ft_strncmp(game->txts.txts[curs.i], "SKY", 3) == 0)
-		// 	game->txts.imgs[4] = get_floor(game->txts.txts[curs.i] + 4, game);
-		// else if (ft_strncmp(game->txts.txts[curs.i], "FLOOR", 5) == 0)
-		// 	game->txts.imgs[5] = get_ceiling(game->txts.txts[curs.i] + 6, game);
+			game->txts.imgs[3] = get_img(game->txts.txts[curs.i] + curs.j + 3, game);
+		else if (ft_strncmp(game->txts.txts[curs.i], "SKY", 3) == 0)
+			game->txts.imgs[4] = get_floor(game->txts.txts[curs.i] + 4, game, curs.i);
+		else if (ft_strncmp(game->txts.txts[curs.i], "FLOOR", 5) == 0)
+			game->txts.imgs[5] = get_floor(game->txts.txts[curs.i] + 6, game, curs.i);
 		curs.i++;
 	}
 }

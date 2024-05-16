@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 16:00:58 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:23:40 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ typedef struct s_player
 	t_pos		dir; // 0, 50, 2
 	t_pos		plane; // 0, 1, 0
 }	t_player;
+
+typedef struct s_color
+{
+	char	*r;
+	char	*g;
+	char	*b;
+}	t_color;
 
 typedef struct s_texture
 {
