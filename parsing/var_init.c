@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:13:53 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 11:49:07 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:13:32 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,22 @@ void	get_textures(t_game *game)
 	exit(0);
 }
 
-t_game	init_game(char *map_path)
+t_game	*init_game(char *map_path)
 {
-	t_game	game;
+	t_game	*game;
 
-	game.mlx = mlx_init();
-	if (!game.mlx)
+	game = ft_calloc(1, sizeof(t_game));
+	game->mlx = mlx_init();
+	if (!game->mlx)
 		return (game);
-	game.input.map_str = 0;
-	game.texture.txts = ft_calloc(1, sizeof(char *));
-	game.map = ft_calloc(1, sizeof(char *));
-	game.texture.txt_nm = texture_names();
-	print_matrix(game.texture.txt_nm);
-	// game.win = mlx_new_window(game.mlx, SCREEN_WIDTH, SCREEN_HEIGHT, "Cub3D");
-	game.input.map_and_txt = parse_map(map_path, &game);
-	split_map(&game);
-	get_textures(&game);
+	game->input.map_str = 0;
+	game->texture.txts = ft_calloc(1, sizeof(char *));
+	game->map = ft_calloc(1, sizeof(char *));
+	game->texture.txt_nm = texture_names();
+	print_matrix(game->texture.txt_nm);
+	// game->win = mlx_new_window(game->mlx, SCREEN_WIDTH, SCREEN_HEIGHT, "Cub3D");
+	game->input.map_and_txt = parse_map(map_path, game);
+	split_map(game);
+	get_textures(game);
 	return (game);
 }

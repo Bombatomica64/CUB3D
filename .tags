@@ -173,7 +173,7 @@ X-WINDOW	minilibx/man/man3/mlx_loop.3	/^.SH X-WINDOW EVENTS$/;"	s	title:MiniLibX
 XPM	minilibx/man/man1/mlx_new_image.1	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
 XPM	minilibx/man/man3/mlx_new_image.3	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
 X_ShmAttach	minilibx/mlx_new_image.c	/^#define	X_ShmAttach	/;"	d	file:
-add_to_matrix	libft/matrix_utils.c	/^char	**add_to_matrix(char **matrix, char *line)$/;"	f	typeref:typename:char **
+add_to_matrix	libft/matrix_utils.c	/^char	**add_to_matrix(char ***matrix, char *line)$/;"	f	typeref:typename:char **
 all	Makefile	/^all: $(NAME)$/;"	t
 all	libft/Makefile	/^all: $(NAME)$/;"	t
 all	minilibx/Makefile	/^all	: do_configure$/;"	t
@@ -332,7 +332,7 @@ im4	minilibx/test/main.c	/^void	*im4;$/;"	v	typeref:typename:void *
 image	minilibx/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
 img	Includes/structs.h	/^	void	*img;$/;"	m	struct:s_img	typeref:typename:void *
 imgs	Includes/structs.h	/^	t_img	imgs[7];$/;"	m	struct:s_texture	typeref:typename:t_img[7]
-init_game	parsing/var_init.c	/^t_game	init_game(char *map_path)$/;"	f	typeref:typename:t_game
+init_game	parsing/var_init.c	/^t_game	*init_game(char *map_path)$/;"	f	typeref:typename:t_game *
 input	Includes/structs.h	/^	t_input		input;$/;"	m	struct:s_game	typeref:typename:t_input
 is_in_mtx	libft/matrix_utils.c	/^int	is_in_mtx(char *line, char **matrix)$/;"	f	typeref:typename:int
 j	Includes/structs.h	/^	int		j;$/;"	m	struct:s_curs	typeref:typename:int

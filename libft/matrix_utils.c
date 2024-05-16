@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 10:26:33 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 11:51:27 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:21:24 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,19 +71,18 @@ char	**add_to_matrix(char ***matrix, char *line)
 
 	i = 0;
 	new_matrix = ft_calloc(sizeof(char *), (ft_matrix_len(*matrix) + 2));
-	fprintf(stderr, "len: %d\n line=%s", ft_matrix_len(*matrix), line);
 	if (!new_matrix)
 		return (NULL);
 	if (ft_matrix_len(*matrix) == 0)
 	{
-		printf("cazzo\n");
 		new_matrix[0] = ft_strdup(line);
 		new_matrix[1] = NULL;
 		return (new_matrix);
 	}
-	while (matrix[i])
+	while ((*matrix)[i])
 	{
-		new_matrix[i] = ft_strdup(*matrix[i]);
+		printf("matrix[%d] = %s\n", i, (*matrix)[i]);
+		new_matrix[i] = ft_strdup((*matrix)[i]);
 		i++;
 	}
 	new_matrix[i] = ft_strdup(line);
