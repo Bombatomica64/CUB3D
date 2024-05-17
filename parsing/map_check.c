@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 11:08:18 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 11:25:34 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,12 @@ char	**parse_map(char *map_path, t_game *game)
 
 void	flood_map(t_game *game, int i, int j)
 {
-	if (i < 0 || j < 0 || i >= ft_matrix_len(game->map)
-		|| j >= ft_strlen(game->map[i]) || game->map[i][j] == '1' ||
+	if (i <= 0 || j <= 0 || i >= ft_matrix_len(game->map)
+		|| j >= ft_strlen(game->map[i]) ||
 		game->map[i][j] == ' ')
 		err_exit("Invalid map", game);
+	if (game->map[i][j] == '1')
+		return ;
 	flood_map(game, i + 1, j);
 	flood_map(game, i - 1, j);
 	flood_map(game, i, j + 1);
