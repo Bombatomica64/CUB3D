@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install ctags
-      run: sudo apt-get update && sudo apt-get install -y ctags
+      run: sudo apt-get update && sudo apt-get install -y exuberant-ctags
       
     - name: Find Makefiles and clean
       run: |
