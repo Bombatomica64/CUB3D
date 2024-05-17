@@ -13,9 +13,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Install ctags
+      run: sudo apt-get update && sudo apt-get install -y ctags
       
     - name: Find Makefiles and clean
       run: |
         find . -name Makefile -execdir make fclean \;
+        
     - name: Generate ctags
       run: ctags -R -f .tags
