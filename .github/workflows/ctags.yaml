@@ -1,0 +1,21 @@
+name: Get tags
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  get_tags:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install ctags
+      run: sudo apt-get update && sudo apt-get install -y exuberant-ctags
+      
+    - name: Generate ctags
+      run: ctags -R -f .tags
