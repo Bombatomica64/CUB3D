@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 16:12:56 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:17:30 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	*create_color_file(t_color color, t_game *game, int nm);
 // map_check.c
 
 char	**parse_map(char *map_path, t_game *game);
-void	flood_map(char **map, int i, int j, t_game *game);
 void	check_map(t_game *game);
 void	check_closed_space(t_game *game, t_curs curs);
 

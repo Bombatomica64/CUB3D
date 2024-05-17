@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 16:16:27 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:17:27 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,18 @@ char	**parse_map(char *map_path, t_game *game)
 	return (map_and_txt);
 }
 
-void	flood_map(char **map, int i, int j, t_game *game)
-{
-	if (i <= 0 || j <= 0 || i >= (int)ft_matrix_len(map)
-		|| j >= (int)ft_strlen(map[i]) || map[i][j] == ' ')
-		err_exit("Error :\n Invalid map", game);
-	if (map[i][j] == '1')
-		return ;
-	flood_map(map, i + 1, j, game);
-	flood_map(map, i - 1, j, game);
-	flood_map(map, i, j + 1, game);
-	flood_map(map, i, j - 1, game);
-}
+// void	flood_map(char **map, int i, int j, t_game *game)
+// {
+// 	if (i <= 0 || j <= 0 || i >= (int)ft_matrix_len(map)
+// 		|| j >= (int)ft_strlen(map[i]) || map[i][j] == ' ')
+// 		err_exit("Error :\n Invalid map", game);
+// 	if (map[i][j] == '1')
+// 		return ;
+// 	flood_map(map, i + 1, j, game);
+// 	flood_map(map, i - 1, j, game);
+// 	flood_map(map, i, j + 1, game);
+// 	flood_map(map, i, j - 1, game);
+// }
 
 // int	check_forzeros(char **map)
 // {
