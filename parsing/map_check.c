@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 15:07:58 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:16:27 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,48 +59,49 @@ char	**parse_map(char *map_path, t_game *game)
 	return (map_and_txt);
 }
 
-void	flood_map(char **map, int i, int j)
+void	flood_map(char **map, int i, int j, t_game *game)
 {
 	if (i <= 0 || j <= 0 || i >= (int)ft_matrix_len(map)
 		|| j >= (int)ft_strlen(map[i]) || map[i][j] == ' ')
-		err("Invalid map");
+		err_exit("Error :\n Invalid map", game);
 	if (map[i][j] == '1')
 		return ;
-	map[i][j] = 'F';
-	flood_map(map, i + 1, j);
-	flood_map(map, i - 1, j);
-	flood_map(map, i, j + 1);
-	flood_map(map, i, j - 1);
+	flood_map(map, i + 1, j, game);
+	flood_map(map, i - 1, j, game);
+	flood_map(map, i, j + 1, game);
+	flood_map(map, i, j - 1, game);
 }
 
-int	check_forzeros(char **map)
-{
-	int		i;
-	int		j;
+// int	check_forzeros(char **map)
+// {
+// 	int		i;
+// 	int		j;
 
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == '0')
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	while (map[i])
+// 	{
+// 		j = 0;
+// 		while (map[i][j])
+// 		{
+// 			if (map[i][j] == '0')
+// 				return (-1);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (0);
+// }
 
 void	check_closed_space(t_game *game, t_curs curs)
 {
-	char	**map;
-
-	map = matrixdup(game->map);
-	flood_map(map, curs.i, curs.j);
-	if (check_forzeros(map) == -1)
-		err_exit("\n", game);
+	if (curs.i == 0 || curs.j == 0
+		|| curs.i == (int)ft_matrix_len(game->map)
+		|| curs.j == (int)ft_strlen(game->map[curs.i]) - 1
+		|| game->map[curs.i][curs.j + 1] == ' '
+		|| game->map[curs.i][curs.j - 1] == ' '
+		|| game->map[curs.i + 1][curs.j] == ' '
+		|| game->map[curs.i - 1][curs.j] == ' ')
+		err_exit("Error :\n Invalid map", game);
 }
 
 void	check_map(t_game *game)
@@ -122,14 +123,28 @@ void	check_map(t_game *game)
 		free(line);
 		curs.k--;
 	}
+	curs.k = 0;
 	while (game->map[curs.i])
 	{
 		curs.j = 0;
 		while (game->map[curs.i][curs.j])
 		{
-			if (!ft_isinset(game->map[curs.i][curs.j], " 012NSEW"))
+			if (ft_isinset(game->map[curs.i][curs.j], "NSEW"))
+				curs.k++;
+			curs.j++;
+		}
+		curs.i++;
+	}
+	if (curs.k != 1)
+		err_exit("Invalid map", game);
+	while (game->map[curs.i])
+	{
+		curs.j = 0;
+		while (game->map[curs.i][curs.j])
+		{
+			if (!ft_isinset(game->map[curs.i][curs.j], " 01NSEW"))
 				err_exit("Invalid character in map", game);
-			else if (game->map[curs.i][curs.j] == '0')
+			else if (ft_isinset(game->map[curs.i][curs.j], "0NSEW"))
 				check_closed_space(game, curs);
 			curs.j++;
 		}
