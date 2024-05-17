@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 10:43:09 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 11:07:27 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,43 @@ char	**parse_map(char *map_path, t_game *game)
 	map_and_txt[i] = NULL;
 	close(fd);
 	return (map_and_txt);
+}
+
+void	flood_map(t_game *game, int i, int j)
+{
+	if (i < 0 || j < 0 || i >= ft_matrix_len(game->map) ||
+		j >= ft_strlen(game->map[i]) || game->map[i][j] == '1' ||
+		game->map[i][j] == ' ')
+		return ;
+	game->map[i][j] = '1';
+	flood_map(game, i + 1, j);
+	flood_map(game, i - 1, j);
+	flood_map(game, i, j + 1);
+	flood_map(game, i, j - 1);
+}
+
+void	check_closed_space(t_game *game, t_curs curs)
+{
+	flood_map(game, curs.i, curs.j);
+}
+
+void	check_map(t_game *game)
+{
+	t_curs	curs;
+
+	curs = (t_curs){0, 0, 0, 0};
+	while (game->map[curs.i])
+	{
+		curs.j = 0;
+		while (game->map[curs.i][curs.j])
+		{
+			if (!ft_isinset(game->map[curs.i][curs.j], " 012NSEW"))
+				err_exit("Invalid character in map", game);
+			else if (game->map[curs.i][curs.j] == '0')
+				check_closed_space(game, curs);
+			curs.j++;
+		}
+		curs.i++;
+	}
+	return ;
 }

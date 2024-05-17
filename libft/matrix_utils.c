@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 10:26:33 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 15:38:35 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 10:17:36 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**rem_from_matrix(char **matrix, int index)
 	return (new_matrix);
 }
 
-char	**add_to_matrix(char ***matrix, char *line)
+char	**add_to_matrix(char **matrix, char *line)
 {
 	char	**new_matrix;
 	int		i;

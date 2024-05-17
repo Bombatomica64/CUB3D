@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_utils4.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli < lmicheli@student.42firenze.it>  +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/04/18 10:31:02 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 10:41:08 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,25 @@ char	*ft_skipstring(int offset, char *str)
 
 	dst = ft_strdup(str + offset);
 	return (free(str), dst);
+}
+
+char	*join_n_char(char *s1, char c, int n)
+{
+	char	*dst;
+	int		i;
+
+	dst = malloc(ft_strlen(s1) + n + 1);
+	if (!dst)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		dst[i] = s1[i];
+		i++;
+	}
+	while (n--)
+		dst[i++] = c;
+	dst[i] = '\0';
+	free(s1);
+	return (dst);
 }
