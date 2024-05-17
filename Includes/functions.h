@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 16:17:30 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 18:22:53 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FUNCTIONS_H
 
 # include <structs.h>
+
+//var_init.c
 
 t_game	*init_game(char *map_path);
 char	**parse_map(char *map_path, t_game *game);
@@ -41,5 +43,19 @@ char	*create_color_file(t_color color, t_game *game, int nm);
 char	**parse_map(char *map_path, t_game *game);
 void	check_map(t_game *game);
 void	check_closed_space(t_game *game, t_curs curs);
+
+//rays.c
+
+double	nor_angle(double angle);
+int		is_wall(double x, double y, t_game *game);
+t_img	get_texture(t_game *game);
+
+//inter_h.c
+
+double	horizontal_inter(t_game *game);
+
+//inter_v.c
+
+double	vertical_inter(t_game *game);
 
 #endif

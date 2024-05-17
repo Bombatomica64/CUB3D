@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:33:08 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 10:55:20 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 17:36:06 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	parse_line(char *line, t_game *game)
 		return (free(line), 0);
 	if (is_in_mtx(&line[curs.i], game->txts.txt_nm) == 1
 		&& game->input.map_str == 0)
-		game->txts.txts = add_to_matrix(ft_strtrimfree(game->txts.txts,
-					"\n", &curs.j), line);
+		game->txts.txts = add_to_matrix(game->txts.txts,
+				ft_strtrimfree(line, "\n", &curs.j));
 	else if (ft_isinset(line[curs.i], "01NSEW"))
 	{
-		game->map = add_to_matrix(ft_strtrimfree(game->txts.txts,
-					"\n", &curs.j), line);
+		game->map = add_to_matrix(game->txts.txts, ft_strtrimfree(line,
+					"\n", &curs.j));
 		game->input.map_str = 1;
 	}
 	else
@@ -43,17 +43,19 @@ void	pad_map(t_game *game)
 	curs = (t_curs){0, 0, 0, 0};
 	while (game->map[curs.i])
 	{
-		if (ft_strlen(game->map[curs.i]) > curs.status)
+		if ((int)ft_strlen(game->map[curs.i]) > curs.status)
 			curs.status = ft_strlen(game->map[curs.i]);
 		curs.i++;
 	}
+	game->map_width = curs.status;
 	while (game->map[curs.j])
 	{
-		if (ft_strlen(game->map[curs.j]) < curs.status)
+		if ((int)ft_strlen(game->map[curs.j]) < curs.status)
 			game->map[curs.j] = join_n_char(game->map[curs.j], ' ',
 					curs.status - ft_strlen(game->map[curs.j]));
 		curs.j++;
 	}
+	game->map_height = ft_matrix_len(game->map);
 }
 
 void	split_map(t_game *game)
