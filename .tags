@@ -173,7 +173,7 @@ X-WINDOW	minilibx/man/man3/mlx_loop.3	/^.SH X-WINDOW EVENTS$/;"	s	title:MiniLibX
 XPM	minilibx/man/man1/mlx_new_image.1	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
 XPM	minilibx/man/man3/mlx_new_image.3	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
 X_ShmAttach	minilibx/mlx_new_image.c	/^#define	X_ShmAttach	/;"	d	file:
-add_to_matrix	libft/matrix_utils.c	/^char	**add_to_matrix(char ***matrix, char *line)$/;"	f	typeref:typename:char **
+add_to_matrix	libft/matrix_utils.c	/^char	**add_to_matrix(char **matrix, char *line)$/;"	f	typeref:typename:char **
 all	Makefile	/^all: $(NAME)$/;"	t
 all	libft/Makefile	/^all: $(NAME)$/;"	t
 all	minilibx/Makefile	/^all	: do_configure$/;"	t
@@ -181,12 +181,16 @@ all	minilibx/Makefile.mk	/^all	: $(NAME)$/;"	t
 all	minilibx/test/Makefile.mk	/^all: $(NAME)$/;"	t
 all_to_trim	libft/ft_strtrim.c	/^static char	*all_to_trim(int start, int len, const char *s1)$/;"	f	typeref:typename:char *	file:
 at_exit	minilibx/test/run_tests.sh	/^at_exit() {$/;"	f
+b	Includes/structs.h	/^	char	*b;$/;"	m	struct:s_color	typeref:typename:char *
 bpp	minilibx/mlx_int.h	/^	int				bpp;$/;"	m	struct:s_img	typeref:typename:int
 bpp1	minilibx/test/main.c	/^int	bpp1;$/;"	v	typeref:typename:int
 bpp2	minilibx/test/main.c	/^int	bpp2;$/;"	v	typeref:typename:int
 bpp3	minilibx/test/main.c	/^int	bpp3;$/;"	v	typeref:typename:int
 bpp4	minilibx/test/main.c	/^int	bpp4;$/;"	v	typeref:typename:int
 check	minilibx/Makefile.mk	/^check: all$/;"	t
+check_closed_space	parsing/map_check.c	/^void	check_closed_space(t_game *game, t_curs curs)$/;"	f	typeref:typename:void
+check_forzeros	parsing/map_check.c	/^int	check_forzeros(char **map)$/;"	f	typeref:typename:int
+check_map	parsing/map_check.c	/^void	check_map(t_game *game)$/;"	f	typeref:typename:void
 check_null	libft/ft_strtrim.c	/^static char	*check_null(char const *s1)$/;"	f	typeref:typename:char *	file:
 check_to_put	libft/ft_printf.c	/^int	check_to_put(char c, va_list lst)$/;"	f	typeref:typename:int
 checksize	libft/ft_putnbr_base.c	/^static int	checksize(unsigned int temp, int size)$/;"	f	typeref:typename:int	file:
@@ -203,6 +207,7 @@ color	minilibx/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name	typeref:typename
 color_map_1	minilibx/test/main.c	/^int	color_map_1(void *win,int w,int h)$/;"	f	typeref:typename:int
 color_map_2	minilibx/test/main.c	/^int	color_map_2(unsigned char *data,int bpp,int sl,int w,int h,int endian, int type)$/;"	f	typeref:typename:int
 content	libft/libft.h	/^	void			*content;$/;"	m	struct:s_list	typeref:typename:void *
+create_color_file	parsing/color.c	/^char	*create_color_file(t_color color, t_game *game, int nm)$/;"	f	typeref:typename:char *
 create_sub_str	libft/ft_split.c	/^static char	*create_sub_str(int start, char const *s, char c)$/;"	f	typeref:typename:char *	file:
 cut_string	libft/str_utils3.c	/^char	*cut_string(int len, char *str)$/;"	f	typeref:typename:char *
 data	minilibx/mlx_int.h	/^	char			*data;$/;"	m	struct:s_img	typeref:typename:char *
@@ -222,7 +227,8 @@ endian1	minilibx/test/main.c	/^int	endian1;$/;"	v	typeref:typename:int
 endian2	minilibx/test/main.c	/^int	endian2;$/;"	v	typeref:typename:int
 endian3	minilibx/test/main.c	/^int	endian3;$/;"	v	typeref:typename:int
 endian4	minilibx/test/main.c	/^int	endian4;$/;"	v	typeref:typename:int
-err	srcs/error_management.c	/^void	err(char *msg)$/;"	f	typeref:typename:void
+err	srcs/error_management.c	/^int	err(char *msg)$/;"	f	typeref:typename:int
+err_exit	srcs/error_management.c	/^void	err_exit(char *msg, t_game *game)$/;"	f	typeref:typename:void
 expose_hook	minilibx/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
 expose_param	minilibx/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list	typeref:typename:void *
 expose_win1	minilibx/test/main.c	/^int	expose_win1(void *p)$/;"	f	typeref:typename:int
@@ -235,6 +241,7 @@ file_size	parsing/map_check.c	/^static void	file_size(char *map_path, t_game *ga
 files.associations	.vscode/settings.json	/^	"files.associations": {$/;"	o
 find_first	libft/str_utils2.c	/^int	find_first(char *str, char c)$/;"	f	typeref:typename:int
 find_last	libft/str_utils2.c	/^int	find_last(char *str, char c)$/;"	f	typeref:typename:int
+flood_map	parsing/map_check.c	/^void	flood_map(char **map, int i, int j)$/;"	f	typeref:typename:void
 format	minilibx/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
 free_strdup	libft/str_utils4.c	/^char	*free_strdup(char *str, char **freestr)$/;"	f	typeref:typename:char *
 free_strrchr	libft/str_utils3.c	/^char	*free_strrchr(char *str, char c, int **offset)$/;"	f	typeref:typename:char *
@@ -313,14 +320,16 @@ ft_substr	libft/ft_substr.c	/^char	*ft_substr(char *s, unsigned int start, size_
 ft_tolower	libft/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f	typeref:typename:int
 ft_toupper	libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f	typeref:typename:int
 ft_unsigned_itoa	libft/ft_unsigned_itoa.c	/^char	*ft_unsigned_itoa(unsigned int n)$/;"	f	typeref:typename:char *
+g	Includes/structs.h	/^	char	*g;$/;"	m	struct:s_color	typeref:typename:char *
 gc	minilibx/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list	typeref:typename:GC
 gc	minilibx/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img	typeref:typename:GC
 gere_mouse	minilibx/test/new_win.c	/^int gere_mouse(int x,int y,int button,void*toto)$/;"	f	typeref:typename:int
+get_floor	parsing/var_init.c	/^t_img	get_floor(char *path, t_game *game, int nm)$/;"	f	typeref:typename:t_img
+get_img	srcs/put_images.c	/^t_img	get_img(char *path, t_game *game)$/;"	f	typeref:typename:t_img
 get_next_line	libft/get_next_line_bonus.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
 get_next_line2	libft/get_next_line2.c	/^int	get_next_line2(int fd, char **line)$/;"	f	typeref:typename:int
 get_textures	parsing/var_init.c	/^void	get_textures(t_game *game)$/;"	f	typeref:typename:void
 get_xlib_include_path	minilibx/configure	/^get_xlib_include_path(){$/;"	f
-height	Includes/structs.h	/^	int		height;$/;"	m	struct:s_img	typeref:typename:int
 height	minilibx/mlx_int.h	/^	int				height;$/;"	m	struct:s_img	typeref:typename:int
 hook	minilibx/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list	typeref:typename:int (*)()
 hooks	minilibx/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list	typeref:typename:t_event_list[]
@@ -330,13 +339,14 @@ im2	minilibx/test/main.c	/^void	*im2;$/;"	v	typeref:typename:void *
 im3	minilibx/test/main.c	/^void	*im3;$/;"	v	typeref:typename:void *
 im4	minilibx/test/main.c	/^void	*im4;$/;"	v	typeref:typename:void *
 image	minilibx/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
-img	Includes/structs.h	/^	void	*img;$/;"	m	struct:s_img	typeref:typename:void *
-imgs	Includes/structs.h	/^	t_img	imgs[7];$/;"	m	struct:s_texture	typeref:typename:t_img[7]
+imgs	Includes/structs.h	/^	t_img	imgs[6]; \/\/ 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F$/;"	m	struct:s_texture	typeref:typename:t_img[6]
 init_game	parsing/var_init.c	/^t_game	*init_game(char *map_path)$/;"	f	typeref:typename:t_game *
 input	Includes/structs.h	/^	t_input		input;$/;"	m	struct:s_game	typeref:typename:t_input
 is_in_mtx	libft/matrix_utils.c	/^int	is_in_mtx(char *line, char **matrix)$/;"	f	typeref:typename:int
+itoa_base_hex	parsing/color.c	/^static char	*itoa_base_hex(int n)$/;"	f	typeref:typename:char *	file:
 j	Includes/structs.h	/^	int		j;$/;"	m	struct:s_curs	typeref:typename:int
 join_char	libft/str_utils3.c	/^char	*join_char(char *str, char c)$/;"	f	typeref:typename:char *
+join_n_char	libft/str_utils4.c	/^char	*join_n_char(char *s1, char c, int n)$/;"	f	typeref:typename:char *
 k	Includes/structs.h	/^	int		k;$/;"	m	struct:s_curs	typeref:typename:int
 key_hook	minilibx/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
 key_param	minilibx/mlx_int.h	/^	void				*key_param;$/;"	m	struct:s_win_list	typeref:typename:void *
@@ -446,6 +456,7 @@ name	minilibx/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name	typeref:typename:
 name	minilibx/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col	typeref:typename:int
 next	libft/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
 next	minilibx/mlx_int.h	/^	struct s_win_list	*next;$/;"	m	struct:s_win_list	typeref:struct:s_win_list *
+pad_map	parsing/splut.c	/^void	pad_map(t_game *game)$/;"	f	typeref:typename:void
 param	minilibx/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list	typeref:typename:void *
 parse_args	minilibx/configure	/^parse_args(){$/;"	f
 parse_line	parsing/splut.c	/^int	parse_line(char *line, t_game *game)$/;"	f	typeref:typename:int
@@ -460,6 +471,7 @@ print_matrix	libft/space_utils.c	/^t_bool	print_matrix(char **mtx)$/;"	f	typeref
 private_cmap	minilibx/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typeref:typename:int
 pshm_format	minilibx/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
 put_xmp	srcs/put_images.c	/^void	*put_xmp(void *mlx, char *filename, int *width, int *height)$/;"	f	typeref:typename:void *
+r	Includes/structs.h	/^	char	*r;$/;"	m	struct:s_color	typeref:typename:char *
 re	Makefile	/^re: fclean all$/;"	t
 re	libft/Makefile	/^re: fclean all$/;"	t
 re	minilibx/Makefile	/^re	: clean all$/;"	t
@@ -467,10 +479,10 @@ re	minilibx/test/Makefile.mk	/^re: clean all$/;"	t
 rem_from_matrix	libft/matrix_utils.c	/^char	**rem_from_matrix(char **matrix, int index)$/;"	f	typeref:typename:char **
 root	minilibx/mlx_int.h	/^	Window		root;$/;"	m	struct:s_xvar	typeref:typename:Window
 s_col_name	minilibx/mlx_int.h	/^struct	s_col_name$/;"	s
+s_color	Includes/structs.h	/^typedef struct s_color$/;"	s
 s_curs	Includes/structs.h	/^typedef struct s_curs$/;"	s
 s_event_list	minilibx/mlx_int.h	/^typedef struct	s_event_list$/;"	s
 s_game	Includes/structs.h	/^typedef struct s_game$/;"	s
-s_img	Includes/structs.h	/^typedef struct s_img$/;"	s
 s_img	minilibx/mlx_int.h	/^typedef struct	s_img$/;"	s
 s_input	Includes/structs.h	/^typedef struct s_input$/;"	s
 s_list	libft/libft.h	/^typedef struct s_list$/;"	s
@@ -502,10 +514,10 @@ str_count	libft/ft_split.c	/^static int	str_count(const char *s, char c)$/;"	f	t
 strjoin_n_free1	libft/str_utils3.c	/^char	*strjoin_n_free1(char *line, char *buff, int index)$/;"	f	typeref:typename:char *
 strlcpy_is_not_posix	minilibx/mlx_xpm.c	/^unsigned int	strlcpy_is_not_posix(char *dest, char *src, unsigned int size)$/;"	f	typeref:typename:unsigned int
 t_bool	libft/libft.h	/^}	t_bool;$/;"	t	typeref:enum:e_bool
+t_color	Includes/structs.h	/^}	t_color;$/;"	t	typeref:struct:s_color
 t_curs	Includes/structs.h	/^}	t_curs;$/;"	t	typeref:struct:s_curs
 t_event_list	minilibx/mlx_int.h	/^}				t_event_list;$/;"	t	typeref:struct:s_event_list
 t_game	Includes/structs.h	/^}	t_game;$/;"	t	typeref:struct:s_game
-t_img	Includes/structs.h	/^}	t_img;$/;"	t	typeref:struct:s_img
 t_img	minilibx/mlx_int.h	/^}				t_img;$/;"	t	typeref:struct:s_img
 t_input	Includes/structs.h	/^}	t_input;$/;"	t	typeref:struct:s_input
 t_list	libft/libft.h	/^}		t_list;$/;"	t	typeref:struct:s_list
@@ -516,15 +528,14 @@ t_win_list	minilibx/mlx_int.h	/^}				t_win_list;$/;"	t	typeref:struct:s_win_list
 t_xpm_col	minilibx/mlx_int.h	/^}				t_xpm_col;$/;"	t	typeref:struct:s_xpm_col
 t_xvar	minilibx/mlx_int.h	/^}				t_xvar;$/;"	t	typeref:struct:s_xvar
 test_default_main	minilibx/test/run_tests.sh	/^test_default_main(){$/;"	f
-texture	Includes/structs.h	/^	t_texture	texture;$/;"	m	struct:s_game	typeref:typename:t_texture
 texture_names	parsing/var_init.c	/^char	**texture_names(void)$/;"	f	typeref:typename:char **
 txt_nm	Includes/structs.h	/^	char	**txt_nm; \/\/alloced in var_init.c$/;"	m	struct:s_texture	typeref:typename:char **
 txts	Includes/structs.h	/^	char	**txts;$/;"	m	struct:s_texture	typeref:typename:char **
+txts	Includes/structs.h	/^	t_texture	txts;$/;"	m	struct:s_game	typeref:typename:t_texture
 type	minilibx/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typename:int
 use_xshm	minilibx/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
 val	Makefile	/^val:$/;"	t
 visual	minilibx/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
-width	Includes/structs.h	/^	int		width;$/;"	m	struct:s_img	typeref:typename:int
 width	minilibx/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int
 win	Includes/structs.h	/^	void		*win;$/;"	m	struct:s_game	typeref:typename:void *
 win1	minilibx/test/main.c	/^void	*win1;$/;"	v	typeref:typename:void *

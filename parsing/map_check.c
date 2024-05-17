@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 12:16:09 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:49:15 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,26 @@ void	flood_map(char **map, int i, int j)
 	flood_map(map, i - 1, j);
 	flood_map(map, i, j + 1);
 	flood_map(map, i, j - 1);
+}
+
+int	check_forzeros(char **map)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == '0')
+				return (-1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
 
 void	check_closed_space(t_game *game, t_curs curs)
