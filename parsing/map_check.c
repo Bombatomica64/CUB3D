@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 11:25:34 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 12:16:09 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,23 +59,28 @@ char	**parse_map(char *map_path, t_game *game)
 	return (map_and_txt);
 }
 
-void	flood_map(t_game *game, int i, int j)
+void	flood_map(char **map, int i, int j)
 {
-	if (i <= 0 || j <= 0 || i >= ft_matrix_len(game->map)
-		|| j >= ft_strlen(game->map[i]) ||
-		game->map[i][j] == ' ')
-		err_exit("Invalid map", game);
-	if (game->map[i][j] == '1')
+	if (i <= 0 || j <= 0 || i >= ft_matrix_len(map)
+		|| j >= ft_strlen(map[i]) || map[i][j] == ' ')
+		err("Invalid map");
+	if (map[i][j] == '1')
 		return ;
-	flood_map(game, i + 1, j);
-	flood_map(game, i - 1, j);
-	flood_map(game, i, j + 1);
-	flood_map(game, i, j - 1);
+	map[i][j] = 'F';
+	flood_map(map, i + 1, j);
+	flood_map(map, i - 1, j);
+	flood_map(map, i, j + 1);
+	flood_map(map, i, j - 1);
 }
 
 void	check_closed_space(t_game *game, t_curs curs)
 {
-	flood_map(game, curs.i, curs.j);
+	char	**map;
+
+	map = matrixdup(game->map);
+	flood_map(map, curs.i, curs.j);
+	if (check_forzeros(map) == -1)
+		err_exit("\n", game);
 }
 
 void	check_map(t_game *game)
