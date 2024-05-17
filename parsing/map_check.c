@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 14:49:15 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:07:58 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ char	**parse_map(char *map_path, t_game *game)
 
 void	flood_map(char **map, int i, int j)
 {
-	if (i <= 0 || j <= 0 || i >= ft_matrix_len(map)
-		|| j >= ft_strlen(map[i]) || map[i][j] == ' ')
+	if (i <= 0 || j <= 0 || i >= (int)ft_matrix_len(map)
+		|| j >= (int)ft_strlen(map[i]) || map[i][j] == ' ')
 		err("Invalid map");
 	if (map[i][j] == '1')
 		return ;
@@ -106,8 +106,22 @@ void	check_closed_space(t_game *game, t_curs curs)
 void	check_map(t_game *game)
 {
 	t_curs	curs;
+	char	*line;
 
-	curs = (t_curs){0, 0, 0, 0};
+	curs = (t_curs){0, 0, ft_matrix_len(game->map), 0};
+	while (curs.k >= 0)
+	{
+		line = ft_strtrim(game->map[curs.k], " \n");
+		if (line[0] != '\0')
+			curs.status = 1;
+		if (curs.status == 1 && line[0] == '\0')
+		{
+			free(line);
+			err_exit("Invalid map", game);
+		}
+		free(line);
+		curs.k--;
+	}
 	while (game->map[curs.i])
 	{
 		curs.j = 0;

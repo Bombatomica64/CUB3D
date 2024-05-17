@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_management.c                                 :+:      :+:    :+:   */
+/*   matrix_utils2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 16:42:14 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 15:06:30 by lmicheli         ###   ########.fr       */
+/*   Created: 2024/05/17 15:08:38 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/17 15:08:57 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <functions.h>
+#include "libft.h"
 
-int	err(char *msg)
+char	**matrixdup(char **matrix)
 {
-	ft_putstr_fd(msg, 2);
-	return (1);
-}
+	char	**new_matrix;
+	int		i;
 
-void	err_exit(char *msg, t_game *game)
-{
-	ft_putstr_fd(msg, 2);
-	ft_free_matrix(game->input.map_and_txt);
-	ft_free_matrix(game->txts.txts);
-	ft_free_matrix(game->map);
-	if (game->mlx)
+	i = 0;
+	new_matrix = malloc(sizeof(char *) * (ft_matrix_len(matrix) + 1));
+	if (!new_matrix)
+		return (NULL);
+	while (matrix[i])
 	{
-		mlx_destroy_display(game->mlx);
-		free(game->mlx);
+		new_matrix[i] = ft_strdup(matrix[i]);
+		i++;
 	}
-	free(game);
-	exit(1);
+	new_matrix[i] = NULL;
+	return (new_matrix);
 }

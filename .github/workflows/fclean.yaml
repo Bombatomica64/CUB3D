@@ -17,3 +17,5 @@ jobs:
     - name: Find Makefiles and clean
       run: |
         find . -name Makefile -execdir make fclean \;
+    - name: Generate ctags
+      run: ctags -R -f .tags

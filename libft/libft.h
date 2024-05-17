@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 10:42:05 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:10:34 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,11 @@ int			ft_matrix_len(char **matrix);
 void		ft_free_matrix(char **matrix);
 char		**rem_from_matrix(char **matrix, int index);
 char		**add_to_matrix(char **matrix, char *line);
+int			is_in_mtx(char *line, char **matrix);
+
+//matrix_utils2.c
+
+char		**matrixdup(char **matrix);
 
 //space_utils.c
 
@@ -128,6 +133,5 @@ int			skip_spaces2(char *str);
 void		skip_spaces(char **str);
 t_bool		ft_isspace(char c);
 t_bool		print_matrix(char **mtx);
-int			is_in_mtx(char *line, char **matrix);
 
 #endif
