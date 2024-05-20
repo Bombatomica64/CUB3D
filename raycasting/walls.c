@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 18:50:41 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/20 09:59:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	draw_wall(t_game *game, double wall_h, double t_pix, double b_pix)
 	}
 }
 
-void	draw_upndown(t_game *game, double t_pix, double b_pix)
+void	draw_up(t_game *game, double t_pix, double b_pix)
 {
 	double		x_o;
 	double		y_o;
@@ -65,6 +65,27 @@ void	draw_upndown(t_game *game, double t_pix, double b_pix)
 	while (y_o < SCREEN_HEIGHT / 2)
 	{
 		better_pixel_put(game, game->ray.i_ray, y_o,
+			reverse_bit(arr[(int)y_o * texture.width + (int)x_o]));
+		y_o++;
+	}
+}
+
+void	draw_down(t_game *game, double t_pix, double b_pix)
+{
+	double		x_o;
+	double		y_o;
+	t_img		texture;
+	u_int32_t	*arr;
+	double		factor;
+
+	texture = game->txts.imgs[5];
+	arr = (u_int32_t *)texture.data;
+	factor = (double)texture.height / (SCREEN_HEIGHT / 2);
+	x_o = get_xo(game, texture);
+	y_o = 0;
+	while (y_o < SCREEN_HEIGHT / 2)
+	{
+		better_pixel_put(game, game->ray.i_ray, b_pix + y_o,
 			reverse_bit(arr[(int)y_o * texture.width + (int)x_o]));
 		y_o++;
 	}
@@ -86,5 +107,6 @@ void	render_wall(t_game *game, int i_ray)
 	if (t_pix < 0)
 		t_pix = 0;
 	draw_wall(game, wall_h, t_pix, b_pix);
-	draw_upndown(game, t_pix, b_pix);
+	draw_up(game, t_pix, b_pix);
+	draw_down(game, t_pix, b_pix);
 }
