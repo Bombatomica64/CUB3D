@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:33:08 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 17:36:06 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/20 11:18:29 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,12 @@ int	parse_line(char *line, t_game *game)
 				ft_strtrimfree(line, "\n", &curs.j));
 	else if (ft_isinset(line[curs.i], "01NSEW"))
 	{
-		game->map = add_to_matrix(game->txts.txts, ft_strtrimfree(line,
+		game->map = add_to_matrix(game->map, ft_strtrimfree(line,
 					"\n", &curs.j));
 		game->input.map_str = 1;
 	}
 	else
 		return (free(line), -1);
-	free(line);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 16:17:27 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/20 11:28:36 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	check_map(t_game *game)
 	t_curs	curs;
 	char	*line;
 
-	curs = (t_curs){0, 0, ft_matrix_len(game->map), 0};
+	curs = (t_curs){0, 0, ft_matrix_len(game->map) - 1, 0};
 	while (curs.k >= 0)
 	{
 		line = ft_strtrim(game->map[curs.k], " \n");
@@ -118,7 +118,7 @@ void	check_map(t_game *game)
 		if (curs.status == 1 && line[0] == '\0')
 		{
 			free(line);
-			err_exit("Invalid map", game);
+			err_exit("Invalid map1", game);
 		}
 		free(line);
 		curs.k--;
@@ -136,7 +136,7 @@ void	check_map(t_game *game)
 		curs.i++;
 	}
 	if (curs.k != 1)
-		err_exit("Invalid map", game);
+		err_exit("Invalid map2", game);
 	while (game->map[curs.i])
 	{
 		curs.j = 0;

@@ -6,24 +6,24 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:36:52 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 18:22:42 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/20 10:17:04 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-static double	calc_first_inter(t_game *game, double angle)
-{
-	double	tan_angle;
+// static double	calc_first_inter(t_game *game, double angle)
+// {
+// 	double	tan_angle;
 
-	tan_angle = tan(angle);
-	game->ray.x_int = floor(game->player.x / TILE_SIZE) * TILE_SIZE;
-	if (angle > M_PI / 2 && angle < 3 * M_PI / 2)
-		game->ray.x_int += TILE_SIZE;
-	game->ray.y_int = game->player.y
-		+ (game->player.x - game->ray.x_int) * tan_angle;
-	return (tan_angle);
-}
+// 	tan_angle = tan(angle);
+// 	game->ray.x_int = floor(game->player.x / TILE_SIZE) * TILE_SIZE;
+// 	if (angle > M_PI / 2 && angle < 3 * M_PI / 2)
+// 		game->ray.x_int += TILE_SIZE;
+// 	game->ray.y_int = game->player.y
+// 		+ (game->player.x - game->ray.x_int) * tan_angle;
+// 	return (tan_angle);
+// }
 
 static void	calculate_steps(t_game *game, double tan_angle,
 	double *x_step, double *y_step)

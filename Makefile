@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/17 18:28:45 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/20 12:07:30 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ INCLUDES =	Includes/
 PARSING =	parsing/map_check.c \
 			parsing/var_init.c \
 			parsing/splut.c \
-			parsing/color.c
+			parsing/color.c \
+			parsing/textures.c 
 
 RAYCASTING =	raycasting/distance.c \
 				raycasting/rays.c \

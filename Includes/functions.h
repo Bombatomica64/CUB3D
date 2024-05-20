@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 18:22:53 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/20 12:15:36 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,25 @@ double	horizontal_inter(t_game *game);
 //inter_v.c
 
 double	vertical_inter(t_game *game);
+
+//pixel_putting.c
+
+void	better_pixel_put(t_game *game, int x, int y, int color);
+int		reverse_bit(int c);
+
+//walls.c
+
+void	render_wall(t_game *game);
+
+//distance.c
+
+void	cast_rays(t_game *game);
+
+//textures.c
+
+char	**texture_names( void );
+t_img	get_floor(char *path, t_game *game, int nm);
+void	get_textures(t_game *game);
+void	get_texture_adresses(t_game *game);
 
 #endif
