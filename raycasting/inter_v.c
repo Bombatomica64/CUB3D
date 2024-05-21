@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:36:52 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/20 10:17:04 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:15:08 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static void	calculate_steps(t_game *game, double tan_angle,
 	if (nor_angle(game->ray.angle) > M_PI
 		&& nor_angle(game->ray.angle) < 2 * M_PI)
 		*y_step *= -1;
+	fprintf(stderr, "x_step: %f, y_step: %f\n", *x_step, *y_step);
 }
 
 static double	check_for_wall(t_game *game, double x_step, double y_step)
@@ -45,8 +46,8 @@ static double	check_for_wall(t_game *game, double x_step, double y_step)
 
 	x = game->ray.x_int;
 	y = game->ray.y_int;
-	while (x >= 0 && x < game->map_width
-		* TILE_SIZE && y >= 0 && y < game->map_height * TILE_SIZE)
+	fprintf(stderr, "x: %f, y: %f\n", x, y);
+	while (y >= 0 && y < game->map_height * TILE_SIZE)
 	{
 		if (is_wall(x, y, game) == 1)
 		{

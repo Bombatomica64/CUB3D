@@ -6,13 +6,13 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/20 12:07:30 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/21 11:06:30 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
-CC = cc -Wall -Wextra -Werror -g
+CC = cc -Wall -Wextra -Werror -g -O3 -lm
 
 MLX_DIR = ./minilibx
 MLX = $(MLX_DIR)/libmlx.a
@@ -24,7 +24,8 @@ PARSING =	parsing/map_check.c \
 			parsing/var_init.c \
 			parsing/splut.c \
 			parsing/color.c \
-			parsing/textures.c 
+			parsing/textures.c \
+			parsing/player.c
 
 RAYCASTING =	raycasting/distance.c \
 				raycasting/rays.c \

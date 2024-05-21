@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 10:26:33 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 15:07:30 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 10:50:01 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ char	**add_to_matrix(char **matrix, char *line)
 	}
 	new_matrix[i] = ft_strdup(line);
 	new_matrix[i + 1] = NULL;
+	free(line);
 	ft_free_matrix(matrix);
 	return (new_matrix);
 }

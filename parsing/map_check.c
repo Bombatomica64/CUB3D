@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:14:51 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/20 11:28:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:00:07 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,10 @@ void	check_map(t_game *game)
 		while (game->map[curs.i][curs.j])
 		{
 			if (ft_isinset(game->map[curs.i][curs.j], "NSEW"))
+			{
+				init_player(game, curs.i, curs.j);
 				curs.k++;
+			}
 			curs.j++;
 		}
 		curs.i++;

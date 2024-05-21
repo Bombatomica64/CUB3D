@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/20 12:14:26 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:50:05 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@
 # define A 0
 # define S 1
 # define D 2
-# define FOV 90
 # define SCREEN_WIDTH 1900
 # define SCREEN_HEIGHT 1000
-# define TILE_SIZE 50
+# define TILE_SIZE 30
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
+# define FOV 90
 
 typedef struct s_pos
 {

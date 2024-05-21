@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:24:48 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/17 18:22:29 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:14:16 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static double	check_for_wall(t_game *game, double x_step, double y_step)
 	x = game->ray.x_int;
 	y = game->ray.y_int;
 	while (x >= 0 && x < game->map_width
-		* TILE_SIZE && y >= 0 && y < game->map_height * TILE_SIZE)
+		* TILE_SIZE)
 	{
 		if (is_wall(x, y, game) == 1)
 		{

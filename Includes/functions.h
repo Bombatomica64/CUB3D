@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/20 12:15:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:24:02 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,9 @@ char	**texture_names( void );
 t_img	get_floor(char *path, t_game *game, int nm);
 void	get_textures(t_game *game);
 void	get_texture_adresses(t_game *game);
+
+//player.c
+
+void	init_player(t_game *game, int x, int y);
 
 #endif

@@ -6,30 +6,29 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 12:03:28 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/20 12:44:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 10:28:06 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-int	on_esc(int keysym)
+int	on_esc(int keysym, t_game *game)
 {
 	if (keysym == XK_Escape)
-		exit(1);
+		err_exit("Exiting\n", game);
 	return (0);
 }
 
 int	on_destroy(t_game *data)
 {
-	(void)data;
-	exit(1);
+	err_exit("Exiting\n", data);
 	return (0);
 }
 
 void	key_input(t_game *data)
 {
 	mlx_hook(data->win, KeyPress, KeyPressMask,
-		&on_esc, NULL);
+		&on_esc, data);
 	// mlx_hook(data->data.win, ButtonPress, ButtonPressMask,
 	// 	&on_mouseclick, &data->data);
 	// mlx_hook(data->data.win, ButtonRelease, ButtonReleaseMask,
@@ -56,8 +55,6 @@ int	main(int ac, char **av)
 	}
 	printf("game.mlx[%p]\n", game->mlx);
 	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[0].image, 0, 0);
-	exit(0);
-
 	cast_rays(game);
 	key_input(game);
 	mlx_destroy_display(game->mlx);
