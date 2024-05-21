@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:05:29 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 12:30:27 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:38:24 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ double	get_angle(int x, int y, t_game *game)
 
 void	init_player(t_game *game, int x, int y)
 {
-	game->player.x = x;
-	game->player.y = y;
-	printf("Player position: %d, %d\n", game->player.x, game->player.y);
+	game->player.x = x + 0.5f;
+	game->player.y = y + 0.5f;
 	game->player.angle = get_angle(x, y, game);
 }
