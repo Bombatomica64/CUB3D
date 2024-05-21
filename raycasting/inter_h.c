@@ -6,68 +6,106 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:24:48 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 12:14:16 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:28:37 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-static double	calc_first_inter(t_game *game, double angle)
+// static double	calc_first_inter(t_game *game, double angle)
+// {
+// 	double	tan_angle;
+
+// 	tan_angle = tan(angle);
+// 	game->ray.y_int = floor(game->player.y / TILE_SIZE) * TILE_SIZE;
+// 	if (angle > M_PI && angle < 2 * M_PI)
+// 		game->ray.y_int += TILE_SIZE;
+// 	game->ray.x_int = game->player.x
+// 		+ (game->player.y - game->ray.y_int) / tan_angle;
+// 	return (tan_angle);
+// }
+
+// static void	calculate_steps(t_game *game, double tan_angle,
+// 	double *x_step, double *y_step)
+// {
+// 	*y_step = TILE_SIZE;
+// 	if (nor_angle(game->ray.angle) > M_PI
+// 		&& nor_angle(game->ray.angle) < 2 * M_PI)
+// 		*y_step *= -1;
+// 	*x_step = TILE_SIZE / tan_angle;
+// 	if (nor_angle(game->ray.angle) > M_PI
+// 		/ 2 && nor_angle(game->ray.angle) < 3 * M_PI / 2)
+// 		*x_step *= -1;
+// }
+
+// static double	check_for_wall(t_game *game, double x_step, double y_step)
+// {
+// 	double	x;
+// 	double	y;
+
+// 	x = game->ray.x_int;
+// 	y = game->ray.y_int;
+// 	while (x >= 0 && x < game->map_width
+// 		* TILE_SIZE)
+// 	{
+// 		if (is_wall(x, y, game) == 1)
+// 		{
+// 			game->ray.flag = 1;
+// 			return (pow(game->player.x - x, 2) + pow(game->player.y - y, 2));
+// 		}
+// 		x += x_step;
+// 		y += y_step;
+// 	}
+// 	game->ray.hor_x = x;
+// 	game->ray.hor_y = y;
+// 	return (INT_MAX);
+// }
+
+int	check_inter(double angle, double *y, double *y_step, int flag)
 {
-	double	tan_angle;
-
-	tan_angle = tan(angle);
-	game->ray.y_int = floor(game->player.y / TILE_SIZE) * TILE_SIZE;
-	if (angle > M_PI && angle < 2 * M_PI)
-		game->ray.y_int += TILE_SIZE;
-	game->ray.x_int = game->player.x
-		+ (game->player.y - game->ray.y_int) / tan_angle;
-	return (tan_angle);
-}
-
-static void	calculate_steps(t_game *game, double tan_angle,
-	double *x_step, double *y_step)
-{
-	*y_step = TILE_SIZE;
-	if (nor_angle(game->ray.angle) > M_PI
-		&& nor_angle(game->ray.angle) < 2 * M_PI)
-		*y_step *= -1;
-	*x_step = TILE_SIZE / tan_angle;
-	if (nor_angle(game->ray.angle) > M_PI
-		/ 2 && nor_angle(game->ray.angle) < 3 * M_PI / 2)
-		*x_step *= -1;
-}
-
-static double	check_for_wall(t_game *game, double x_step, double y_step)
-{
-	double	x;
-	double	y;
-
-	x = game->ray.x_int;
-	y = game->ray.y_int;
-	while (x >= 0 && x < game->map_width
-		* TILE_SIZE)
+	if (flag == 1)
 	{
-		if (is_wall(x, y, game) == 1)
+		if (angle < M_PI && angle > 0)
 		{
-			game->ray.flag = 1;
-			return (pow(game->player.x - x, 2) + pow(game->player.y - y, 2));
+			*y += TILE_SIZE;
+			return (-1);
 		}
-		x += x_step;
-		y += y_step;
+		*y_step *= -1;
 	}
-	game->ray.hor_x = x;
-	game->ray.hor_y = y;
-	return (INT_MAX);
+	else
+	{
+		if (angle < 3 * M_PI / 2 && angle > M_PI / 2)
+		{
+			*y += TILE_SIZE;
+			return (-1);
+		}
+		*y_step *= -1;
+	}
+	return (1);
 }
 
 double	horizontal_inter(t_game *game)
 {
 	double	x_step;
 	double	y_step;
-	double	tan_angle;
+	double	h_y;
+	double	h_x;
+	int		pixel;
 
-	tan_angle = calc_first_inter(game, nor_angle(game->ray.angle));
-	calculate_steps(game, tan_angle, &x_step, &y_step);
-	return (check_for_wall(game, x_step, y_step));
+	y_step = TILE_SIZE;
+	x_step = TILE_SIZE / tan(game->ray.angle);
+	h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE;
+	pixel = check_inter(nor_angle(game->ray.angle), &h_y, &y_step, 1);
+	h_x = game->player.x + (h_y - game->player.y) / tan(game->ray.angle);
+	if ((unit_circle(game->ray.angle, 'y') && x_step > 0)
+		|| (!unit_circle(game->ray.angle, 'y') && x_step < 0))
+		x_step *= -1;
+	while (is_wall(h_x, h_y - pixel, game))
+	{
+		h_x += x_step;
+		h_y += y_step;
+	}
+	game->ray.hor_x = h_x;
+	game->ray.hor_y = h_y;
+	return (sqrt(pow(h_x - game->player.x, 2) + pow (h_y - game->player.y, 2)));
 }

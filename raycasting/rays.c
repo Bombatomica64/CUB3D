@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:13:50 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 12:41:24 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:28:26 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,16 @@ int	is_wall(double x, double y, t_game *game)
 	int	i;
 	int	j;
 
-	i = floor(y / TILE_SIZE);
-	j = floor(x / TILE_SIZE);
-	if (i < 0 || i >= game->map_height || j < 0 || j >= game->map_width)
-		return (1);
-	if (game->map[i][j] == '1')
-		return (1);
-	return (0);
+	if (x < 0 || y < 0)
+		return (0);
+	i = floor(x / TILE_SIZE);
+	j = floor(y / TILE_SIZE);
+	if (j >= game->map_height || i >= game->map_width)
+		return (0);
+	if (game->map[j] && i <=(int)ft_strlen(game->map[j]))
+		if (game->map[j][i] == '1')
+			return (0);
+	return (1);
 }
 
 t_img	get_texture(t_game *game)
@@ -52,4 +55,19 @@ t_img	get_texture(t_game *game)
 		else
 			return (game->txts.imgs[0]);
 	}
+}
+
+int	unit_circle(double angle, char c)
+{
+	if (c == 'x')
+	{
+		if (angle > 0 && angle < M_PI)
+			return (1);
+	}
+	else
+	{
+		if (angle > M_PI / 2 && angle < 3 * M_PI / 2)
+			return (1);
+	}
+	return (0);
 }

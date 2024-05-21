@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 12:45:46 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:31:31 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ void	cast_rays(t_game *game)
 		game->ray.angle = nor_angle(game->ray.angle);
 		h_inter = horizontal_inter(game);
 		v_inter = vertical_inter(game);
-		if (h_inter < v_inter)
-			game->ray.dist = h_inter;
-		else
+		if (v_inter <= h_inter)
 			game->ray.dist = v_inter;
-		game->ray.dist *= cos(game->ray.angle - game->player.angle);
-		fprintf(stderr, "dist: %f\n", game->ray.dist);
+		else
+		{
+			game->ray.dist = h_inter;
+			game->ray.flag = 1;
+		}
+		// game->ray.dist *= cos(game->ray.angle - game->player.angle);
 		render_wall(game);
 		game->ray.angle += game->fov_rd / SCREEN_WIDTH;
 		game->ray.i_ray++;

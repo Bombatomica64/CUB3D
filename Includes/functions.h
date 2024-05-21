@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 11:24:02 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:16:59 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,12 @@ void	check_closed_space(t_game *game, t_curs curs);
 double	nor_angle(double angle);
 int		is_wall(double x, double y, t_game *game);
 t_img	get_texture(t_game *game);
+int		unit_circle(double angle, char c);
 
 //inter_h.c
 
 double	horizontal_inter(t_game *game);
+int		check_inter(double angle, double *y, double *y_step, int flag);
 
 //inter_v.c
 
