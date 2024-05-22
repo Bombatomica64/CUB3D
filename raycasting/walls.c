@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 16:41:08 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:09:03 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ double	get_xo(t_game *game, t_img texture, char type)
 	else
 	{
 		x_o = (int)fmodf((game->player.x
-			* (texture.width / TILE_SIZE)), texture.width);
+					* (texture.width / TILE_SIZE)), texture.width);
 	}
 	return (x_o);
 }
@@ -116,10 +116,11 @@ void	render_wall(t_game *game)
 	double	wall_h;
 	double	b_pix;
 	double	t_pix;
+	// double	correction;
 
-	game->ray.dist *= fast_cos(nor_angle(game->ray.angle - game->player.angle),
-			game);
-	wall_h = (TILE_SIZE / game->ray.dist) * game->player.dist_proj;
+	// correction = cos((game->fov_rd / 2) - game->ray.angle);
+	// game->ray.dist *= cos(nor_angle(game->ray.angle - game->player.angle));
+	wall_h = (SCREEN_HEIGHT / game->ray.dist);/* * game->player.dist_proj * correction;  */
 	printf("wall_h: %f\n", wall_h);
 	b_pix = (SCREEN_HEIGHT / 2) + (wall_h / 2);
 	t_pix = (SCREEN_HEIGHT / 2) - (wall_h / 2);
