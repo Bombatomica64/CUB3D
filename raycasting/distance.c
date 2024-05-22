@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 18:00:39 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:58:22 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,9 @@ void	cast_rays(t_game *game)
 	{
 		game->ray.flag = 0;
 		game->ray.angle = nor_angle(game->ray.angle);
-		game->ray.dist = get_wall_dist(game);
+		game->ray.dist = get_wall_dist(game) / 10;
+		/*if (game->ray.dist > 10)
+			game->ray.dist = 10;*/
 		printf("ray %d: dist = %f\n", game->ray.i_ray, game->ray.dist);
 		render_wall(game);
 		game->ray.angle += increment;

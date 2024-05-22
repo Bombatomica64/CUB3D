@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   walls.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 18:09:03 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:47:37 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ void	render_wall(t_game *game)
 	// correction = cos((game->fov_rd / 2) - game->ray.angle);
 	// game->ray.dist *= cos(nor_angle(game->ray.angle - game->player.angle));
 	wall_h = (SCREEN_HEIGHT / game->ray.dist);/* * game->player.dist_proj * correction;  */
-	printf("wall_h: %f\n", wall_h);
+	//printf("wall_h: %f\n", wall_h);
 	b_pix = (SCREEN_HEIGHT / 2) + (wall_h / 2);
 	t_pix = (SCREEN_HEIGHT / 2) - (wall_h / 2);
 	if (b_pix > SCREEN_HEIGHT)

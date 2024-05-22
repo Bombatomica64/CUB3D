@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 17:49:25 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:59:17 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
-# define FOV 90
+# define FOV 180
 
 /**
  * @brief 2D space vector
