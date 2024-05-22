@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 10:45:38 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 11:03:37 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,8 @@ void	init_player(t_game *game, int x, int y);
 //fast_trig.c
 
 void	init_trig(t_game *game);
-double	fast_cos(double angle);
-double	fast_sin(double angle);
-double	fast_tan(double angle);
+double	fast_cos(double angle, t_game *game);
+double	fast_sin(double angle, t_game *game);
+double	fast_tan(double angle, t_game *game);
 
 #endif

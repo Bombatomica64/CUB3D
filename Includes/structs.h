@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 10:36:05 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:41:44 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
+# ifndef M_PI_2
+#  define M_PI_2 1.57079632679489661923	/* pi/2 */
+# endif
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
@@ -55,7 +58,7 @@ typedef struct s_player
 	double		angle;
 	t_pos		pos; // 0, 50, 0
 	t_pos		dir; // 0, 50, 2
-	t_pos		plane; // 0, 1, 0
+	double		dist_proj; // distance from player to projection plane
 }	t_player;
 
 typedef struct s_color

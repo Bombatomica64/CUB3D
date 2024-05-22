@@ -6,13 +6,13 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 10:35:14 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 10:38:59 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:01:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-void	init_trig_tables(t_game *game)
+void	init_trig(t_game *game)
 {
 	int	i;
 
@@ -23,6 +23,14 @@ void	init_trig_tables(t_game *game)
 		game->cos_table[i] = cos(i * M_PI / 180);
 		i++;
 	}
+	game->sin_table[0] = 0;
+	game->cos_table[0] = 1;
+	game->sin_table[90] = 1;
+	game->cos_table[90] = 0;
+	game->sin_table[180] = 0;
+	game->cos_table[180] = -1;
+	game->sin_table[270] = -1;
+	game->cos_table[270] = 0;
 }
 
 double	fast_sin(double angle, t_game *game)

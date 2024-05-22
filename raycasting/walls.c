@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 18:17:05 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:00:59 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,10 @@ void	render_wall(t_game *game)
 	double	b_pix;
 	double	t_pix;
 
-	game->ray.dist *= cos(nor_angle(game->ray.angle - game->player.angle));
-	wall_h = (TILE_SIZE / game->ray.dist) * (SCREEN_WIDTH / 2)
-		/ tan(game->fov_rd / 2);
+	game->ray.dist *= fast_cos(nor_angle(game->ray.angle - game->player.angle),
+			game);
+	wall_h = (TILE_SIZE / game->ray.dist) * game->player.dist_proj;
+	// printf("wall_h: %f\n", wall_h);
 	b_pix = (SCREEN_HEIGHT / 2) + (wall_h / 2);
 	t_pix = (SCREEN_HEIGHT / 2) - (wall_h / 2);
 	if (b_pix > SCREEN_HEIGHT)

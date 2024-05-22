@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:24:48 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 15:36:15 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:58:25 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // {
 // 	double	tan_angle;
 
-// 	tan_angle = tan(angle);
+// 	tan_angle = fast_tan(angle);
 // 	game->ray.y_int = floor(game->player.y / TILE_SIZE) * TILE_SIZE;
 // 	if (angle > M_PI && angle < 2 * M_PI)
 // 		game->ray.y_int += TILE_SIZE;
@@ -92,20 +92,33 @@ double	horizontal_inter(t_game *game)
 	double	h_x;
 	int		pixel;
 
-	y_step = TILE_SIZE;
-	x_step = TILE_SIZE / tan(game->ray.angle);
-	h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE;
-	pixel = check_inter(nor_angle(game->ray.angle), &h_y, &y_step, 1);
-	h_x = game->player.x + (h_y - game->player.y) / tan(game->ray.angle);
-	if ((unit_circle(game->ray.angle, 'y') && x_step > 0)
-		|| (!unit_circle(game->ray.angle, 'y') && x_step < 0))
-		x_step *= -1;
-	while (is_wall(h_x, h_y - pixel, game))
+	if (game->ray.angle > 0 && game->ray.angle < M_PI)
+	{
+		y_step = TILE_SIZE;
+		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
+		pixel = 0;
+	}
+	else
+	{
+		y_step = -TILE_SIZE;
+		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE - 1;
+		pixel = 1;
+	}
+	x_step = TILE_SIZE / fast_tan(game->ray.angle, game);
+	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
+		&& x_step > 0)
+		x_step = -x_step;
+	else if ((game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2)
+		&& x_step < 0)
+		x_step = -x_step;
+	h_x = game->player.x + (game->player.y - h_y)
+		/ fast_tan(game->ray.angle, game);
+	while (is_wall(h_x, h_y, game))
 	{
 		h_x += x_step;
 		h_y += y_step;
 	}
 	game->ray.hor_x = h_x;
 	game->ray.hor_y = h_y;
-	return (sqrt(pow(h_x - game->player.x, 2) + pow (h_y - game->player.y, 2)));
+	return (fabsl(game->player.x - h_x) / fast_cos(game->ray.angle, game));
 }

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:36:52 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 15:29:28 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 12:58:35 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // {
 // 	double	tan_angle;
 
-// 	tan_angle = tan(angle);
+// 	tan_angle = fast_tan(angle);
 // 	game->ray.x_int = floor(game->player.x / TILE_SIZE) * TILE_SIZE;
 // 	if (angle > M_PI / 2 && angle < 3 * M_PI / 2)
 // 		game->ray.x_int += TILE_SIZE;
@@ -66,24 +66,35 @@ double	vertical_inter(t_game *game)
 {
 	double	x_step;
 	double	y_step;
-	double	v_y;
 	double	v_x;
+	double	v_y;
 	int		pixel;
 
-	x_step = TILE_SIZE;
+	if (game->ray.angle < M_PI_2 || game->ray.angle > 3 * M_PI_2)
+	{
+		x_step = TILE_SIZE;
+		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
+		pixel = 0;
+	}
+	else
+	{
+		x_step = -TILE_SIZE;
+		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE - 1;
+		pixel = 1;
+	}
 	y_step = TILE_SIZE * tan(game->ray.angle);
-	v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE;
-	pixel = check_inter(game->ray.angle, &v_x, &x_step, 0);
+	if ((game->ray.angle > M_PI && game->ray.angle < 2 * M_PI && y_step > 0)
+		|| (game->ray.angle < M_PI && y_step < 0))
+	{
+		y_step = -y_step;
+	}
 	v_y = game->player.y + (v_x - game->player.x) * tan(game->ray.angle);
-	if ((unit_circle(nor_angle(game->ray.angle), 'x') && y_step < 0)
-		|| (!unit_circle(nor_angle(game->ray.angle), 'x') && y_step > 0))
-		y_step *= -1;
-	while (is_wall(v_x - pixel, v_y, game))
+	while (is_wall(v_x, v_y, game))
 	{
 		v_x += x_step;
 		v_y += y_step;
 	}
 	game->ray.ver_x = v_x;
 	game->ray.ver_y = v_y;
-	return (sqrt(pow(v_x - game->player.x, 2) + pow(v_y - game->player.y, 2)));
+	return (fabsl(game->player.x - v_x) / cos(game->ray.angle));
 }
