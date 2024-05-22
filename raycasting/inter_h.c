@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:24:48 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 12:58:25 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:59:20 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ double	horizontal_inter(t_game *game)
 		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE - 1;
 		pixel = 1;
 	}
-	x_step = TILE_SIZE / fast_tan(game->ray.angle, game);
+	x_step = TILE_SIZE / tan(game->ray.angle);
 	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
 		&& x_step > 0)
 		x_step = -x_step;
@@ -112,7 +112,7 @@ double	horizontal_inter(t_game *game)
 		&& x_step < 0)
 		x_step = -x_step;
 	h_x = game->player.x + (game->player.y - h_y)
-		/ fast_tan(game->ray.angle, game);
+		/ tan(game->ray.angle);
 	while (is_wall(h_x, h_y, game))
 	{
 		h_x += x_step;
@@ -120,5 +120,5 @@ double	horizontal_inter(t_game *game)
 	}
 	game->ray.hor_x = h_x;
 	game->ray.hor_y = h_y;
-	return (fabsl(game->player.x - h_x) / fast_cos(game->ray.angle, game));
+	return (fabs((game->player.y - h_y) / fast_cos(game->ray.angle, game)));
 }

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:36:52 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 12:58:35 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:44:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ double	vertical_inter(t_game *game)
 	double	v_y;
 	int		pixel;
 
-	if (game->ray.angle < M_PI_2 || game->ray.angle > 3 * M_PI_2)
+	if (game->ray.angle < M_PI / 2 || game->ray.angle > 3 * M_PI / 2)
 	{
 		x_step = TILE_SIZE;
 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
@@ -82,13 +82,13 @@ double	vertical_inter(t_game *game)
 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE - 1;
 		pixel = 1;
 	}
-	y_step = TILE_SIZE * tan(game->ray.angle);
+	y_step = TILE_SIZE * fast_tan(game->ray.angle, game);
 	if ((game->ray.angle > M_PI && game->ray.angle < 2 * M_PI && y_step > 0)
 		|| (game->ray.angle < M_PI && y_step < 0))
 	{
 		y_step = -y_step;
 	}
-	v_y = game->player.y + (v_x - game->player.x) * tan(game->ray.angle);
+	v_y = game->player.y + (v_x - game->player.x) * fast_tan(game->ray.angle, game);
 	while (is_wall(v_x, v_y, game))
 	{
 		v_x += x_step;
@@ -96,5 +96,5 @@ double	vertical_inter(t_game *game)
 	}
 	game->ray.ver_x = v_x;
 	game->ray.ver_y = v_y;
-	return (fabsl(game->player.x - v_x) / cos(game->ray.angle));
+	return (fabs((game->player.x - v_x) / fast_cos(game->ray.angle, game)));
 }

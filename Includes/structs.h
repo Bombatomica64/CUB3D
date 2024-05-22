@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 12:41:44 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:35:54 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <math.h>
+# include <colours.h>
 # include "../minilibx/mlx.h"
 # include "../minilibx/mlx_int.h"
 # include "../libft/get_next_line_bonus.h"
@@ -87,6 +88,7 @@ typedef struct s_texture
 	char	**txts;
 	char	**txt_nm; //alloced in var_init.c
 	t_img	imgs[6]; // 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F
+	size_t	addr[6]; // 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F
 	int		endians[6];
 }	t_texture;
 

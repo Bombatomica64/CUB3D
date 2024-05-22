@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 12:03:28 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 12:59:04 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:39:10 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	printf("game.mlx[%p]\n", game->mlx);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[0].image, 0, 0);
-	key_input(game);
+	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[4].image, 0, 0);
 	cast_rays(game);
+	key_input(game);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	return (0);
