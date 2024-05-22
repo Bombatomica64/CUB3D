@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 15:16:59 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:45:38 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,12 @@ void	get_texture_adresses(t_game *game);
 //player.c
 
 void	init_player(t_game *game, int x, int y);
+
+//fast_trig.c
+
+void	init_trig(t_game *game);
+double	fast_cos(double angle);
+double	fast_sin(double angle);
+double	fast_tan(double angle);
 
 #endif

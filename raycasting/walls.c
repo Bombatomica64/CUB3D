@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 15:33:05 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/21 18:17:05 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	draw_wall(t_game *game, double wall_h, double t_pix, double b_pix)
 	while (t_pix < b_pix)
 	{
 		better_pixel_put(game, game->ray.i_ray, t_pix,
-			reverse_bit(0x456421/* arr[(int)y_o * texture.width + (int)x_o] */));
+			reverse_bit(0x115221/* arr[(int)y_o * texture.width + (int)x_o] */));
 		y_o += factor;
 		t_pix++;
 	}

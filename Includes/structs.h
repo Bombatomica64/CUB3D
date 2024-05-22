@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 18:14:07 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:36:05 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@
 # endif
 # define FOV 90
 
+/**
+ * @brief 2D space vector
+*/
 typedef struct s_pos
 {
 	double	x;
@@ -105,8 +108,10 @@ typedef struct s_game
 	void		*mlx;
 	void		*win;
 	char		**map;
-	int			map_width; //TODO
-	int			map_height;//TODO
+	int			map_width;
+	int			map_height;
+	double		sin_table[360];
+	double		cos_table[360];
 	t_ray		ray;
 	t_input		input;
 	t_player	player;

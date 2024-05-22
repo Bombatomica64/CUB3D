@@ -24,8 +24,7 @@ AUTHOR	minilibx/man/man3/mlx_new_image.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 AUTHOR	minilibx/man/man3/mlx_new_window.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 AUTHOR	minilibx/man/man3/mlx_pixel_put.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 BUFFER_SIZE	libft/get_next_line_bonus.h	/^#  define BUFFER_SIZE /;"	d
-CAMERA_HEIGHT	Includes/structs.h	/^# define CAMERA_HEIGHT /;"	d
-CC	Makefile	/^CC = cc -Wall -Wextra -Werror -g$/;"	m
+CC	Makefile	/^CC = cc -Wall -Wextra -Werror -g -O3 -lm$/;"	m
 CC	libft/Makefile	/^CC = cc$/;"	m
 CC	minilibx/Makefile.mk	/^	CC = clang$/;"	m
 CC	minilibx/Makefile.mk	/^CC	= gcc$/;"	m
@@ -72,6 +71,7 @@ INCLIB	minilibx/test/Makefile.mk	/^INCLIB=$(INC)\/..\/lib$/;"	m
 INCLUDE	minilibx/man/man1/mlx.1	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
 INCLUDE	minilibx/man/man3/mlx.3	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
 INCLUDES	Makefile	/^INCLUDES =	Includes\/$/;"	m
+INT_MAX	Includes/structs.h	/^#  define INT_MAX /;"	d
 LFLAGS	minilibx/test/Makefile.mk	/^LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm$/;"	m
 LIB	Makefile	/^LIB = libft\/libftprintf.a$/;"	m
 LIBFT_H	libft/libft.h	/^# define LIBFT_H$/;"	d
@@ -90,6 +90,7 @@ MLX_MAX_EVENT	minilibx/mlx_int.h	/^# define MLX_MAX_EVENT /;"	d
 MLX_TYPE_SHM	minilibx/mlx_int.h	/^# define MLX_TYPE_SHM /;"	d
 MLX_TYPE_SHM_PIXMAP	minilibx/mlx_int.h	/^# define MLX_TYPE_SHM_PIXMAP /;"	d
 MLX_TYPE_XIMAGE	minilibx/mlx_int.h	/^# define MLX_TYPE_XIMAGE /;"	d
+M_PI	Includes/structs.h	/^#  define M_PI	/;"	d
 MiniLibX	minilibx/man/man1/mlx.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
 MiniLibX	minilibx/man/man1/mlx_loop.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
 MiniLibX	minilibx/man/man1/mlx_new_image.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
@@ -120,6 +121,7 @@ OBJ	minilibx/test/Makefile.mk	/^OBJ = $(SRC:%.c=%.o)$/;"	m
 OBJS	libft/Makefile	/^OBJS = $(SRCS:.c=.o)$/;"	m
 OBJ_DIR	minilibx/Makefile.mk	/^OBJ_DIR = obj$/;"	m
 PARSING	Makefile	/^PARSING =	parsing\/map_check.c \\$/;"	m
+RAYCASTING	Makefile	/^RAYCASTING =	raycasting\/distance.c \\$/;"	m
 RETURN	minilibx/man/man1/mlx.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
 RETURN	minilibx/man/man1/mlx_new_image.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
 RETURN	minilibx/man/man1/mlx_new_window.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
@@ -140,7 +142,7 @@ SEE	minilibx/man/man3/mlx_loop.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
 SEE	minilibx/man/man3/mlx_new_image.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
 SEE	minilibx/man/man3/mlx_new_window.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
 SEE	minilibx/man/man3/mlx_pixel_put.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
-SRC	Makefile	/^SRC = $(PARSING) $(SRCS)$/;"	m
+SRC	Makefile	/^SRC = $(PARSING) $(SRCS) $(RAYCASTING)$/;"	m
 SRC	minilibx/Makefile.mk	/^SRC	= mlx_init.c mlx_new_window.c mlx_pixel_put.c mlx_loop.c \\$/;"	m
 SRC	minilibx/test/Makefile.mk	/^SRC = main.c$/;"	m
 SRCS	Makefile	/^SRCS =	srcs\/main.c \\$/;"	m
@@ -158,6 +160,7 @@ SYNOPSYS	minilibx/man/man3/mlx_loop.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
 SYNOPSYS	minilibx/man/man3/mlx_new_image.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
 SYNOPSYS	minilibx/man/man3/mlx_new_window.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
 SYNOPSYS	minilibx/man/man3/mlx_pixel_put.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+TILE_SIZE	Includes/structs.h	/^# define TILE_SIZE /;"	d
 TO IMPLEMENT	README.md	/^## TO IMPLEMENT  $/;"	s
 TRUE	libft/libft.h	/^	TRUE, \/\/ 1$/;"	e	enum:e_bool
 UNAME	minilibx/Makefile.mk	/^UNAME = $(shell uname)$/;"	m
@@ -180,16 +183,20 @@ all	minilibx/Makefile	/^all	: do_configure$/;"	t
 all	minilibx/Makefile.mk	/^all	: $(NAME)$/;"	t
 all	minilibx/test/Makefile.mk	/^all: $(NAME)$/;"	t
 all_to_trim	libft/ft_strtrim.c	/^static char	*all_to_trim(int start, int len, const char *s1)$/;"	f	typeref:typename:char *	file:
+angle	Includes/structs.h	/^	double		angle; \/\/angle of ray$/;"	m	struct:s_ray	typeref:typename:double
+angle	Includes/structs.h	/^	double		angle;$/;"	m	struct:s_player	typeref:typename:double
 at_exit	minilibx/test/run_tests.sh	/^at_exit() {$/;"	f
 b	Includes/structs.h	/^	char	*b;$/;"	m	struct:s_color	typeref:typename:char *
+better_pixel_put	raycasting/pixel_putting.c	/^void	better_pixel_put(t_game *game, int x, int y, int color)$/;"	f	typeref:typename:void
 bpp	minilibx/mlx_int.h	/^	int				bpp;$/;"	m	struct:s_img	typeref:typename:int
 bpp1	minilibx/test/main.c	/^int	bpp1;$/;"	v	typeref:typename:int
 bpp2	minilibx/test/main.c	/^int	bpp2;$/;"	v	typeref:typename:int
 bpp3	minilibx/test/main.c	/^int	bpp3;$/;"	v	typeref:typename:int
 bpp4	minilibx/test/main.c	/^int	bpp4;$/;"	v	typeref:typename:int
+cast_rays	raycasting/distance.c	/^void	cast_rays(t_game *game)$/;"	f	typeref:typename:void
 check	minilibx/Makefile.mk	/^check: all$/;"	t
 check_closed_space	parsing/map_check.c	/^void	check_closed_space(t_game *game, t_curs curs)$/;"	f	typeref:typename:void
-check_forzeros	parsing/map_check.c	/^int	check_forzeros(char **map)$/;"	f	typeref:typename:int
+check_inter	raycasting/inter_h.c	/^int	check_inter(double angle, double *y, double *y_step, int flag)$/;"	f	typeref:typename:int
 check_map	parsing/map_check.c	/^void	check_map(t_game *game)$/;"	f	typeref:typename:void
 check_null	libft/ft_strtrim.c	/^static char	*check_null(char const *s1)$/;"	f	typeref:typename:char *	file:
 check_to_put	libft/ft_printf.c	/^int	check_to_put(char c, va_list lst)$/;"	f	typeref:typename:int
@@ -207,6 +214,7 @@ color	minilibx/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name	typeref:typename
 color_map_1	minilibx/test/main.c	/^int	color_map_1(void *win,int w,int h)$/;"	f	typeref:typename:int
 color_map_2	minilibx/test/main.c	/^int	color_map_2(unsigned char *data,int bpp,int sl,int w,int h,int endian, int type)$/;"	f	typeref:typename:int
 content	libft/libft.h	/^	void			*content;$/;"	m	struct:s_list	typeref:typename:void *
+cos_table	Includes/structs.h	/^	double		cos_table[360];$/;"	m	struct:s_game	typeref:typename:double[360]
 create_color_file	parsing/color.c	/^char	*create_color_file(t_color color, t_game *game, int nm)$/;"	f	typeref:typename:char *
 create_sub_str	libft/ft_split.c	/^static char	*create_sub_str(int start, char const *s, char c)$/;"	f	typeref:typename:char *	file:
 cut_string	libft/str_utils3.c	/^char	*cut_string(int len, char *str)$/;"	f	typeref:typename:char *
@@ -219,30 +227,40 @@ decrgb	minilibx/mlx_int.h	/^	int			decrgb[6];$/;"	m	struct:s_xvar	typeref:typena
 depth	minilibx/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar	typeref:typename:int
 dir	Includes/structs.h	/^	t_pos		dir; \/\/ 0, 50, 2$/;"	m	struct:s_player	typeref:typename:t_pos
 display	minilibx/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar	typeref:typename:Display *
+dist	Includes/structs.h	/^	double		dist; \/\/distance to wall$/;"	m	struct:s_ray	typeref:typename:double
 do_configure	minilibx/Makefile	/^do_configure	:$/;"	t
 do_flush	minilibx/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar	typeref:typename:int
+draw_down	raycasting/walls.c	/^void	draw_down(t_game *game, double wall_h, double b_pix)$/;"	f	typeref:typename:void
+draw_up	raycasting/walls.c	/^void	draw_up(t_game *game, double wall_h, double t_pix)$/;"	f	typeref:typename:void
+draw_wall	raycasting/walls.c	/^void	draw_wall(t_game *game, double wall_h, double t_pix, double b_pix)$/;"	f	typeref:typename:void
 e_bool	libft/libft.h	/^typedef enum e_bool$/;"	g
 end_loop	minilibx/mlx_int.h	/^	int 		end_loop;$/;"	m	struct:s_xvar	typeref:typename:int
 endian1	minilibx/test/main.c	/^int	endian1;$/;"	v	typeref:typename:int
 endian2	minilibx/test/main.c	/^int	endian2;$/;"	v	typeref:typename:int
 endian3	minilibx/test/main.c	/^int	endian3;$/;"	v	typeref:typename:int
 endian4	minilibx/test/main.c	/^int	endian4;$/;"	v	typeref:typename:int
+endians	Includes/structs.h	/^	int		endians[6];$/;"	m	struct:s_texture	typeref:typename:int[6]
 err	srcs/error_management.c	/^int	err(char *msg)$/;"	f	typeref:typename:int
 err_exit	srcs/error_management.c	/^void	err_exit(char *msg, t_game *game)$/;"	f	typeref:typename:void
 expose_hook	minilibx/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
 expose_param	minilibx/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list	typeref:typename:void *
 expose_win1	minilibx/test/main.c	/^int	expose_win1(void *p)$/;"	f	typeref:typename:int
 expose_win2	minilibx/test/main.c	/^int	expose_win2(void *p)$/;"	f	typeref:typename:int
+fast_cos	srcs/fast_trig.c	/^double	fast_cos(double angle, t_game *game)$/;"	f	typeref:typename:double
+fast_sin	srcs/fast_trig.c	/^double	fast_sin(double angle, t_game *game)$/;"	f	typeref:typename:double
+fast_tan	srcs/fast_trig.c	/^double	fast_tan(double angle, t_game *game)$/;"	f	typeref:typename:double
 fclean	Makefile	/^fclean: clean$/;"	t
 fclean	libft/Makefile	/^fclean: clean$/;"	t
+fcntl.h	.vscode/settings.json	/^		"fcntl.h": "c"$/;"	s	object:files.associations
 fd	Includes/structs.h	/^	int		fd;$/;"	m	struct:s_input	typeref:typename:int
 file_len	Includes/structs.h	/^	int		file_len;$/;"	m	struct:s_input	typeref:typename:int
 file_size	parsing/map_check.c	/^static void	file_size(char *map_path, t_game *game)$/;"	f	typeref:typename:void	file:
 files.associations	.vscode/settings.json	/^	"files.associations": {$/;"	o
 find_first	libft/str_utils2.c	/^int	find_first(char *str, char c)$/;"	f	typeref:typename:int
 find_last	libft/str_utils2.c	/^int	find_last(char *str, char c)$/;"	f	typeref:typename:int
-flood_map	parsing/map_check.c	/^void	flood_map(char **map, int i, int j)$/;"	f	typeref:typename:void
+flag	Includes/structs.h	/^	int			flag; \/\/1 = vertical, 0 = horizontal$/;"	m	struct:s_ray	typeref:typename:int
 format	minilibx/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
+fov_rd	Includes/structs.h	/^	double		fov_rd;$/;"	m	struct:s_game	typeref:typename:double
 free_strdup	libft/str_utils4.c	/^char	*free_strdup(char *str, char **freestr)$/;"	f	typeref:typename:char *
 free_strrchr	libft/str_utils3.c	/^char	*free_strrchr(char *str, char c, int **offset)$/;"	f	typeref:typename:char *
 ft_atoi	libft/ft_atoi.c	/^int	ft_atoi(const char *nptr)$/;"	f	typeref:typename:int
@@ -324,16 +342,24 @@ g	Includes/structs.h	/^	char	*g;$/;"	m	struct:s_color	typeref:typename:char *
 gc	minilibx/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list	typeref:typename:GC
 gc	minilibx/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img	typeref:typename:GC
 gere_mouse	minilibx/test/new_win.c	/^int gere_mouse(int x,int y,int button,void*toto)$/;"	f	typeref:typename:int
-get_floor	parsing/var_init.c	/^t_img	get_floor(char *path, t_game *game, int nm)$/;"	f	typeref:typename:t_img
+get_angle	parsing/player.c	/^double	get_angle(int x, int y, t_game *game)$/;"	f	typeref:typename:double
+get_floor	parsing/textures.c	/^t_img	get_floor(char *path, t_game *game, int nm)$/;"	f	typeref:typename:t_img
 get_img	srcs/put_images.c	/^t_img	get_img(char *path, t_game *game)$/;"	f	typeref:typename:t_img
 get_next_line	libft/get_next_line_bonus.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
 get_next_line2	libft/get_next_line2.c	/^int	get_next_line2(int fd, char **line)$/;"	f	typeref:typename:int
-get_textures	parsing/var_init.c	/^void	get_textures(t_game *game)$/;"	f	typeref:typename:void
+get_texture	raycasting/rays.c	/^t_img	get_texture(t_game *game)$/;"	f	typeref:typename:t_img
+get_texture_adresses	parsing/textures.c	/^void	get_texture_adresses(t_game *game)$/;"	f	typeref:typename:void
+get_textures	parsing/textures.c	/^void	get_textures(t_game *game)$/;"	f	typeref:typename:void
 get_xlib_include_path	minilibx/configure	/^get_xlib_include_path(){$/;"	f
+get_xo	raycasting/walls.c	/^double	get_xo(t_game *game, t_img texture)$/;"	f	typeref:typename:double
 height	minilibx/mlx_int.h	/^	int				height;$/;"	m	struct:s_img	typeref:typename:int
 hook	minilibx/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list	typeref:typename:int (*)()
 hooks	minilibx/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list	typeref:typename:t_event_list[]
+hor_x	Includes/structs.h	/^	double		hor_x; \/\/horizontal intersection$/;"	m	struct:s_ray	typeref:typename:double
+hor_y	Includes/structs.h	/^	double		hor_y; \/\/horizontal intersection$/;"	m	struct:s_ray	typeref:typename:double
+horizontal_inter	raycasting/inter_h.c	/^double	horizontal_inter(t_game *game)$/;"	f	typeref:typename:double
 i	Includes/structs.h	/^	int		i;$/;"	m	struct:s_curs	typeref:typename:int
+i_ray	Includes/structs.h	/^	int			i_ray; \/\/ray number$/;"	m	struct:s_ray	typeref:typename:int
 im1	minilibx/test/main.c	/^void    *im1;$/;"	v	typeref:typename:void *
 im2	minilibx/test/main.c	/^void	*im2;$/;"	v	typeref:typename:void *
 im3	minilibx/test/main.c	/^void	*im3;$/;"	v	typeref:typename:void *
@@ -341,18 +367,23 @@ im4	minilibx/test/main.c	/^void	*im4;$/;"	v	typeref:typename:void *
 image	minilibx/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
 imgs	Includes/structs.h	/^	t_img	imgs[6]; \/\/ 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F$/;"	m	struct:s_texture	typeref:typename:t_img[6]
 init_game	parsing/var_init.c	/^t_game	*init_game(char *map_path)$/;"	f	typeref:typename:t_game *
+init_player	parsing/player.c	/^void	init_player(t_game *game, int x, int y)$/;"	f	typeref:typename:void
+init_trig_tables	srcs/fast_trig.c	/^void	init_trig_tables(t_game *game)$/;"	f	typeref:typename:void
 input	Includes/structs.h	/^	t_input		input;$/;"	m	struct:s_game	typeref:typename:t_input
 is_in_mtx	libft/matrix_utils.c	/^int	is_in_mtx(char *line, char **matrix)$/;"	f	typeref:typename:int
+is_wall	raycasting/rays.c	/^int	is_wall(double x, double y, t_game *game)$/;"	f	typeref:typename:int
 itoa_base_hex	parsing/color.c	/^static char	*itoa_base_hex(int n)$/;"	f	typeref:typename:char *	file:
 j	Includes/structs.h	/^	int		j;$/;"	m	struct:s_curs	typeref:typename:int
 join_char	libft/str_utils3.c	/^char	*join_char(char *str, char c)$/;"	f	typeref:typename:char *
 join_n_char	libft/str_utils4.c	/^char	*join_n_char(char *s1, char c, int n)$/;"	f	typeref:typename:char *
 k	Includes/structs.h	/^	int		k;$/;"	m	struct:s_curs	typeref:typename:int
 key_hook	minilibx/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
+key_input	srcs/main.c	/^void	key_input(t_game *data)$/;"	f	typeref:typename:void
 key_param	minilibx/mlx_int.h	/^	void				*key_param;$/;"	m	struct:s_win_list	typeref:typename:void *
 key_win1	minilibx/test/main.c	/^int	key_win1(int key,void *p)$/;"	f	typeref:typename:int
 key_win2	minilibx/test/main.c	/^int	key_win2(int key,void *p)$/;"	f	typeref:typename:int
 key_win3	minilibx/test/main.c	/^int	key_win3(int key,void *p)$/;"	f	typeref:typename:int
+libc-header-start.h	.vscode/settings.json	/^		"libc-header-start.h": "c",$/;"	s	object:files.associations
 local_endian	minilibx/test/main.c	/^int	local_endian;$/;"	v	typeref:typename:int
 log_error	minilibx/configure	/^log_error(){$/;"	f
 log_error	minilibx/test/run_tests.sh	/^log_error(){$/;"	f
@@ -375,10 +406,12 @@ map_height	Includes/structs.h	/^	int			map_height;$/;"	m	struct:s_game	typeref:t
 map_str	Includes/structs.h	/^	t_bool	map_str;$/;"	m	struct:s_input	typeref:typename:t_bool
 map_width	Includes/structs.h	/^	int			map_width;$/;"	m	struct:s_game	typeref:typename:int
 mask	minilibx/mlx_int.h	/^	int		mask;$/;"	m	struct:s_event_list	typeref:typename:int
+math.h	.vscode/settings.json	/^		"math.h": "c",$/;"	s	object:files.associations
+matrixdup	libft/matrix_utils2.c	/^char	**matrixdup(char **matrix)$/;"	f	typeref:typename:char **
 mlx	Includes/structs.h	/^	void		*mlx;$/;"	m	struct:s_game	typeref:typename:void *
 mlx	minilibx/test/main.c	/^void	*mlx;$/;"	v	typeref:typename:void *
 mlx	minilibx/test/new_win.c	/^void *mlx;$/;"	v	typeref:typename:void *
-mlx.h	.vscode/settings.json	/^		"mlx.h": "c"$/;"	s	object:files.associations
+mlx.h	.vscode/settings.json	/^		"mlx.h": "c",$/;"	s	object:files.associations
 mlx_X_error	minilibx/mlx_new_image.c	/^int	mlx_X_error;$/;"	v	typeref:typename:int
 mlx_clear_window	minilibx/mlx_clear_window.c	/^int		mlx_clear_window(t_xvar *xvar,t_win_list *win)$/;"	f	typeref:typename:int
 mlx_col_name	minilibx/mlx_rgb.c	/^struct s_col_name mlx_col_name[] =$/;"	v	typeref:struct:s_col_name[]
@@ -456,6 +489,9 @@ name	minilibx/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name	typeref:typename:
 name	minilibx/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col	typeref:typename:int
 next	libft/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
 next	minilibx/mlx_int.h	/^	struct s_win_list	*next;$/;"	m	struct:s_win_list	typeref:struct:s_win_list *
+nor_angle	raycasting/rays.c	/^double	nor_angle(double angle)$/;"	f	typeref:typename:double
+on_destroy	srcs/main.c	/^int	on_destroy(t_game *data)$/;"	f	typeref:typename:int
+on_esc	srcs/main.c	/^int	on_esc(int keysym, t_game *game)$/;"	f	typeref:typename:int
 pad_map	parsing/splut.c	/^void	pad_map(t_game *game)$/;"	f	typeref:typename:void
 param	minilibx/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list	typeref:typename:void *
 parse_args	minilibx/configure	/^parse_args(){$/;"	f
@@ -463,7 +499,6 @@ parse_line	parsing/splut.c	/^int	parse_line(char *line, t_game *game)$/;"	f	type
 parse_map	parsing/map_check.c	/^char	**parse_map(char *map_path, t_game *game)$/;"	f	typeref:typename:char **
 pix	minilibx/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img	typeref:typename:Pixmap
 plane	Includes/structs.h	/^	t_pos		plane; \/\/ 0, 1, 0$/;"	m	struct:s_player	typeref:typename:t_pos
-plane	raycasting/plane.c	/^void	plane(t_pos pos, t_pos dir, t_pos plane)$/;"	f	typeref:typename:void
 play	Makefile	/^play:$/;"	t
 player	Includes/structs.h	/^	t_player	player;$/;"	m	struct:s_game	typeref:typename:t_player
 pos	Includes/structs.h	/^	t_pos		pos; \/\/ 0, 50, 0$/;"	m	struct:s_player	typeref:typename:t_pos
@@ -472,11 +507,14 @@ private_cmap	minilibx/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typer
 pshm_format	minilibx/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
 put_xmp	srcs/put_images.c	/^void	*put_xmp(void *mlx, char *filename, int *width, int *height)$/;"	f	typeref:typename:void *
 r	Includes/structs.h	/^	char	*r;$/;"	m	struct:s_color	typeref:typename:char *
+ray	Includes/structs.h	/^	t_ray		ray;$/;"	m	struct:s_game	typeref:typename:t_ray
 re	Makefile	/^re: fclean all$/;"	t
 re	libft/Makefile	/^re: fclean all$/;"	t
 re	minilibx/Makefile	/^re	: clean all$/;"	t
 re	minilibx/test/Makefile.mk	/^re: clean all$/;"	t
 rem_from_matrix	libft/matrix_utils.c	/^char	**rem_from_matrix(char **matrix, int index)$/;"	f	typeref:typename:char **
+render_wall	raycasting/walls.c	/^void	render_wall(t_game *game)$/;"	f	typeref:typename:void
+reverse_bit	raycasting/pixel_putting.c	/^int	reverse_bit(int c)$/;"	f	typeref:typename:int
 root	minilibx/mlx_int.h	/^	Window		root;$/;"	m	struct:s_xvar	typeref:typename:Window
 s_col_name	minilibx/mlx_int.h	/^struct	s_col_name$/;"	s
 s_color	Includes/structs.h	/^typedef struct s_color$/;"	s
@@ -488,6 +526,7 @@ s_input	Includes/structs.h	/^typedef struct s_input$/;"	s
 s_list	libft/libft.h	/^typedef struct s_list$/;"	s
 s_player	Includes/structs.h	/^typedef struct s_player$/;"	s
 s_pos	Includes/structs.h	/^typedef struct s_pos$/;"	s
+s_ray	Includes/structs.h	/^typedef struct s_ray$/;"	s
 s_texture	Includes/structs.h	/^typedef struct s_texture$/;"	s
 s_win_list	minilibx/mlx_int.h	/^typedef struct	s_win_list$/;"	s
 s_xpm_col	minilibx/mlx_int.h	/^typedef	struct	s_xpm_col$/;"	s
@@ -500,6 +539,7 @@ show	minilibx/Makefile.mk	/^show:$/;"	t
 show	minilibx/test/Makefile.mk	/^show:$/;"	t
 show_help	minilibx/configure	/^show_help(){$/;"	f
 sigint_handler	minilibx/test/run_tests.sh	/^sigint_handler(){$/;"	f
+sin_table	Includes/structs.h	/^	double		sin_table[360];$/;"	m	struct:s_game	typeref:typename:double[360]
 size_line	minilibx/mlx_int.h	/^	int				size_line;$/;"	m	struct:s_img	typeref:typename:int
 skip_spaces	libft/space_utils.c	/^void	skip_spaces(char **str)$/;"	f	typeref:typename:void
 skip_spaces2	libft/space_utils.c	/^int	skip_spaces2(char *str)$/;"	f	typeref:typename:int
@@ -523,18 +563,23 @@ t_input	Includes/structs.h	/^}	t_input;$/;"	t	typeref:struct:s_input
 t_list	libft/libft.h	/^}		t_list;$/;"	t	typeref:struct:s_list
 t_player	Includes/structs.h	/^}	t_player;$/;"	t	typeref:struct:s_player
 t_pos	Includes/structs.h	/^}	t_pos;$/;"	t	typeref:struct:s_pos
+t_ray	Includes/structs.h	/^}	t_ray;$/;"	t	typeref:struct:s_ray
 t_texture	Includes/structs.h	/^}	t_texture;$/;"	t	typeref:struct:s_texture
 t_win_list	minilibx/mlx_int.h	/^}				t_win_list;$/;"	t	typeref:struct:s_win_list
 t_xpm_col	minilibx/mlx_int.h	/^}				t_xpm_col;$/;"	t	typeref:struct:s_xpm_col
 t_xvar	minilibx/mlx_int.h	/^}				t_xvar;$/;"	t	typeref:struct:s_xvar
 test_default_main	minilibx/test/run_tests.sh	/^test_default_main(){$/;"	f
-texture_names	parsing/var_init.c	/^char	**texture_names(void)$/;"	f	typeref:typename:char **
+texture_names	parsing/textures.c	/^char	**texture_names(void)$/;"	f	typeref:typename:char **
 txt_nm	Includes/structs.h	/^	char	**txt_nm; \/\/alloced in var_init.c$/;"	m	struct:s_texture	typeref:typename:char **
 txts	Includes/structs.h	/^	char	**txts;$/;"	m	struct:s_texture	typeref:typename:char **
 txts	Includes/structs.h	/^	t_texture	txts;$/;"	m	struct:s_game	typeref:typename:t_texture
 type	minilibx/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typename:int
+unit_circle	raycasting/rays.c	/^int	unit_circle(double angle, char c)$/;"	f	typeref:typename:int
 use_xshm	minilibx/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
 val	Makefile	/^val:$/;"	t
+ver_x	Includes/structs.h	/^	double		ver_x; \/\/vertical intersection$/;"	m	struct:s_ray	typeref:typename:double
+ver_y	Includes/structs.h	/^	double		ver_y; \/\/vertical intersection$/;"	m	struct:s_ray	typeref:typename:double
+vertical_inter	raycasting/inter_v.c	/^double	vertical_inter(t_game *game)$/;"	f	typeref:typename:double
 visual	minilibx/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
 width	minilibx/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int
 win	Includes/structs.h	/^	void		*win;$/;"	m	struct:s_game	typeref:typename:void *
@@ -548,8 +593,11 @@ win_list	minilibx/mlx_int.h	/^	t_win_list	*win_list;$/;"	m	struct:s_xvar	typeref
 window	minilibx/mlx_int.h	/^	Window				window;$/;"	m	struct:s_win_list	typeref:typename:Window
 wm_delete_window	minilibx/mlx_int.h	/^	Atom		wm_delete_window;$/;"	m	struct:s_xvar	typeref:typename:Atom
 wm_protocols	minilibx/mlx_int.h	/^	Atom		wm_protocols;$/;"	m	struct:s_xvar	typeref:typename:Atom
+x	Includes/structs.h	/^	double		x;$/;"	m	struct:s_player	typeref:typename:double
 x	Includes/structs.h	/^	double	x;$/;"	m	struct:s_pos	typeref:typename:double
+x_int	Includes/structs.h	/^	double		x_int; \/\/x intersection$/;"	m	struct:s_ray	typeref:typename:double
 xpm1_x	minilibx/test/main.c	/^int	xpm1_x;$/;"	v	typeref:typename:int
 xpm1_y	minilibx/test/main.c	/^int	xpm1_y;$/;"	v	typeref:typename:int
+y	Includes/structs.h	/^	double		y;$/;"	m	struct:s_player	typeref:typename:double
 y	Includes/structs.h	/^	double	y;$/;"	m	struct:s_pos	typeref:typename:double
-z	Includes/structs.h	/^	double	z;$/;"	m	struct:s_pos	typeref:typename:double
+y_int	Includes/structs.h	/^	double		y_int; \/\/y intersection$/;"	m	struct:s_ray	typeref:typename:double

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:13:53 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 15:46:04 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:56:13 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_game	*init_game(char *map_path)
 	if (!game->mlx)
 		return (game);
 	game->input.map_str = 0;
+	init_trig(game);
 	game->fov_rd = FOV * (M_PI / 180);
 	game->txts.txts = ft_calloc(1, sizeof(char *));
 	game->map = ft_calloc(1, sizeof(char *));

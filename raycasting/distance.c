@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 15:45:46 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:31:04 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	cast_rays(t_game *game)
 			game->ray.dist = h_inter;
 			game->ray.flag = 1;
 		}
-		// game->ray.dist *= cos(game->ray.angle - game->player.angle);
 		render_wall(game);
 		game->ray.angle += game->fov_rd / SCREEN_WIDTH;
 		game->ray.i_ray++;
