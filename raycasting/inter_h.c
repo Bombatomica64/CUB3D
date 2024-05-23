@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:24:48 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 17:03:25 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 12:46:38 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,5 @@ double	horizontal_inter(t_game *game)
 		h_x += x_step;
 		h_y += y_step;
 	}
-	game->ray.hor_x = h_x;
-	game->ray.hor_y = h_y;
 	return (fabs((game->player.y - h_y) / cos(game->ray.angle)));
 }

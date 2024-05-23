@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 11:54:41 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 12:46:30 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@ double	get_xo(t_game *game, t_img texture, char type)
 
 	if (type == 'w')
 	{
-		if (game->ray.flag == 1)
-			x_o = (int)fmodf((game->ray.hor_x * \
-			(texture.width / TILE_SIZE)), texture.width);
-		else
-			x_o = (int)fmodf((game->ray.ver_y * \
-			(texture.width / TILE_SIZE)), texture.width);
+		x_o = (int)fmodf((game->ray.next.x
+					* (texture.width / TILE_SIZE)), texture.width);
 	}
 	else
 	{

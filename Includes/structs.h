@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 17:49:25 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 12:42:48 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,7 @@ typedef struct s_ray
 {
 	double		angle; //angle of ray
 	double		dist; //distance to wall
-	double		x_int; //x intersection
-	double		y_int; //y intersection
-	double		hor_x; //horizontal intersection
-	double		hor_y; //horizontal intersection
-	double		ver_x; //vertical intersection
-	double		ver_y; //vertical intersection
+	t_pos		next; //next intersection point
 	int			i_ray; //ray number
 	int			flag; //1 = vertical, 0 = horizontal
 }	t_ray;
