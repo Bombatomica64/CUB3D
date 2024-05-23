@@ -1,0 +1,3835 @@
+[34mRe-compiled cub3D successfully![0m
+[30mPlease work🙏[0m
+NO
+SO
+WE
+EA
+C
+F
+--------------------
+C assets/sky_powder.xpm
+F assets/end_bricks.xpm
+NO assets/end_bricks.xpm
+SO assets/stonebrick_mossy.xpm
+EA assets/stonebrick.xpm
+WE assets/mud_bricks.xpm
+--------------------
+1111111111
+1000000001
+10000S0001
+1000000001
+1111111111
+--------------------
+txts[0] = C assets/sky_powder.xpm
+txts[1] = F assets/end_bricks.xpm
+txts[2] = NO assets/end_bricks.xpm
+txts[3] = SO assets/stonebrick_mossy.xpm
+txts[4] = EA assets/stonebrick.xpm
+txts[5] = WE assets/mud_bricks.xpm
+player.x: 1.500000
+player.y: 4.500000
+player.angle: 1.570796
+player.dist_proj: 950.000000
+game.mlx[0xf09c60]
+ray 0: dist = 36.062446
+wall_h: 487.904630
+ray 1: dist = 36.032669
+wall_h: 488.307831
+ray 2: dist = 36.002965
+wall_h: 488.710698
+ray 3: dist = 35.973335
+wall_h: 489.113231
+ray 4: dist = 35.943779
+wall_h: 489.515430
+ray 5: dist = 35.914295
+wall_h: 489.917294
+ray 6: dist = 35.884884
+wall_h: 490.318824
+ray 7: dist = 35.855546
+wall_h: 490.720018
+ray 8: dist = 35.826280
+wall_h: 491.120877
+ray 9: dist = 35.797087
+wall_h: 491.521400
+ray 10: dist = 35.767965
+wall_h: 491.921588
+ray 11: dist = 35.738915
+wall_h: 492.321439
+ray 12: dist = 35.709937
+wall_h: 492.720953
+ray 13: dist = 35.681030
+wall_h: 493.120131
+ray 14: dist = 35.652194
+wall_h: 493.518972
+ray 15: dist = 35.623429
+wall_h: 493.917475
+ray 16: dist = 35.594735
+wall_h: 494.315641
+ray 17: dist = 35.566111
+wall_h: 494.713469
+ray 18: dist = 35.537558
+wall_h: 495.110959
+ray 19: dist = 35.509074
+wall_h: 495.508111
+ray 20: dist = 35.480661
+wall_h: 495.904924
+ray 21: dist = 35.452317
+wall_h: 496.301397
+ray 22: dist = 35.424042
+wall_h: 496.697532
+ray 23: dist = 35.395837
+wall_h: 497.093327
+ray 24: dist = 35.367701
+wall_h: 497.488783
+ray 25: dist = 35.339633
+wall_h: 497.883898
+ray 26: dist = 35.311634
+wall_h: 498.278673
+ray 27: dist = 35.283704
+wall_h: 498.673108
+ray 28: dist = 35.255842
+wall_h: 499.067201
+ray 29: dist = 35.228048
+wall_h: 499.460954
+ray 30: dist = 35.200321
+wall_h: 499.854365
+ray 31: dist = 35.172663
+wall_h: 500.247435
+ray 32: dist = 35.145071
+wall_h: 500.640162
+ray 33: dist = 35.117547
+wall_h: 501.032548
+ray 34: dist = 35.090091
+wall_h: 501.424591
+ray 35: dist = 35.062700
+wall_h: 501.816291
+ray 36: dist = 35.035377
+wall_h: 502.207648
+ray 37: dist = 35.008120
+wall_h: 502.598662
+ray 38: dist = 34.980929
+wall_h: 502.989333
+ray 39: dist = 34.953805
+wall_h: 503.379660
+ray 40: dist = 34.926746
+wall_h: 503.769642
+ray 41: dist = 34.899753
+wall_h: 504.159281
+ray 42: dist = 34.872825
+wall_h: 504.548574
+ray 43: dist = 34.845963
+wall_h: 504.937523
+ray 44: dist = 34.819166
+wall_h: 505.326127
+ray 45: dist = 34.792434
+wall_h: 505.714385
+ray 46: dist = 34.765766
+wall_h: 506.102298
+ray 47: dist = 34.739164
+wall_h: 506.489865
+ray 48: dist = 34.712625
+wall_h: 506.877086
+ray 49: dist = 34.686151
+wall_h: 507.263960
+ray 50: dist = 34.659741
+wall_h: 507.650487
+ray 51: dist = 34.633394
+wall_h: 508.036668
+ray 52: dist = 34.607112
+wall_h: 508.422501
+ray 53: dist = 34.580892
+wall_h: 508.807987
+ray 54: dist = 34.554737
+wall_h: 509.193125
+ray 55: dist = 34.528644
+wall_h: 509.577915
+ray 56: dist = 34.502614
+wall_h: 509.962357
+ray 57: dist = 34.476647
+wall_h: 510.346450
+ray 58: dist = 34.450742
+wall_h: 510.730194
+ray 59: dist = 34.424900
+wall_h: 511.113589
+ray 60: dist = 34.399120
+wall_h: 511.496635
+ray 61: dist = 34.373402
+wall_h: 511.879332
+ray 62: dist = 34.347747
+wall_h: 512.261678
+ray 63: dist = 34.322152
+wall_h: 512.643674
+ray 64: dist = 34.296620
+wall_h: 513.025320
+ray 65: dist = 34.271148
+wall_h: 513.406615
+ray 66: dist = 34.245738
+wall_h: 513.787560
+ray 67: dist = 34.220389
+wall_h: 514.168153
+ray 68: dist = 34.195101
+wall_h: 514.548395
+ray 69: dist = 34.169873
+wall_h: 514.928285
+ray 70: dist = 34.144706
+wall_h: 515.307823
+ray 71: dist = 34.119600
+wall_h: 515.687009
+ray 72: dist = 34.094553
+wall_h: 516.065842
+ray 73: dist = 34.069567
+wall_h: 516.444323
+ray 74: dist = 34.044640
+wall_h: 516.822451
+ray 75: dist = 34.019773
+wall_h: 517.200225
+ray 76: dist = 33.994966
+wall_h: 517.577646
+ray 77: dist = 33.970218
+wall_h: 517.954714
+ray 78: dist = 33.945529
+wall_h: 518.331427
+ray 79: dist = 33.920899
+wall_h: 518.707786
+ray 80: dist = 33.896328
+wall_h: 519.083790
+ray 81: dist = 33.871815
+wall_h: 519.459440
+ray 82: dist = 33.847362
+wall_h: 519.834734
+ray 83: dist = 33.822966
+wall_h: 520.209674
+ray 84: dist = 33.798629
+wall_h: 520.584257
+ray 85: dist = 33.774350
+wall_h: 520.958485
+ray 86: dist = 33.750129
+wall_h: 521.332357
+ray 87: dist = 33.725966
+wall_h: 521.705873
+ray 88: dist = 33.701860
+wall_h: 522.079032
+ray 89: dist = 33.677811
+wall_h: 522.451834
+ray 90: dist = 33.653820
+wall_h: 522.824279
+ray 91: dist = 33.629886
+wall_h: 523.196366
+ray 92: dist = 33.606009
+wall_h: 523.568096
+ray 93: dist = 33.582189
+wall_h: 523.939469
+ray 94: dist = 33.558426
+wall_h: 524.310483
+ray 95: dist = 33.534718
+wall_h: 524.681138
+ray 96: dist = 33.511068
+wall_h: 525.051436
+ray 97: dist = 33.487473
+wall_h: 525.421374
+ray 98: dist = 33.463935
+wall_h: 525.790953
+ray 99: dist = 33.440453
+wall_h: 526.160173
+ray 100: dist = 33.417026
+wall_h: 526.529033
+ray 101: dist = 33.393655
+wall_h: 526.897533
+ray 102: dist = 33.370339
+wall_h: 527.265673
+ray 103: dist = 33.347079
+wall_h: 527.633453
+ray 104: dist = 33.323874
+wall_h: 528.000872
+ray 105: dist = 33.300723
+wall_h: 528.367930
+ray 106: dist = 33.277628
+wall_h: 528.734627
+ray 107: dist = 33.254588
+wall_h: 529.100963
+ray 108: dist = 33.231602
+wall_h: 529.466937
+ray 109: dist = 33.208670
+wall_h: 529.832549
+ray 110: dist = 33.185793
+wall_h: 530.197799
+ray 111: dist = 33.162970
+wall_h: 530.562687
+ray 112: dist = 33.140201
+wall_h: 530.927212
+ray 113: dist = 33.117485
+wall_h: 531.291374
+ray 114: dist = 33.094824
+wall_h: 531.655173
+ray 115: dist = 33.072216
+wall_h: 532.018609
+ray 116: dist = 33.049661
+wall_h: 532.381681
+ray 117: dist = 33.027160
+wall_h: 532.744389
+ray 118: dist = 33.004712
+wall_h: 533.106733
+ray 119: dist = 32.982317
+wall_h: 533.468713
+ray 120: dist = 32.959975
+wall_h: 533.830328
+ray 121: dist = 32.937686
+wall_h: 534.191578
+ray 122: dist = 32.915449
+wall_h: 534.552463
+ray 123: dist = 32.893265
+wall_h: 534.912982
+ray 124: dist = 32.871133
+wall_h: 535.273137
+ray 125: dist = 32.849053
+wall_h: 535.632925
+ray 126: dist = 32.827025
+wall_h: 535.992347
+ray 127: dist = 32.805049
+wall_h: 536.351403
+ray 128: dist = 32.783125
+wall_h: 536.710092
+ray 129: dist = 32.761253
+wall_h: 537.068414
+ray 130: dist = 32.739432
+wall_h: 537.426369
+ray 131: dist = 32.717663
+wall_h: 537.783957
+ray 132: dist = 32.695945
+wall_h: 538.141178
+ray 133: dist = 32.674278
+wall_h: 538.498030
+ray 134: dist = 32.652662
+wall_h: 538.854515
+ray 135: dist = 32.631097
+wall_h: 539.210631
+ray 136: dist = 32.609582
+wall_h: 539.566378
+ray 137: dist = 32.588119
+wall_h: 539.921757
+ray 138: dist = 32.566705
+wall_h: 540.276767
+ray 139: dist = 32.545342
+wall_h: 540.631408
+ray 140: dist = 32.524030
+wall_h: 540.985679
+ray 141: dist = 32.502767
+wall_h: 541.339580
+ray 142: dist = 32.481554
+wall_h: 541.693111
+ray 143: dist = 32.460392
+wall_h: 542.046272
+ray 144: dist = 32.439279
+wall_h: 542.399063
+ray 145: dist = 32.418215
+wall_h: 542.751483
+ray 146: dist = 32.397201
+wall_h: 543.103531
+ray 147: dist = 32.376236
+wall_h: 543.455209
+ray 148: dist = 32.355321
+wall_h: 543.806515
+ray 149: dist = 32.334454
+wall_h: 544.157450
+ray 150: dist = 32.313637
+wall_h: 544.508012
+ray 151: dist = 32.292868
+wall_h: 544.858203
+ray 152: dist = 32.272149
+wall_h: 545.208021
+ray 153: dist = 32.251477
+wall_h: 545.557466
+ray 154: dist = 32.230855
+wall_h: 545.906539
+ray 155: dist = 32.210280
+wall_h: 546.255238
+ray 156: dist = 32.189754
+wall_h: 546.603564
+ray 157: dist = 32.169276
+wall_h: 546.951516
+ray 158: dist = 32.148846
+wall_h: 547.299095
+ray 159: dist = 32.128464
+wall_h: 547.646299
+ray 160: dist = 32.108129
+wall_h: 547.993130
+ray 161: dist = 32.087843
+wall_h: 548.339585
+ray 162: dist = 32.067603
+wall_h: 548.685666
+ray 163: dist = 32.047411
+wall_h: 549.031372
+ray 164: dist = 32.027267
+wall_h: 549.376702
+ray 165: dist = 32.007170
+wall_h: 549.721657
+ray 166: dist = 31.987119
+wall_h: 550.066237
+ray 167: dist = 31.967116
+wall_h: 550.410440
+ray 168: dist = 31.947159
+wall_h: 550.754267
+ray 169: dist = 31.927249
+wall_h: 551.097718
+ray 170: dist = 31.907386
+wall_h: 551.440792
+ray 171: dist = 31.887569
+wall_h: 551.783489
+ray 172: dist = 31.867799
+wall_h: 552.125809
+ray 173: dist = 31.848075
+wall_h: 552.467752
+ray 174: dist = 31.828397
+wall_h: 552.809317
+ray 175: dist = 31.808765
+wall_h: 553.150504
+ray 176: dist = 31.789179
+wall_h: 553.491313
+ray 177: dist = 31.769638
+wall_h: 553.831744
+ray 178: dist = 31.750144
+wall_h: 554.171797
+ray 179: dist = 31.730695
+wall_h: 554.511470
+ray 180: dist = 31.711291
+wall_h: 554.850765
+ray 181: dist = 31.691933
+wall_h: 555.189680
+ray 182: dist = 31.672620
+wall_h: 555.528216
+ray 183: dist = 31.653353
+wall_h: 555.866372
+ray 184: dist = 31.634130
+wall_h: 556.204148
+ray 185: dist = 31.614952
+wall_h: 556.541544
+ray 186: dist = 31.595819
+wall_h: 556.878560
+ray 187: dist = 31.576731
+wall_h: 557.215195
+ray 188: dist = 31.557687
+wall_h: 557.551449
+ray 189: dist = 31.538688
+wall_h: 557.887322
+ray 190: dist = 31.519733
+wall_h: 558.222814
+ray 191: dist = 31.500823
+wall_h: 558.557924
+ray 192: dist = 31.481957
+wall_h: 558.892652
+ray 193: dist = 31.463134
+wall_h: 559.226999
+ray 194: dist = 31.444356
+wall_h: 559.560963
+ray 195: dist = 31.425622
+wall_h: 559.894545
+ray 196: dist = 31.406931
+wall_h: 560.227744
+ray 197: dist = 31.388284
+wall_h: 560.560560
+ray 198: dist = 31.369681
+wall_h: 560.892993
+ray 199: dist = 31.351121
+wall_h: 561.225043
+ray 200: dist = 31.332605
+wall_h: 561.556709
+ray 201: dist = 31.314131
+wall_h: 561.887991
+ray 202: dist = 31.295701
+wall_h: 562.218889
+ray 203: dist = 31.277314
+wall_h: 562.549403
+ray 204: dist = 31.258970
+wall_h: 562.879533
+ray 205: dist = 31.240668
+wall_h: 563.209278
+ray 206: dist = 31.222410
+wall_h: 563.538637
+ray 207: dist = 31.204194
+wall_h: 563.867612
+ray 208: dist = 31.186020
+wall_h: 564.196201
+ray 209: dist = 31.167890
+wall_h: 564.524405
+ray 210: dist = 31.149801
+wall_h: 564.852223
+ray 211: dist = 31.131755
+wall_h: 565.179654
+ray 212: dist = 31.113750
+wall_h: 565.506700
+ray 213: dist = 31.095788
+wall_h: 565.833358
+ray 214: dist = 31.077868
+wall_h: 566.159631
+ray 215: dist = 31.059990
+wall_h: 566.485516
+ray 216: dist = 31.042153
+wall_h: 566.811014
+ray 217: dist = 31.024358
+wall_h: 567.136124
+ray 218: dist = 31.006605
+wall_h: 567.460847
+ray 219: dist = 30.988893
+wall_h: 567.785182
+ray 220: dist = 30.971223
+wall_h: 568.109129
+ray 221: dist = 30.953593
+wall_h: 568.432688
+ray 222: dist = 30.936005
+wall_h: 568.755858
+ray 223: dist = 30.918458
+wall_h: 569.078640
+ray 224: dist = 30.900953
+wall_h: 569.401032
+ray 225: dist = 30.883488
+wall_h: 569.723035
+ray 226: dist = 30.866063
+wall_h: 570.044649
+ray 227: dist = 30.848680
+wall_h: 570.365874
+ray 228: dist = 30.831337
+wall_h: 570.686708
+ray 229: dist = 30.814035
+wall_h: 571.007152
+ray 230: dist = 30.796773
+wall_h: 571.327207
+ray 231: dist = 30.779551
+wall_h: 571.646870
+ray 232: dist = 30.762370
+wall_h: 571.966143
+ray 233: dist = 30.745229
+wall_h: 572.285025
+ray 234: dist = 30.728128
+wall_h: 572.603516
+ray 235: dist = 30.711067
+wall_h: 572.921615
+ray 236: dist = 30.694046
+wall_h: 573.239323
+ray 237: dist = 30.677065
+wall_h: 573.556639
+ray 238: dist = 30.660123
+wall_h: 573.873563
+ray 239: dist = 30.643222
+wall_h: 574.190095
+ray 240: dist = 30.626359
+wall_h: 574.506234
+ray 241: dist = 30.609536
+wall_h: 574.821981
+ray 242: dist = 30.592753
+wall_h: 575.137335
+ray 243: dist = 30.576009
+wall_h: 575.452295
+ray 244: dist = 30.559303
+wall_h: 575.766863
+ray 245: dist = 30.542638
+wall_h: 576.081037
+ray 246: dist = 30.526011
+wall_h: 576.394817
+ray 247: dist = 30.509423
+wall_h: 576.708203
+ray 248: dist = 30.492873
+wall_h: 577.021195
+ray 249: dist = 30.476363
+wall_h: 577.333792
+ray 250: dist = 30.459891
+wall_h: 577.645995
+ray 251: dist = 30.443458
+wall_h: 577.957803
+ray 252: dist = 30.427064
+wall_h: 578.269217
+ray 253: dist = 30.410708
+wall_h: 578.580234
+ray 254: dist = 30.394390
+wall_h: 578.890857
+ray 255: dist = 30.378110
+wall_h: 579.201084
+ray 256: dist = 30.361869
+wall_h: 579.510915
+ray 257: dist = 30.345665
+wall_h: 579.820349
+ray 258: dist = 30.329500
+wall_h: 580.129388
+ray 259: dist = 30.313373
+wall_h: 580.438030
+ray 260: dist = 30.297283
+wall_h: 580.834739
+ray 261: dist = 30.281231
+wall_h: 581.142634
+ray 262: dist = 30.265217
+wall_h: 581.450132
+ray 263: dist = 30.249241
+wall_h: 581.757233
+ray 264: dist = 30.233302
+wall_h: 582.063936
+ray 265: dist = 30.217400
+wall_h: 582.370241
+ray 266: dist = 30.201536
+wall_h: 582.676148
+ray 267: dist = 30.185709
+wall_h: 582.981657
+ray 268: dist = 30.169919
+wall_h: 583.286767
+ray 269: dist = 30.154166
+wall_h: 583.591479
+ray 270: dist = 30.138451
+wall_h: 583.895792
+ray 271: dist = 30.122772
+wall_h: 584.199705
+ray 272: dist = 30.107130
+wall_h: 584.503220
+ray 273: dist = 30.091525
+wall_h: 584.806335
+ray 274: dist = 30.075957
+wall_h: 585.109050
+ray 275: dist = 30.060425
+wall_h: 585.411365
+ray 276: dist = 30.044930
+wall_h: 585.713280
+ray 277: dist = 30.029471
+wall_h: 586.014795
+ray 278: dist = 30.014049
+wall_h: 586.315910
+ray 279: dist = 29.998663
+wall_h: 586.616623
+ray 280: dist = 29.983314
+wall_h: 586.916936
+ray 281: dist = 29.968000
+wall_h: 587.216847
+ray 282: dist = 29.952723
+wall_h: 587.516357
+ray 283: dist = 29.937481
+wall_h: 587.815466
+ray 284: dist = 29.922276
+wall_h: 588.114173
+ray 285: dist = 29.907106
+wall_h: 588.412478
+ray 286: dist = 29.891972
+wall_h: 588.710380
+ray 287: dist = 29.876874
+wall_h: 589.007881
+ray 288: dist = 29.861812
+wall_h: 589.304978
+ray 289: dist = 29.846785
+wall_h: 589.601673
+ray 290: dist = 29.831794
+wall_h: 589.897965
+ray 291: dist = 29.816838
+wall_h: 590.193854
+ray 292: dist = 29.801917
+wall_h: 590.489339
+ray 293: dist = 29.787032
+wall_h: 590.784421
+ray 294: dist = 29.772182
+wall_h: 591.079099
+ray 295: dist = 29.757367
+wall_h: 591.373373
+ray 296: dist = 29.742587
+wall_h: 591.667242
+ray 297: dist = 29.727842
+wall_h: 591.960708
+ray 298: dist = 29.713132
+wall_h: 592.253769
+ray 299: dist = 29.698457
+wall_h: 592.546425
+ray 300: dist = 29.683817
+wall_h: 592.838675
+ray 301: dist = 29.669211
+wall_h: 593.130521
+ray 302: dist = 29.654640
+wall_h: 593.421962
+ray 303: dist = 29.640103
+wall_h: 593.712996
+ray 304: dist = 29.625601
+wall_h: 594.003625
+ray 305: dist = 29.611134
+wall_h: 594.293848
+ray 306: dist = 29.596700
+wall_h: 594.583665
+ray 307: dist = 29.582301
+wall_h: 594.873075
+ray 308: dist = 29.567936
+wall_h: 595.162079
+ray 309: dist = 29.553606
+wall_h: 595.450676
+ray 310: dist = 29.539309
+wall_h: 595.738866
+ray 311: dist = 29.525046
+wall_h: 596.026649
+ray 312: dist = 29.510818
+wall_h: 596.314024
+ray 313: dist = 29.496623
+wall_h: 596.600992
+ray 314: dist = 29.482462
+wall_h: 596.887552
+ray 315: dist = 29.468335
+wall_h: 597.173705
+ray 316: dist = 29.454241
+wall_h: 597.459449
+ray 317: dist = 29.440181
+wall_h: 597.744784
+ray 318: dist = 29.426154
+wall_h: 598.029711
+ray 319: dist = 29.412161
+wall_h: 598.314230
+ray 320: dist = 29.398201
+wall_h: 598.598339
+ray 321: dist = 29.384275
+wall_h: 598.882039
+ray 322: dist = 29.370382
+wall_h: 599.165330
+ray 323: dist = 29.356522
+wall_h: 599.448211
+ray 324: dist = 29.342695
+wall_h: 599.730683
+ray 325: dist = 29.328901
+wall_h: 600.012745
+ray 326: dist = 29.315140
+wall_h: 600.294397
+ray 327: dist = 29.301412
+wall_h: 600.575638
+ray 328: dist = 29.287717
+wall_h: 600.856469
+ray 329: dist = 29.274055
+wall_h: 601.136889
+ray 330: dist = 29.260426
+wall_h: 601.416898
+ray 331: dist = 29.246829
+wall_h: 601.696497
+ray 332: dist = 29.233265
+wall_h: 601.975684
+ray 333: dist = 29.219733
+wall_h: 602.254459
+ray 334: dist = 29.206234
+wall_h: 602.532823
+ray 335: dist = 29.192767
+wall_h: 602.810775
+ray 336: dist = 29.179333
+wall_h: 603.088315
+ray 337: dist = 29.165930
+wall_h: 603.365443
+ray 338: dist = 29.152560
+wall_h: 603.642159
+ray 339: dist = 29.139223
+wall_h: 603.918461
+ray 340: dist = 29.125917
+wall_h: 604.194352
+ray 341: dist = 29.112643
+wall_h: 604.469829
+ray 342: dist = 29.099402
+wall_h: 604.744893
+ray 343: dist = 29.086192
+wall_h: 605.019543
+ray 344: dist = 29.073014
+wall_h: 605.293781
+ray 345: dist = 29.059868
+wall_h: 605.567604
+ray 346: dist = 29.046753
+wall_h: 605.841014
+ray 347: dist = 29.033671
+wall_h: 606.114009
+ray 348: dist = 29.020619
+wall_h: 606.386590
+ray 349: dist = 29.007600
+wall_h: 606.658757
+ray 350: dist = 28.994612
+wall_h: 606.930509
+ray 351: dist = 28.981655
+wall_h: 607.201846
+ray 352: dist = 28.968730
+wall_h: 607.472768
+ray 353: dist = 28.955836
+wall_h: 607.743275
+ray 354: dist = 28.942973
+wall_h: 608.013367
+ray 355: dist = 28.930141
+wall_h: 608.283043
+ray 356: dist = 28.917341
+wall_h: 608.552304
+ray 357: dist = 28.904572
+wall_h: 608.821148
+ray 358: dist = 28.891833
+wall_h: 609.089576
+ray 359: dist = 28.879126
+wall_h: 609.357588
+ray 360: dist = 28.866449
+wall_h: 609.625184
+ray 361: dist = 28.853804
+wall_h: 609.892362
+ray 362: dist = 28.841189
+wall_h: 610.159124
+ray 363: dist = 28.828605
+wall_h: 610.425469
+ray 364: dist = 28.816051
+wall_h: 610.691397
+ray 365: dist = 28.803528
+wall_h: 610.956907
+ray 366: dist = 28.791036
+wall_h: 611.222000
+ray 367: dist = 28.778574
+wall_h: 611.486675
+ray 368: dist = 28.766143
+wall_h: 611.750932
+ray 369: dist = 28.753741
+wall_h: 612.014770
+ray 370: dist = 28.741371
+wall_h: 612.278191
+ray 371: dist = 28.729030
+wall_h: 612.541193
+ray 372: dist = 28.716720
+wall_h: 612.803776
+ray 373: dist = 28.704440
+wall_h: 613.065941
+ray 374: dist = 28.692190
+wall_h: 613.327686
+ray 375: dist = 28.679970
+wall_h: 613.589013
+ray 376: dist = 28.667780
+wall_h: 613.849920
+ray 377: dist = 28.655620
+wall_h: 614.110407
+ray 378: dist = 28.643490
+wall_h: 614.370475
+ray 379: dist = 28.631390
+wall_h: 614.630122
+ray 380: dist = 28.619319
+wall_h: 614.889350
+ray 381: dist = 28.607278
+wall_h: 615.148157
+ray 382: dist = 28.595267
+wall_h: 615.406544
+ray 383: dist = 28.583286
+wall_h: 615.664511
+ray 384: dist = 28.571334
+wall_h: 615.922056
+ray 385: dist = 28.559411
+wall_h: 616.179181
+ray 386: dist = 28.547518
+wall_h: 616.435884
+ray 387: dist = 28.535654
+wall_h: 616.692166
+ray 388: dist = 28.523820
+wall_h: 616.948026
+ray 389: dist = 28.512015
+wall_h: 617.203465
+ray 390: dist = 28.500239
+wall_h: 617.458482
+ray 391: dist = 28.488493
+wall_h: 617.713077
+ray 392: dist = 28.476775
+wall_h: 617.967250
+ray 393: dist = 28.465087
+wall_h: 618.221000
+ray 394: dist = 28.453428
+wall_h: 618.474328
+ray 395: dist = 28.441797
+wall_h: 618.727233
+ray 396: dist = 28.430196
+wall_h: 618.979715
+ray 397: dist = 28.418623
+wall_h: 619.231775
+ray 398: dist = 28.407080
+wall_h: 619.483411
+ray 399: dist = 28.395565
+wall_h: 619.734623
+ray 400: dist = 28.384078
+wall_h: 619.985412
+ray 401: dist = 28.372621
+wall_h: 620.235777
+ray 402: dist = 28.361192
+wall_h: 620.485718
+ray 403: dist = 28.349791
+wall_h: 620.735235
+ray 404: dist = 28.338420
+wall_h: 620.984328
+ray 405: dist = 28.327076
+wall_h: 621.232997
+ray 406: dist = 28.315761
+wall_h: 621.481241
+ray 407: dist = 28.304475
+wall_h: 621.729060
+ray 408: dist = 28.293217
+wall_h: 621.976454
+ray 409: dist = 28.281987
+wall_h: 622.223423
+ray 410: dist = 28.270785
+wall_h: 622.469966
+ray 411: dist = 28.259611
+wall_h: 622.716085
+ray 412: dist = 28.248466
+wall_h: 622.961777
+ray 413: dist = 28.237349
+wall_h: 623.207044
+ray 414: dist = 28.226259
+wall_h: 623.451885
+ray 415: dist = 28.215198
+wall_h: 623.696300
+ray 416: dist = 28.204164
+wall_h: 623.940288
+ray 417: dist = 28.193159
+wall_h: 624.183850
+ray 418: dist = 28.182181
+wall_h: 624.426986
+ray 419: dist = 28.171231
+wall_h: 624.669694
+ray 420: dist = 28.160309
+wall_h: 624.911976
+ray 421: dist = 28.149415
+wall_h: 625.153831
+ray 422: dist = 28.138548
+wall_h: 625.395258
+ray 423: dist = 28.127709
+wall_h: 625.636258
+ray 424: dist = 28.116897
+wall_h: 625.876830
+ray 425: dist = 28.106113
+wall_h: 626.116974
+ray 426: dist = 28.095356
+wall_h: 626.356691
+ray 427: dist = 28.084627
+wall_h: 626.595979
+ray 428: dist = 28.073925
+wall_h: 626.834839
+ray 429: dist = 28.063251
+wall_h: 627.073271
+ray 430: dist = 28.052604
+wall_h: 627.311274
+ray 431: dist = 28.041984
+wall_h: 627.548848
+ray 432: dist = 28.031391
+wall_h: 627.785993
+ray 433: dist = 28.020825
+wall_h: 628.022710
+ray 434: dist = 28.010287
+wall_h: 628.258997
+ray 435: dist = 27.999775
+wall_h: 628.494854
+ray 436: dist = 27.989290
+wall_h: 628.730282
+ray 437: dist = 27.978833
+wall_h: 628.965280
+ray 438: dist = 27.968402
+wall_h: 629.199849
+ray 439: dist = 27.957999
+wall_h: 629.433987
+ray 440: dist = 27.947622
+wall_h: 629.667695
+ray 441: dist = 27.937271
+wall_h: 629.900973
+ray 442: dist = 27.926948
+wall_h: 630.133820
+ray 443: dist = 27.916651
+wall_h: 630.366237
+ray 444: dist = 27.906381
+wall_h: 630.598223
+ray 445: dist = 27.896138
+wall_h: 630.829777
+ray 446: dist = 27.885921
+wall_h: 631.060901
+ray 447: dist = 27.875731
+wall_h: 631.291593
+ray 448: dist = 27.865567
+wall_h: 631.521854
+ray 449: dist = 27.855430
+wall_h: 631.751683
+ray 450: dist = 27.845319
+wall_h: 631.981080
+ray 451: dist = 27.835234
+wall_h: 632.210046
+ray 452: dist = 27.825176
+wall_h: 632.438579
+ray 453: dist = 27.815144
+wall_h: 632.666680
+ray 454: dist = 27.805138
+wall_h: 632.894348
+ray 455: dist = 27.795158
+wall_h: 633.121584
+ray 456: dist = 27.785205
+wall_h: 633.348387
+ray 457: dist = 27.775277
+wall_h: 633.574758
+ray 458: dist = 27.765376
+wall_h: 633.800695
+ray 459: dist = 27.755501
+wall_h: 634.026199
+ray 460: dist = 27.745651
+wall_h: 634.251270
+ray 461: dist = 27.735828
+wall_h: 634.475907
+ray 462: dist = 27.726030
+wall_h: 634.700111
+ray 463: dist = 27.716259
+wall_h: 634.923881
+ray 464: dist = 27.706513
+wall_h: 635.147216
+ray 465: dist = 27.696793
+wall_h: 635.370118
+ray 466: dist = 27.687098
+wall_h: 635.592585
+ray 467: dist = 27.677430
+wall_h: 635.814618
+ray 468: dist = 27.667787
+wall_h: 636.036217
+ray 469: dist = 27.658170
+wall_h: 636.257381
+ray 470: dist = 27.648578
+wall_h: 636.478109
+ray 471: dist = 27.639012
+wall_h: 636.698403
+ray 472: dist = 27.629471
+wall_h: 636.918262
+ray 473: dist = 27.619955
+wall_h: 637.137685
+ray 474: dist = 27.610466
+wall_h: 637.356673
+ray 475: dist = 27.601001
+wall_h: 637.575225
+ray 476: dist = 27.591562
+wall_h: 637.793342
+ray 477: dist = 27.582148
+wall_h: 638.011022
+ray 478: dist = 27.572759
+wall_h: 638.228266
+ray 479: dist = 27.563396
+wall_h: 638.445075
+ray 480: dist = 27.554058
+wall_h: 638.661446
+ray 481: dist = 27.544745
+wall_h: 638.877382
+ray 482: dist = 27.535457
+wall_h: 639.092880
+ray 483: dist = 27.526194
+wall_h: 639.307942
+ray 484: dist = 27.516956
+wall_h: 639.522567
+ray 485: dist = 27.507743
+wall_h: 639.736755
+ray 486: dist = 27.498556
+wall_h: 639.950505
+ray 487: dist = 27.489393
+wall_h: 640.163818
+ray 488: dist = 27.480254
+wall_h: 640.376694
+ray 489: dist = 27.471141
+wall_h: 640.589132
+ray 490: dist = 27.462053
+wall_h: 640.801132
+ray 491: dist = 27.452989
+wall_h: 641.012694
+ray 492: dist = 27.443950
+wall_h: 641.223818
+ray 493: dist = 27.434936
+wall_h: 641.434503
+ray 494: dist = 27.425946
+wall_h: 641.644751
+ray 495: dist = 27.416981
+wall_h: 641.854559
+ray 496: dist = 27.408041
+wall_h: 642.063929
+ray 497: dist = 27.399125
+wall_h: 642.272860
+ray 498: dist = 27.390234
+wall_h: 642.481353
+ray 499: dist = 27.381367
+wall_h: 642.689406
+ray 500: dist = 27.372525
+wall_h: 642.897019
+ray 501: dist = 27.363707
+wall_h: 643.104194
+ray 502: dist = 27.354913
+wall_h: 643.310928
+ray 503: dist = 27.346144
+wall_h: 643.517224
+ray 504: dist = 27.337399
+wall_h: 643.723079
+ray 505: dist = 27.328678
+wall_h: 643.928494
+ray 506: dist = 27.319982
+wall_h: 644.133469
+ray 507: dist = 27.311309
+wall_h: 644.338004
+ray 508: dist = 27.302661
+wall_h: 644.542098
+ray 509: dist = 27.294037
+wall_h: 644.745752
+ray 510: dist = 27.285437
+wall_h: 644.948966
+ray 511: dist = 27.276861
+wall_h: 645.151738
+ray 512: dist = 27.268309
+wall_h: 645.354070
+ray 513: dist = 27.259782
+wall_h: 645.555960
+ray 514: dist = 27.251278
+wall_h: 645.757409
+ray 515: dist = 27.242798
+wall_h: 645.958417
+ray 516: dist = 27.234342
+wall_h: 646.158983
+ray 517: dist = 27.225909
+wall_h: 646.359108
+ray 518: dist = 27.217501
+wall_h: 646.558791
+ray 519: dist = 27.209116
+wall_h: 646.758032
+ray 520: dist = 27.200755
+wall_h: 646.956831
+ray 521: dist = 27.192418
+wall_h: 647.155187
+ray 522: dist = 27.184105
+wall_h: 647.353102
+ray 523: dist = 27.175815
+wall_h: 647.550574
+ray 524: dist = 27.167549
+wall_h: 647.747603
+ray 525: dist = 27.159306
+wall_h: 647.944190
+ray 526: dist = 27.151087
+wall_h: 648.140333
+ray 527: dist = 27.142891
+wall_h: 648.336034
+ray 528: dist = 27.134719
+wall_h: 648.531292
+ray 529: dist = 27.126571
+wall_h: 648.726106
+ray 530: dist = 27.118445
+wall_h: 648.920477
+ray 531: dist = 27.110344
+wall_h: 649.114404
+ray 532: dist = 27.102265
+wall_h: 649.307888
+ray 533: dist = 27.094210
+wall_h: 649.500928
+ray 534: dist = 27.086178
+wall_h: 649.693524
+ray 535: dist = 27.078170
+wall_h: 649.885676
+ray 536: dist = 27.070184
+wall_h: 650.077384
+ray 537: dist = 27.062222
+wall_h: 650.268647
+ray 538: dist = 27.054283
+wall_h: 650.459466
+ray 539: dist = 27.046367
+wall_h: 650.649841
+ray 540: dist = 27.038474
+wall_h: 650.839770
+ray 541: dist = 27.030605
+wall_h: 651.029255
+ray 542: dist = 27.022758
+wall_h: 651.218295
+ray 543: dist = 27.014935
+wall_h: 651.406890
+ray 544: dist = 27.007134
+wall_h: 651.595039
+ray 545: dist = 26.999356
+wall_h: 651.782744
+ray 546: dist = 26.991602
+wall_h: 651.970002
+ray 547: dist = 26.983870
+wall_h: 652.156815
+ray 548: dist = 26.976161
+wall_h: 652.343183
+ray 549: dist = 26.968474
+wall_h: 652.529104
+ray 550: dist = 26.960811
+wall_h: 652.714580
+ray 551: dist = 26.953171
+wall_h: 652.899609
+ray 552: dist = 26.945553
+wall_h: 653.084192
+ray 553: dist = 26.937958
+wall_h: 653.268329
+ray 554: dist = 26.930385
+wall_h: 653.452019
+ray 555: dist = 26.922835
+wall_h: 653.635263
+ray 556: dist = 26.915308
+wall_h: 653.818060
+ray 557: dist = 26.907803
+wall_h: 654.000410
+ray 558: dist = 26.900321
+wall_h: 654.182313
+ray 559: dist = 26.892862
+wall_h: 654.363768
+ray 560: dist = 26.885425
+wall_h: 654.544777
+ray 561: dist = 26.878010
+wall_h: 654.725338
+ray 562: dist = 26.870618
+wall_h: 654.905452
+ray 563: dist = 26.863249
+wall_h: 655.085118
+ray 564: dist = 26.855902
+wall_h: 655.264336
+ray 565: dist = 26.848577
+wall_h: 655.443107
+ray 566: dist = 26.841274
+wall_h: 655.621429
+ray 567: dist = 26.833994
+wall_h: 655.799304
+ray 568: dist = 26.826736
+wall_h: 655.976730
+ray 569: dist = 26.819500
+wall_h: 656.153708
+ray 570: dist = 26.812287
+wall_h: 656.330237
+ray 571: dist = 26.805095
+wall_h: 656.506318
+ray 572: dist = 26.797926
+wall_h: 656.681950
+ray 573: dist = 26.790779
+wall_h: 656.857133
+ray 574: dist = 26.783654
+wall_h: 657.031867
+ray 575: dist = 26.776552
+wall_h: 657.206152
+ray 576: dist = 26.769471
+wall_h: 657.379988
+ray 577: dist = 26.762412
+wall_h: 657.553375
+ray 578: dist = 26.755376
+wall_h: 657.726312
+ray 579: dist = 26.748361
+wall_h: 657.898800
+ray 580: dist = 26.741368
+wall_h: 658.070838
+ray 581: dist = 26.734397
+wall_h: 658.242426
+ray 582: dist = 26.727448
+wall_h: 658.413564
+ray 583: dist = 26.720521
+wall_h: 658.584252
+ray 584: dist = 26.713616
+wall_h: 658.754491
+ray 585: dist = 26.706733
+wall_h: 658.924278
+ray 586: dist = 26.699871
+wall_h: 659.093616
+ray 587: dist = 26.693031
+wall_h: 659.262503
+ray 588: dist = 26.686213
+wall_h: 659.430939
+ray 589: dist = 26.679417
+wall_h: 659.598925
+ray 590: dist = 26.672642
+wall_h: 659.766460
+ray 591: dist = 26.665889
+wall_h: 659.933544
+ray 592: dist = 26.659157
+wall_h: 660.100177
+ray 593: dist = 26.652448
+wall_h: 660.266359
+ray 594: dist = 26.645759
+wall_h: 660.432089
+ray 595: dist = 26.639093
+wall_h: 660.597368
+ray 596: dist = 26.632448
+wall_h: 660.762196
+ray 597: dist = 26.625824
+wall_h: 660.926571
+ray 598: dist = 26.619222
+wall_h: 661.090496
+ray 599: dist = 26.612641
+wall_h: 661.253968
+ray 600: dist = 26.606082
+wall_h: 661.416988
+ray 601: dist = 26.599544
+wall_h: 661.579557
+ray 602: dist = 26.593027
+wall_h: 661.741673
+ray 603: dist = 26.586532
+wall_h: 661.903336
+ray 604: dist = 26.580059
+wall_h: 662.064548
+ray 605: dist = 26.573606
+wall_h: 662.225307
+ray 606: dist = 26.567175
+wall_h: 662.385613
+ray 607: dist = 26.560765
+wall_h: 662.545466
+ray 608: dist = 26.554376
+wall_h: 662.704867
+ray 609: dist = 26.548009
+wall_h: 662.863815
+ray 610: dist = 26.541663
+wall_h: 663.022310
+ray 611: dist = 26.535338
+wall_h: 663.180351
+ray 612: dist = 26.529034
+wall_h: 663.337939
+ray 613: dist = 26.522751
+wall_h: 663.495074
+ray 614: dist = 26.516489
+wall_h: 663.651755
+ray 615: dist = 26.510248
+wall_h: 663.807983
+ray 616: dist = 26.504029
+wall_h: 663.963757
+ray 617: dist = 26.497830
+wall_h: 664.119077
+ray 618: dist = 26.491653
+wall_h: 664.273944
+ray 619: dist = 26.485496
+wall_h: 664.428356
+ray 620: dist = 26.479360
+wall_h: 664.582314
+ray 621: dist = 26.473245
+wall_h: 664.735818
+ray 622: dist = 26.467152
+wall_h: 664.888868
+ray 623: dist = 26.461079
+wall_h: 665.041463
+ray 624: dist = 26.455027
+wall_h: 665.193603
+ray 625: dist = 26.448995
+wall_h: 665.345289
+ray 626: dist = 26.442985
+wall_h: 665.496520
+ray 627: dist = 26.436995
+wall_h: 665.647297
+ray 628: dist = 26.431027
+wall_h: 665.797618
+ray 629: dist = 26.425078
+wall_h: 665.947484
+ray 630: dist = 26.419151
+wall_h: 666.096895
+ray 631: dist = 26.413244
+wall_h: 666.245851
+ray 632: dist = 26.407358
+wall_h: 666.394352
+ray 633: dist = 26.401493
+wall_h: 666.542397
+ray 634: dist = 26.395648
+wall_h: 666.689986
+ray 635: dist = 26.389824
+wall_h: 666.837120
+ray 636: dist = 26.384021
+wall_h: 666.983798
+ray 637: dist = 26.378238
+wall_h: 667.130020
+ray 638: dist = 26.372476
+wall_h: 667.275786
+ray 639: dist = 26.366734
+wall_h: 667.421096
+ray 640: dist = 26.361013
+wall_h: 667.565950
+ray 641: dist = 26.355312
+wall_h: 667.710347
+ray 642: dist = 26.349632
+wall_h: 667.854289
+ray 643: dist = 26.343972
+wall_h: 667.997773
+ray 644: dist = 26.338332
+wall_h: 668.140801
+ray 645: dist = 26.332713
+wall_h: 668.283373
+ray 646: dist = 26.327115
+wall_h: 668.425488
+ray 647: dist = 26.321536
+wall_h: 668.567145
+ray 648: dist = 26.315979
+wall_h: 668.708346
+ray 649: dist = 26.310441
+wall_h: 668.849090
+ray 650: dist = 26.304924
+wall_h: 668.989377
+ray 651: dist = 26.299427
+wall_h: 669.129206
+ray 652: dist = 26.293950
+wall_h: 669.268578
+ray 653: dist = 26.288493
+wall_h: 669.407493
+ray 654: dist = 26.283057
+wall_h: 669.545950
+ray 655: dist = 26.277641
+wall_h: 669.683950
+ray 656: dist = 26.272245
+wall_h: 669.821492
+ray 657: dist = 26.266870
+wall_h: 669.958575
+ray 658: dist = 26.261514
+wall_h: 670.095202
+ray 659: dist = 26.256179
+wall_h: 670.231370
+ray 660: dist = 26.250863
+wall_h: 670.367080
+ray 661: dist = 26.245568
+wall_h: 670.502331
+ray 662: dist = 26.240293
+wall_h: 670.637125
+ray 663: dist = 26.235038
+wall_h: 670.771460
+ray 664: dist = 26.229803
+wall_h: 670.905337
+ray 665: dist = 26.224587
+wall_h: 671.038755
+ray 666: dist = 26.219392
+wall_h: 671.171714
+ray 667: dist = 26.214217
+wall_h: 671.304215
+ray 668: dist = 26.209062
+wall_h: 671.436257
+ray 669: dist = 26.203927
+wall_h: 671.567840
+ray 670: dist = 26.198811
+wall_h: 671.698963
+ray 671: dist = 26.193716
+wall_h: 671.829628
+ray 672: dist = 26.188640
+wall_h: 671.959834
+ray 673: dist = 26.183585
+wall_h: 672.089580
+ray 674: dist = 26.178549
+wall_h: 672.218867
+ray 675: dist = 26.173533
+wall_h: 672.347695
+ray 676: dist = 26.168537
+wall_h: 672.476063
+ray 677: dist = 26.163560
+wall_h: 672.603971
+ray 678: dist = 26.158604
+wall_h: 672.731420
+ray 679: dist = 26.153667
+wall_h: 672.858409
+ray 680: dist = 26.148749
+wall_h: 672.984938
+ray 681: dist = 26.143852
+wall_h: 673.111007
+ray 682: dist = 26.138974
+wall_h: 673.236616
+ray 683: dist = 26.134116
+wall_h: 673.361764
+ray 684: dist = 26.129278
+wall_h: 673.486453
+ray 685: dist = 26.124459
+wall_h: 673.610681
+ray 686: dist = 26.119660
+wall_h: 673.734449
+ray 687: dist = 26.114880
+wall_h: 673.857756
+ray 688: dist = 26.110120
+wall_h: 673.980603
+ray 689: dist = 26.105380
+wall_h: 674.102989
+ray 690: dist = 26.100659
+wall_h: 674.224914
+ray 691: dist = 26.095958
+wall_h: 674.346379
+ray 692: dist = 26.091276
+wall_h: 674.467382
+ray 693: dist = 26.086614
+wall_h: 674.587925
+ray 694: dist = 26.081971
+wall_h: 674.708006
+ray 695: dist = 26.077347
+wall_h: 674.827627
+ray 696: dist = 26.072744
+wall_h: 674.946786
+ray 697: dist = 26.068159
+wall_h: 675.065484
+ray 698: dist = 26.063594
+wall_h: 675.183720
+ray 699: dist = 26.059049
+wall_h: 675.301495
+ray 700: dist = 26.054522
+wall_h: 675.418808
+ray 701: dist = 26.050016
+wall_h: 675.535660
+ray 702: dist = 26.045528
+wall_h: 675.652050
+ray 703: dist = 26.041060
+wall_h: 675.767978
+ray 704: dist = 26.036611
+wall_h: 675.883445
+ray 705: dist = 26.032182
+wall_h: 675.998449
+ray 706: dist = 26.027772
+wall_h: 676.112991
+ray 707: dist = 26.023381
+wall_h: 676.227072
+ray 708: dist = 26.019009
+wall_h: 676.340690
+ray 709: dist = 26.014657
+wall_h: 676.453845
+ray 710: dist = 26.010323
+wall_h: 676.566539
+ray 711: dist = 26.006009
+wall_h: 676.678770
+ray 712: dist = 26.001715
+wall_h: 676.790538
+ray 713: dist = 25.997439
+wall_h: 676.901844
+ray 714: dist = 25.993183
+wall_h: 677.012687
+ray 715: dist = 25.988945
+wall_h: 677.123068
+ray 716: dist = 25.984727
+wall_h: 677.232985
+ray 717: dist = 25.980528
+wall_h: 677.342440
+ray 718: dist = 25.976349
+wall_h: 677.451432
+ray 719: dist = 25.972188
+wall_h: 677.559961
+ray 720: dist = 25.968046
+wall_h: 677.668026
+ray 721: dist = 25.963923
+wall_h: 677.775629
+ray 722: dist = 25.959820
+wall_h: 677.882768
+ray 723: dist = 25.955735
+wall_h: 677.989444
+ray 724: dist = 25.951670
+wall_h: 678.095657
+ray 725: dist = 25.947623
+wall_h: 678.201406
+ray 726: dist = 25.943596
+wall_h: 678.306691
+ray 727: dist = 25.939587
+wall_h: 678.411513
+ray 728: dist = 25.935597
+wall_h: 678.515871
+ray 729: dist = 25.931627
+wall_h: 678.619766
+ray 730: dist = 25.927675
+wall_h: 678.723197
+ray 731: dist = 25.923742
+wall_h: 678.826163
+ray 732: dist = 25.919828
+wall_h: 678.928666
+ray 733: dist = 25.915933
+wall_h: 679.030705
+ray 734: dist = 25.912057
+wall_h: 679.132279
+ray 735: dist = 25.908200
+wall_h: 679.233390
+ray 736: dist = 25.904362
+wall_h: 679.334036
+ray 737: dist = 25.900542
+wall_h: 679.434218
+ray 738: dist = 25.896741
+wall_h: 679.533935
+ray 739: dist = 25.892959
+wall_h: 679.633188
+ray 740: dist = 25.889196
+wall_h: 679.731977
+ray 741: dist = 25.885452
+wall_h: 679.830301
+ray 742: dist = 25.881726
+wall_h: 679.928160
+ray 743: dist = 25.878019
+wall_h: 680.025554
+ray 744: dist = 25.874331
+wall_h: 680.122484
+ray 745: dist = 25.870662
+wall_h: 680.218949
+ray 746: dist = 25.867011
+wall_h: 680.314949
+ray 747: dist = 25.863379
+wall_h: 680.410484
+ray 748: dist = 25.859766
+wall_h: 680.505554
+ray 749: dist = 25.856172
+wall_h: 680.600159
+ray 750: dist = 25.852596
+wall_h: 680.694298
+ray 751: dist = 25.849038
+wall_h: 680.787973
+ray 752: dist = 25.845500
+wall_h: 680.881182
+ray 753: dist = 25.841980
+wall_h: 680.973925
+ray 754: dist = 25.838479
+wall_h: 681.066204
+ray 755: dist = 25.834996
+wall_h: 681.158016
+ray 756: dist = 25.831532
+wall_h: 681.249363
+ray 757: dist = 25.828086
+wall_h: 681.340245
+ray 758: dist = 25.824659
+wall_h: 681.430661
+ray 759: dist = 25.821251
+wall_h: 681.520611
+ray 760: dist = 25.817861
+wall_h: 681.610095
+ray 761: dist = 25.814489
+wall_h: 681.699114
+ray 762: dist = 25.811136
+wall_h: 681.787666
+ray 763: dist = 25.807802
+wall_h: 681.875753
+ray 764: dist = 25.804486
+wall_h: 681.963373
+ray 765: dist = 25.801189
+wall_h: 682.050527
+ray 766: dist = 25.797910
+wall_h: 682.137215
+ray 767: dist = 25.794650
+wall_h: 682.223437
+ray 768: dist = 25.791408
+wall_h: 682.309193
+ray 769: dist = 25.788184
+wall_h: 682.394482
+ray 770: dist = 25.784979
+wall_h: 682.479305
+ray 771: dist = 25.781792
+wall_h: 682.563661
+ray 772: dist = 25.778624
+wall_h: 682.647551
+ray 773: dist = 25.775474
+wall_h: 682.730974
+ray 774: dist = 25.772342
+wall_h: 682.813931
+ray 775: dist = 25.769229
+wall_h: 682.896421
+ray 776: dist = 25.766135
+wall_h: 682.978444
+ray 777: dist = 25.763058
+wall_h: 683.060001
+ray 778: dist = 25.760000
+wall_h: 683.141090
+ray 779: dist = 25.756960
+wall_h: 683.221713
+ray 780: dist = 25.753939
+wall_h: 683.301868
+ray 781: dist = 25.750936
+wall_h: 683.381557
+ray 782: dist = 25.747951
+wall_h: 683.460778
+ray 783: dist = 25.744984
+wall_h: 683.539533
+ray 784: dist = 25.742036
+wall_h: 683.617820
+ray 785: dist = 25.739106
+wall_h: 683.695640
+ray 786: dist = 25.736194
+wall_h: 683.772992
+ray 787: dist = 25.733301
+wall_h: 683.849878
+ray 788: dist = 25.730425
+wall_h: 683.926295
+ray 789: dist = 25.727568
+wall_h: 684.002246
+ray 790: dist = 25.724729
+wall_h: 684.077729
+ray 791: dist = 25.721909
+wall_h: 684.152744
+ray 792: dist = 25.719106
+wall_h: 684.227292
+ray 793: dist = 25.716322
+wall_h: 684.301372
+ray 794: dist = 25.713556
+wall_h: 684.374984
+ray 795: dist = 25.710808
+wall_h: 684.448129
+ray 796: dist = 25.708078
+wall_h: 684.520805
+ray 797: dist = 25.705367
+wall_h: 684.593014
+ray 798: dist = 25.702673
+wall_h: 684.664755
+ray 799: dist = 25.699998
+wall_h: 684.736028
+ray 800: dist = 25.697341
+wall_h: 684.806833
+ray 801: dist = 25.694702
+wall_h: 684.877170
+ray 802: dist = 25.692081
+wall_h: 684.947039
+ray 803: dist = 25.689478
+wall_h: 685.016440
+ray 804: dist = 25.686893
+wall_h: 685.085372
+ray 805: dist = 25.684326
+wall_h: 685.153837
+ray 806: dist = 25.681777
+wall_h: 685.221832
+ray 807: dist = 25.679247
+wall_h: 685.289360
+ray 808: dist = 25.676734
+wall_h: 685.356419
+ray 809: dist = 25.674239
+wall_h: 685.423010
+ray 810: dist = 25.671763
+wall_h: 685.489132
+ray 811: dist = 25.669304
+wall_h: 685.554786
+ray 812: dist = 25.666864
+wall_h: 685.619971
+ray 813: dist = 25.664441
+wall_h: 685.684688
+ray 814: dist = 25.662037
+wall_h: 685.748936
+ray 815: dist = 25.659650
+wall_h: 685.812715
+ray 816: dist = 25.657282
+wall_h: 685.876026
+ray 817: dist = 25.654931
+wall_h: 685.938867
+ray 818: dist = 25.652599
+wall_h: 686.001240
+ray 819: dist = 25.650284
+wall_h: 686.063144
+ray 820: dist = 25.647987
+wall_h: 686.124579
+ray 821: dist = 25.645709
+wall_h: 686.185545
+ray 822: dist = 25.643448
+wall_h: 686.246042
+ray 823: dist = 25.641205
+wall_h: 686.306070
+ray 824: dist = 25.638980
+wall_h: 686.365629
+ray 825: dist = 25.636773
+wall_h: 686.424719
+ray 826: dist = 25.634583
+wall_h: 686.483340
+ray 827: dist = 25.632412
+wall_h: 686.541491
+ray 828: dist = 25.630259
+wall_h: 686.599174
+ray 829: dist = 25.628123
+wall_h: 686.656386
+ray 830: dist = 25.626006
+wall_h: 686.713130
+ray 831: dist = 25.623906
+wall_h: 686.769404
+ray 832: dist = 25.621824
+wall_h: 686.825209
+ray 833: dist = 25.619760
+wall_h: 686.880545
+ray 834: dist = 25.617713
+wall_h: 686.935411
+ray 835: dist = 25.615685
+wall_h: 686.989807
+ray 836: dist = 25.613674
+wall_h: 687.043734
+ray 837: dist = 25.611682
+wall_h: 687.097191
+ray 838: dist = 25.609707
+wall_h: 687.150179
+ray 839: dist = 25.607749
+wall_h: 687.202697
+ray 840: dist = 25.605810
+wall_h: 687.254745
+ray 841: dist = 25.603889
+wall_h: 687.306324
+ray 842: dist = 25.601985
+wall_h: 687.357433
+ray 843: dist = 25.600099
+wall_h: 687.408072
+ray 844: dist = 25.598230
+wall_h: 687.458241
+ray 845: dist = 25.596380
+wall_h: 687.507940
+ray 846: dist = 25.594547
+wall_h: 687.557170
+ray 847: dist = 25.592732
+wall_h: 687.605929
+ray 848: dist = 25.590935
+wall_h: 687.654218
+ray 849: dist = 25.589156
+wall_h: 687.702038
+ray 850: dist = 25.587394
+wall_h: 687.749387
+ray 851: dist = 25.585650
+wall_h: 687.796267
+ray 852: dist = 25.583924
+wall_h: 687.842676
+ray 853: dist = 25.582215
+wall_h: 687.888615
+ray 854: dist = 25.580524
+wall_h: 687.934084
+ray 855: dist = 25.578851
+wall_h: 687.979083
+ray 856: dist = 25.577196
+wall_h: 688.023611
+ray 857: dist = 25.575558
+wall_h: 688.067670
+ray 858: dist = 25.573938
+wall_h: 688.111258
+ray 859: dist = 25.572335
+wall_h: 688.154375
+ray 860: dist = 25.570751
+wall_h: 688.197023
+ray 861: dist = 25.569184
+wall_h: 688.239200
+ray 862: dist = 25.567634
+wall_h: 688.280906
+ray 863: dist = 25.566103
+wall_h: 688.322142
+ray 864: dist = 25.564589
+wall_h: 688.362908
+ray 865: dist = 25.563092
+wall_h: 688.403203
+ray 866: dist = 25.561613
+wall_h: 688.443028
+ray 867: dist = 25.560152
+wall_h: 688.482382
+ray 868: dist = 25.558709
+wall_h: 688.521266
+ray 869: dist = 25.557283
+wall_h: 688.559679
+ray 870: dist = 25.555875
+wall_h: 688.597621
+ray 871: dist = 25.554484
+wall_h: 688.635092
+ray 872: dist = 25.553111
+wall_h: 688.672093
+ray 873: dist = 25.551756
+wall_h: 688.708624
+ray 874: dist = 25.550418
+wall_h: 688.744683
+ray 875: dist = 25.549098
+wall_h: 688.780272
+ray 876: dist = 25.547795
+wall_h: 688.815390
+ray 877: dist = 25.546510
+wall_h: 688.850037
+ray 878: dist = 25.545243
+wall_h: 688.884214
+ray 879: dist = 25.543993
+wall_h: 688.917919
+ray 880: dist = 25.542761
+wall_h: 688.951154
+ray 881: dist = 25.541546
+wall_h: 688.983918
+ray 882: dist = 25.540349
+wall_h: 689.016211
+ray 883: dist = 25.539169
+wall_h: 689.048033
+ray 884: dist = 25.538008
+wall_h: 689.079384
+ray 885: dist = 25.536863
+wall_h: 689.110264
+ray 886: dist = 25.535736
+wall_h: 689.140673
+ray 887: dist = 25.534627
+wall_h: 689.170611
+ray 888: dist = 25.533535
+wall_h: 689.200078
+ray 889: dist = 25.532461
+wall_h: 689.229074
+ray 890: dist = 25.531404
+wall_h: 689.257599
+ray 891: dist = 25.530365
+wall_h: 689.285652
+ray 892: dist = 25.529344
+wall_h: 689.313235
+ray 893: dist = 25.528340
+wall_h: 689.340346
+ray 894: dist = 25.527353
+wall_h: 689.366987
+ray 895: dist = 25.526384
+wall_h: 689.393156
+ray 896: dist = 25.525433
+wall_h: 689.418854
+ray 897: dist = 25.524499
+wall_h: 689.444080
+ray 898: dist = 25.523582
+wall_h: 689.468836
+ray 899: dist = 25.522683
+wall_h: 689.493120
+ray 900: dist = 25.521802
+wall_h: 689.516933
+ray 901: dist = 25.520938
+wall_h: 689.540275
+ray 902: dist = 25.520091
+wall_h: 689.563145
+ray 903: dist = 25.519262
+wall_h: 689.585544
+ray 904: dist = 25.518451
+wall_h: 689.607472
+ray 905: dist = 25.517657
+wall_h: 689.628929
+ray 906: dist = 25.516881
+wall_h: 689.649914
+ray 907: dist = 25.516122
+wall_h: 689.670427
+ray 908: dist = 25.515380
+wall_h: 689.690470
+ray 909: dist = 25.514656
+wall_h: 689.710041
+ray 910: dist = 25.513950
+wall_h: 689.729140
+ray 911: dist = 25.513261
+wall_h: 689.747768
+ray 912: dist = 25.512589
+wall_h: 689.765925
+ray 913: dist = 25.511935
+wall_h: 689.783610
+ray 914: dist = 25.511298
+wall_h: 689.800824
+ray 915: dist = 25.510679
+wall_h: 689.817566
+ray 916: dist = 25.510077
+wall_h: 689.833837
+ray 917: dist = 25.509493
+wall_h: 689.849636
+ray 918: dist = 25.508926
+wall_h: 689.864964
+ray 919: dist = 25.508377
+wall_h: 689.879820
+ray 920: dist = 25.507845
+wall_h: 689.894205
+ray 921: dist = 25.507331
+wall_h: 689.908118
+ray 922: dist = 25.506834
+wall_h: 689.921560
+ray 923: dist = 25.506354
+wall_h: 689.934530
+ray 924: dist = 25.505892
+wall_h: 689.947029
+ray 925: dist = 25.505448
+wall_h: 689.959056
+ray 926: dist = 25.505020
+wall_h: 689.970611
+ray 927: dist = 25.504611
+wall_h: 689.981695
+ray 928: dist = 25.504218
+wall_h: 689.992307
+ray 929: dist = 25.503844
+wall_h: 690.002448
+ray 930: dist = 25.503486
+wall_h: 690.012117
+ray 931: dist = 25.503146
+wall_h: 690.021314
+ray 932: dist = 25.502824
+wall_h: 690.030040
+ray 933: dist = 25.502519
+wall_h: 690.038294
+ray 934: dist = 25.502231
+wall_h: 690.046076
+ray 935: dist = 25.501961
+wall_h: 690.053387
+ray 936: dist = 25.501708
+wall_h: 690.060227
+ray 937: dist = 25.501473
+wall_h: 690.066594
+ray 938: dist = 25.501255
+wall_h: 690.072490
+ray 939: dist = 25.501054
+wall_h: 690.077914
+ray 940: dist = 25.500871
+wall_h: 690.082867
+ray 941: dist = 25.500706
+wall_h: 690.087348
+ray 942: dist = 25.500558
+wall_h: 690.091357
+ray 943: dist = 25.500427
+wall_h: 690.094895
+ray 944: dist = 25.500314
+wall_h: 690.097961
+ray 945: dist = 25.500218
+wall_h: 690.100555
+ray 946: dist = 25.500139
+wall_h: 690.102677
+ray 947: dist = 25.500078
+wall_h: 690.104328
+ray 948: dist = 25.500035
+wall_h: 690.105507
+ray 949: dist = 25.500009
+wall_h: 690.106215
+ray 950: dist = 25.500000
+wall_h: 690.106451
+ray 951: dist = 25.500009
+wall_h: 690.106215
+ray 952: dist = 25.500035
+wall_h: 690.105507
+ray 953: dist = 25.500078
+wall_h: 690.104328
+ray 954: dist = 25.500139
+wall_h: 690.102677
+ray 955: dist = 25.500218
+wall_h: 690.100555
+ray 956: dist = 25.500314
+wall_h: 690.097961
+ray 957: dist = 25.500427
+wall_h: 690.094895
+ray 958: dist = 25.500558
+wall_h: 690.091357
+ray 959: dist = 25.500706
+wall_h: 690.087348
+ray 960: dist = 25.500871
+wall_h: 690.082867
+ray 961: dist = 25.501054
+wall_h: 690.077914
+ray 962: dist = 25.501255
+wall_h: 690.072490
+ray 963: dist = 25.501473
+wall_h: 690.066594
+ray 964: dist = 25.501708
+wall_h: 690.060227
+ray 965: dist = 25.501961
+wall_h: 690.053387
+ray 966: dist = 25.502231
+wall_h: 690.046076
+ray 967: dist = 25.502519
+wall_h: 690.038294
+ray 968: dist = 25.502824
+wall_h: 690.030040
+ray 969: dist = 25.503146
+wall_h: 690.021314
+ray 970: dist = 25.503486
+wall_h: 690.012117
+ray 971: dist = 25.503844
+wall_h: 690.002448
+ray 972: dist = 25.504218
+wall_h: 689.992307
+ray 973: dist = 25.504611
+wall_h: 689.981695
+ray 974: dist = 25.505020
+wall_h: 689.970611
+ray 975: dist = 25.505448
+wall_h: 689.959056
+ray 976: dist = 25.505892
+wall_h: 689.947029
+ray 977: dist = 25.506354
+wall_h: 689.934530
+ray 978: dist = 25.506834
+wall_h: 689.921560
+ray 979: dist = 25.507331
+wall_h: 689.908118
+ray 980: dist = 25.507845
+wall_h: 689.894205
+ray 981: dist = 25.508377
+wall_h: 689.879820
+ray 982: dist = 25.508926
+wall_h: 689.864964
+ray 983: dist = 25.509493
+wall_h: 689.849636
+ray 984: dist = 25.510077
+wall_h: 689.833837
+ray 985: dist = 25.510679
+wall_h: 689.817566
+ray 986: dist = 25.511298
+wall_h: 689.800824
+ray 987: dist = 25.511935
+wall_h: 689.783610
+ray 988: dist = 25.512589
+wall_h: 689.765925
+ray 989: dist = 25.513261
+wall_h: 689.747768
+ray 990: dist = 25.513950
+wall_h: 689.729140
+ray 991: dist = 25.514656
+wall_h: 689.710041
+ray 992: dist = 25.515380
+wall_h: 689.690470
+ray 993: dist = 25.516122
+wall_h: 689.670427
+ray 994: dist = 25.516881
+wall_h: 689.649914
+ray 995: dist = 25.517657
+wall_h: 689.628929
+ray 996: dist = 25.518451
+wall_h: 689.607472
+ray 997: dist = 25.519262
+wall_h: 689.585544
+ray 998: dist = 25.520091
+wall_h: 689.563145
+ray 999: dist = 25.520938
+wall_h: 689.540275
+ray 1000: dist = 25.521802
+wall_h: 689.516933
+ray 1001: dist = 25.522683
+wall_h: 689.493120
+ray 1002: dist = 25.523582
+wall_h: 689.468836
+ray 1003: dist = 25.524499
+wall_h: 689.444080
+ray 1004: dist = 25.525433
+wall_h: 689.418854
+ray 1005: dist = 25.526384
+wall_h: 689.393156
+ray 1006: dist = 25.527353
+wall_h: 689.366987
+ray 1007: dist = 25.528340
+wall_h: 689.340346
+ray 1008: dist = 25.529344
+wall_h: 689.313235
+ray 1009: dist = 25.530365
+wall_h: 689.285652
+ray 1010: dist = 25.531404
+wall_h: 689.257599
+ray 1011: dist = 25.532461
+wall_h: 689.229074
+ray 1012: dist = 25.533535
+wall_h: 689.200078
+ray 1013: dist = 25.534627
+wall_h: 689.170611
+ray 1014: dist = 25.535736
+wall_h: 689.140673
+ray 1015: dist = 25.536863
+wall_h: 689.110264
+ray 1016: dist = 25.538008
+wall_h: 689.079384
+ray 1017: dist = 25.539169
+wall_h: 689.048033
+ray 1018: dist = 25.540349
+wall_h: 689.016211
+ray 1019: dist = 25.541546
+wall_h: 688.983918
+ray 1020: dist = 25.542761
+wall_h: 688.951154
+ray 1021: dist = 25.543993
+wall_h: 688.917919
+ray 1022: dist = 25.545243
+wall_h: 688.884214
+ray 1023: dist = 25.546510
+wall_h: 688.850037
+ray 1024: dist = 25.547795
+wall_h: 688.815390
+ray 1025: dist = 25.549098
+wall_h: 688.780272
+ray 1026: dist = 25.550418
+wall_h: 688.744683
+ray 1027: dist = 25.551756
+wall_h: 688.708624
+ray 1028: dist = 25.553111
+wall_h: 688.672093
+ray 1029: dist = 25.554484
+wall_h: 688.635092
+ray 1030: dist = 25.555875
+wall_h: 688.597621
+ray 1031: dist = 25.557283
+wall_h: 688.559679
+ray 1032: dist = 25.558709
+wall_h: 688.521266
+ray 1033: dist = 25.560152
+wall_h: 688.482382
+ray 1034: dist = 25.561613
+wall_h: 688.443028
+ray 1035: dist = 25.563092
+wall_h: 688.403203
+ray 1036: dist = 25.564589
+wall_h: 688.362908
+ray 1037: dist = 25.566103
+wall_h: 688.322142
+ray 1038: dist = 25.567634
+wall_h: 688.280906
+ray 1039: dist = 25.569184
+wall_h: 688.239200
+ray 1040: dist = 25.570751
+wall_h: 688.197023
+ray 1041: dist = 25.572335
+wall_h: 688.154375
+ray 1042: dist = 25.573938
+wall_h: 688.111258
+ray 1043: dist = 25.575558
+wall_h: 688.067670
+ray 1044: dist = 25.577196
+wall_h: 688.023611
+ray 1045: dist = 25.578851
+wall_h: 687.979083
+ray 1046: dist = 25.580524
+wall_h: 687.934084
+ray 1047: dist = 25.582215
+wall_h: 687.888615
+ray 1048: dist = 25.583924
+wall_h: 687.842676
+ray 1049: dist = 25.585650
+wall_h: 687.796267
+ray 1050: dist = 25.587394
+wall_h: 687.749387
+ray 1051: dist = 25.589156
+wall_h: 687.702038
+ray 1052: dist = 25.590935
+wall_h: 687.654218
+ray 1053: dist = 25.592732
+wall_h: 687.605929
+ray 1054: dist = 25.594547
+wall_h: 687.557170
+ray 1055: dist = 25.596380
+wall_h: 687.507940
+ray 1056: dist = 25.598230
+wall_h: 687.458241
+ray 1057: dist = 25.600099
+wall_h: 687.408072
+ray 1058: dist = 25.601985
+wall_h: 687.357433
+ray 1059: dist = 25.603889
+wall_h: 687.306324
+ray 1060: dist = 25.605810
+wall_h: 687.254745
+ray 1061: dist = 25.607749
+wall_h: 687.202697
+ray 1062: dist = 25.609707
+wall_h: 687.150179
+ray 1063: dist = 25.611682
+wall_h: 687.097191
+ray 1064: dist = 25.613674
+wall_h: 687.043734
+ray 1065: dist = 25.615685
+wall_h: 686.989807
+ray 1066: dist = 25.617713
+wall_h: 686.935411
+ray 1067: dist = 25.619760
+wall_h: 686.880545
+ray 1068: dist = 25.621824
+wall_h: 686.825209
+ray 1069: dist = 25.623906
+wall_h: 686.769404
+ray 1070: dist = 25.626006
+wall_h: 686.713130
+ray 1071: dist = 25.628123
+wall_h: 686.656386
+ray 1072: dist = 25.630259
+wall_h: 686.599174
+ray 1073: dist = 25.632412
+wall_h: 686.541491
+ray 1074: dist = 25.634583
+wall_h: 686.483340
+ray 1075: dist = 25.636773
+wall_h: 686.424719
+ray 1076: dist = 25.638980
+wall_h: 686.365629
+ray 1077: dist = 25.641205
+wall_h: 686.306070
+ray 1078: dist = 25.643448
+wall_h: 686.246042
+ray 1079: dist = 25.645709
+wall_h: 686.185545
+ray 1080: dist = 25.647987
+wall_h: 686.124579
+ray 1081: dist = 25.650284
+wall_h: 686.063144
+ray 1082: dist = 25.652599
+wall_h: 686.001240
+ray 1083: dist = 25.654931
+wall_h: 685.938867
+ray 1084: dist = 25.657282
+wall_h: 685.876026
+ray 1085: dist = 25.659650
+wall_h: 685.812715
+ray 1086: dist = 25.662037
+wall_h: 685.748936
+ray 1087: dist = 25.664441
+wall_h: 685.684688
+ray 1088: dist = 25.666864
+wall_h: 685.619971
+ray 1089: dist = 25.669304
+wall_h: 685.554786
+ray 1090: dist = 25.671763
+wall_h: 685.489132
+ray 1091: dist = 25.674239
+wall_h: 685.423010
+ray 1092: dist = 25.676734
+wall_h: 685.356419
+ray 1093: dist = 25.679247
+wall_h: 685.289360
+ray 1094: dist = 25.681777
+wall_h: 685.221832
+ray 1095: dist = 25.684326
+wall_h: 685.153837
+ray 1096: dist = 25.686893
+wall_h: 685.085372
+ray 1097: dist = 25.689478
+wall_h: 685.016440
+ray 1098: dist = 25.692081
+wall_h: 684.947039
+ray 1099: dist = 25.694702
+wall_h: 684.877170
+ray 1100: dist = 25.697341
+wall_h: 684.806833
+ray 1101: dist = 25.699998
+wall_h: 684.736028
+ray 1102: dist = 25.702673
+wall_h: 684.664755
+ray 1103: dist = 25.705367
+wall_h: 684.593014
+ray 1104: dist = 25.708078
+wall_h: 684.520805
+ray 1105: dist = 25.710808
+wall_h: 684.448129
+ray 1106: dist = 25.713556
+wall_h: 684.374984
+ray 1107: dist = 25.716322
+wall_h: 684.301372
+ray 1108: dist = 25.719106
+wall_h: 684.227292
+ray 1109: dist = 25.721909
+wall_h: 684.152744
+ray 1110: dist = 25.724729
+wall_h: 684.077729
+ray 1111: dist = 25.727568
+wall_h: 684.002246
+ray 1112: dist = 25.730425
+wall_h: 683.926295
+ray 1113: dist = 25.733301
+wall_h: 683.849878
+ray 1114: dist = 25.736194
+wall_h: 683.772992
+ray 1115: dist = 25.739106
+wall_h: 683.695640
+ray 1116: dist = 25.742036
+wall_h: 683.617820
+ray 1117: dist = 25.744984
+wall_h: 683.539533
+ray 1118: dist = 25.747951
+wall_h: 683.460778
+ray 1119: dist = 25.750936
+wall_h: 683.381557
+ray 1120: dist = 25.753939
+wall_h: 683.301868
+ray 1121: dist = 25.756960
+wall_h: 683.221713
+ray 1122: dist = 25.760000
+wall_h: 683.141090
+ray 1123: dist = 25.763058
+wall_h: 683.060001
+ray 1124: dist = 25.766135
+wall_h: 682.978444
+ray 1125: dist = 25.769229
+wall_h: 682.896421
+ray 1126: dist = 25.772342
+wall_h: 682.813931
+ray 1127: dist = 25.775474
+wall_h: 682.730974
+ray 1128: dist = 25.778624
+wall_h: 682.647551
+ray 1129: dist = 25.781792
+wall_h: 682.563661
+ray 1130: dist = 25.784979
+wall_h: 682.479305
+ray 1131: dist = 25.788184
+wall_h: 682.394482
+ray 1132: dist = 25.791408
+wall_h: 682.309193
+ray 1133: dist = 25.794650
+wall_h: 682.223437
+ray 1134: dist = 25.797910
+wall_h: 682.137215
+ray 1135: dist = 25.801189
+wall_h: 682.050527
+ray 1136: dist = 25.804486
+wall_h: 681.963373
+ray 1137: dist = 25.807802
+wall_h: 681.875753
+ray 1138: dist = 25.811136
+wall_h: 681.787666
+ray 1139: dist = 25.814489
+wall_h: 681.699114
+ray 1140: dist = 25.817861
+wall_h: 681.610095
+ray 1141: dist = 25.821251
+wall_h: 681.520611
+ray 1142: dist = 25.824659
+wall_h: 681.430661
+ray 1143: dist = 25.828086
+wall_h: 681.340245
+ray 1144: dist = 25.831532
+wall_h: 681.249363
+ray 1145: dist = 25.834996
+wall_h: 681.158016
+ray 1146: dist = 25.838479
+wall_h: 681.066204
+ray 1147: dist = 25.841980
+wall_h: 680.973925
+ray 1148: dist = 25.845500
+wall_h: 680.881182
+ray 1149: dist = 25.849038
+wall_h: 680.787973
+ray 1150: dist = 25.852596
+wall_h: 680.694298
+ray 1151: dist = 25.856172
+wall_h: 680.600159
+ray 1152: dist = 25.859766
+wall_h: 680.505554
+ray 1153: dist = 25.863379
+wall_h: 680.410484
+ray 1154: dist = 25.867011
+wall_h: 680.314949
+ray 1155: dist = 25.870662
+wall_h: 680.218949
+ray 1156: dist = 25.874331
+wall_h: 680.122484
+ray 1157: dist = 25.878019
+wall_h: 680.025554
+ray 1158: dist = 25.881726
+wall_h: 679.928160
+ray 1159: dist = 25.885452
+wall_h: 679.830301
+ray 1160: dist = 25.889196
+wall_h: 679.731977
+ray 1161: dist = 25.892959
+wall_h: 679.633188
+ray 1162: dist = 25.896741
+wall_h: 679.533935
+ray 1163: dist = 25.900542
+wall_h: 679.434218
+ray 1164: dist = 25.904362
+wall_h: 679.334036
+ray 1165: dist = 25.908200
+wall_h: 679.233390
+ray 1166: dist = 25.912057
+wall_h: 679.132279
+ray 1167: dist = 25.915933
+wall_h: 679.030705
+ray 1168: dist = 25.919828
+wall_h: 678.928666
+ray 1169: dist = 25.923742
+wall_h: 678.826163
+ray 1170: dist = 25.927675
+wall_h: 678.723197
+ray 1171: dist = 25.931627
+wall_h: 678.619766
+ray 1172: dist = 25.935597
+wall_h: 678.515871
+ray 1173: dist = 25.939587
+wall_h: 678.411513
+ray 1174: dist = 25.943596
+wall_h: 678.306691
+ray 1175: dist = 25.947623
+wall_h: 678.201406
+ray 1176: dist = 25.951670
+wall_h: 678.095657
+ray 1177: dist = 25.955735
+wall_h: 677.989444
+ray 1178: dist = 25.959820
+wall_h: 677.882768
+ray 1179: dist = 25.963923
+wall_h: 677.775629
+ray 1180: dist = 25.968046
+wall_h: 677.668026
+ray 1181: dist = 25.972188
+wall_h: 677.559961
+ray 1182: dist = 25.976349
+wall_h: 677.451432
+ray 1183: dist = 25.980528
+wall_h: 677.342440
+ray 1184: dist = 25.984727
+wall_h: 677.232985
+ray 1185: dist = 25.988945
+wall_h: 677.123068
+ray 1186: dist = 25.993183
+wall_h: 677.012687
+ray 1187: dist = 25.997439
+wall_h: 676.901844
+ray 1188: dist = 26.001715
+wall_h: 676.790538
+ray 1189: dist = 26.006009
+wall_h: 676.678770
+ray 1190: dist = 26.010323
+wall_h: 676.566539
+ray 1191: dist = 26.014657
+wall_h: 676.453845
+ray 1192: dist = 26.019009
+wall_h: 676.340690
+ray 1193: dist = 26.023381
+wall_h: 676.227072
+ray 1194: dist = 26.027772
+wall_h: 676.112991
+ray 1195: dist = 26.032182
+wall_h: 675.998449
+ray 1196: dist = 26.036611
+wall_h: 675.883445
+ray 1197: dist = 26.041060
+wall_h: 675.767978
+ray 1198: dist = 26.045528
+wall_h: 675.652050
+ray 1199: dist = 26.050016
+wall_h: 675.535660
+ray 1200: dist = 26.054522
+wall_h: 675.418808
+ray 1201: dist = 26.059049
+wall_h: 675.301495
+ray 1202: dist = 26.063594
+wall_h: 675.183720
+ray 1203: dist = 26.068159
+wall_h: 675.065484
+ray 1204: dist = 26.072744
+wall_h: 674.946786
+ray 1205: dist = 26.077347
+wall_h: 674.827627
+ray 1206: dist = 26.081971
+wall_h: 674.708006
+ray 1207: dist = 26.086614
+wall_h: 674.587925
+ray 1208: dist = 26.091276
+wall_h: 674.467382
+ray 1209: dist = 26.095958
+wall_h: 674.346379
+ray 1210: dist = 26.100659
+wall_h: 674.224914
+ray 1211: dist = 26.105380
+wall_h: 674.102989
+ray 1212: dist = 26.110120
+wall_h: 673.980603
+ray 1213: dist = 26.114880
+wall_h: 673.857756
+ray 1214: dist = 26.119660
+wall_h: 673.734449
+ray 1215: dist = 26.124459
+wall_h: 673.610681
+ray 1216: dist = 26.129278
+wall_h: 673.486453
+ray 1217: dist = 26.134116
+wall_h: 673.361764
+ray 1218: dist = 26.138974
+wall_h: 673.236616
+ray 1219: dist = 26.143852
+wall_h: 673.111007
+ray 1220: dist = 26.148749
+wall_h: 672.984938
+ray 1221: dist = 26.153667
+wall_h: 672.858409
+ray 1222: dist = 26.158604
+wall_h: 672.731420
+ray 1223: dist = 26.163560
+wall_h: 672.603971
+ray 1224: dist = 26.168537
+wall_h: 672.476063
+ray 1225: dist = 26.173533
+wall_h: 672.347695
+ray 1226: dist = 26.178549
+wall_h: 672.218867
+ray 1227: dist = 26.183585
+wall_h: 672.089580
+ray 1228: dist = 26.188640
+wall_h: 671.959834
+ray 1229: dist = 26.193716
+wall_h: 671.829628
+ray 1230: dist = 26.198811
+wall_h: 671.698963
+ray 1231: dist = 26.203927
+wall_h: 671.567840
+ray 1232: dist = 26.209062
+wall_h: 671.436257
+ray 1233: dist = 26.214217
+wall_h: 671.304215
+ray 1234: dist = 26.219392
+wall_h: 671.171714
+ray 1235: dist = 26.224587
+wall_h: 671.038755
+ray 1236: dist = 26.229803
+wall_h: 670.905337
+ray 1237: dist = 26.235038
+wall_h: 670.771460
+ray 1238: dist = 26.240293
+wall_h: 670.637125
+ray 1239: dist = 26.245568
+wall_h: 670.502331
+ray 1240: dist = 26.250863
+wall_h: 670.367080
+ray 1241: dist = 26.256179
+wall_h: 670.231370
+ray 1242: dist = 26.261514
+wall_h: 670.095202
+ray 1243: dist = 26.266870
+wall_h: 669.958575
+ray 1244: dist = 26.272245
+wall_h: 669.821492
+ray 1245: dist = 26.277641
+wall_h: 669.683950
+ray 1246: dist = 26.283057
+wall_h: 669.545950
+ray 1247: dist = 26.288493
+wall_h: 669.407493
+ray 1248: dist = 26.293950
+wall_h: 669.268578
+ray 1249: dist = 26.299427
+wall_h: 669.129206
+ray 1250: dist = 26.304924
+wall_h: 668.989377
+ray 1251: dist = 26.310441
+wall_h: 668.849090
+ray 1252: dist = 26.315979
+wall_h: 668.708346
+ray 1253: dist = 26.321536
+wall_h: 668.567145
+ray 1254: dist = 26.327115
+wall_h: 668.425488
+ray 1255: dist = 26.332713
+wall_h: 668.283373
+ray 1256: dist = 26.338332
+wall_h: 668.140801
+ray 1257: dist = 26.343972
+wall_h: 667.997773
+ray 1258: dist = 26.349632
+wall_h: 667.854289
+ray 1259: dist = 26.355312
+wall_h: 667.710347
+ray 1260: dist = 26.361013
+wall_h: 667.565950
+ray 1261: dist = 26.366734
+wall_h: 667.421096
+ray 1262: dist = 26.372476
+wall_h: 667.275786
+ray 1263: dist = 26.378238
+wall_h: 667.130020
+ray 1264: dist = 26.384021
+wall_h: 666.983798
+ray 1265: dist = 26.389824
+wall_h: 666.837120
+ray 1266: dist = 26.395648
+wall_h: 666.689986
+ray 1267: dist = 26.401493
+wall_h: 666.542397
+ray 1268: dist = 26.407358
+wall_h: 666.394352
+ray 1269: dist = 26.413244
+wall_h: 666.245851
+ray 1270: dist = 26.419151
+wall_h: 666.096895
+ray 1271: dist = 26.425078
+wall_h: 665.947484
+ray 1272: dist = 26.431027
+wall_h: 665.797618
+ray 1273: dist = 26.436995
+wall_h: 665.647297
+ray 1274: dist = 26.442985
+wall_h: 665.496520
+ray 1275: dist = 26.448995
+wall_h: 665.345289
+ray 1276: dist = 26.455027
+wall_h: 665.193603
+ray 1277: dist = 26.461079
+wall_h: 665.041463
+ray 1278: dist = 26.467152
+wall_h: 664.888868
+ray 1279: dist = 26.473245
+wall_h: 664.735818
+ray 1280: dist = 26.479360
+wall_h: 664.582314
+ray 1281: dist = 26.485496
+wall_h: 664.428356
+ray 1282: dist = 26.491653
+wall_h: 664.273944
+ray 1283: dist = 26.497830
+wall_h: 664.119077
+ray 1284: dist = 26.504029
+wall_h: 663.963757
+ray 1285: dist = 26.510248
+wall_h: 663.807983
+ray 1286: dist = 26.516489
+wall_h: 663.651755
+ray 1287: dist = 26.522751
+wall_h: 663.495074
+ray 1288: dist = 26.529034
+wall_h: 663.337939
+ray 1289: dist = 26.535338
+wall_h: 663.180351
+ray 1290: dist = 26.541663
+wall_h: 663.022310
+ray 1291: dist = 26.548009
+wall_h: 662.863815
+ray 1292: dist = 26.554376
+wall_h: 662.704867
+ray 1293: dist = 26.560765
+wall_h: 662.545466
+ray 1294: dist = 26.567175
+wall_h: 662.385613
+ray 1295: dist = 26.573606
+wall_h: 662.225307
+ray 1296: dist = 26.580059
+wall_h: 662.064548
+ray 1297: dist = 26.586532
+wall_h: 661.903336
+ray 1298: dist = 26.593027
+wall_h: 661.741673
+ray 1299: dist = 26.599544
+wall_h: 661.579557
+ray 1300: dist = 26.606082
+wall_h: 661.416988
+ray 1301: dist = 26.612641
+wall_h: 661.253968
+ray 1302: dist = 26.619222
+wall_h: 661.090496
+ray 1303: dist = 26.625824
+wall_h: 660.926571
+ray 1304: dist = 26.632448
+wall_h: 660.762196
+ray 1305: dist = 26.639093
+wall_h: 660.597368
+ray 1306: dist = 26.645759
+wall_h: 660.432089
+ray 1307: dist = 26.652448
+wall_h: 660.266359
+ray 1308: dist = 26.659157
+wall_h: 660.100177
+ray 1309: dist = 26.665889
+wall_h: 659.933544
+ray 1310: dist = 26.672642
+wall_h: 659.766460
+ray 1311: dist = 26.679417
+wall_h: 659.598925
+ray 1312: dist = 26.686213
+wall_h: 659.430939
+ray 1313: dist = 26.693031
+wall_h: 659.262503
+ray 1314: dist = 26.699871
+wall_h: 659.093616
+ray 1315: dist = 26.706733
+wall_h: 658.924278
+ray 1316: dist = 26.713616
+wall_h: 658.754491
+ray 1317: dist = 26.720521
+wall_h: 658.584252
+ray 1318: dist = 26.727448
+wall_h: 658.413564
+ray 1319: dist = 26.734397
+wall_h: 658.242426
+ray 1320: dist = 26.741368
+wall_h: 658.070838
+ray 1321: dist = 26.748361
+wall_h: 657.898800
+ray 1322: dist = 26.755376
+wall_h: 657.726312
+ray 1323: dist = 26.762412
+wall_h: 657.553375
+ray 1324: dist = 26.769471
+wall_h: 657.379988
+ray 1325: dist = 26.776552
+wall_h: 657.206152
+ray 1326: dist = 26.783654
+wall_h: 657.031867
+ray 1327: dist = 26.790779
+wall_h: 656.857133
+ray 1328: dist = 26.797926
+wall_h: 656.681950
+ray 1329: dist = 26.805095
+wall_h: 656.506318
+ray 1330: dist = 26.812287
+wall_h: 656.330237
+ray 1331: dist = 26.819500
+wall_h: 656.153708
+ray 1332: dist = 26.826736
+wall_h: 655.976730
+ray 1333: dist = 26.833994
+wall_h: 655.799304
+ray 1334: dist = 26.841274
+wall_h: 655.621429
+ray 1335: dist = 26.848577
+wall_h: 655.443107
+ray 1336: dist = 26.855902
+wall_h: 655.264336
+ray 1337: dist = 26.863249
+wall_h: 655.085118
+ray 1338: dist = 26.870618
+wall_h: 654.905452
+ray 1339: dist = 26.878010
+wall_h: 654.725338
+ray 1340: dist = 26.885425
+wall_h: 654.544777
+ray 1341: dist = 26.892862
+wall_h: 654.363768
+ray 1342: dist = 26.900321
+wall_h: 654.182313
+ray 1343: dist = 26.907803
+wall_h: 654.000410
+ray 1344: dist = 26.915308
+wall_h: 653.818060
+ray 1345: dist = 26.922835
+wall_h: 653.635263
+ray 1346: dist = 26.930385
+wall_h: 653.452019
+ray 1347: dist = 26.937958
+wall_h: 653.268329
+ray 1348: dist = 26.945553
+wall_h: 653.084192
+ray 1349: dist = 26.953171
+wall_h: 652.899609
+ray 1350: dist = 26.960811
+wall_h: 652.714580
+ray 1351: dist = 26.968474
+wall_h: 652.529104
+ray 1352: dist = 26.976161
+wall_h: 652.343183
+ray 1353: dist = 26.983870
+wall_h: 652.156815
+ray 1354: dist = 26.991602
+wall_h: 651.970002
+ray 1355: dist = 26.999356
+wall_h: 651.782744
+ray 1356: dist = 27.007134
+wall_h: 651.595039
+ray 1357: dist = 27.014935
+wall_h: 651.406890
+ray 1358: dist = 27.022758
+wall_h: 651.218295
+ray 1359: dist = 27.030605
+wall_h: 651.029255
+ray 1360: dist = 27.038474
+wall_h: 650.839770
+ray 1361: dist = 27.046367
+wall_h: 650.649841
+ray 1362: dist = 27.054283
+wall_h: 650.459466
+ray 1363: dist = 27.062222
+wall_h: 650.268647
+ray 1364: dist = 27.070184
+wall_h: 650.077384
+ray 1365: dist = 27.078170
+wall_h: 649.885676
+ray 1366: dist = 27.086178
+wall_h: 649.693524
+ray 1367: dist = 27.094210
+wall_h: 649.500928
+ray 1368: dist = 27.102265
+wall_h: 649.307888
+ray 1369: dist = 27.110344
+wall_h: 649.114404
+ray 1370: dist = 27.118445
+wall_h: 648.920477
+ray 1371: dist = 27.126571
+wall_h: 648.726106
+ray 1372: dist = 27.134719
+wall_h: 648.531292
+ray 1373: dist = 27.142891
+wall_h: 648.336034
+ray 1374: dist = 27.151087
+wall_h: 648.140333
+ray 1375: dist = 27.159306
+wall_h: 647.944190
+ray 1376: dist = 27.167549
+wall_h: 647.747603
+ray 1377: dist = 27.175815
+wall_h: 647.550574
+ray 1378: dist = 27.184105
+wall_h: 647.353102
+ray 1379: dist = 27.192418
+wall_h: 647.155187
+ray 1380: dist = 27.200755
+wall_h: 646.956831
+ray 1381: dist = 27.209116
+wall_h: 646.758032
+ray 1382: dist = 27.217501
+wall_h: 646.558791
+ray 1383: dist = 27.225909
+wall_h: 646.359108
+ray 1384: dist = 27.234342
+wall_h: 646.158983
+ray 1385: dist = 27.242798
+wall_h: 645.958417
+ray 1386: dist = 27.251278
+wall_h: 645.757409
+ray 1387: dist = 27.259782
+wall_h: 645.555960
+ray 1388: dist = 27.268309
+wall_h: 645.354070
+ray 1389: dist = 27.276861
+wall_h: 645.151738
+ray 1390: dist = 27.285437
+wall_h: 644.948966
+ray 1391: dist = 27.294037
+wall_h: 644.745752
+ray 1392: dist = 27.302661
+wall_h: 644.542098
+ray 1393: dist = 27.311309
+wall_h: 644.338004
+ray 1394: dist = 27.319982
+wall_h: 644.133469
+ray 1395: dist = 27.328678
+wall_h: 643.928494
+ray 1396: dist = 27.337399
+wall_h: 643.723079
+ray 1397: dist = 27.346144
+wall_h: 643.517224
+ray 1398: dist = 27.354913
+wall_h: 643.310928
+ray 1399: dist = 27.363707
+wall_h: 643.104194
+ray 1400: dist = 27.372525
+wall_h: 642.897019
+ray 1401: dist = 27.381367
+wall_h: 642.689406
+ray 1402: dist = 27.390234
+wall_h: 642.481353
+ray 1403: dist = 27.399125
+wall_h: 642.272860
+ray 1404: dist = 27.408041
+wall_h: 642.063929
+ray 1405: dist = 27.416981
+wall_h: 641.854559
+ray 1406: dist = 27.425946
+wall_h: 641.644751
+ray 1407: dist = 27.434936
+wall_h: 641.434503
+ray 1408: dist = 27.443950
+wall_h: 641.223818
+ray 1409: dist = 27.452989
+wall_h: 641.012694
+ray 1410: dist = 27.462053
+wall_h: 640.801132
+ray 1411: dist = 27.471141
+wall_h: 640.589132
+ray 1412: dist = 27.480254
+wall_h: 640.376694
+ray 1413: dist = 27.489393
+wall_h: 640.163818
+ray 1414: dist = 27.498556
+wall_h: 639.950505
+ray 1415: dist = 27.507743
+wall_h: 639.736755
+ray 1416: dist = 27.516956
+wall_h: 639.522567
+ray 1417: dist = 27.526194
+wall_h: 639.307942
+ray 1418: dist = 27.535457
+wall_h: 639.092880
+ray 1419: dist = 27.544745
+wall_h: 638.877382
+ray 1420: dist = 27.554058
+wall_h: 638.661446
+ray 1421: dist = 27.563396
+wall_h: 638.445075
+ray 1422: dist = 27.572759
+wall_h: 638.228266
+ray 1423: dist = 27.582148
+wall_h: 638.011022
+ray 1424: dist = 27.591562
+wall_h: 637.793342
+ray 1425: dist = 27.601001
+wall_h: 637.575225
+ray 1426: dist = 27.610466
+wall_h: 637.356673
+ray 1427: dist = 27.619955
+wall_h: 637.137685
+ray 1428: dist = 27.629471
+wall_h: 636.918262
+ray 1429: dist = 27.639012
+wall_h: 636.698403
+ray 1430: dist = 27.648578
+wall_h: 636.478109
+ray 1431: dist = 27.658170
+wall_h: 636.257381
+ray 1432: dist = 27.667787
+wall_h: 636.036217
+ray 1433: dist = 27.677430
+wall_h: 635.814618
+ray 1434: dist = 27.687098
+wall_h: 635.592585
+ray 1435: dist = 27.696793
+wall_h: 635.370118
+ray 1436: dist = 27.706513
+wall_h: 635.147216
+ray 1437: dist = 27.716259
+wall_h: 634.923881
+ray 1438: dist = 27.726030
+wall_h: 634.700111
+ray 1439: dist = 27.735828
+wall_h: 634.475907
+ray 1440: dist = 27.745651
+wall_h: 634.251270
+ray 1441: dist = 27.755501
+wall_h: 634.026199
+ray 1442: dist = 27.765376
+wall_h: 633.800695
+ray 1443: dist = 27.775277
+wall_h: 633.574758
+ray 1444: dist = 27.785205
+wall_h: 633.348387
+ray 1445: dist = 27.795158
+wall_h: 633.121584
+ray 1446: dist = 27.805138
+wall_h: 632.894348
+ray 1447: dist = 27.815144
+wall_h: 632.666680
+ray 1448: dist = 27.825176
+wall_h: 632.438579
+ray 1449: dist = 27.835234
+wall_h: 632.210046
+ray 1450: dist = 27.845319
+wall_h: 631.981080
+ray 1451: dist = 27.855430
+wall_h: 631.751683
+ray 1452: dist = 27.865567
+wall_h: 631.521854
+ray 1453: dist = 27.875731
+wall_h: 631.291593
+ray 1454: dist = 27.885921
+wall_h: 631.060901
+ray 1455: dist = 27.896138
+wall_h: 630.829777
+ray 1456: dist = 27.906381
+wall_h: 630.598223
+ray 1457: dist = 27.916651
+wall_h: 630.366237
+ray 1458: dist = 27.926948
+wall_h: 630.133820
+ray 1459: dist = 27.937271
+wall_h: 629.900973
+ray 1460: dist = 27.947622
+wall_h: 629.667695
+ray 1461: dist = 27.957999
+wall_h: 629.433987
+ray 1462: dist = 27.968402
+wall_h: 629.199849
+ray 1463: dist = 27.978833
+wall_h: 628.965280
+ray 1464: dist = 27.989290
+wall_h: 628.730282
+ray 1465: dist = 27.999775
+wall_h: 628.494854
+ray 1466: dist = 28.010287
+wall_h: 628.258997
+ray 1467: dist = 28.020825
+wall_h: 628.022710
+ray 1468: dist = 28.031391
+wall_h: 627.785993
+ray 1469: dist = 28.041984
+wall_h: 627.548848
+ray 1470: dist = 28.052604
+wall_h: 627.598047
+ray 1471: dist = 28.063251
+wall_h: 627.359935
+ray 1472: dist = 28.073925
+wall_h: 627.121394
+ray 1473: dist = 28.084627
+wall_h: 626.882425
+ray 1474: dist = 28.095356
+wall_h: 626.643027
+ray 1475: dist = 28.106113
+wall_h: 626.403201
+ray 1476: dist = 28.116897
+wall_h: 626.162947
+ray 1477: dist = 28.127709
+wall_h: 625.922265
+ray 1478: dist = 28.138548
+wall_h: 625.681155
+ray 1479: dist = 28.149415
+wall_h: 625.439617
+ray 1480: dist = 28.160309
+wall_h: 625.197652
+ray 1481: dist = 28.171231
+wall_h: 624.955260
+ray 1482: dist = 28.182181
+wall_h: 624.712440
+ray 1483: dist = 28.193159
+wall_h: 624.469194
+ray 1484: dist = 28.204164
+wall_h: 624.225521
+ray 1485: dist = 28.215198
+wall_h: 623.981421
+ray 1486: dist = 28.226259
+wall_h: 623.736894
+ray 1487: dist = 28.237349
+wall_h: 623.491941
+ray 1488: dist = 28.248466
+wall_h: 623.246562
+ray 1489: dist = 28.259611
+wall_h: 623.000757
+ray 1490: dist = 28.270785
+wall_h: 622.754527
+ray 1491: dist = 28.281987
+wall_h: 622.507870
+ray 1492: dist = 28.293217
+wall_h: 622.260788
+ray 1493: dist = 28.304475
+wall_h: 622.013281
+ray 1494: dist = 28.315761
+wall_h: 621.765349
+ray 1495: dist = 28.327076
+wall_h: 621.516991
+ray 1496: dist = 28.338420
+wall_h: 621.268209
+ray 1497: dist = 28.349791
+wall_h: 621.019002
+ray 1498: dist = 28.361192
+wall_h: 620.769371
+ray 1499: dist = 28.372621
+wall_h: 620.519316
+ray 1500: dist = 28.384078
+wall_h: 620.268836
+ray 1501: dist = 28.395565
+wall_h: 620.017933
+ray 1502: dist = 28.407080
+wall_h: 619.766605
+ray 1503: dist = 28.418623
+wall_h: 619.514854
+ray 1504: dist = 28.430196
+wall_h: 619.262680
+ray 1505: dist = 28.441797
+wall_h: 619.010082
+ray 1506: dist = 28.453428
+wall_h: 618.757062
+ray 1507: dist = 28.465087
+wall_h: 618.503618
+ray 1508: dist = 28.476775
+wall_h: 618.249752
+ray 1509: dist = 28.488493
+wall_h: 617.995463
+ray 1510: dist = 28.500239
+wall_h: 617.740751
+ray 1511: dist = 28.512015
+wall_h: 617.485618
+ray 1512: dist = 28.523820
+wall_h: 617.230062
+ray 1513: dist = 28.535654
+wall_h: 616.974085
+ray 1514: dist = 28.547518
+wall_h: 616.717685
+ray 1515: dist = 28.559411
+wall_h: 616.460865
+ray 1516: dist = 28.571334
+wall_h: 616.203623
+ray 1517: dist = 28.583286
+wall_h: 615.945960
+ray 1518: dist = 28.595267
+wall_h: 615.687875
+ray 1519: dist = 28.607278
+wall_h: 615.429370
+ray 1520: dist = 28.619319
+wall_h: 615.170445
+ray 1521: dist = 28.631390
+wall_h: 614.911098
+ray 1522: dist = 28.643490
+wall_h: 614.651332
+ray 1523: dist = 28.655620
+wall_h: 614.391146
+ray 1524: dist = 28.667780
+wall_h: 614.130539
+ray 1525: dist = 28.679970
+wall_h: 613.869513
+ray 1526: dist = 28.692190
+wall_h: 613.608067
+ray 1527: dist = 28.704440
+wall_h: 613.346202
+ray 1528: dist = 28.716720
+wall_h: 613.083918
+ray 1529: dist = 28.729030
+wall_h: 612.821214
+ray 1530: dist = 28.741371
+wall_h: 612.558092
+ray 1531: dist = 28.753741
+wall_h: 612.294551
+ray 1532: dist = 28.766143
+wall_h: 612.030591
+ray 1533: dist = 28.778574
+wall_h: 611.766214
+ray 1534: dist = 28.791036
+wall_h: 611.501418
+ray 1535: dist = 28.803528
+wall_h: 611.236204
+ray 1536: dist = 28.816051
+wall_h: 610.970572
+ray 1537: dist = 28.828605
+wall_h: 610.704523
+ray 1538: dist = 28.841189
+wall_h: 610.438056
+ray 1539: dist = 28.853804
+wall_h: 610.171173
+ray 1540: dist = 28.866449
+wall_h: 609.903872
+ray 1541: dist = 28.879126
+wall_h: 609.636154
+ray 1542: dist = 28.891833
+wall_h: 609.368019
+ray 1543: dist = 28.904572
+wall_h: 609.099468
+ray 1544: dist = 28.917341
+wall_h: 608.830501
+ray 1545: dist = 28.930141
+wall_h: 608.561118
+ray 1546: dist = 28.942973
+wall_h: 608.291318
+ray 1547: dist = 28.955836
+wall_h: 608.021103
+ray 1548: dist = 28.968730
+wall_h: 607.750473
+ray 1549: dist = 28.981655
+wall_h: 607.479427
+ray 1550: dist = 28.994612
+wall_h: 607.207965
+ray 1551: dist = 29.007600
+wall_h: 606.936089
+ray 1552: dist = 29.020619
+wall_h: 606.663798
+ray 1553: dist = 29.033671
+wall_h: 606.391092
+ray 1554: dist = 29.046753
+wall_h: 606.117972
+ray 1555: dist = 29.059868
+wall_h: 605.844437
+ray 1556: dist = 29.073014
+wall_h: 605.570489
+ray 1557: dist = 29.086192
+wall_h: 605.296126
+ray 1558: dist = 29.099402
+wall_h: 605.021350
+ray 1559: dist = 29.112643
+wall_h: 604.746160
+ray 1560: dist = 29.125917
+wall_h: 604.470557
+ray 1561: dist = 29.139223
+wall_h: 604.194541
+ray 1562: dist = 29.152560
+wall_h: 603.918112
+ray 1563: dist = 29.165930
+wall_h: 603.641270
+ray 1564: dist = 29.179333
+wall_h: 603.364015
+ray 1565: dist = 29.192767
+wall_h: 603.086348
+ray 1566: dist = 29.206234
+wall_h: 602.808269
+ray 1567: dist = 29.219733
+wall_h: 602.529778
+ray 1568: dist = 29.233265
+wall_h: 602.250875
+ray 1569: dist = 29.246829
+wall_h: 601.971560
+ray 1570: dist = 29.260426
+wall_h: 601.691834
+ray 1571: dist = 29.274055
+wall_h: 601.411697
+ray 1572: dist = 29.287717
+wall_h: 601.131148
+ray 1573: dist = 29.301412
+wall_h: 600.850189
+ray 1574: dist = 29.315140
+wall_h: 600.568819
+ray 1575: dist = 29.328901
+wall_h: 600.287039
+ray 1576: dist = 29.342695
+wall_h: 600.004848
+ray 1577: dist = 29.356522
+wall_h: 599.722247
+ray 1578: dist = 29.370382
+wall_h: 599.439236
+ray 1579: dist = 29.384275
+wall_h: 599.155816
+ray 1580: dist = 29.398201
+wall_h: 598.871986
+ray 1581: dist = 29.412161
+wall_h: 598.587747
+ray 1582: dist = 29.426154
+wall_h: 598.303099
+ray 1583: dist = 29.440181
+wall_h: 598.018041
+ray 1584: dist = 29.454241
+wall_h: 597.732575
+ray 1585: dist = 29.468335
+wall_h: 597.446701
+ray 1586: dist = 29.482462
+wall_h: 597.160418
+ray 1587: dist = 29.496623
+wall_h: 596.873726
+ray 1588: dist = 29.510818
+wall_h: 596.586627
+ray 1589: dist = 29.525046
+wall_h: 596.299121
+ray 1590: dist = 29.539309
+wall_h: 596.011206
+ray 1591: dist = 29.553606
+wall_h: 595.722884
+ray 1592: dist = 29.567936
+wall_h: 595.434156
+ray 1593: dist = 29.582301
+wall_h: 595.145020
+ray 1594: dist = 29.596700
+wall_h: 594.855477
+ray 1595: dist = 29.611134
+wall_h: 594.565528
+ray 1596: dist = 29.625601
+wall_h: 594.275172
+ray 1597: dist = 29.640103
+wall_h: 593.984410
+ray 1598: dist = 29.654640
+wall_h: 593.693242
+ray 1599: dist = 29.669211
+wall_h: 593.401669
+ray 1600: dist = 29.683817
+wall_h: 593.109690
+ray 1601: dist = 29.698457
+wall_h: 592.817305
+ray 1602: dist = 29.713132
+wall_h: 592.524515
+ray 1603: dist = 29.727842
+wall_h: 592.231321
+ray 1604: dist = 29.742587
+wall_h: 591.937721
+ray 1605: dist = 29.757367
+wall_h: 591.643717
+ray 1606: dist = 29.772182
+wall_h: 591.349309
+ray 1607: dist = 29.787032
+wall_h: 591.054496
+ray 1608: dist = 29.801917
+wall_h: 590.759279
+ray 1609: dist = 29.816838
+wall_h: 590.463659
+ray 1610: dist = 29.831794
+wall_h: 590.167635
+ray 1611: dist = 29.846785
+wall_h: 589.871208
+ray 1612: dist = 29.861812
+wall_h: 589.574377
+ray 1613: dist = 29.876874
+wall_h: 589.277143
+ray 1614: dist = 29.891972
+wall_h: 588.979507
+ray 1615: dist = 29.907106
+wall_h: 588.681468
+ray 1616: dist = 29.922276
+wall_h: 588.383027
+ray 1617: dist = 29.937481
+wall_h: 588.084184
+ray 1618: dist = 29.952723
+wall_h: 587.784939
+ray 1619: dist = 29.968000
+wall_h: 587.485292
+ray 1620: dist = 29.983314
+wall_h: 587.185243
+ray 1621: dist = 29.998663
+wall_h: 586.884793
+ray 1622: dist = 30.014049
+wall_h: 586.583942
+ray 1623: dist = 30.029471
+wall_h: 586.282690
+ray 1624: dist = 30.044930
+wall_h: 585.981037
+ray 1625: dist = 30.060425
+wall_h: 585.678984
+ray 1626: dist = 30.075957
+wall_h: 585.376531
+ray 1627: dist = 30.091525
+wall_h: 585.073677
+ray 1628: dist = 30.107130
+wall_h: 584.770424
+ray 1629: dist = 30.122772
+wall_h: 584.466770
+ray 1630: dist = 30.138451
+wall_h: 584.162718
+ray 1631: dist = 30.154166
+wall_h: 583.858266
+ray 1632: dist = 30.169919
+wall_h: 583.553415
+ray 1633: dist = 30.185709
+wall_h: 583.248165
+ray 1634: dist = 30.201536
+wall_h: 582.942516
+ray 1635: dist = 30.217400
+wall_h: 582.636469
+ray 1636: dist = 30.233302
+wall_h: 582.330024
+ray 1637: dist = 30.249241
+wall_h: 582.023181
+ray 1638: dist = 30.265217
+wall_h: 581.715940
+ray 1639: dist = 30.281231
+wall_h: 581.408302
+ray 1640: dist = 30.297283
+wall_h: 581.100266
+ray 1641: dist = 30.313373
+wall_h: 580.791832
+ray 1642: dist = 30.329500
+wall_h: 580.483002
+ray 1643: dist = 30.345665
+wall_h: 580.173776
+ray 1644: dist = 30.361869
+wall_h: 579.864152
+ray 1645: dist = 30.378110
+wall_h: 579.554132
+ray 1646: dist = 30.394390
+wall_h: 579.243717
+ray 1647: dist = 30.410708
+wall_h: 578.932905
+ray 1648: dist = 30.427064
+wall_h: 578.621697
+ray 1649: dist = 30.443458
+wall_h: 578.310094
+ray 1650: dist = 30.459891
+wall_h: 577.998096
+ray 1651: dist = 30.476363
+wall_h: 577.685703
+ray 1652: dist = 30.492873
+wall_h: 577.372915
+ray 1653: dist = 30.509423
+wall_h: 577.059732
+ray 1654: dist = 30.526011
+wall_h: 576.746155
+ray 1655: dist = 30.542638
+wall_h: 576.432184
+ray 1656: dist = 30.559303
+wall_h: 576.117818
+ray 1657: dist = 30.576009
+wall_h: 575.803059
+ray 1658: dist = 30.592753
+wall_h: 575.487906
+ray 1659: dist = 30.609536
+wall_h: 575.172360
+ray 1660: dist = 30.626359
+wall_h: 574.856421
+ray 1661: dist = 30.643222
+wall_h: 574.540089
+ray 1662: dist = 30.660123
+wall_h: 574.223365
+ray 1663: dist = 30.677065
+wall_h: 573.906247
+ray 1664: dist = 30.694046
+wall_h: 573.588738
+ray 1665: dist = 30.711067
+wall_h: 573.270836
+ray 1666: dist = 30.728128
+wall_h: 572.952543
+ray 1667: dist = 30.745229
+wall_h: 572.633858
+ray 1668: dist = 30.762370
+wall_h: 572.314782
+ray 1669: dist = 30.779551
+wall_h: 571.995314
+ray 1670: dist = 30.796773
+wall_h: 571.675456
+ray 1671: dist = 30.814035
+wall_h: 571.355207
+ray 1672: dist = 30.831337
+wall_h: 571.034567
+ray 1673: dist = 30.848680
+wall_h: 570.713537
+ray 1674: dist = 30.866063
+wall_h: 570.392117
+ray 1675: dist = 30.883488
+wall_h: 570.070307
+ray 1676: dist = 30.900953
+wall_h: 569.748107
+ray 1677: dist = 30.918458
+wall_h: 569.425518
+ray 1678: dist = 30.936005
+wall_h: 569.102540
+ray 1679: dist = 30.953593
+wall_h: 568.779173
+ray 1680: dist = 30.971223
+wall_h: 568.455417
+ray 1681: dist = 30.988893
+wall_h: 568.131273
+ray 1682: dist = 31.006605
+wall_h: 567.806740
+ray 1683: dist = 31.024358
+wall_h: 567.481819
+ray 1684: dist = 31.042153
+wall_h: 567.156510
+ray 1685: dist = 31.059990
+wall_h: 566.830814
+ray 1686: dist = 31.077868
+wall_h: 566.504730
+ray 1687: dist = 31.095788
+wall_h: 566.178259
+ray 1688: dist = 31.113750
+wall_h: 565.851401
+ray 1689: dist = 31.131755
+wall_h: 565.524156
+ray 1690: dist = 31.149801
+wall_h: 565.196525
+ray 1691: dist = 31.167890
+wall_h: 564.868507
+ray 1692: dist = 31.186020
+wall_h: 564.540104
+ray 1693: dist = 31.204194
+wall_h: 564.211314
+ray 1694: dist = 31.222410
+wall_h: 563.882139
+ray 1695: dist = 31.240668
+wall_h: 563.552579
+ray 1696: dist = 31.258970
+wall_h: 563.222633
+ray 1697: dist = 31.277314
+wall_h: 562.892302
+ray 1698: dist = 31.295701
+wall_h: 562.561587
+ray 1699: dist = 31.314131
+wall_h: 562.230487
+ray 1700: dist = 31.332605
+wall_h: 561.899003
+ray 1701: dist = 31.351121
+wall_h: 561.567134
+ray 1702: dist = 31.369681
+wall_h: 561.234882
+ray 1703: dist = 31.388284
+wall_h: 560.902247
+ray 1704: dist = 31.406931
+wall_h: 560.569228
+ray 1705: dist = 31.425622
+wall_h: 560.235825
+ray 1706: dist = 31.444356
+wall_h: 559.902040
+ray 1707: dist = 31.463134
+wall_h: 559.567872
+ray 1708: dist = 31.481957
+wall_h: 559.233322
+ray 1709: dist = 31.500823
+wall_h: 558.898390
+ray 1710: dist = 31.519733
+wall_h: 558.563075
+ray 1711: dist = 31.538688
+wall_h: 558.227379
+ray 1712: dist = 31.557687
+wall_h: 557.891301
+ray 1713: dist = 31.576731
+wall_h: 557.554842
+ray 1714: dist = 31.595819
+wall_h: 557.218002
+ray 1715: dist = 31.614952
+wall_h: 556.880781
+ray 1716: dist = 31.634130
+wall_h: 556.543179
+ray 1717: dist = 31.653353
+wall_h: 556.205197
+ray 1718: dist = 31.672620
+wall_h: 555.866835
+ray 1719: dist = 31.691933
+wall_h: 555.528093
+ray 1720: dist = 31.711291
+wall_h: 555.188971
+ray 1721: dist = 31.730695
+wall_h: 554.849469
+ray 1722: dist = 31.750144
+wall_h: 554.509589
+ray 1723: dist = 31.769638
+wall_h: 554.169329
+ray 1724: dist = 31.789179
+wall_h: 553.828691
+ray 1725: dist = 31.808765
+wall_h: 553.487674
+ray 1726: dist = 31.828397
+wall_h: 553.146279
+ray 1727: dist = 31.848075
+wall_h: 552.804506
+ray 1728: dist = 31.867799
+wall_h: 552.462354
+ray 1729: dist = 31.887569
+wall_h: 552.119826
+ray 1730: dist = 31.907386
+wall_h: 551.776920
+ray 1731: dist = 31.927249
+wall_h: 551.433637
+ray 1732: dist = 31.947159
+wall_h: 551.089976
+ray 1733: dist = 31.967116
+wall_h: 550.745940
+ray 1734: dist = 31.987119
+wall_h: 550.401527
+ray 1735: dist = 32.007170
+wall_h: 550.056737
+ray 1736: dist = 32.027267
+wall_h: 549.711572
+ray 1737: dist = 32.047411
+wall_h: 549.366031
+ray 1738: dist = 32.067603
+wall_h: 549.020114
+ray 1739: dist = 32.087843
+wall_h: 548.673822
+ray 1740: dist = 32.108129
+wall_h: 548.327156
+ray 1741: dist = 32.128464
+wall_h: 547.980114
+ray 1742: dist = 32.148846
+wall_h: 547.632698
+ray 1743: dist = 32.169276
+wall_h: 547.284907
+ray 1744: dist = 32.189754
+wall_h: 546.936743
+ray 1745: dist = 32.210280
+wall_h: 546.588205
+ray 1746: dist = 32.230855
+wall_h: 546.239293
+ray 1747: dist = 32.251477
+wall_h: 545.890007
+ray 1748: dist = 32.272149
+wall_h: 545.540349
+ray 1749: dist = 32.292868
+wall_h: 545.190318
+ray 1750: dist = 32.313637
+wall_h: 544.839914
+ray 1751: dist = 32.334454
+wall_h: 544.489138
+ray 1752: dist = 32.355321
+wall_h: 544.137989
+ray 1753: dist = 32.376236
+wall_h: 543.786469
+ray 1754: dist = 32.397201
+wall_h: 543.434577
+ray 1755: dist = 32.418215
+wall_h: 543.082314
+ray 1756: dist = 32.439279
+wall_h: 542.729679
+ray 1757: dist = 32.460392
+wall_h: 542.376673
+ray 1758: dist = 32.481554
+wall_h: 542.023297
+ray 1759: dist = 32.502767
+wall_h: 541.669550
+ray 1760: dist = 32.524030
+wall_h: 541.315433
+ray 1761: dist = 32.545342
+wall_h: 540.960946
+ray 1762: dist = 32.566705
+wall_h: 540.606090
+ray 1763: dist = 32.588119
+wall_h: 540.250863
+ray 1764: dist = 32.609582
+wall_h: 539.895268
+ray 1765: dist = 32.631097
+wall_h: 539.539304
+ray 1766: dist = 32.652662
+wall_h: 539.182970
+ray 1767: dist = 32.674278
+wall_h: 538.826269
+ray 1768: dist = 32.695945
+wall_h: 538.469198
+ray 1769: dist = 32.717663
+wall_h: 538.111760
+ray 1770: dist = 32.739432
+wall_h: 537.753955
+ray 1771: dist = 32.761253
+wall_h: 537.395781
+ray 1772: dist = 32.783125
+wall_h: 537.037240
+ray 1773: dist = 32.805049
+wall_h: 536.678333
+ray 1774: dist = 32.827025
+wall_h: 536.319058
+ray 1775: dist = 32.849053
+wall_h: 535.959417
+ray 1776: dist = 32.871133
+wall_h: 535.599409
+ray 1777: dist = 32.893265
+wall_h: 535.239036
+ray 1778: dist = 32.915449
+wall_h: 534.878296
+ray 1779: dist = 32.937686
+wall_h: 534.517191
+ray 1780: dist = 32.959975
+wall_h: 534.155721
+ray 1781: dist = 32.982317
+wall_h: 533.793885
+ray 1782: dist = 33.004712
+wall_h: 533.431685
+ray 1783: dist = 33.027160
+wall_h: 533.069120
+ray 1784: dist = 33.049661
+wall_h: 532.706191
+ray 1785: dist = 33.072216
+wall_h: 532.342898
+ray 1786: dist = 33.094824
+wall_h: 531.979241
+ray 1787: dist = 33.117485
+wall_h: 531.615220
+ray 1788: dist = 33.140201
+wall_h: 531.250836
+ray 1789: dist = 33.162970
+wall_h: 530.886089
+ray 1790: dist = 33.185793
+wall_h: 530.520978
+ray 1791: dist = 33.208670
+wall_h: 530.155506
+ray 1792: dist = 33.231602
+wall_h: 529.789671
+ray 1793: dist = 33.254588
+wall_h: 529.423474
+ray 1794: dist = 33.277628
+wall_h: 529.056915
+ray 1795: dist = 33.300723
+wall_h: 528.689994
+ray 1796: dist = 33.323874
+wall_h: 528.322712
+ray 1797: dist = 33.347079
+wall_h: 527.955069
+ray 1798: dist = 33.370339
+wall_h: 527.587065
+ray 1799: dist = 33.393655
+wall_h: 527.218700
+ray 1800: dist = 33.417026
+wall_h: 526.849976
+ray 1801: dist = 33.440453
+wall_h: 526.480891
+ray 1802: dist = 33.463935
+wall_h: 526.111446
+ray 1803: dist = 33.487473
+wall_h: 525.741641
+ray 1804: dist = 33.511068
+wall_h: 525.371478
+ray 1805: dist = 33.534718
+wall_h: 525.000955
+ray 1806: dist = 33.558426
+wall_h: 524.630073
+ray 1807: dist = 33.582189
+wall_h: 524.258833
+ray 1808: dist = 33.606009
+wall_h: 523.887234
+ray 1809: dist = 33.629886
+wall_h: 523.515278
+ray 1810: dist = 33.653820
+wall_h: 523.142963
+ray 1811: dist = 33.677811
+wall_h: 522.770291
+ray 1812: dist = 33.701860
+wall_h: 522.397262
+ray 1813: dist = 33.725966
+wall_h: 522.023875
+ray 1814: dist = 33.750129
+wall_h: 521.650132
+ray 1815: dist = 33.774350
+wall_h: 521.276033
+ray 1816: dist = 33.798629
+wall_h: 520.901577
+ray 1817: dist = 33.822966
+wall_h: 520.526765
+ray 1818: dist = 33.847362
+wall_h: 520.151597
+ray 1819: dist = 33.871815
+wall_h: 519.776073
+ray 1820: dist = 33.896328
+wall_h: 519.400195
+ray 1821: dist = 33.920899
+wall_h: 519.023961
+ray 1822: dist = 33.945529
+wall_h: 518.647373
+ray 1823: dist = 33.970218
+wall_h: 518.270430
+ray 1824: dist = 33.994966
+wall_h: 517.893133
+ray 1825: dist = 34.019773
+wall_h: 517.515482
+ray 1826: dist = 34.044640
+wall_h: 517.137477
+ray 1827: dist = 34.069567
+wall_h: 516.759119
+ray 1828: dist = 34.094553
+wall_h: 516.380407
+ray 1829: dist = 34.119600
+wall_h: 516.001343
+ray 1830: dist = 34.144706
+wall_h: 515.621926
+ray 1831: dist = 34.169873
+wall_h: 515.242156
+ray 1832: dist = 34.195101
+wall_h: 514.862035
+ray 1833: dist = 34.220389
+wall_h: 514.481561
+ray 1834: dist = 34.245738
+wall_h: 514.100736
+ray 1835: dist = 34.271148
+wall_h: 513.719560
+ray 1836: dist = 34.296620
+wall_h: 513.338032
+ray 1837: dist = 34.322152
+wall_h: 512.956153
+ray 1838: dist = 34.347747
+wall_h: 512.573924
+ray 1839: dist = 34.373402
+wall_h: 512.191345
+ray 1840: dist = 34.399120
+wall_h: 511.808415
+ray 1841: dist = 34.424900
+wall_h: 511.425136
+ray 1842: dist = 34.450742
+wall_h: 511.041507
+ray 1843: dist = 34.476647
+wall_h: 510.657529
+ray 1844: dist = 34.502614
+wall_h: 510.273201
+ray 1845: dist = 34.528644
+wall_h: 509.888525
+ray 1846: dist = 34.554737
+wall_h: 509.503501
+ray 1847: dist = 34.580892
+wall_h: 509.118128
+ray 1848: dist = 34.607112
+wall_h: 508.732407
+ray 1849: dist = 34.633394
+wall_h: 508.346339
+ray 1850: dist = 34.659741
+wall_h: 507.959923
+ray 1851: dist = 34.686151
+wall_h: 507.573160
+ray 1852: dist = 34.712625
+wall_h: 507.186050
+ray 1853: dist = 34.739164
+wall_h: 506.798593
+ray 1854: dist = 34.765766
+wall_h: 506.410790
+ray 1855: dist = 34.792434
+wall_h: 506.022641
+ray 1856: dist = 34.819166
+wall_h: 505.634146
+ray 1857: dist = 34.845963
+wall_h: 505.245305
+ray 1858: dist = 34.872825
+wall_h: 504.856119
+ray 1859: dist = 34.899753
+wall_h: 504.466588
+ray 1860: dist = 34.926746
+wall_h: 504.076712
+ray 1861: dist = 34.953805
+wall_h: 503.686492
+ray 1862: dist = 34.980929
+wall_h: 503.295927
+ray 1863: dist = 35.008120
+wall_h: 502.905018
+ray 1864: dist = 35.035377
+wall_h: 502.513766
+ray 1865: dist = 35.062700
+wall_h: 502.122170
+ray 1866: dist = 35.090091
+wall_h: 501.730231
+ray 1867: dist = 35.117547
+wall_h: 501.337949
+ray 1868: dist = 35.145071
+wall_h: 500.945325
+ray 1869: dist = 35.172663
+wall_h: 500.552358
+ray 1870: dist = 35.200321
+wall_h: 500.159048
+ray 1871: dist = 35.228048
+wall_h: 499.765397
+ray 1872: dist = 35.255842
+wall_h: 499.371405
+ray 1873: dist = 35.283704
+wall_h: 498.977071
+ray 1874: dist = 35.311634
+wall_h: 498.582396
+ray 1875: dist = 35.339633
+wall_h: 498.187380
+ray 1876: dist = 35.367701
+wall_h: 497.792024
+ray 1877: dist = 35.395837
+wall_h: 497.396328
+ray 1878: dist = 35.424042
+wall_h: 497.000291
+ray 1879: dist = 35.452317
+wall_h: 496.603915
+ray 1880: dist = 35.480661
+wall_h: 496.207200
+ray 1881: dist = 35.509074
+wall_h: 495.810145
+ray 1882: dist = 35.537558
+wall_h: 495.412751
+ray 1883: dist = 35.566111
+wall_h: 495.015019
+ray 1884: dist = 35.594735
+wall_h: 494.616949
+ray 1885: dist = 35.623429
+wall_h: 494.218540
+ray 1886: dist = 35.652194
+wall_h: 493.819794
+ray 1887: dist = 35.681030
+wall_h: 493.420710
+ray 1888: dist = 35.709937
+wall_h: 493.021289
+ray 1889: dist = 35.738915
+wall_h: 492.621530
+ray 1890: dist = 35.767965
+wall_h: 492.221436
+ray 1891: dist = 35.797087
+wall_h: 491.821004
+ray 1892: dist = 35.826280
+wall_h: 491.420237
+ray 1893: dist = 35.855546
+wall_h: 491.019134
+ray 1894: dist = 35.884884
+wall_h: 490.617695
+ray 1895: dist = 35.914295
+wall_h: 490.215921
+ray 1896: dist = 35.943779
+wall_h: 489.813811
+ray 1897: dist = 35.973335
+wall_h: 489.411367
+ray 1898: dist = 36.002965
+wall_h: 489.008589
+ray 1899: dist = 36.032669
+wall_h: 488.605476
+ray 1900: dist = 36.062446
+wall_h: 488.202029

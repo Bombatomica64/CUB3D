@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 18:09:03 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 11:54:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	draw_wall(t_game *game, double wall_h, double t_pix, double b_pix)
 	while (t_pix < b_pix)
 	{
 		better_pixel_put(game, game->ray.i_ray, t_pix,
-			reverse_bit(/*0x115221*/arr[(int)y_o * texture.width + (int)x_o]));
+			(/*0x115221*/arr[(int)y_o * texture.width + (int)x_o]));
 		y_o += factor;
 		t_pix++;
 	}
@@ -116,16 +116,16 @@ void	render_wall(t_game *game)
 	double	wall_h;
 	double	b_pix;
 	double	t_pix;
-	// double	correction;
 
-	// correction = cos((game->fov_rd / 2) - game->ray.angle);
-	// game->ray.dist *= cos(nor_angle(game->ray.angle - game->player.angle));
-	wall_h = (SCREEN_HEIGHT / game->ray.dist);/* * game->player.dist_proj * correction;  */
+	wall_h = fabs(((SCREEN_WIDTH / 2) / tan(FOV / 2))
+			* TILE_SIZE / (game->ray.dist * fast_cos(game->ray.angle, game)));
 	printf("wall_h: %f\n", wall_h);
+	if (wall_h > SCREEN_HEIGHT)
+		wall_h = SCREEN_HEIGHT;
 	b_pix = (SCREEN_HEIGHT / 2) + (wall_h / 2);
 	t_pix = (SCREEN_HEIGHT / 2) - (wall_h / 2);
 	if (b_pix > SCREEN_HEIGHT)
-		b_pix = SCREEN_HEIGHT;
+		b_pix = SCREEN_HEIGHT - 1;
 	if (t_pix < 0)
 		t_pix = 0;
 	draw_wall(game, wall_h, t_pix, b_pix);

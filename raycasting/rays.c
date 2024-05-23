@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:13:50 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/21 18:12:29 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 09:50:14 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	is_wall(double x, double y, t_game *game)
 	i = floor(x / TILE_SIZE);
 	j = floor(y / TILE_SIZE);
 	if (j >= game->map_height || i >= game->map_width)
-		return (0);
+		return (1);
 	if (i < game->map_width && j < game->map_width && i >= 0
 		&& j >= 0 && game->map[(int)j])
 		if (game->map[(int)j][(int)i] == '1')

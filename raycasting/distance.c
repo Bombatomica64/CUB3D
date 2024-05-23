@@ -6,18 +6,20 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 18:00:39 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 11:51:56 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-double get_wall_dist(t_game *game)
+double	get_wall_dist(t_game *game)
 {
-	double x_step, y_step;
-	double next_x, next_y;
-	int hit_side; // 0 for horizontal, 1 for vertical
-	// Initial step direction based on quadrant
+	double	x_step;
+	double	y_step;
+	double	next_x;
+	double	next_y;
+	int		hit_side;
+
 	if (game->ray.angle > 0 && game->ray.angle < M_PI)
 	{
 		y_step = TILE_SIZE;
@@ -31,12 +33,14 @@ double get_wall_dist(t_game *game)
 		hit_side = 1;
 	}
 	x_step = TILE_SIZE / tan(game->ray.angle);
-	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2) && x_step > 0)
+	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
+		&& x_step > 0)
 		x_step = -x_step;
-	else if ((game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2) && x_step < 0)
+	else if ((game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2)
+		&& x_step < 0)
 		x_step = -x_step;
-	next_x = game->player.x + (game->player.y - next_y) / tan(game->ray.angle);
-	// Loop until wall hit or out of bounds
+	next_x = game->player.x + (game->player.y - next_y)
+		/ tan(game->ray.angle);
 	while (is_wall(next_x, next_y, game))
 	{
 		next_x += x_step;
@@ -52,10 +56,12 @@ double get_wall_dist(t_game *game)
 				x_step = TILE_SIZE / tan(game->ray.angle);
 				if (game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
 					x_step = -x_step;
-				next_x = game->player.x + (game->player.y - next_y) / tan(game->ray.angle);
+				next_x = game->player.x
+					+ (game->player.y - next_y) / tan(game->ray.angle);
 			}
 		}
-		else if (hit_side == 0 && (game->ray.angle < 0 || game->ray.angle > M_PI))
+		else if (hit_side == 0
+			&& (game->ray.angle < 0 || game->ray.angle > M_PI))
 		{
 			if (check_inter(game->ray.angle, &next_y, &y_step, 0))
 			{
@@ -63,11 +69,12 @@ double get_wall_dist(t_game *game)
 				x_step = TILE_SIZE / tan(game->ray.angle);
 				if (game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2)
 					x_step = -x_step;
-				next_x = game->player.x + (game->player.y - next_y) / tan(game->ray.angle);
+				next_x = game->player.x + (game->player.y - next_y)
+					/ tan(game->ray.angle);
 			}
 		}
-		// Check for vertical intersection (similar to vertical_inter)
-		if (hit_side == 1 && (game->ray.angle < M_PI_2 || game->ray.angle > 3 * M_PI_2))
+		if (hit_side == 1
+			&& (game->ray.angle < M_PI_2 || game->ray.angle > 3 * M_PI_2))
 		{
 			if (check_inter(game->ray.angle, &next_x, &x_step, 0))
 			{
@@ -75,10 +82,12 @@ double get_wall_dist(t_game *game)
 				y_step = TILE_SIZE * tan(game->ray.angle);
 				if (game->ray.angle > M_PI && game->ray.angle < 2 * M_PI)
 					y_step = -y_step;
-				next_y = game->player.y + (next_x - game->player.x) * tan(game->ray.angle);
+				next_y = game->player.y + (next_x - game->player.x)
+					* tan(game->ray.angle);
 			}
 		}
-		else if (hit_side == 1 && (game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2))
+		else if (hit_side == 1
+			&& (game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2))
 		{
 			if (check_inter(game->ray.angle, &next_x, &x_step, 1))
 			{
@@ -86,11 +95,13 @@ double get_wall_dist(t_game *game)
 				y_step = TILE_SIZE * tan(game->ray.angle);
 				if (game->ray.angle < M_PI && game->ray.angle > 0)
 					y_step = -y_step;
-				next_y = game->player.y + (next_x - game->player.x) * tan(game->ray.angle);
+				next_y = game->player.y + (next_x - game->player.x)
+					* tan(game->ray.angle);
 			}
 		}
 	}
-	return (sqrt(pow(game->player.x - next_x, 2) + pow(game->player.y - next_y, 2)));
+	return (sqrt(pow(game->player.x - next_x, 2)
+			+ pow(game->player.y - next_y, 2)));
 }
 
 void	cast_rays(t_game *game)
