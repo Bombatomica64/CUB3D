@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/24 19:45:41 by marco            ###   ########.fr       */
+/*   Updated: 2024/05/24 23:27:15 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ double	get_wall_dist(t_game *game)
 void	cast_rays(t_game *game)
 {
 	//double	increment;
-	int y;
+	//int y;
 
-	game->ray.i_ray = 0;
+	/*game->ray.i_ray = 0;
 	//increment = game->fov_rd / SCREEN_WIDTH;
 	game->ray.angle = game->player.angle - (game->fov_rd / 2);
-	while (game->ray.i_ray <= SCREEN_WIDTH)
+	while (game->ray.i_ray <= SCREEN_WIDTH / 2)
 	{
 		y = (SCREEN_HEIGHT);
 		while (y >= 0)
@@ -58,20 +58,18 @@ void	cast_rays(t_game *game)
 		
 		}
 		game->ray.i_ray++;
+	*/
 
-
-		{
+		
 			double FOV_rad = FOV * M_PI / 180; // conversione in radianti
 			double FOV2 = FOV_rad / 2;
 			double alpha = FOV2; //angolo iniziale
+				printf(BLUE"alpha:%f\n"END, alpha);
+
 			double alpha_ray = game->ray.angle + FOV2;
 			double rotaz = alpha / (SCREEN_WIDTH / 2);
 			(void)alpha_ray;
-			//while (alpha != 0) //solo prima metà, cioè a nord per POV/2
-			//{
-			//	
-			//	alpha = alpha - rotaz;
-			//}
+			(void)rotaz;
 			
 			//--calcolo piccolo di delta x--
 			double Smallstepx; //distanza da p.y a y riga successiva (n00)
@@ -80,50 +78,111 @@ void	cast_rays(t_game *game)
 			double Wx; //intersezione da controllare con IsWall
 			double Wy; //intersezione con riga y (n00) IsWall
 			double d; //distanza finale
-
-			Smallstepy = fmod(game->player.y, TILE_SIZE); //y % TILE_SIZE in float
-			Smallstepx = Smallstepy / tan(alpha);
-			printf(PURPLE"sstepx:%f\nsstepy:%f\n"END, Smallstepx, Smallstepy);
-			dSmallstep = Smallstepy / sin(alpha);
-			printf(RED"dSmallstep:%f\n"END, dSmallstep);
-			Wx = game->player.x - Smallstepx;
-			Wy = game->player.y - Smallstepy; //per controllare se muro
-			printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
-
-			d = dSmallstep;
-			if (is_wall(Wx - TILE_SIZE, Wy - TILE_SIZE, game) == 1)
-			{
-				printf(RED"è muro e d:%f\n"END, d);
-				exit(0);
-			}
 			
-			//--se non è muro-- step da ripetere x--
-			double stepx;
-			double stepy;
-			double dstep;
-
-			stepy = TILE_SIZE;
-			stepx = stepy * tan(alpha);
-			dstep = stepy / cos(alpha);
-			printf(PURPLE"stepx:%f\nstepy:%f\n"END, stepx, stepy);
-			printf(RED"dstep:%f\n"END, dstep);
-
-			while (is_wall(Wx - TILE_SIZE, Wy - TILE_SIZE, game) == 0)
+			int displayx = 0;
+			while (alpha > 0.0009) //solo prima metà, cioè a nord per POV/2
 			{
-				Wx = Wx - stepx;
-				Wy = Wy - stepy;
-				d = d + dstep;
+				//alpha = 0.000826735;
+				printf(BLUE"alpha:%f\n"END, alpha);
+				
+				Smallstepy = fmod(game->player.y, TILE_SIZE); //y % TILE_SIZE in float
+				Smallstepx = Smallstepy * tan(alpha);
+				printf(PURPLE"sstepx:%f\nsstepy:%f\n"END, Smallstepx, Smallstepy);
+				dSmallstep = Smallstepx / sin(alpha);
+				printf(RED"dSmallstep:%f\n"END, dSmallstep);
+				Wx = game->player.x - Smallstepx;
+				Wy = game->player.y - Smallstepy; //per controllare se muro
 				printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
+
+				d = dSmallstep;
+				if (is_wall(Wx - TILE_SIZE, Wy - TILE_SIZE, game) == 1)
+				{
+					printf(RED"è muro e d:%f\n"END, d);
+					//exit(0);
+				}
+				else
+				{
+				
+				//--se non è muro-- step da ripetere x--
+				double stepx;
+				double stepy;
+				double dstep;
+
+				stepy = TILE_SIZE;
+				stepx = stepy * tan(alpha);
+				dstep = stepx / sin(alpha);
+				printf(PURPLE"stepx:%f\nstepy:%f\n"END, stepx, stepy);
+				printf(RED"dstep:%f\n"END, dstep);
+
+				while (is_wall(Wx - TILE_SIZE, Wy - TILE_SIZE, game) == 0)
+				{
+					Wx = Wx - stepx;
+					Wy = Wy - stepy;
+					d = d + dstep;
+					if (Wx < TILE_SIZE && Wy < TILE_SIZE)
+					{
+						Wx = TILE_SIZE;
+						Wy = TILE_SIZE;
+						break;
+					}
+					if (Wx < TILE_SIZE)
+					{
+						Wx = TILE_SIZE;
+						break;
+					}
+					if (Wy < TILE_SIZE)
+					{
+						Wy = TILE_SIZE;
+						break;
+					}
+					printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
+				}
+				printf(RED"è muro e d:%f\n"END, d);
+				}
+
+
+				int y = SCREEN_HEIGHT;
+				while (y>0)
+				{
+					double wallhight = SCREEN_HEIGHT - d;
+					if (wallhight < 0)
+						wallhight = 0;
+					if (y < 500)
+					{
+						if (y > wallhight / 2)
+							mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFFFFFF);
+						else
+							mlx_pixel_put(game->mlx, game->win, displayx, y, 0x00FF00);
+					}
+					//else
+					//{
+						//if (y < wallhight / 2)
+						//	mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFFFFFF);
+						//else
+						//	mlx_pixel_put(game->mlx, game->win, displayx, y, 0x00FF00);
+					//}
+					y--;
+				}
+					displayx++;
+
+
+
+
+
+				
+				//ciclo while
+				alpha = alpha - rotaz;
 			}
-			printf(RED"è muro e d:%f\n"END, d);
-			
-			
-
 			
 
 			
 			
 
+			
+
+			
+			
+
 
 
 
@@ -132,8 +191,15 @@ void	cast_rays(t_game *game)
 
 
 			
-		}
-		exit(0);
+		
+		//long int i = 0;
+		//while (i < 10000000000)
+		//	{i++;
+		//	printf("i:%ld\n", i);}
+		//exit(0);
+
+
+		
 		//game->ray.flag = 0;
 		//game->ray.angle = nor_angle(game->ray.angle);*/
 		//game->ray.dist = get_wall_dist(game);
@@ -141,7 +207,7 @@ void	cast_rays(t_game *game)
 		//render_wall(game);
 		//game->ray.angle += increment;
 		
-	}
+	//}
 	return ;
 }
 
