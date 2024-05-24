@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/24 23:27:15 by marco            ###   ########.fr       */
+/*   Updated: 2024/05/25 00:47:52 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ void	cast_rays(t_game *game)
 				
 				Smallstepy = fmod(game->player.y, TILE_SIZE); //y % TILE_SIZE in float
 				Smallstepx = Smallstepy * tan(alpha);
-				printf(PURPLE"sstepx:%f\nsstepy:%f\n"END, Smallstepx, Smallstepy);
+				//printf(PURPLE"sstepx:%f\nsstepy:%f\n"END, Smallstepx, Smallstepy);
 				dSmallstep = Smallstepx / sin(alpha);
-				printf(RED"dSmallstep:%f\n"END, dSmallstep);
+				//printf(RED"dSmallstep:%f\n"END, dSmallstep);
 				Wx = game->player.x - Smallstepx;
 				Wy = game->player.y - Smallstepy; //per controllare se muro
-				printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
+				//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
 
 				d = dSmallstep;
 				if (is_wall(Wx - TILE_SIZE, Wy - TILE_SIZE, game) == 1)
@@ -111,8 +111,8 @@ void	cast_rays(t_game *game)
 				stepy = TILE_SIZE;
 				stepx = stepy * tan(alpha);
 				dstep = stepx / sin(alpha);
-				printf(PURPLE"stepx:%f\nstepy:%f\n"END, stepx, stepy);
-				printf(RED"dstep:%f\n"END, dstep);
+				//printf(PURPLE"stepx:%f\nstepy:%f\n"END, stepx, stepy);
+				//printf(RED"dstep:%f\n"END, dstep);
 
 				while (is_wall(Wx - TILE_SIZE, Wy - TILE_SIZE, game) == 0)
 				{
@@ -135,35 +135,28 @@ void	cast_rays(t_game *game)
 						Wy = TILE_SIZE;
 						break;
 					}
-					printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
+					//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
 				}
 				printf(RED"è muro e d:%f\n"END, d);
 				}
 
 
-				int y = SCREEN_HEIGHT;
-				while (y>0)
+				int y = 0;
+				
+				while (y <= floor(d) / 2)
 				{
-					double wallhight = SCREEN_HEIGHT - d;
-					if (wallhight < 0)
-						wallhight = 0;
-					if (y < 500)
-					{
-						if (y > wallhight / 2)
-							mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFFFFFF);
-						else
-							mlx_pixel_put(game->mlx, game->win, displayx, y, 0x00FF00);
-					}
-					//else
-					//{
-						//if (y < wallhight / 2)
-						//	mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFFFFFF);
-						//else
-						//	mlx_pixel_put(game->mlx, game->win, displayx, y, 0x00FF00);
-					//}
-					y--;
+					mlx_pixel_put(game->mlx, game->win, displayx, y, 0x00FFFF);
+					mlx_pixel_put(game->mlx, game->win, displayx, SCREEN_HEIGHT - y, 0x00FFFF);
+					y++;
 				}
-					displayx++;
+
+				while( y <= SCREEN_HEIGHT / 2)
+				{
+					mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFFFF00);
+					mlx_pixel_put(game->mlx, game->win, displayx, SCREEN_HEIGHT - y, 0xFFFF00);
+					y++;
+				}
+				displayx++;
 
 
 
