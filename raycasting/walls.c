@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   walls.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:49:46 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 12:46:30 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:29:11 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,10 @@ void	draw_down(t_game *game, double wall_h, double b_pix)
 	double		x_o;
 	double		y_o;
 	t_img		texture;
-	u_int32_t	*arr;
 	double		factor;
 	int			i;
 
 	texture = game->txts.imgs[5];
-	arr = (u_int32_t *)game->txts.addr[5];
 	factor = (double)texture.height / (SCREEN_HEIGHT - wall_h);
 	x_o = get_xo(game, texture, 'f');
 	y_o = b_pix * factor;
@@ -85,12 +83,10 @@ void	draw_up(t_game *game, double wall_h, double t_pix)
 	double		x_o;
 	double		y_o;
 	t_img		texture;
-	u_int32_t	*arr;
 	double		factor;
 	int			i;
 
 	texture = game->txts.imgs[4];
-	arr = (u_int32_t *)game->txts.addr[4];
 	factor = (double)texture.height / (SCREEN_HEIGHT - wall_h);
 	x_o = get_xo(game, texture, 'c');
 	y_o = t_pix * factor;

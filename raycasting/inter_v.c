@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_v.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:36:52 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 12:46:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:27:31 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,16 @@ double	vertical_inter(t_game *game)
 	double	y_step;
 	double	v_x;
 	double	v_y;
-	int		pixel;
 
 	if (game->ray.angle < M_PI / 2 || game->ray.angle > 3 * M_PI / 2)
 	{
 		x_step = TILE_SIZE;
 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
-		pixel = 0;
 	}
 	else
 	{
 		x_step = -TILE_SIZE;
 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE - 1;
-		pixel = 1;
 	}
 	y_step = TILE_SIZE * tan(game->ray.angle);
 	if ((game->ray.angle > M_PI && game->ray.angle < 2 * M_PI && y_step > 0)

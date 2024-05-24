@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_h.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:24:48 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 12:46:38 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:26:35 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,19 +90,16 @@ double	horizontal_inter(t_game *game)
 	double	y_step;
 	double	h_y;
 	double	h_x;
-	int		pixel;
 
 	if (game->ray.angle > 0 && game->ray.angle < M_PI)
 	{
 		y_step = TILE_SIZE;
 		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
-		pixel = 0;
 	}
 	else
 	{
 		y_step = -TILE_SIZE;
 		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE - 1;
-		pixel = 1;
 	}
 	x_step = TILE_SIZE / tan(game->ray.angle);
 	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)

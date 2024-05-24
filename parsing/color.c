@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:50:06 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/16 18:45:56 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:26:26 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ static char	*itoa_base_hex(int n)
 {
 	char	*hex;
 	char	*base;
-	size_t	tmp;
 	size_t	len;
 
 	base = "0123456789ABCDEF";
 	len = 2;
-	tmp = n;
 	hex = ft_calloc(sizeof(char), (len + 1));
 	hex[len] = 0;
 	while (len--)
