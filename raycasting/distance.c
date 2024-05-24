@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 17:49:03 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/24 12:18:06 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,31 @@ double	get_wall_dist(t_game *game)
 	t_pos		steps;
 
 	steps.x = TILE_SIZE / tan(game->ray.angle);
-	if (game->ray.angle > M_PI && game->ray.angle < 2 * M_PI)
+	printf("angle = %f\n", game->ray.angle);
+	printf("tan = %f\n", tan(game->ray.angle));
+	if (game->ray.angle > M_PI / 2 && game->ray.angle < 3 * M_PI / 2)
 	{
 		steps.x = -steps.x;
-		game->ray.next.x = floor(game->player.x / TILE_SIZE) * TILE_SIZE - 1;
+		game->ray.next.x = (game->player.x / TILE_SIZE) * TILE_SIZE - 1;
 	}
 	else
-		game->ray.next.x = floor(game->player.x / TILE_SIZE)
+		game->ray.next.x = (game->player.x / TILE_SIZE)
 			* TILE_SIZE + TILE_SIZE;
 	steps.y = TILE_SIZE * tan(game->ray.angle);
-	if (game->ray.angle > 0 && game->ray.angle < M_PI)
+	if (game->ray.angle < M_PI / 2 || game->ray.angle > 3 * M_PI / 2)
 	{
 		steps.y = -steps.y;
 		game->ray.next.y = game->player.y - 1;
 	}
 	else
 		game->ray.next.y = game->player.y + TILE_SIZE;
+	printf("next.x = %f, next.y = %f\n", game->ray.next.x, game->ray.next.y);
 	while (TRUE)
 	{
-	printf("step x: %f, step y: %f\n", steps.x, steps.y);
-		if (is_wall(game->ray.next.x, game->ray.next.y, game))
-			break ;
 		game->ray.next.x += steps.x;
 		game->ray.next.y += steps.y;
+		if (is_wall(game->ray.next.x, game->ray.next.y, game) )
+			break ;
 	}
 	return (sqrt(pow(game->player.x - game->ray.next.x, 2)
 			+ pow(game->player.y - game->ray.next.y, 2)));
