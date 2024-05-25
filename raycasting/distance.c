@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/25 16:19:12 by marco            ###   ########.fr       */
+/*   Updated: 2024/05/25 23:11:00 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,17 @@ double	get_wall_dist(t_game *game)
 // Q2 Q1
 // Q3 Q4
 
-
 void	cast_rays(t_game *game)
 {		
 	double FOV_rad = FOV * M_PI / 180; // conversione in radianti
+	printf(BLUE"FOV_rad:%f\n"END, FOV_rad);
 	double FOV2 = FOV_rad / 2;
 	double alpha = FOV2; //angolo iniziale
 	//printf(BLUE"alpha:%f\n"END, alpha);
 
 	//double alpha_tot = game->ray.angle + FOV2; non funge game->ray.angle
-	double alpha_tot = FOV_rad + FOV2; //quindi lo hardcodo a 90 (N) + 45
+	double alpha_tot = M_PI_2 + FOV2; //quindi lo hardcodo a 90 (N) + 45
+	printf(BLUE"alpha_tot:%f\n"END, alpha_tot);
 	double alpha_current = alpha_tot;
 	double rotaz = alpha / (SCREEN_WIDTH / 2);
 	int signx;
@@ -65,7 +66,7 @@ void	cast_rays(t_game *game)
 	int signalpha = -1;
 	
 	int displayx = 0;
-	while (alpha_current > M_PI_2 - FOV2) //angolo del player - FOV/2 ???
+	while (alpha_current > alpha_tot - FOV_rad) //angolo del player - FOV/2 ???
 	{
 		//NORMALIZZA Angolo
 		
@@ -92,7 +93,7 @@ void	cast_rays(t_game *game)
 		}
 		
 		//printf(GREEN"signx:%d\nsigny:%d\n"END, signx, signy);
-		//printf(BLUE"alpha:%f\n"END, alpha);
+		printf(BLUE"alpha:%f\n"END, alpha);
 		if ((signx == -1 && signy == -1) || (signx == 1 && signy == 1))
 		{
 			Smallstepy = fmod(game->player.y, TILE_SIZE); //y % TILE_SIZE in float
@@ -105,7 +106,7 @@ void	cast_rays(t_game *game)
 			Smallstepx = Smallstepy * tan(alpha);
 			dSmallstep = Smallstepx / sin(alpha);
 		}
-		//printf(PURPLE"sstepx:%f\nsstepy:%f\n"END, Smallstepx, Smallstepy);
+		printf(PURPLE"sstepx:%f\nsstepy:%f\n"END, Smallstepx, Smallstepy);
 		
 		//printf(RED"dSmallstep:%f\n"END, dSmallstep);
 		Wx = game->player.x + Smallstepx * signx;
@@ -117,22 +118,34 @@ void	cast_rays(t_game *game)
 		{	
 			if (is_wall(Wx, Wy - TILE_SIZE, game) == 1)
 			{
-				alpha = alpha - rotaz;
 				alpha_current = alpha_current - rotaz;
-				//printf(RED"è muro e d:%f\n"END, d);
+				alpha = alpha + rotaz * (signalpha);
+				if (alpha <= 0)
+				{
+					signalpha = 1;
+				}
+				printf(GREEN"wx:%f\nwy:%f\n"END, Wx, Wy);
+				printf(RED"è muro e smalld:%f\n"END, d);
 				//exit(0);
-				break;
+				continue;
 			}
 		}
 		else
 		{
 			if (is_wall(Wx, Wy + TILE_SIZE, game) == 1)
 			{
-				alpha = alpha - rotaz;
+				printf(BLUE"alpha_current:%f\n"END, alpha_current);
 				alpha_current = alpha_current - rotaz;
-				//printf(RED"è muro e d:%f\n"END, d);
+				alpha = alpha + rotaz * (signalpha);
+				if (alpha <= 0)
+				{
+					signalpha = 1;
+				}
+				printf(GREEN"wx:%f\nwy:%f\n"END, Wx, Wy);
+
+				printf(RED"è muro e smalld:%f\n"END, d);
 				//exit(0);
-				break;
+				continue;
 			}
 		}
 		
@@ -154,7 +167,7 @@ void	cast_rays(t_game *game)
 			dstep = stepx / sin(alpha); 
 		}
 		
-		//printf(PURPLE"stepx:%f\nstepy:%f\n"END, stepx, stepy);
+		printf(PURPLE"stepx:%f\nstepy:%f\n"END, stepx, stepy);
 		//printf(RED"dstep:%f\n"END, dstep);
 
 		if ((signx == 1 && signy == -1) || (signx == -1 && signy == -1))
@@ -164,6 +177,8 @@ void	cast_rays(t_game *game)
 				Wx = Wx + stepx * signx;
 				Wy = Wy + stepy * signy;
 				d = d + dstep;
+				if (d > 1000) //errore non trova il muro
+					break;
 				//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
 			}
 		}
@@ -174,14 +189,30 @@ void	cast_rays(t_game *game)
 				Wx = Wx + stepx * signx;
 				Wy = Wy + stepy * signy;
 				d = d + dstep;
+				if (d > 1000) //errore non trova il muro
+					break;
 				//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
 			}
 		}
-		//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
 
-		//printf(RED"è muro e d:%f\n"END, d);
 		
+		if (d > 1000) //errore non trova il muro. stampa comunque righe nere, boh?
+		{
+			alpha_current = alpha_current - rotaz;
+			alpha = alpha + rotaz * (signalpha);
+			for (int y = 0; y <= SCREEN_HEIGHT; y++)
+				mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFF0000);
+			displayx++;
+			if (alpha <= 0)
+			{
+				signalpha = 1;
+			}
+			continue;
+		}
+		printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
 
+		printf(RED"è muro e d:%f\n"END, d);
+		
 		
 
 		//print wall
@@ -200,16 +231,15 @@ void	cast_rays(t_game *game)
 		}
 		displayx++;
 
+
 		//ciclo while
 		alpha_current = alpha_current - rotaz;
 		alpha = alpha + rotaz * (signalpha);
 		if (alpha <= 0)
 		{
-			//alpha = FOV - rotaz;
 			signalpha = 1;
 		}
 	}
-
 
 
 	return ;

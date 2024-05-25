@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:05:29 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/25 00:38:19 by marco            ###   ########.fr       */
+/*   Updated: 2024/05/25 22:52:01 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ double	get_angle(int x, int y, t_game *game)
 
 void	init_player(t_game *game, int x, int y)
 {
-	game->player.x = 450;//x - TILE_SIZE / 2;
+	game->player.x = 650;//x - TILE_SIZE / 2;
 	game->player.y = 350;//y - TILE_SIZE / 2;
 	game->player.angle = get_angle(x, y, game);
 	game->player.dist_proj = (SCREEN_WIDTH / 2) / tan(game->fov_rd / 2);

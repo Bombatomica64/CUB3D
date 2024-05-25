@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/24 17:42:02 by marco            ###   ########.fr       */
+/*   Updated: 2024/05/25 22:53:17 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
-# define FOV 90
+# define FOV 120
 
 /**
  * @brief 2D space vector
