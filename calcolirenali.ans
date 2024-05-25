@@ -1,0 +1,33 @@
+[34mRe-compiled cub3D successfully![0m
+[30mPlease work🙏[0m
+NO
+SO
+WE
+EA
+C
+F
+--------------------
+C assets/sky_powder.xpm
+F assets/end_bricks.xpm
+NO assets/end_bricks.xpm
+SO assets/stonebrick_mossy.xpm
+EA assets/stonebrick.xpm
+WE assets/mud_bricks.xpm
+--------------------
+111111111
+111101111
+100000001
+1000N0001
+111111111
+--------------------
+txts[0] = C assets/sky_powder.xpm
+txts[1] = F assets/end_bricks.xpm
+txts[2] = NO assets/end_bricks.xpm
+txts[3] = SO assets/stonebrick_mossy.xpm
+txts[4] = EA assets/stonebrick.xpm
+txts[5] = WE assets/mud_bricks.xpm
+player.x: 450.000000
+player.y: 350.000000
+player.angle: 1.570796
+player.dist_proj: 950.000000
+game.mlx[0x55fc6301dc40]
