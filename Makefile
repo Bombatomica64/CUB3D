@@ -6,13 +6,13 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/22 10:35:36 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/24 11:16:39 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
-CC = cc -Wall -Wextra -Werror -g -O3 -lm
+CC = cc -Wall -Wextra -Werror -g -lm
 
 MLX_DIR = ./minilibx
 MLX = $(MLX_DIR)/libmlx.a
