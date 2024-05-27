@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 12:56:55 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:42:05 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**parse_map(char *map_path, t_game *game);
 
 // srcs/put_image.c
 void	*put_xmp(void *mlx, char *filename, int *width, int *height);
-t_img	get_img(char *path, t_game *game);
+t_img	*get_img(char *path, t_game *game);
 
 // error_management.c
 
@@ -71,12 +71,13 @@ void	render_wall(t_game *game);
 
 //distance.c
 
-void	cast_rays(t_game *game);
+int	cast_rays(t_game *game);
 
 //textures.c
 
+void	get_texture_int(t_game *game);
 char	**texture_names( void );
-t_img	get_floor(char *path, t_game *game, int nm);
+t_img	*get_floor(char *path, t_game *game, int nm);
 void	get_textures(t_game *game);
 void	get_texture_adresses(t_game *game);
 int		get_texture_id(t_game *game);
@@ -99,5 +100,12 @@ t_pos	smallstep_q1(t_game *game);
 t_pos	smallstep_q2(t_game *game);
 t_pos	smallstep_q3(t_game *game);
 t_pos	smallstep_q4(t_game *game);
+t_pos	calculate_first_step_and_steps(t_game *game, double ray_angle);
+
+//pixels.c
+
+void	pixels_init(t_game *game);
+void	pixels_update(t_game *game, int x);
+
 
 #endif

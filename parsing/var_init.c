@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:13:53 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 12:00:19 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:36:00 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,8 @@ t_game	*init_game(char *map_path)
 	game->input.map_and_txt = parse_map(map_path, game);
 	split_map(game);
 	get_textures(game);
-	get_texture_adresses(game);
+	get_texture_int(game);
 	check_map(game);
-	if (SCREEN_WIDTH > SCREEN_HEIGHT)
-		game->size = SCREEN_WIDTH / 9;
-	else
-		game->size = SCREEN_HEIGHT / 9;
-	if (game->map_height > game->map_width)
-		game->shape = game->size / game->map_height;
-	else
-		game->shape = game->size / game->map_width;
+	pixels_init(game);
 	return (game);
 }

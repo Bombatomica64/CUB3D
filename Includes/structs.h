@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 12:52:53 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:31:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <math.h>
 # include <colours.h>
+# include <stdbool.h>
 # include "../minilibx/mlx.h"
 # include "../minilibx/mlx_int.h"
 # include "../libft/get_next_line_bonus.h"
@@ -44,7 +45,7 @@
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
-# define FOV 120
+# define FOV 90
 
 /**
  * @brief 2D space vector
@@ -61,13 +62,16 @@ typedef struct s_player
 	double		x;
 	double		y;
 	double		angle;
-	t_pos		pos; // 0, 50, 0
-	t_pos		dir; // 0, 50, 2
+	char		name;
+	t_pos		pos;
+	t_pos		dir;
+	t_pos		plane;
 	double		dist_proj; // distance from player to projection plane
 }	t_player;
 
 typedef struct s_color
 {
+	char	*α;
 	char	*r;
 	char	*g;
 	char	*b;
@@ -75,20 +79,41 @@ typedef struct s_color
 
 typedef struct s_ray
 {
-	double		angle; //angle of ray
+	double		camera_x; //x coordinate of the camera plane
+	t_pos		dir; //direction of the ray
+	t_pos		map; //current map square
+	t_pos		step; //lenght of the steps
+	t_pos		side_dist; //distance to the next side
+	t_pos		delta_dist; //distance between two sides
 	double		dist; //distance to wall
-	t_pos		next; //next intersection point
+	double		wall_x; //x coordinate of the wall
+	int			side; // 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH
+	int			line_len; //lenght of the line to draw
+	int			drw_start; //start of the line to draw
+	int			drw_end; //end of the line to draw
 	int			i_ray; //ray number
-	int			flag; //1 = vertical, 0 = horizontal
 }	t_ray;
+
+typedef struct s_chadimg
+{
+	t_img	*img;
+	char	*addr;
+	int		bpp;
+	int		size_line;
+	int		endian;
+	int		*data;
+}	t_Myimg;
 
 typedef struct s_texture
 {
 	char	**txts;
 	char	**txt_nm; //alloced in var_init.c
-	t_img	imgs[6]; // 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F
-	size_t	addr[6]; // 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F
-	int		endians[6];
+	t_Myimg	imgs[6]; // 0 = NORTH, 1 = EAST, 2 = WEST, 3 = SOUTH, 4 = FLOOR, 5 = CEILING
+	int		x;
+	int		y;
+	int		size;
+	double	pos;
+	double	step;
 }	t_texture;
 
 typedef struct s_input
@@ -112,6 +137,7 @@ typedef struct s_game
 	void		*mlx;
 	void		*win;
 	char		**map;
+	int			**pixels;
 	int			map_width;
 	int			map_height;
 	double		sin_table[360];
@@ -121,8 +147,6 @@ typedef struct s_game
 	t_player	player;
 	t_texture	txts;
 	double		fov_rd;
-	double		shape;
-	double		size;
 }	t_game;
 
 #endif

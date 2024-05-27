@@ -22,12 +22,13 @@ void	*put_xmp(void *mlx, char *filename, int *width, int *height)
 	return (img);
 }
 
-t_img	get_img(char *path, t_game *game)
+t_img	*get_img(char *path, t_game *game)
 {
-	t_img	img;
+	t_img	*img;
 
-	img.image = mlx_xpm_file_to_image(game->mlx, path, &img.width, &img.height);
-	if (!img.image)
-		return (err("Failed to load texture : "), err(path), img);
+	img = NULL;
+	img = mlx_xpm_file_to_image(game->mlx, path, &img->width, &img->height);
+	if (!img)
+		return (err("Failed to load texture : "), err(path), NULL);
 	return (img);
 }

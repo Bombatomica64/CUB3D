@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_v.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:36:52 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 14:27:31 by marco            ###   ########.fr       */
+/*   Updated: 2024/05/27 18:36:12 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,34 +62,34 @@
 // 	return (INT_MAX);
 // }
 
-double	vertical_inter(t_game *game)
-{
-	double	x_step;
-	double	y_step;
-	double	v_x;
-	double	v_y;
+// double	vertical_inter(t_game *game)
+// {
+// 	double	x_step;
+// 	double	y_step;
+// 	double	v_x;
+// 	double	v_y;
 
-	if (game->ray.angle < M_PI / 2 || game->ray.angle > 3 * M_PI / 2)
-	{
-		x_step = TILE_SIZE;
-		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
-	}
-	else
-	{
-		x_step = -TILE_SIZE;
-		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE - 1;
-	}
-	y_step = TILE_SIZE * tan(game->ray.angle);
-	if ((game->ray.angle > M_PI && game->ray.angle < 2 * M_PI && y_step > 0)
-		|| (game->ray.angle < M_PI && y_step < 0))
-	{
-		y_step = -y_step;
-	}
-	v_y = game->player.y + (v_x - game->player.x) * tan(game->ray.angle);
-	while (is_wall(v_x, v_y, game))
-	{
-		v_x += x_step;
-		v_y += y_step;
-	}
-	return (fabs((game->player.x - v_x) / cos(game->ray.angle)));
-}
+// 	if (game->ray.angle < M_PI / 2 || game->ray.angle > 3 * M_PI / 2)
+// 	{
+// 		x_step = TILE_SIZE;
+// 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
+// 	}
+// 	else
+// 	{
+// 		x_step = -TILE_SIZE;
+// 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE - 1;
+// 	}
+// 	y_step = TILE_SIZE * tan(game->ray.angle);
+// 	if ((game->ray.angle > M_PI && game->ray.angle < 2 * M_PI && y_step > 0)
+// 		|| (game->ray.angle < M_PI && y_step < 0))
+// 	{
+// 		y_step = -y_step;
+// 	}
+// 	v_y = game->player.y + (v_x - game->player.x) * tan(game->ray.angle);
+// 	while (is_wall(v_x, v_y, game))
+// 	{
+// 		v_x += x_step;
+// 		v_y += y_step;
+// 	}
+// 	return (fabs((game->player.x - v_x) / cos(game->ray.angle)));
+// }
