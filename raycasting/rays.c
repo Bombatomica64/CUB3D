@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:13:50 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 12:48:47 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:56:40 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,25 @@ t_img	get_texture(t_game *game)
 			return (game->txts.imgs[1]);
 		else
 			return (game->txts.imgs[0]);
+	}
+}
+
+int	get_texture_id(t_game *game)
+{
+	game->ray.angle = nor_angle(game->ray.angle);
+	if (game->ray.flag == 0)
+	{
+		if (game->ray.angle > M_PI / 2 && game->ray.angle < 3 * M_PI / 2)
+			return (3);
+		else
+			return (2);
+	}
+	else
+	{
+		if (game->ray.angle > 0 && game->ray.angle < M_PI)
+			return (1);
+		else
+			return (0);
 	}
 }
 

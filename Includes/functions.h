@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 11:03:37 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:56:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char	**texture_names( void );
 t_img	get_floor(char *path, t_game *game, int nm);
 void	get_textures(t_game *game);
 void	get_texture_adresses(t_game *game);
+int		get_texture_id(t_game *game);
 
 //player.c
 
@@ -90,5 +91,13 @@ void	init_trig(t_game *game);
 double	fast_cos(double angle, t_game *game);
 double	fast_sin(double angle, t_game *game);
 double	fast_tan(double angle, t_game *game);
+
+//smallsteps.c
+
+t_pos	get_wal(t_game *game, t_pos first_step, t_pos steps);
+t_pos	smallstep_q1(t_game *game);
+t_pos	smallstep_q2(t_game *game);
+t_pos	smallstep_q3(t_game *game);
+t_pos	smallstep_q4(t_game *game);
 
 #endif

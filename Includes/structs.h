@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:07:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 10:17:23 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:52:53 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@
 # ifndef M_PI_2
 #  define M_PI_2 1.57079632679489661923	/* pi/2 */
 # endif
+# ifndef M_PI_4
+#  define M_PI_4 0.78539816339744830962	/* pi/4 */
+# endif
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
@@ -50,6 +53,7 @@ typedef struct s_pos
 {
 	double	x;
 	double	y;
+	int		wall_hit; // 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH
 }	t_pos;
 
 typedef struct s_player
@@ -117,6 +121,8 @@ typedef struct s_game
 	t_player	player;
 	t_texture	txts;
 	double		fov_rd;
+	double		shape;
+	double		size;
 }	t_game;
 
 #endif

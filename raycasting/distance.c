@@ -6,21 +6,19 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/25 23:11:00 by marco            ###   ########.fr       */
-
+/*   Updated: 2024/05/27 13:00:21 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <functions.h>
 
 double	get_wall_dist(t_game *game)
 {
-	t_pos		steps;
+	t_pos	steps;
 
 	steps.x = TILE_SIZE / tan(game->ray.angle);
-	if (game->ray.angle > M_PI || (game->ray.angle > 0
-			&& game->ray.angle < M_PI))
+	if (game->ray.angle > M_PI
+		|| (game->ray.angle > 0 && game->ray.angle < M_PI))
 		steps.x = -steps.x;
 	steps.y = TILE_SIZE * tan(game->ray.angle);
 	if (game->ray.angle > M_PI / 2 && game->ray.angle < 3 * M_PI / 2)
@@ -43,198 +41,36 @@ double	get_wall_dist(t_game *game)
 // Q3 Q4
 
 void	cast_rays(t_game *game)
-{		
-	double FOV_rad = FOV * M_PI / 180; // conversione in radianti
-	printf(BLUE"FOV_rad:%f\n"END, FOV_rad);
-	double FOV2 = FOV_rad / 2;
-	double alpha = FOV2; //angolo iniziale
-	//printf(BLUE"alpha:%f\n"END, alpha);
-
-	//double alpha_tot = game->ray.angle + FOV2; non funge game->ray.angle
-	double alpha_tot = M_PI_2 + FOV2; //quindi lo hardcodo a 90 (N) + 45
-	printf(BLUE"alpha_tot:%f\n"END, alpha_tot);
+{
+	// double	game->fov_rd = FOV * M_PI / 180;  conversione in radianti ??? c'e' gia
+	printf(BLUE "game->fov_rd:%f\n" END, game->fov_rd);
+	double	FOV2 = game->fov_rd / 2;
+	double	alpha = FOV2; // angolo iniziale
+	// double alpha_tot = game->ray.angle + FOV2; non funge game->ray.angle
+	double alpha_tot = M_PI_2 + FOV2; // quindi lo hardcodo a 90 (N) + 45
+	printf(BLUE "alpha_tot:%f\n" END, alpha_tot);
 	double alpha_current = alpha_tot;
 	double rotaz = alpha / (SCREEN_WIDTH / 2);
-	int signx;
-	int signy;
-	
+	int	signx;
+	int	signy;
 	//--calcolo piccolo di delta x--
-	double Smallstepx; //distanza da p.y a y riga successiva (n00)
-	double Smallstepy; //distanza da p.x a interzezione con riga y (n00)
-	double dSmallstep;
-	double Wx; //intersezione da controllare con IsWall
-	double Wy; //intersezione con riga y (n00) IsWall
-	double d; //distanza finale
-	int signalpha = -1;
-	
-	int displayx = 0;
-	while (alpha_current > alpha_tot - FOV_rad) //angolo del player - FOV/2 ???
+	int		signalpha = -1;
+	int		displayx = 0;
+	double	d;
+	t_pos	w_pos;
+
+	while (alpha_current > alpha_tot - game->fov_rd) // angolo del player - FOV/2 ???
 	{
-		//NORMALIZZA Angolo
-		
-		//segno per quadrante
 		if (alpha_current >= 0 && alpha_current < M_PI_2)
-		{
-			signx = 1;
-			signy = -1;
-		}
+			w_pos = smallstep_q1(game);
 		else if (alpha_current >= M_PI_2 && alpha_current < M_PI)
-		{
-			signx = -1;
-			signy = -1;
-		}
+			w_pos = smallstep_q2(game);
 		else if (alpha_current >= M_PI && alpha_current < 3 * M_PI_2)
-		{
-			signx = -1;
-			signy = 1;
-		}
+			w_pos = smallstep_q3(game);
 		else
-		{
-			signx = 1;
-			signy = 1;
-		}
+			w_pos = smallstep_q4(game);
+		d = sqrt(pow(game->player.x - w_pos.x, 2) + pow(game->player.y - w_pos.y, 2));
 		
-		//printf(GREEN"signx:%d\nsigny:%d\n"END, signx, signy);
-		printf(BLUE"alpha:%f\n"END, alpha);
-		if ((signx == -1 && signy == -1) || (signx == 1 && signy == 1))
-		{
-			Smallstepy = fmod(game->player.y, TILE_SIZE); //y % TILE_SIZE in float
-			Smallstepx = Smallstepy * tan(alpha);
-			dSmallstep = Smallstepx / sin(alpha);
-		}
-		else
-		{
-			Smallstepy = fmod(game->player.y, TILE_SIZE); //x % TILE_SIZE in float
-			Smallstepx = Smallstepy * tan(alpha);
-			dSmallstep = Smallstepx / sin(alpha);
-		}
-		printf(PURPLE"sstepx:%f\nsstepy:%f\n"END, Smallstepx, Smallstepy);
-		
-		//printf(RED"dSmallstep:%f\n"END, dSmallstep);
-		Wx = game->player.x + Smallstepx * signx;
-		Wy = game->player.y + Smallstepy * signy; //per controllare se muro
-		//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
-
-		d = dSmallstep;
-		if ((signx == 1 && signy == -1) || (signx == -1 && signy == -1))
-		{	
-			if (is_wall(Wx, Wy - TILE_SIZE, game) == 1)
-			{
-				alpha_current = alpha_current - rotaz;
-				alpha = alpha + rotaz * (signalpha);
-				if (alpha <= 0)
-				{
-					signalpha = 1;
-				}
-				printf(GREEN"wx:%f\nwy:%f\n"END, Wx, Wy);
-				printf(RED"è muro e smalld:%f\n"END, d);
-				//exit(0);
-				continue;
-			}
-		}
-		else
-		{
-			if (is_wall(Wx, Wy + TILE_SIZE, game) == 1)
-			{
-				printf(BLUE"alpha_current:%f\n"END, alpha_current);
-				alpha_current = alpha_current - rotaz;
-				alpha = alpha + rotaz * (signalpha);
-				if (alpha <= 0)
-				{
-					signalpha = 1;
-				}
-				printf(GREEN"wx:%f\nwy:%f\n"END, Wx, Wy);
-
-				printf(RED"è muro e smalld:%f\n"END, d);
-				//exit(0);
-				continue;
-			}
-		}
-		
-		//--se non è muro-- step da ripetere x--
-		double stepx;
-		double stepy;
-		double dstep;
-
-		if ((signx == -1 && signy == -1) || (signx == 1 && signy == 1))
-		{
-			stepy = TILE_SIZE;
-			stepx = stepy * tan(alpha);
-			dstep = stepx / sin(alpha); 
-		}
-		else
-		{
-			stepy = TILE_SIZE;
-			stepx = stepy * tan(alpha);
-			dstep = stepx / sin(alpha); 
-		}
-		
-		printf(PURPLE"stepx:%f\nstepy:%f\n"END, stepx, stepy);
-		//printf(RED"dstep:%f\n"END, dstep);
-
-		if ((signx == 1 && signy == -1) || (signx == -1 && signy == -1))
-		{
-			while (is_wall(Wx, Wy - TILE_SIZE, game) == 0)
-			{
-				Wx = Wx + stepx * signx;
-				Wy = Wy + stepy * signy;
-				d = d + dstep;
-				if (d > 1000) //errore non trova il muro
-					break;
-				//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
-			}
-		}
-		else
-		{
-			while (is_wall(Wx, Wy + TILE_SIZE, game) == 0)
-			{
-				Wx = Wx + stepx * signx;
-				Wy = Wy + stepy * signy;
-				d = d + dstep;
-				if (d > 1000) //errore non trova il muro
-					break;
-				//printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
-			}
-		}
-
-		
-		if (d > 1000) //errore non trova il muro. stampa comunque righe nere, boh?
-		{
-			alpha_current = alpha_current - rotaz;
-			alpha = alpha + rotaz * (signalpha);
-			for (int y = 0; y <= SCREEN_HEIGHT; y++)
-				mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFF0000);
-			displayx++;
-			if (alpha <= 0)
-			{
-				signalpha = 1;
-			}
-			continue;
-		}
-		printf(GREEN"Wx:%f\nWy:%f\n"END, Wx, Wy);
-
-		printf(RED"è muro e d:%f\n"END, d);
-		
-		
-
-		//print wall
-		int y = 0;
-		while (y <= floor(d) / 2)
-		{
-			mlx_pixel_put(game->mlx, game->win, displayx, y, 0x00FFFF);
-			mlx_pixel_put(game->mlx, game->win, displayx, SCREEN_HEIGHT - y, 0x00FFFF);
-			y++;
-		}
-		while( y <= SCREEN_HEIGHT / 2)
-		{
-			mlx_pixel_put(game->mlx, game->win, displayx, y, 0xFFFF00);
-			mlx_pixel_put(game->mlx, game->win, displayx, SCREEN_HEIGHT - y, 0xFFFF00);
-			y++;
-		}
-		displayx++;
-
-
-		//ciclo while
 		alpha_current = alpha_current - rotaz;
 		alpha = alpha + rotaz * (signalpha);
 		if (alpha <= 0)
@@ -243,9 +79,132 @@ void	cast_rays(t_game *game)
 		}
 	}
 
-
 	return ;
 }
+/*
+void	ray_casting(t_cub3d *data, float ray_angle,
+	int id_ray, mlx_image_t *img)
+{
+	double	height_wall;
+	int		xstart;
+	int		ystart;
+	int		xend;
+	int		yend;
+
+	data->dist = data->dist * cos(to_rad(ray_angle) - to_rad(data->angle));
+	height_wall = ((data->size_shape) * HEIGHT_WIN) / data->dist;
+	xstart = id_ray;
+	xend = id_ray;
+	ystart = (HEIGHT_WIN / 2) - (height_wall / 2);
+	yend = (HEIGHT_WIN / 2) + (height_wall / 2);
+	if (yend > HEIGHT_WIN)
+		yend = HEIGHT_WIN;
+	data->texture_offset_x = data->present_texture * img->width;
+	data->wall_start = ystart;
+	while (ystart < yend)
+	{
+		data->texture_offset_y = (((float)ystart - (float)data->wall_start)
+				/ (float)height_wall) * img->height;
+		if (ystart >= 0 && ystart < HEIGHT_WIN)
+			mlx_put_pixel(data->img, xstart, (int)ystart,
+				get_texel(img, data->texture_offset_x, data->texture_offset_y));
+		ystart += 1;
+	}
+}
+
+void	check_ray_draw_down(t_cub3d *data, float ray_angle)
+{
+	data->hores_inters_y = floor((data->py / data->size_shape) + 1)
+		* data->size_shape;
+	data->hores_inters_x = data->px + (data->hores_inters_y - data->py)
+		/ tan(to_rad(ray_angle));
+	data->next_hor_inters_y = data->hores_inters_y + data->size_shape;
+	data->next_hor_inters_x = data->hores_inters_x + ((data->next_hor_inters_y
+				- data->hores_inters_y) / tan(to_rad(ray_angle)));
+	data->step_hor_y = data->size_shape;
+	data->step_hor_x = data->next_hor_inters_x - data->hores_inters_x;
+	while (((int)(data->hores_inters_x / data->size_shape)) < data->width_map
+		&& ((int)(data->hores_inters_y / data->size_shape)) < data->height_map
+		&& data->hores_inters_x >= 0 && data->hores_inters_y >= 0
+		&& data->map[(int)(data->hores_inters_y
+			/ data->size_shape)][(int)(data->hores_inters_x
+			/ data->size_shape)] != '1')
+	{
+		data->hores_inters_y += data->step_hor_y;
+		data->hores_inters_x += data->step_hor_x;
+	}
+}
+
+void	check_ray_draw_up(t_cub3d *data, float ray_angle)
+{
+	data->hores_inters_y = floor((data->py / data->size_shape))
+		* data->size_shape;
+	data->hores_inters_x = data->px - ((data->py - data->hores_inters_y)
+			/ tan(to_rad(ray_angle)));
+	data->next_hor_inters_y = data->hores_inters_y - data->size_shape;
+	data->next_hor_inters_x = data->hores_inters_x - ((data->hores_inters_y
+				- data->next_hor_inters_y) / tan(to_rad(ray_angle)));
+	data->step_hor_y = data->size_shape;
+	data->step_hor_x = data->next_hor_inters_x - data->hores_inters_x;
+	while (((int)(data->hores_inters_x / data->size_shape)) < data->width_map
+		&& ((int)((data->hores_inters_y - 1)
+				/ data->size_shape)) < data->height_map
+		&& data->hores_inters_x >= 0 && data->hores_inters_y >= 0
+		&& data->map[(int)((data->hores_inters_y - 1)
+			/ data->size_shape)][(int)(data->hores_inters_x
+			/ data->size_shape)] != '1')
+	{
+		data->hores_inters_y -= data->step_hor_y;
+		data->hores_inters_x += data->step_hor_x;
+	}
+}
+
+void	check_ray_draw_right(t_cub3d *data, float ray_angle)
+{
+	data->vertcl_inters_x = floor((data->px / data->size_shape) + 1)
+		* data->size_shape;
+	data->vertcl_inters_y = data->py - ((data->px - data->vertcl_inters_x)
+			* tan(to_rad(ray_angle)));
+	data->next_ver_inters_x = data->vertcl_inters_x + data->size_shape;
+	data->next_ver_inters_y = data->vertcl_inters_y - ((data->vertcl_inters_x
+				- data->next_ver_inters_x) * tan(to_rad(ray_angle)));
+	data->step_ver_x = data->size_shape;
+	data->step_ver_y = data->next_ver_inters_y - data->vertcl_inters_y;
+	while (((int)(data->vertcl_inters_x / data->size_shape)) < data->width_map
+		&& ((int)(data->vertcl_inters_y / data->size_shape)) < data->height_map
+		&& data->vertcl_inters_x >= 0 && data->vertcl_inters_y >= 0
+		&& data->map[(int)(data->vertcl_inters_y
+			/ data->size_shape)][(int)(data->vertcl_inters_x
+			/ data->size_shape)] != '1')
+	{
+		data->vertcl_inters_y += data->step_ver_y;
+		data->vertcl_inters_x += data->step_ver_x;
+	}
+}
+
+void	check_ray_draw_left(t_cub3d *data, float ray_angle)
+{
+	data->vertcl_inters_x = floor((data->px / data->size_shape))
+		* data->size_shape;
+	data->vertcl_inters_y = data->py - ((data->px - data->vertcl_inters_x)
+			* tan(to_rad(ray_angle)));
+	data->next_ver_inters_x = data->vertcl_inters_x - data->size_shape;
+	data->next_ver_inters_y = data->vertcl_inters_y - ((data->vertcl_inters_x
+				- data->next_ver_inters_x) * tan(to_rad(ray_angle)));
+	data->step_ver_x = data->size_shape;
+	data->step_ver_y = data->next_ver_inters_y - data->vertcl_inters_y;
+	while (((int)((data->vertcl_inters_x - 1)
+			/ data->size_shape)) < data->width_map
+		&& ((int)(data->vertcl_inters_y / data->size_shape)) < data->height_map
+		&& data->vertcl_inters_x >= 0 && data->vertcl_inters_y >= 0
+		&& data->map[(int)(data->vertcl_inters_y
+			/ data->size_shape)][(int)((data->vertcl_inters_x - 1)
+			/ data->size_shape)] != '1')
+	{
+		data->vertcl_inters_y += data->step_ver_y;
+		data->vertcl_inters_x -= data->step_ver_x;
+	}
+}*/
 
 // double	get_wall_dist(t_game *game)
 // {
