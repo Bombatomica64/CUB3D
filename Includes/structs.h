@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:38:51 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:20:14 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ typedef struct s_ray
 typedef struct s_chadimg
 {
 	t_img	img;
-	char	*addr;
 	int		bpp;
 	int		size_line;
 	int		endian;

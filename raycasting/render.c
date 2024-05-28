@@ -6,30 +6,48 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:21:19 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:39:44 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-static void	frame_set(t_game *game, t_myImg *image, int x, int y)
+void	set_pixel(t_Myimg *image, int x, int y, int color)
+{
+	int	pixel;
+
+	pixel = y * (image->size_line / 4) + x;
+	printf("pixel: %d\n", pixel);
+	image->data[pixel] = color;
+}
+
+static void	frame_set(t_game *game, t_Myimg *image, int x, int y)
 {
 	if (game->pixels[y][x] > 0)
 		set_pixel(image, x, y, game->pixels[y][x]);
 	else if (y < SCREEN_HEIGHT / 2)
-		set_pixel(image, x, y, game->textures.col_ceiling.value);
+		set_pixel(image, x, y, 0x87CEEB);
 	else if (y < SCREEN_HEIGHT -1)
-		set_pixel(image, x, y, game->textures.col_floor.value);
+		set_pixel(image, x, y, 0x2F4F4F);
+}
+
+static t_Myimg	empty_myimg(t_game *game, int width, int height)
+{
+	t_Myimg	image;
+
+	image.img.image = mlx_new_image(game->mlx, width, height);
+	image.data = (int *)mlx_get_data_addr(image.img.image, &image.img.bpp,
+			&image.size_line, &image.endian);
+	return (image);
 }
 
 static void	render_frame(t_game *game)
 {
-	t_myImg	image;
+	t_Myimg	image;
 	int		x;
 	int		y;
 
-	image.img = NULL;
-	image = empty_myImg(game, SCREEN_WIDTH, SCREEN_HEIGHT);
+	image = empty_myimg(game, SCREEN_WIDTH, SCREEN_HEIGHT);
 	y = 0;
 	while (y < SCREEN_HEIGHT)
 	{
@@ -41,24 +59,24 @@ static void	render_frame(t_game *game)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(game->mlx, game->window, image.img, 0, 0);
-	mlx_destroy_image(game->mlx, image.img);
+	mlx_put_image_to_window(game->mlx, game->win, image.img.image, 0, 0);
+	mlx_destroy_image(game->mlx, image.img.image);
 }
 
 void	render_images(t_game *game)
 {
 	pixels_init(game);
-	raycasting(game);
+	cast_rays(game);
 	render_frame(game);
 	// if (BONUS)
 	// 	render_minimap(game);
 }
 
-int	render(t_game *game)
-{
-	game->player.has_moved += ft_movement(game);
-	if (game->player.has_moved == 0)
-		return (0);
-	render_images(game);
-	return (0);
-}
+// int	render(t_game *game)
+// {
+// 	game->player.has_moved += ft_movement(game);
+// 	if (game->player.has_moved == 0)
+// 		return (0);
+// 	render_images(game);
+// 	return (0);
+// }
