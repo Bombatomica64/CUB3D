@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_management.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 16:42:14 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 18:37:52 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:54:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ void	err_exit(char *msg, t_game *game)
 {
 	ft_putstr_fd(msg, 2);
 	ft_free_matrix(game->input.map_and_txt);
-	mlx_destroy_image(game->mlx, game->txts.imgs[0].img);
-	mlx_destroy_image(game->mlx, game->txts.imgs[1].img);
-	mlx_destroy_image(game->mlx, game->txts.imgs[2].img);
-	mlx_destroy_image(game->mlx, game->txts.imgs[3].img);
-	mlx_destroy_image(game->mlx, game->txts.imgs[4].img);
-	// mlx_destroy_image(game->mlx, game->txts.imgs[5].image);
+	mlx_destroy_image(game->mlx, game->txts.imgs[0].img.image);
+	mlx_destroy_image(game->mlx, game->txts.imgs[1].img.image);
+	mlx_destroy_image(game->mlx, game->txts.imgs[2].img.image);
+	mlx_destroy_image(game->mlx, game->txts.imgs[3].img.image);
+	mlx_destroy_image(game->mlx, game->txts.imgs[4].img.image);
+	// mlx_destroy_image(game->mlx, game->txts.imgs[5].img.image);
 	ft_free_matrix(game->txts.txts);
 	ft_free_matrix(game->map);
+	ft_free_matrix((char **)game->pixels);
 	free(game->txts.txt_nm);
 	if (game->win)
 		mlx_destroy_window(game->mlx, game->win);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 11:05:29 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 17:31:31 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:43:02 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	init_player_east_west(t_player *player)
 		return ;
 }
 
-void	init_player(t_game *game, int x, int y)
+void	init_player(t_game *game, int y, int x)
 {
 	game->player.x = x * TILE_SIZE + (TILE_SIZE / 2);
 	game->player.y = y * TILE_SIZE + (TILE_SIZE / 2);

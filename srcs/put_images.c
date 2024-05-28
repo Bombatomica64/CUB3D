@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_images.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 15:52:58 by lmicheli          #+#    #+#             */
-/*   Updated: 2023/12/18 16:01:14 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:32:49 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@ void	*put_xmp(void *mlx, char *filename, int *width, int *height)
 	return (img);
 }
 
-t_img	*get_img(char *path, t_game *game)
+t_img	get_img(char *path, t_game *game)
 {
-	t_img	*img;
+	t_img	img;
 
-	img = NULL;
-	img = mlx_xpm_file_to_image(game->mlx, path, &img->width, &img->height);
-	if (!img)
-		return (err("Failed to load texture : "), err(path), NULL);
+	img.image = mlx_xpm_file_to_image(game->mlx, path, &img.width, &img.height);
+	if (!img.image)
+		return (err("Failed to load texture : "), err(path), img);
 	return (img);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 17:46:39 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 18:42:05 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:44:27 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**parse_map(char *map_path, t_game *game);
 
 // srcs/put_image.c
 void	*put_xmp(void *mlx, char *filename, int *width, int *height);
-t_img	*get_img(char *path, t_game *game);
+t_img	get_img(char *path, t_game *game);
 
 // error_management.c
 
@@ -71,13 +71,13 @@ void	render_wall(t_game *game);
 
 //distance.c
 
-int	cast_rays(t_game *game);
+int		cast_rays(t_game *game);
 
 //textures.c
 
 void	get_texture_int(t_game *game);
 char	**texture_names( void );
-t_img	*get_floor(char *path, t_game *game, int nm);
+t_img	get_floor(char *path, t_game *game, int nm);
 void	get_textures(t_game *game);
 void	get_texture_adresses(t_game *game);
 int		get_texture_id(t_game *game);
@@ -106,6 +106,5 @@ t_pos	calculate_first_step_and_steps(t_game *game, double ray_angle);
 
 void	pixels_init(t_game *game);
 void	pixels_update(t_game *game, int x);
-
 
 #endif

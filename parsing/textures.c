@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 12:06:50 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 18:40:28 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:40:38 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ char	**texture_names(void)
 	return (txt_nm);
 }
 
-t_img	*get_floor(char *path, t_game *game, int nm)
+t_img	get_floor(char *path, t_game *game, int nm)
 {
-	t_img	*img = NULL;
+	t_img	img;
 	t_color	color;
 	int		i;
 	int		start;
 	int		len;
 
-	len = ft_strlen(path);
 	if (ft_isdigit(path[0]))
 	{
+		len = ft_strlen(path);
 		printf("path = %s\n", path);
 		i = 0;
 		start = 0;
@@ -54,9 +54,11 @@ t_img	*get_floor(char *path, t_game *game, int nm)
 		color.b = ft_substr(path, start, i - start);
 		path = create_color_file(color, game, nm);
 	}
-	img = mlx_xpm_file_to_image(game->mlx, path + skip_spaces2(path), &img->width, &img->height);
-	if (!img)
-		return (err("Failed to load texture : "), err(path), NULL);
+	fprintf(stderr, "path = |%s|\n", path);
+	img = get_img(path + skip_spaces2(path), game);
+	if (!img.image)
+		return (err("Failed to load texture : "), err(path),
+			err_exit("", game), img);
 	return (img);
 }
 
@@ -109,8 +111,9 @@ void	get_texture_int(t_game *game)
 	i = 0;
 	while (i < 5)
 	{
-		game->txts.imgs[i].addr = mlx_get_data_addr(game->txts.imgs[i].img->image,
+		game->txts.imgs[i].data = (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
 				&game->txts.imgs[i].bpp, &game->txts.imgs[i].size_line,
 				&game->txts.imgs[i].endian);
+		i++;
 	}
 }

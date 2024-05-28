@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 11:30:33 by gduranti          #+#    #+#             */
-/*   Updated: 2024/05/27 18:34:57 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:43:33 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void	pixels_update(t_game *game, int x)
 
 	texture = get_index(game);
 	game->txts.x = (int)(game->ray.wall_x * game->txts.size);
-	if ((game->ray.side == 0 && game->ray.dir.x < 0) || (game->ray.side == 1 && game->ray.dir.y > 0))
+	if ((game->ray.side == 0 && game->ray.dir.x < 0)
+		|| (game->ray.side == 1 && game->ray.dir.y > 0))
 		game->txts.x = game->txts.size - game->txts.x - 1;
 	game->txts.step = 1.0 * game->txts.size / game->ray.line_len;
 	game->txts.pos = (game->ray.drw_start - SCREEN_HEIGHT
