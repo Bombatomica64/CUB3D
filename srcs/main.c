@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:46:20 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:17:03 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,12 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	printf("game.mlx[%p]\n", game->mlx);
-	// mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[4].image, 0, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[0].img.image, 0, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[1].img.image, 100, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[2].img.image, 200, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[3].img.image, 300, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[4].img.image, 400, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[5].img.image, 500, 0);
 	render_images(game);
 	key_input(game);
 	mlx_destroy_display(game->mlx);

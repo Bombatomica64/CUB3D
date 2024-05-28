@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 12:24:48 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:12:57 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	get_textures(t_game *game)
 		else if (ft_strncmp(game->txts.txts[curs.i], "C", 1) == 0)
 			game->txts.imgs[4].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
-		else if (ft_strncmp(game->txts.txts[curs.i], "F", 5) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "F", 1) == 0)
 			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
 		curs.i++;

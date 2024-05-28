@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 12:39:44 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:17:39 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	set_pixel(t_Myimg *image, int x, int y, int color)
 	int	pixel;
 
 	pixel = y * (image->size_line / 4) + x;
-	printf("pixel: %d\n", pixel);
 	image->data[pixel] = color;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:39:11 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:26:11 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,5 @@ void	init_player(t_game *game, int y, int x)
 	init_player_north_south(&game->player);
 	init_player_east_west(&game->player);
 	printf("player.x: %f\nplayer.y: %f\nplayer.angle: %f\n", game->player.x, game->player.y, game->player.angle);
+	printf("player.dir.x: %f\nplayer.dir.y: %f\nplayer.plane.x: %f\nplayer.plane.y: %f\n", game->player.dir.x, game->player.dir.y, game->player.plane.x, game->player.plane.y);
 }
