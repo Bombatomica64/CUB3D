@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 10:43:02 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 11:39:10 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ static void	init_player_north_south(t_player *player)
 	{
 		player->dir.x = 0;
 		player->dir.y = 1;
-		player->plane.x = -0.66;
+		player->plane.x = -(double)SCREEN_HEIGHT / (double)SCREEN_WIDTH;
 		player->plane.y = 0;
 	}
 	else if (player->name == 'N')
 	{
 		player->dir.x = 0;
 		player->dir.y = -1;
-		player->plane.x = 0.66;
+		player->plane.x = (double)SCREEN_HEIGHT / (double)SCREEN_WIDTH;
 		player->plane.y = 0;
 	}
 	else
@@ -39,14 +39,14 @@ static void	init_player_east_west(t_player *player)
 		player->dir.x = -1;
 		player->dir.y = 0;
 		player->plane.x = 0;
-		player->plane.y = -0.66;
+		player->plane.y = -(double)SCREEN_HEIGHT / (double)SCREEN_WIDTH;
 	}
 	else if (player->name == 'E')
 	{
 		player->dir.x = 1;
 		player->dir.y = 0;
 		player->plane.x = 0;
-		player->plane.y = 0.66;
+		player->plane.y = (double)SCREEN_HEIGHT / (double)SCREEN_WIDTH;
 	}
 	else
 		return ;
@@ -59,6 +59,5 @@ void	init_player(t_game *game, int y, int x)
 	game->player.name = game->map[y][x];
 	init_player_north_south(&game->player);
 	init_player_east_west(&game->player);
-	game->player.dist_proj = (SCREEN_WIDTH / 2) / tan(game->fov_rd / 2);
-	printf("player.x: %f\nplayer.y: %f\nplayer.angle: %f\nplayer.dist_proj: %f\n", game->player.x, game->player.y, game->player.angle, game->player.dist_proj);
+	printf("player.x: %f\nplayer.y: %f\nplayer.angle: %f\n", game->player.x, game->player.y, game->player.angle);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:08:58 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 11:21:19 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ static void	render_frame(t_game *game)
 	int		y;
 
 	image.img = NULL;
-	image = empty_myImg(game, game->win_w, SCREEN_HEIGHT);
+	image = empty_myImg(game, SCREEN_WIDTH, SCREEN_HEIGHT);
 	y = 0;
 	while (y < SCREEN_HEIGHT)
 	{
 		x = 0;
-		while (x < game->win_w)
+		while (x < SCREEN_WIDTH)
 		{
 			frame_set(game, &image, x, y);
 			x++;
