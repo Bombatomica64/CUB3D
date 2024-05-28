@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 10:44:27 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 11:45:18 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,9 @@ t_pos	calculate_first_step_and_steps(t_game *game, double ray_angle);
 
 void	pixels_init(t_game *game);
 void	pixels_update(t_game *game, int x);
+
+//render.c
+
+void	render_images(t_game *game);
 
 #endif

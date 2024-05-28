@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:21:19 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 11:47:29 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ static void	frame_set(t_game *game, t_myImg *image, int x, int y)
 
 static void	render_frame(t_game *game)
 {
-	t_myImg	image;
+	t_Myimg	image;
 	int		x;
 	int		y;
 
-	image.img = NULL;
 	image = empty_myImg(game, SCREEN_WIDTH, SCREEN_HEIGHT);
 	y = 0;
 	while (y < SCREEN_HEIGHT)
@@ -41,14 +40,14 @@ static void	render_frame(t_game *game)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(game->mlx, game->window, image.img, 0, 0);
+	mlx_put_image_to_window(game->mlx, game->win, image.img, 0, 0);
 	mlx_destroy_image(game->mlx, image.img);
 }
 
 void	render_images(t_game *game)
 {
 	pixels_init(game);
-	raycasting(game);
+	cast_rays(game);
 	render_frame(game);
 	// if (BONUS)
 	// 	render_minimap(game);
