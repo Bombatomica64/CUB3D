@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   splut.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:09:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:07:38 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	parse_line(char *line, t_game *game)
 {
 	t_curs		curs;
+	char *tmp;
 
 	curs = (t_curs){0, 0, 0, 0};
 	curs.i += skip_spaces2(line);
@@ -22,12 +23,18 @@ int	parse_line(char *line, t_game *game)
 		return (free(line), 0);
 	if (is_in_mtx(&line[curs.i], game->txts.txt_nm) == 1
 		&& game->input.map_str == 0)
-		game->txts.txts = add_to_matrix(game->txts.txts,
-				ft_strtrimfree(line, "\n", &curs.j));
+	{
+		tmp = ft_strtrimfree(line, "\n", &curs.j);
+		game->txts.txts = add_to_matrix(game->txts.txts, tmp);
+		if (tmp != NULL)
+			free(tmp);
+	}
 	else if (ft_isinset(line[curs.i], "01NSEW"))
 	{
-		game->map = add_to_matrix(game->map, ft_strtrimfree(line,
-					"\n", &curs.j));
+		tmp = ft_strtrimfree(line, "\n", &curs.j);
+		game->map = add_to_matrix(game->map, tmp);
+		if (tmp != NULL)
+			free(tmp);
 		game->input.map_str = 1;
 	}
 	else
