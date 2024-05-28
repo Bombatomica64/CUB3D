@@ -3,158 +3,134 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 15:39:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/24 12:18:06 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/27 18:41:53 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-double	get_wall_dist(t_game *game)
+static void	reycast_init(int x, t_game *game)
 {
-	t_pos		steps;
+	game->ray.camera_x = 2 * x / SCREEN_WIDTH - 1;
+	game->ray.dir.x = game->player.dir.x
+		+ game->player.plane.x * game->ray.camera_x;
+	game->ray.dir.y = game->player.dir.y
+		+ game->player.plane.y * game->ray.camera_x;
+	game->ray.map.x = (int)game->player.pos.x;
+	game->ray.map.y = (int)game->player.pos.y;
+	game->ray.delta_dist.x = fabs(1 / game->ray.dir.x);
+	game->ray.delta_dist.y = fabs(1 / game->ray.dir.y);
+}
 
-	steps.x = TILE_SIZE / tan(game->ray.angle);
-	printf("angle = %f\n", game->ray.angle);
-	printf("tan = %f\n", tan(game->ray.angle));
-	if (game->ray.angle > M_PI / 2 && game->ray.angle < 3 * M_PI / 2)
+/*
+- We are doing the initial set up for the dda
+- dda algorithm will jump one square in each loop eiter in a x or y dir
+- ray->side_dist.x or y = distance from the ray start pos to the
+	next x or y pos
+- if x or y < 0 go the next x or y to the left
+- if x or y > 0 go the next x or y to the right
+*/
+
+static void	dda_init(t_game *game)
+{
+	if (game->ray.dir.x < 0)
 	{
-		steps.x = -steps.x;
-		game->ray.next.x = (game->player.x / TILE_SIZE) * TILE_SIZE - 1;
+		game->ray.step.x = -1;
+		game->ray.side_dist.x = (game->player.pos.x - game->ray.map.x)
+			* game->ray.delta_dist.x;
 	}
 	else
-		game->ray.next.x = (game->player.x / TILE_SIZE)
-			* TILE_SIZE + TILE_SIZE;
-	steps.y = TILE_SIZE * tan(game->ray.angle);
-	if (game->ray.angle < M_PI / 2 || game->ray.angle > 3 * M_PI / 2)
 	{
-		steps.y = -steps.y;
-		game->ray.next.y = game->player.y - 1;
+		game->ray.step.x = 1;
+		game->ray.side_dist.x = (game->ray.map.x + 1.0 - game->player.pos.x)
+			* game->ray.delta_dist.x;
+	}
+	if (game->ray.dir.y < 0)
+	{
+		game->ray.step.y = -1;
+		game->ray.side_dist.y = (game->player.pos.y - game->ray.map.y)
+			* game->ray.delta_dist.y;
 	}
 	else
-		game->ray.next.y = game->player.y + TILE_SIZE;
-	printf("next.x = %f, next.y = %f\n", game->ray.next.x, game->ray.next.y);
-	while (TRUE)
 	{
-		game->ray.next.x += steps.x;
-		game->ray.next.y += steps.y;
-		if (is_wall(game->ray.next.x, game->ray.next.y, game) )
+		game->ray.step.y = 1;
+		game->ray.side_dist.y = (game->ray.map.y + 1.0 - game->player.pos.y)
+			* game->ray.delta_dist.y;
+	}
+}
+
+/*
+- We implement the DDA algorithm -> the loop will increment 1 square 
+-   until we hit a wall
+- If the sidedistx < sidedisty, x is the closest point from the ray
+*/
+
+static void	dda_exec(t_game *game)
+{
+	bool	hit;
+
+	hit = false;
+	while (hit == false)
+	{
+		if (game->ray.side_dist.x < game->ray.side_dist.y)
+		{
+			game->ray.side_dist.x += game->ray.delta_dist.x;
+			game->ray.map.x += game->ray.step.x;
+			game->ray.side = 0;
+		}
+		else
+		{
+			game->ray.side_dist.y += game->ray.delta_dist.y;
+			game->ray.map.y += game->ray.step.y;
+			game->ray.side = 1;
+		}
+		if (game->ray.map.y < 0.25 || game->ray.map.x < 0.25
+			|| game->ray.map.y > game->map_height - 0.25
+			|| game->ray.map.x > game->map_width - 1.25)
 			break ;
+		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] != '0')
+			hit = true;
 	}
-	return (sqrt(pow(game->player.x - game->ray.next.x, 2)
-			+ pow(game->player.y - game->ray.next.y, 2)));
 }
 
-void	cast_rays(t_game *game)
+static void	line_calc(t_game *game)
 {
-	double	increment;
-
-	game->ray.i_ray = 0;
-	increment = game->fov_rd / SCREEN_WIDTH;
-	game->ray.angle = game->player.angle - (game->fov_rd / 2);
-	while (game->ray.i_ray <= SCREEN_WIDTH)
-	{
-		game->ray.flag = 0;
-		game->ray.angle = nor_angle(game->ray.angle);
-		game->ray.dist = get_wall_dist(game);
-		printf("ray %d: dist = %f\n", game->ray.i_ray, game->ray.dist);
-		render_wall(game);
-		game->ray.angle += increment;
-		game->ray.i_ray++;
-	}
-	return ;
+	if (game->ray.side == 0)
+		game->ray.dist = (game->ray.side_dist.x - game->ray.delta_dist.x);
+	else
+		game->ray.dist = (game->ray.side_dist.y - game->ray.delta_dist.y);
+	game->ray.line_len = (int)(SCREEN_HEIGHT / game->ray.dist);
+	game->ray.drw_start = -(game->ray.line_len) / 2 + SCREEN_HEIGHT / 2;
+	if (game->ray.drw_start < 0)
+		game->ray.drw_start = 0;
+	game->ray.drw_end = game->ray.line_len / 2 + SCREEN_HEIGHT / 2;
+	if (game->ray.drw_end >= SCREEN_HEIGHT)
+		game->ray.drw_end = SCREEN_HEIGHT - 1;
+	if (game->ray.side == 0)
+		game->ray.wall_x = game->player.pos.y
+			+ game->ray.dist * game->ray.dir.y;
+	else
+		game->ray.wall_x = game->player.pos.x
+			+ game->ray.dist * game->ray.dir.x;
+	game->ray.wall_x -= floor(game->ray.wall_x);
 }
 
-// double	get_wall_dist(t_game *game)
-// {
-// 	double	x_step;
-// 	double	y_step;
-// 	double	next_x;
-// 	double	next_y;
-// 	int		hit_side;
+int	cast_rays(t_game *game)
+{
+	int		x;
 
-// 	if (game->ray.angle > 0 && game->ray.angle < M_PI)
-// 	{
-// 		y_step = TILE_SIZE;
-// 		next_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
-// 		hit_side = 0;
-// 	}
-// 	else
-// 	{
-// 		y_step = -TILE_SIZE;
-// 		next_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE - 1;
-// 		hit_side = 1;
-// 	}
-// 	x_step = TILE_SIZE / tan(game->ray.angle);
-// 	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
-// 		&& x_step > 0)
-// 		x_step = -x_step;
-// 	else if ((game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2)
-// 		&& x_step < 0)
-// 		x_step = -x_step;
-// 	next_x = game->player.x + (game->player.y - next_y)
-// 		/ tan(game->ray.angle);
-// 	while (is_wall(next_x, next_y, game))
-// 	{
-// 		next_x += x_step;
-// 		next_y += y_step;
-// 		if (next_x < 0 || next_x >= game->map_width * TILE_SIZE
-// 			|| next_y < 0 || next_y >= game->map_height * TILE_SIZE)
-// 			return (INFINITY);
-// 		if (hit_side == 0 && (game->ray.angle > 0 && game->ray.angle < M_PI))
-// 		{
-// 			if (check_inter(game->ray.angle, &next_y, &y_step, 1))
-// 			{
-// 				hit_side = 1;
-// 				x_step = TILE_SIZE / tan(game->ray.angle);
-// 				if (game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
-// 					x_step = -x_step;
-// 				next_x = game->player.x
-// 					+ (game->player.y - next_y) / tan(game->ray.angle);
-// 			}
-// 		}
-// 		else if (hit_side == 0
-// 			&& (game->ray.angle < 0 || game->ray.angle > M_PI))
-// 		{
-// 			if (check_inter(game->ray.angle, &next_y, &y_step, 0))
-// 			{
-// 				hit_side = 1;
-// 				x_step = TILE_SIZE / tan(game->ray.angle);
-// 				if (game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2)
-// 					x_step = -x_step;
-// 				next_x = game->player.x + (game->player.y - next_y)
-// 					/ tan(game->ray.angle);
-// 			}
-// 		}
-// 		if (hit_side == 1
-// 			&& (game->ray.angle < M_PI_2 || game->ray.angle > 3 * M_PI_2))
-// 		{
-// 			if (check_inter(game->ray.angle, &next_x, &x_step, 0))
-// 			{
-// 				hit_side = 0;
-// 				y_step = TILE_SIZE * tan(game->ray.angle);
-// 				if (game->ray.angle > M_PI && game->ray.angle < 2 * M_PI)
-// 					y_step = -y_step;
-// 				next_y = game->player.y + (next_x - game->player.x)
-// 					* tan(game->ray.angle);
-// 			}
-// 		}
-// 		else if (hit_side == 1
-// 			&& (game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2))
-// 		{
-// 			if (check_inter(game->ray.angle, &next_x, &x_step, 1))
-// 			{
-// 				hit_side = 0;
-// 				y_step = TILE_SIZE * tan(game->ray.angle);
-// 				if (game->ray.angle < M_PI && game->ray.angle > 0)
-// 					y_step = -y_step;
-// 				next_y = game->player.y + (next_x - game->player.x)
-// 					* tan(game->ray.angle);
-// 			}
-// 		}
-// 	}
-// 	return (sqrt(pow(game->player.x - next_x, 2)
-// 			+ pow(game->player.y - next_y, 2)));
-// }
+	x = 0;
+	while (x < SCREEN_WIDTH)
+	{
+		reycast_init(x, game);
+		dda_init(game);
+		dda_exec(game);
+		line_calc(game);
+		pixels_update(game, x);
+		x++;
+	}
+	return (0);
+}

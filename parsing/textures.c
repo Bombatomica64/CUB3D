@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 12:06:50 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 15:32:42 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:40:38 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ t_img	get_floor(char *path, t_game *game, int nm)
 	int		start;
 	int		len;
 
-	len = ft_strlen(path);
 	if (ft_isdigit(path[0]))
 	{
+		len = ft_strlen(path);
 		printf("path = %s\n", path);
 		i = 0;
 		start = 0;
@@ -54,9 +54,11 @@ t_img	get_floor(char *path, t_game *game, int nm)
 		color.b = ft_substr(path, start, i - start);
 		path = create_color_file(color, game, nm);
 	}
-	img.image = mlx_xpm_file_to_image(game->mlx, path + skip_spaces2(path), &img.width, &img.height);
+	fprintf(stderr, "path = |%s|\n", path);
+	img = get_img(path + skip_spaces2(path), game);
 	if (!img.image)
-		return (err("Failed to load texture : "), err(path), img);
+		return (err("Failed to load texture : "), err(path),
+			err_exit("", game), img);
 	return (img);
 }
 
@@ -81,38 +83,37 @@ void	get_textures(t_game *game)
 			continue ;
 		}
 		if (ft_strncmp(&game->txts.txts[curs.i][curs.j], "NO", 2) == 0)
-			game->txts.imgs[0] = get_img(game->txts.txts[curs.i]
+			game->txts.imgs[0].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "SO", 2) == 0)
-			game->txts.imgs[1] = get_img(game->txts.txts[curs.i]
+			game->txts.imgs[1].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "WE", 2) == 0)
-			game->txts.imgs[2] = get_img(game->txts.txts[curs.i]
+			game->txts.imgs[2].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "EA", 2) == 0)
-			game->txts.imgs[3] = get_img(game->txts.txts[curs.i]
+			game->txts.imgs[3].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "C", 1) == 0)
-			game->txts.imgs[4] = get_floor(game->txts.txts[curs.i]
+			game->txts.imgs[4].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
 		else if (ft_strncmp(game->txts.txts[curs.i], "F", 5) == 0)
-			game->txts.imgs[5] = get_floor(game->txts.txts[curs.i]
+			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
 		curs.i++;
 	}
 }
 
-void	get_texture_adresses(t_game *game)
+void	get_texture_int(t_game *game)
 {
 	int	i;
 
 	i = 0;
 	while (i < 5)
 	{
-		game->txts.imgs[i].data = NULL;
-		game->txts.addr[i] = (size_t)mlx_get_data_addr(game->txts.imgs[i].image,
+		game->txts.imgs[i].data = (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
 				&game->txts.imgs[i].bpp, &game->txts.imgs[i].size_line,
-				&game->txts.endians[i]);
+				&game->txts.imgs[i].endian);
 		i++;
 	}
 }

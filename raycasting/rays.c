@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 17:13:50 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 12:48:47 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/27 18:36:54 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,38 +23,56 @@ double	nor_angle(double angle)
 
 int	is_wall(double x, double y, t_game *game)
 {
-	int	i;
-	int	j;
+	int map_x = (int)(x / TILE_SIZE);
+	int map_y = (int)(y / TILE_SIZE);
 
-	if (x < 0 || y < 0)
-		return (0);
-	i = floor(x / TILE_SIZE);
-	j = floor(y / TILE_SIZE);
-	if (i >= game->map_width || j >= game->map_height || i < 0 || j < 0)
-		return (0);
-	if (game->map[j][i] == '1')
-		return (1);
+    // Ensure the coordinates are within the map boundaries
+	if (map_x >= 0 && map_x < game->map_width
+			&& map_y >= 0 && map_y < game->map_height)
+	{
+        // Check if the tile is a wall
+		return (game->map[map_y][map_x] == '1') ? 1 : 0;
+	}
 	return (0);
 }
 
-t_img	get_texture(t_game *game)
-{
-	game->ray.angle = nor_angle(game->ray.angle);
-	if (game->ray.flag == 0)
-	{
-		if (game->ray.angle > M_PI / 2 && game->ray.angle < 3 * M_PI / 2)
-			return (game->txts.imgs[3]);
-		else
-			return (game->txts.imgs[2]);
-	}
-	else
-	{
-		if (game->ray.angle > 0 && game->ray.angle < M_PI)
-			return (game->txts.imgs[1]);
-		else
-			return (game->txts.imgs[0]);
-	}
-}
+// t_img	get_texture(t_game *game)
+// {
+// 	game->ray.angle = nor_angle(game->ray.angle);
+// 	if (game->ray.flag == 0)
+// 	{
+// 		if (game->ray.angle > M_PI / 2 && game->ray.angle < 3 * M_PI / 2)
+// 			return (game->txts.imgs[3]);
+// 		else
+// 			return (game->txts.imgs[2]);
+// 	}
+// 	else
+// 	{
+// 		if (game->ray.angle > 0 && game->ray.angle < M_PI)
+// 			return (game->txts.imgs[1]);
+// 		else
+// 			return (game->txts.imgs[0]);
+// 	}
+// }
+
+// int	get_texture_id(t_game *game)
+// {
+// 	game->ray.angle = nor_angle(game->ray.angle);
+// 	if (game->ray.flag == 0)
+// 	{
+// 		if (game->ray.angle > M_PI / 2 && game->ray.angle < 3 * M_PI / 2)
+// 			return (3);
+// 		else
+// 			return (2);
+// 	}
+// 	else
+// 	{
+// 		if (game->ray.angle > 0 && game->ray.angle < M_PI)
+// 			return (1);
+// 		else
+// 			return (0);
+// 	}
+// }
 
 int	unit_circle(double angle, char c)
 {

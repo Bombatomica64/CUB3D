@@ -23,8 +23,36 @@ AUTHOR	minilibx/man/man3/mlx_loop.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 AUTHOR	minilibx/man/man3/mlx_new_image.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 AUTHOR	minilibx/man/man3/mlx_new_window.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
 AUTHOR	minilibx/man/man3/mlx_pixel_put.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+BG_BLACK	Includes/colours.h	/^# define BG_BLACK /;"	d
+BG_BLUE	Includes/colours.h	/^# define BG_BLUE /;"	d
+BG_BRIGHT_BLACK	Includes/colours.h	/^# define BG_BRIGHT_BLACK /;"	d
+BG_BRIGHT_BLUE	Includes/colours.h	/^# define BG_BRIGHT_BLUE /;"	d
+BG_BRIGHT_CYAN	Includes/colours.h	/^# define BG_BRIGHT_CYAN /;"	d
+BG_BRIGHT_GREEN	Includes/colours.h	/^# define BG_BRIGHT_GREEN /;"	d
+BG_BRIGHT_MAGENTA	Includes/colours.h	/^# define BG_BRIGHT_MAGENTA /;"	d
+BG_BRIGHT_RED	Includes/colours.h	/^# define BG_BRIGHT_RED /;"	d
+BG_BRIGHT_WHITE	Includes/colours.h	/^# define BG_BRIGHT_WHITE /;"	d
+BG_BRIGHT_YELLOW	Includes/colours.h	/^# define BG_BRIGHT_YELLOW /;"	d
+BG_CYAN	Includes/colours.h	/^# define BG_CYAN /;"	d
+BG_END	Includes/colours.h	/^# define BG_END /;"	d
+BG_GREEN	Includes/colours.h	/^# define BG_GREEN /;"	d
+BG_MAGENTA	Includes/colours.h	/^# define BG_MAGENTA /;"	d
+BG_RED	Includes/colours.h	/^# define BG_RED /;"	d
+BG_WHITE	Includes/colours.h	/^# define BG_WHITE /;"	d
+BG_YELLOW	Includes/colours.h	/^# define BG_YELLOW /;"	d
+BLACK	Includes/colours.h	/^# define BLACK /;"	d
+BLUE	Includes/colours.h	/^# define BLUE /;"	d
+BOLD	Includes/colours.h	/^# define BOLD /;"	d
+BRIGHT_BLACK	Includes/colours.h	/^# define BRIGHT_BLACK /;"	d
+BRIGHT_BLUE	Includes/colours.h	/^# define BRIGHT_BLUE /;"	d
+BRIGHT_CYAN	Includes/colours.h	/^# define BRIGHT_CYAN /;"	d
+BRIGHT_GREEN	Includes/colours.h	/^# define BRIGHT_GREEN /;"	d
+BRIGHT_MAGENTA	Includes/colours.h	/^# define BRIGHT_MAGENTA /;"	d
+BRIGHT_RED	Includes/colours.h	/^# define BRIGHT_RED /;"	d
+BRIGHT_WHITE	Includes/colours.h	/^# define BRIGHT_WHITE /;"	d
+BRIGHT_YELLOW	Includes/colours.h	/^# define BRIGHT_YELLOW /;"	d
 BUFFER_SIZE	libft/get_next_line_bonus.h	/^#  define BUFFER_SIZE /;"	d
-CC	Makefile	/^CC = cc -Wall -Wextra -Werror -g -O3 -lm$/;"	m
+CC	Makefile	/^CC = cc -Wall -Wextra -Werror -g -lm$/;"	m
 CC	libft/Makefile	/^CC = cc$/;"	m
 CC	minilibx/Makefile.mk	/^	CC = clang$/;"	m
 CC	minilibx/Makefile.mk	/^CC	= gcc$/;"	m
@@ -35,7 +63,9 @@ CFLAGS	minilibx/Makefile.mk	/^CFLAGS	= -O3 -I$(INC)$/;"	m
 CFLAGS	minilibx/test/Makefile.mk	/^CFLAGS= -I$(INC) -O3 -I.. -g$/;"	m
 COLOR	minilibx/man/man1/mlx_pixel_put.1	/^.SH COLOR MANAGEMENT$/;"	s	title:MiniLibX
 COLOR	minilibx/man/man3/mlx_pixel_put.3	/^.SH COLOR MANAGEMENT$/;"	s	title:MiniLibX
+COLOURS_H	Includes/colours.h	/^# define COLOURS_H$/;"	d
 CUB3D	README.md	/^# CUB3D$/;"	c
+CYAN	Includes/colours.h	/^# define CYAN /;"	d
 D	Includes/structs.h	/^# define D /;"	d
 DESCRIPTION	minilibx/man/man1/mlx.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
 DESCRIPTION	minilibx/man/man1/mlx_loop.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
@@ -47,6 +77,7 @@ DESCRIPTION	minilibx/man/man3/mlx_loop.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
 DESCRIPTION	minilibx/man/man3/mlx_new_image.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
 DESCRIPTION	minilibx/man/man3/mlx_new_window.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
 DESCRIPTION	minilibx/man/man3/mlx_pixel_put.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+END	Includes/colours.h	/^# define END /;"	d
 ENV_DISPLAY	minilibx/mlx_int.h	/^# define ENV_DISPLAY /;"	d
 EOF	minilibx/configure	/^cat <<EOF$/;"	h
 ERROR	libft/libft.h	/^	ERROR = -1$/;"	e	enum:e_bool
@@ -60,6 +91,7 @@ FUNCTIONS_H	Includes/functions.h	/^# define FUNCTIONS_H$/;"	d
 GET_NEXT_LINE_BONUS_H	libft/get_next_line_bonus.h	/^# define GET_NEXT_LINE_BONUS_H$/;"	d
 GOING	minilibx/man/man1/mlx_loop.1	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
 GOING	minilibx/man/man3/mlx_loop.3	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
+GREEN	Includes/colours.h	/^# define GREEN /;"	d
 HOW THE FUCK DOES RAYCASTING WORK	README.md	/^## HOW THE FUCK DOES RAYCASTING WORK$/;"	s
 IM1_SX	minilibx/test/main.c	/^#define	IM1_SX	/;"	d	file:
 IM1_SY	minilibx/test/main.c	/^#define	IM1_SY	/;"	d	file:
@@ -80,6 +112,7 @@ LIBRARY	minilibx/man/man3/mlx.3	/^.SH LIBRARY FUNCTIONS$/;"	s	title:MiniLibX
 LINKING	minilibx/man/man1/mlx.1	/^.SH LINKING MiniLibX$/;"	s	title:MiniLibX
 LINKING	minilibx/man/man3/mlx.3	/^.SH LINKING MiniLibX$/;"	s	title:MiniLibX
 LOCALHOST	minilibx/mlx_int.h	/^# define LOCALHOST /;"	d
+MAGENTA	Includes/colours.h	/^# define MAGENTA /;"	d
 MAP Parsing	README.md	/^## MAP Parsing$/;"	s
 MLX	Makefile	/^MLX = $(MLX_DIR)\/libmlx.a$/;"	m
 MLXFLAGS	Makefile	/^MLXFLAGS = -lX11 -lXext -lm$/;"	m
@@ -91,6 +124,8 @@ MLX_TYPE_SHM	minilibx/mlx_int.h	/^# define MLX_TYPE_SHM /;"	d
 MLX_TYPE_SHM_PIXMAP	minilibx/mlx_int.h	/^# define MLX_TYPE_SHM_PIXMAP /;"	d
 MLX_TYPE_XIMAGE	minilibx/mlx_int.h	/^# define MLX_TYPE_XIMAGE /;"	d
 M_PI	Includes/structs.h	/^#  define M_PI	/;"	d
+M_PI_2	Includes/structs.h	/^#  define M_PI_2 /;"	d
+M_PI_4	Includes/structs.h	/^#  define M_PI_4 /;"	d
 MiniLibX	minilibx/man/man1/mlx.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
 MiniLibX	minilibx/man/man1/mlx_loop.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
 MiniLibX	minilibx/man/man1/mlx_new_image.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
@@ -121,7 +156,9 @@ OBJ	minilibx/test/Makefile.mk	/^OBJ = $(SRC:%.c=%.o)$/;"	m
 OBJS	libft/Makefile	/^OBJS = $(SRCS:.c=.o)$/;"	m
 OBJ_DIR	minilibx/Makefile.mk	/^OBJ_DIR = obj$/;"	m
 PARSING	Makefile	/^PARSING =	parsing\/map_check.c \\$/;"	m
+PURPLE	Includes/colours.h	/^# define PURPLE /;"	d
 RAYCASTING	Makefile	/^RAYCASTING =	raycasting\/distance.c \\$/;"	m
+RED	Includes/colours.h	/^# define RED /;"	d
 RETURN	minilibx/man/man1/mlx.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
 RETURN	minilibx/man/man1/mlx_new_image.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
 RETURN	minilibx/man/man1/mlx_new_window.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
@@ -129,6 +166,7 @@ RETURN	minilibx/man/man3/mlx.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
 RETURN	minilibx/man/man3/mlx_new_image.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
 RETURN	minilibx/man/man3/mlx_new_window.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
 RETURN	minilibx/mlx_xpm.c	/^#define	RETURN	/;"	d	file:
+REVERSED	Includes/colours.h	/^# define REVERSED /;"	d
 S	Includes/structs.h	/^# define S /;"	d
 SCREEN_HEIGHT	Includes/structs.h	/^# define SCREEN_HEIGHT /;"	d
 SCREEN_WIDTH	Includes/structs.h	/^# define SCREEN_WIDTH /;"	d
@@ -165,8 +203,10 @@ TO IMPLEMENT	README.md	/^## TO IMPLEMENT  $/;"	s
 TRUE	libft/libft.h	/^	TRUE, \/\/ 1$/;"	e	enum:e_bool
 UNAME	minilibx/Makefile.mk	/^UNAME = $(shell uname)$/;"	m
 UNAME	minilibx/test/Makefile.mk	/^UNAME := $(shell uname)$/;"	m
+UNDERLINE	Includes/colours.h	/^# define UNDERLINE /;"	d
 W	Includes/structs.h	/^# define W /;"	d
 WARN_SHM_ATTACH	minilibx/mlx_int.h	/^# define WARN_SHM_ATTACH /;"	d
+WHITE	Includes/colours.h	/^# define WHITE /;"	d
 WIN1_SX	minilibx/test/main.c	/^#define	WIN1_SX	/;"	d	file:
 WIN1_SY	minilibx/test/main.c	/^#define	WIN1_SY	/;"	d	file:
 X-WINDOW	minilibx/man/man1/mlx.1	/^.SH X-WINDOW CONCEPT$/;"	s	title:MiniLibX
@@ -176,7 +216,9 @@ X-WINDOW	minilibx/man/man3/mlx_loop.3	/^.SH X-WINDOW EVENTS$/;"	s	title:MiniLibX
 XPM	minilibx/man/man1/mlx_new_image.1	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
 XPM	minilibx/man/man3/mlx_new_image.3	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
 X_ShmAttach	minilibx/mlx_new_image.c	/^#define	X_ShmAttach	/;"	d	file:
+YELLOW	Includes/colours.h	/^# define YELLOW /;"	d
 add_to_matrix	libft/matrix_utils.c	/^char	**add_to_matrix(char **matrix, char *line)$/;"	f	typeref:typename:char **
+addr	Includes/structs.h	/^	size_t	addr[6]; \/\/ 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F$/;"	m	struct:s_texture	typeref:typename:size_t[6]
 all	Makefile	/^all: $(NAME)$/;"	t
 all	libft/Makefile	/^all: $(NAME)$/;"	t
 all	minilibx/Makefile	/^all	: do_configure$/;"	t
@@ -228,6 +270,7 @@ depth	minilibx/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar	typeref:typename:in
 dir	Includes/structs.h	/^	t_pos		dir; \/\/ 0, 50, 2$/;"	m	struct:s_player	typeref:typename:t_pos
 display	minilibx/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar	typeref:typename:Display *
 dist	Includes/structs.h	/^	double		dist; \/\/distance to wall$/;"	m	struct:s_ray	typeref:typename:double
+dist_proj	Includes/structs.h	/^	double		dist_proj; \/\/ distance from player to projection plane$/;"	m	struct:s_player	typeref:typename:double
 do_configure	minilibx/Makefile	/^do_configure	:$/;"	t
 do_flush	minilibx/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar	typeref:typename:int
 draw_down	raycasting/walls.c	/^void	draw_down(t_game *game, double wall_h, double b_pix)$/;"	f	typeref:typename:void
@@ -251,7 +294,7 @@ fast_sin	srcs/fast_trig.c	/^double	fast_sin(double angle, t_game *game)$/;"	f	ty
 fast_tan	srcs/fast_trig.c	/^double	fast_tan(double angle, t_game *game)$/;"	f	typeref:typename:double
 fclean	Makefile	/^fclean: clean$/;"	t
 fclean	libft/Makefile	/^fclean: clean$/;"	t
-fcntl.h	.vscode/settings.json	/^		"fcntl.h": "c"$/;"	s	object:files.associations
+fcntl.h	.vscode/settings.json	/^		"fcntl.h": "c",$/;"	s	object:files.associations
 fd	Includes/structs.h	/^	int		fd;$/;"	m	struct:s_input	typeref:typename:int
 file_len	Includes/structs.h	/^	int		file_len;$/;"	m	struct:s_input	typeref:typename:int
 file_size	parsing/map_check.c	/^static void	file_size(char *map_path, t_game *game)$/;"	f	typeref:typename:void	file:
@@ -350,13 +393,13 @@ get_next_line2	libft/get_next_line2.c	/^int	get_next_line2(int fd, char **line)$
 get_texture	raycasting/rays.c	/^t_img	get_texture(t_game *game)$/;"	f	typeref:typename:t_img
 get_texture_adresses	parsing/textures.c	/^void	get_texture_adresses(t_game *game)$/;"	f	typeref:typename:void
 get_textures	parsing/textures.c	/^void	get_textures(t_game *game)$/;"	f	typeref:typename:void
+get_wal	raycasting/smallsteps.c	/^t_pos	get_wal(t_game *game, t_pos first_step, t_pos steps)$/;"	f	typeref:typename:t_pos
+get_wall_dist	raycasting/distance.c	/^double	get_wall_dist(t_game *game)$/;"	f	typeref:typename:double
 get_xlib_include_path	minilibx/configure	/^get_xlib_include_path(){$/;"	f
-get_xo	raycasting/walls.c	/^double	get_xo(t_game *game, t_img texture)$/;"	f	typeref:typename:double
+get_xo	raycasting/walls.c	/^double	get_xo(t_game *game, t_img texture, char type)$/;"	f	typeref:typename:double
 height	minilibx/mlx_int.h	/^	int				height;$/;"	m	struct:s_img	typeref:typename:int
 hook	minilibx/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list	typeref:typename:int (*)()
 hooks	minilibx/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list	typeref:typename:t_event_list[]
-hor_x	Includes/structs.h	/^	double		hor_x; \/\/horizontal intersection$/;"	m	struct:s_ray	typeref:typename:double
-hor_y	Includes/structs.h	/^	double		hor_y; \/\/horizontal intersection$/;"	m	struct:s_ray	typeref:typename:double
 horizontal_inter	raycasting/inter_h.c	/^double	horizontal_inter(t_game *game)$/;"	f	typeref:typename:double
 i	Includes/structs.h	/^	int		i;$/;"	m	struct:s_curs	typeref:typename:int
 i_ray	Includes/structs.h	/^	int			i_ray; \/\/ray number$/;"	m	struct:s_ray	typeref:typename:int
@@ -368,7 +411,7 @@ image	minilibx/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename
 imgs	Includes/structs.h	/^	t_img	imgs[6]; \/\/ 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F$/;"	m	struct:s_texture	typeref:typename:t_img[6]
 init_game	parsing/var_init.c	/^t_game	*init_game(char *map_path)$/;"	f	typeref:typename:t_game *
 init_player	parsing/player.c	/^void	init_player(t_game *game, int x, int y)$/;"	f	typeref:typename:void
-init_trig_tables	srcs/fast_trig.c	/^void	init_trig_tables(t_game *game)$/;"	f	typeref:typename:void
+init_trig	srcs/fast_trig.c	/^void	init_trig(t_game *game)$/;"	f	typeref:typename:void
 input	Includes/structs.h	/^	t_input		input;$/;"	m	struct:s_game	typeref:typename:t_input
 is_in_mtx	libft/matrix_utils.c	/^int	is_in_mtx(char *line, char **matrix)$/;"	f	typeref:typename:int
 is_wall	raycasting/rays.c	/^int	is_wall(double x, double y, t_game *game)$/;"	f	typeref:typename:int
@@ -487,6 +530,7 @@ mouse_win2	minilibx/test/main.c	/^int	mouse_win2(int button,int x,int y, void *p
 mouse_win3	minilibx/test/main.c	/^int	mouse_win3(int x,int y, void *p)$/;"	f	typeref:typename:int
 name	minilibx/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name	typeref:typename:char *
 name	minilibx/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col	typeref:typename:int
+next	Includes/structs.h	/^	t_pos		next; \/\/next intersection point$/;"	m	struct:s_ray	typeref:typename:t_pos
 next	libft/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
 next	minilibx/mlx_int.h	/^	struct s_win_list	*next;$/;"	m	struct:s_win_list	typeref:struct:s_win_list *
 nor_angle	raycasting/rays.c	/^double	nor_angle(double angle)$/;"	f	typeref:typename:double
@@ -498,7 +542,6 @@ parse_args	minilibx/configure	/^parse_args(){$/;"	f
 parse_line	parsing/splut.c	/^int	parse_line(char *line, t_game *game)$/;"	f	typeref:typename:int
 parse_map	parsing/map_check.c	/^char	**parse_map(char *map_path, t_game *game)$/;"	f	typeref:typename:char **
 pix	minilibx/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img	typeref:typename:Pixmap
-plane	Includes/structs.h	/^	t_pos		plane; \/\/ 0, 1, 0$/;"	m	struct:s_player	typeref:typename:t_pos
 play	Makefile	/^play:$/;"	t
 player	Includes/structs.h	/^	t_player	player;$/;"	m	struct:s_game	typeref:typename:t_player
 pos	Includes/structs.h	/^	t_pos		pos; \/\/ 0, 50, 0$/;"	m	struct:s_player	typeref:typename:t_pos
@@ -507,6 +550,7 @@ private_cmap	minilibx/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typer
 pshm_format	minilibx/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
 put_xmp	srcs/put_images.c	/^void	*put_xmp(void *mlx, char *filename, int *width, int *height)$/;"	f	typeref:typename:void *
 r	Includes/structs.h	/^	char	*r;$/;"	m	struct:s_color	typeref:typename:char *
+random	.vscode/settings.json	/^		"random": "c"$/;"	s	object:files.associations
 ray	Includes/structs.h	/^	t_ray		ray;$/;"	m	struct:s_game	typeref:typename:t_ray
 re	Makefile	/^re: fclean all$/;"	t
 re	libft/Makefile	/^re: fclean all$/;"	t
@@ -533,6 +577,7 @@ s_xpm_col	minilibx/mlx_int.h	/^typedef	struct	s_xpm_col$/;"	s
 s_xvar	minilibx/mlx_int.h	/^typedef struct	s_xvar$/;"	s
 saved_mode	minilibx/mlx_ext_randr.c	/^RRMode	saved_mode = 0;$/;"	v	typeref:typename:RRMode
 screen	minilibx/mlx_int.h	/^	int			screen;$/;"	m	struct:s_xvar	typeref:typename:int
+shape	Includes/structs.h	/^	double		shape;$/;"	m	struct:s_game	typeref:typename:double
 shm	minilibx/mlx_int.h	/^	XShmSegmentInfo	shm;$/;"	m	struct:s_img	typeref:typename:XShmSegmentInfo
 shm_att_pb	minilibx/mlx_new_image.c	/^int	shm_att_pb(Display *d,XErrorEvent *ev)$/;"	f	typeref:typename:int
 show	minilibx/Makefile.mk	/^show:$/;"	t
@@ -540,6 +585,7 @@ show	minilibx/test/Makefile.mk	/^show:$/;"	t
 show_help	minilibx/configure	/^show_help(){$/;"	f
 sigint_handler	minilibx/test/run_tests.sh	/^sigint_handler(){$/;"	f
 sin_table	Includes/structs.h	/^	double		sin_table[360];$/;"	m	struct:s_game	typeref:typename:double[360]
+size	Includes/structs.h	/^	double		size;$/;"	m	struct:s_game	typeref:typename:double
 size_line	minilibx/mlx_int.h	/^	int				size_line;$/;"	m	struct:s_img	typeref:typename:int
 skip_spaces	libft/space_utils.c	/^void	skip_spaces(char **str)$/;"	f	typeref:typename:void
 skip_spaces2	libft/space_utils.c	/^int	skip_spaces2(char *str)$/;"	f	typeref:typename:int
@@ -547,6 +593,10 @@ sl1	minilibx/test/main.c	/^int	sl1;$/;"	v	typeref:typename:int
 sl2	minilibx/test/main.c	/^int	sl2;$/;"	v	typeref:typename:int
 sl3	minilibx/test/main.c	/^int	sl3;$/;"	v	typeref:typename:int
 sl4	minilibx/test/main.c	/^int	sl4;$/;"	v	typeref:typename:int
+smallstep_q1	raycasting/smallsteps.c	/^t_pos	smallstep_q1(t_game *game)$/;"	f	typeref:typename:t_pos
+smallstep_q2	raycasting/smallsteps.c	/^t_pos	smallstep_q2(t_game *game)$/;"	f	typeref:typename:t_pos
+smallstep_q3	raycasting/smallsteps.c	/^t_pos	smallstep_q3(t_game *game)$/;"	f	typeref:typename:t_pos
+smallstep_q4	raycasting/smallsteps.c	/^t_pos	smallstep_q4(t_game *game)$/;"	f	typeref:typename:t_pos
 split_map	parsing/splut.c	/^void	split_map(t_game *game)$/;"	f	typeref:typename:void
 stamp	libft/ft_putnbr_fd.c	/^static void	stamp(char nb, int fd)$/;"	f	typeref:typename:void	file:
 status	Includes/structs.h	/^	int		status;$/;"	m	struct:s_curs	typeref:typename:int
@@ -577,10 +627,9 @@ type	minilibx/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typename:int
 unit_circle	raycasting/rays.c	/^int	unit_circle(double angle, char c)$/;"	f	typeref:typename:int
 use_xshm	minilibx/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
 val	Makefile	/^val:$/;"	t
-ver_x	Includes/structs.h	/^	double		ver_x; \/\/vertical intersection$/;"	m	struct:s_ray	typeref:typename:double
-ver_y	Includes/structs.h	/^	double		ver_y; \/\/vertical intersection$/;"	m	struct:s_ray	typeref:typename:double
 vertical_inter	raycasting/inter_v.c	/^double	vertical_inter(t_game *game)$/;"	f	typeref:typename:double
 visual	minilibx/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
+wall_hit	Includes/structs.h	/^	int		wall_hit; \/\/ 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH$/;"	m	struct:s_pos	typeref:typename:int
 width	minilibx/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int
 win	Includes/structs.h	/^	void		*win;$/;"	m	struct:s_game	typeref:typename:void *
 win1	minilibx/test/main.c	/^void	*win1;$/;"	v	typeref:typename:void *
@@ -595,9 +644,7 @@ wm_delete_window	minilibx/mlx_int.h	/^	Atom		wm_delete_window;$/;"	m	struct:s_xv
 wm_protocols	minilibx/mlx_int.h	/^	Atom		wm_protocols;$/;"	m	struct:s_xvar	typeref:typename:Atom
 x	Includes/structs.h	/^	double		x;$/;"	m	struct:s_player	typeref:typename:double
 x	Includes/structs.h	/^	double	x;$/;"	m	struct:s_pos	typeref:typename:double
-x_int	Includes/structs.h	/^	double		x_int; \/\/x intersection$/;"	m	struct:s_ray	typeref:typename:double
 xpm1_x	minilibx/test/main.c	/^int	xpm1_x;$/;"	v	typeref:typename:int
 xpm1_y	minilibx/test/main.c	/^int	xpm1_y;$/;"	v	typeref:typename:int
 y	Includes/structs.h	/^	double		y;$/;"	m	struct:s_player	typeref:typename:double
 y	Includes/structs.h	/^	double	y;$/;"	m	struct:s_pos	typeref:typename:double
-y_int	Includes/structs.h	/^	double		y_int; \/\/y intersection$/;"	m	struct:s_ray	typeref:typename:double

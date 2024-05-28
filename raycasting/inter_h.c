@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_h.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 17:24:48 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/23 12:46:38 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/27 18:36:21 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,62 +61,59 @@
 // 	return (INT_MAX);
 // }
 
-int	check_inter(double angle, double *y, double *y_step, int flag)
-{
-	if (flag == 1)
-	{
-		if (angle < M_PI && angle > 0)
-		{
-			*y += TILE_SIZE;
-			return (-1);
-		}
-		*y_step *= -1;
-	}
-	else
-	{
-		if (angle < 3 * M_PI / 2 && angle > M_PI / 2)
-		{
-			*y += TILE_SIZE;
-			return (-1);
-		}
-		*y_step *= -1;
-	}
-	return (1);
-}
+// int	check_inter(double angle, double *y, double *y_step, int flag)
+// {
+// 	if (flag == 1)
+// 	{
+// 		if (angle < M_PI && angle > 0)
+// 		{
+// 			*y += TILE_SIZE;
+// 			return (-1);
+// 		}
+// 		*y_step *= -1;
+// 	}
+// 	else
+// 	{
+// 		if (angle < 3 * M_PI / 2 && angle > M_PI / 2)
+// 		{
+// 			*y += TILE_SIZE;
+// 			return (-1);
+// 		}
+// 		*y_step *= -1;
+// 	}
+// 	return (1);
+// }
 
-double	horizontal_inter(t_game *game)
-{
-	double	x_step;
-	double	y_step;
-	double	h_y;
-	double	h_x;
-	int		pixel;
+// double	horizontal_inter(t_game *game)
+// {
+// 	double	x_step;
+// 	double	y_step;
+// 	double	h_y;
+// 	double	h_x;
 
-	if (game->ray.angle > 0 && game->ray.angle < M_PI)
-	{
-		y_step = TILE_SIZE;
-		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
-		pixel = 0;
-	}
-	else
-	{
-		y_step = -TILE_SIZE;
-		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE - 1;
-		pixel = 1;
-	}
-	x_step = TILE_SIZE / tan(game->ray.angle);
-	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
-		&& x_step > 0)
-		x_step = -x_step;
-	else if ((game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2)
-		&& x_step < 0)
-		x_step = -x_step;
-	h_x = game->player.x + (game->player.y - h_y)
-		/ tan(game->ray.angle);
-	while (is_wall(h_x, h_y, game))
-	{
-		h_x += x_step;
-		h_y += y_step;
-	}
-	return (fabs((game->player.y - h_y) / cos(game->ray.angle)));
-}
+// 	if (game->ray.angle > 0 && game->ray.angle < M_PI)
+// 	{
+// 		y_step = TILE_SIZE;
+// 		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
+// 	}
+// 	else
+// 	{
+// 		y_step = -TILE_SIZE;
+// 		h_y = floor(game->player.y / TILE_SIZE) * TILE_SIZE - 1;
+// 	}
+// 	x_step = TILE_SIZE / tan(game->ray.angle);
+// 	if ((game->ray.angle > M_PI_2 && game->ray.angle < 3 * M_PI_2)
+// 		&& x_step > 0)
+// 		x_step = -x_step;
+// 	else if ((game->ray.angle <= M_PI_2 || game->ray.angle >= 3 * M_PI_2)
+// 		&& x_step < 0)
+// 		x_step = -x_step;
+// 	h_x = game->player.x + (game->player.y - h_y)
+// 		/ tan(game->ray.angle);
+// 	while (is_wall(h_x, h_y, game))
+// 	{
+// 		h_x += x_step;
+// 		h_y += y_step;
+// 	}
+// 	return (fabs((game->player.y - h_y) / cos(game->ray.angle)));
+// }

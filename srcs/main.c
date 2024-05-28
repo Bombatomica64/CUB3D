@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 12:03:28 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/22 15:39:10 by lmicheli         ###   ########.fr       */
+/*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
+/*   Updated: 2024/05/28 10:44:10 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	printf("game.mlx[%p]\n", game->mlx);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[4].image, 0, 0);
+	// mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[4].image, 0, 0);
 	cast_rays(game);
+	print_matrix((char **)game->pixels);
 	key_input(game);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
