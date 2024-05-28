@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/27 10:11:46 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:00:08 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ char	**add_to_matrix(char **matrix, char *line)
 	}
 	new_matrix[i] = ft_strdup(line);
 	new_matrix[i + 1] = NULL;
-	free(line);
 	ft_free_matrix(matrix);
 	return (new_matrix);
 }
