@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:09:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:24:48 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	get_textures(t_game *game)
 	while (game->txts.txts[curs.i])
 	{
 		game->txts.txts[curs.i] = ft_freestrtrim(game->txts.txts[curs.i], "\n");
-		printf("txts[%d] = %s\n", curs.i, game->txts.txts[curs.i]);
+		printf("INFO:txts[%d] = %s\n", curs.i, game->txts.txts[curs.i]);
 		curs.j = skip_spaces2(game->txts.txts[curs.i]);
 		if (game->txts.txts[curs.i][curs.j] == '\0')
 		{
@@ -111,7 +111,8 @@ void	get_texture_int(t_game *game)
 	i = 0;
 	while (i < 5)
 	{
-		game->txts.imgs[i].data = (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
+		game->txts.imgs[i].data
+			= (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
 				&game->txts.imgs[i].bpp, &game->txts.imgs[i].size_line,
 				&game->txts.imgs[i].endian);
 		i++;

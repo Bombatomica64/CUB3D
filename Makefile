@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/27 17:37:09 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/28 12:18:14 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ RAYCASTING =	raycasting/distance.c \
 				raycasting/inter_v.c \
 				raycasting/walls.c \
 				raycasting/pixel_putting.c \
-				raycasting/pixels.c
+				raycasting/pixels.c \
+				raycasting/render.c
 
 SRCS =	srcs/main.c \
 		srcs/put_images.c \
