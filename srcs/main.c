@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 17:22:18 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:36:15 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,4 +150,5 @@ int	main(int ac, char **av)
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	return (0);
+	
 }
