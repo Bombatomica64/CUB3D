@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/28 12:18:14 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/29 16:56:05 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ RAYCASTING =	raycasting/distance.c \
 SRCS =	srcs/main.c \
 		srcs/put_images.c \
 		srcs/error_management.c \
-		srcs/fast_trig.c
+		srcs/fast_trig.c \
+		srcs/vectors.c
 		
 SRC = $(PARSING) $(SRCS) $(RAYCASTING)
 

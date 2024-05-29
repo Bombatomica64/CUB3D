@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 12:22:50 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:57:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,12 @@ void	pixels_update(t_game *game, int x);
 //render.c
 
 int		render_images(t_game *game);
+
+//vectors.c
+
+t_pos	add(t_pos a, t_pos b);
+t_pos	sub(t_pos a, t_pos b);
+t_pos	mult(t_pos a, double b);
+t_pos	scale(t_pos a, double b);
 
 #endif
