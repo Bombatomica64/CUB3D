@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 12:33:55 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:59:27 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define D 2
 # define SCREEN_WIDTH (double)720
 # define SCREEN_HEIGHT (double)480
-# define TILE_SIZE 100
+# define TILE_SIZE 128
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.17
 # ifndef M_PI
@@ -47,7 +47,7 @@
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
-# define FOV 120
+# define FOV 90
 
 /**
  * @brief 2D space vector
