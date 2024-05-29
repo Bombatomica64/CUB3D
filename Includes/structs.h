@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
 /*   Updated: 2024/05/29 17:23:43 by mruggier         ###   ########.fr       */
@@ -33,6 +33,7 @@
 # define SCREEN_WIDTH (double)720
 # define SCREEN_HEIGHT (double)480
 # define TILE_SIZE 128
+# define BACKGROUND_SIZE 512
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.05
 # ifndef M_PI

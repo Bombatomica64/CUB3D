@@ -113,4 +113,11 @@ void	pixels_update(t_game *game, int x);
 int		render_images(t_game *game);
 int		game_loop(t_game *game);
 
+//vectors.c
+
+t_pos	add(t_pos a, t_pos b);
+t_pos	sub(t_pos a, t_pos b);
+t_pos	mult(t_pos a, double b);
+t_pos	scale(t_pos a, double b);
+
 #endif
