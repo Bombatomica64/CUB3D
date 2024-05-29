@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 12:33:38 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:36:15 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,36 +21,44 @@ t_pos	rotate(t_pos pos, double angle)
 	return (new_pos);
 }
 
-int	on_esc(int keysym, t_game *game)
+int	game_loop(t_game *game)
 {
-	if (keysym == XK_Escape)
-		err_exit("Exiting\n", game);
-	else if (keysym == XK_s)
+
+	printf("game->keys.w[%d]\n", game->keys.w);
+	printf("game->keys.a[%d]\n", game->keys.a);
+	printf("game->keys.s[%d]\n", game->keys.s);
+	printf("game->keys.d[%d]\n", game->keys.d);
+	printf("game->keys.left[%d]\n", game->keys.left);
+	printf("game->keys.right[%d]\n", game->keys.right);
+	
+	/*if (keysym == XK_Escape)
+		err_exit("Exiting\n", game);*/
+	if (game->keys.s && !game->keys.w)//(keysym == XK_s)
 	{
 		game->player.pos.y -= game->player.dir.y * MOVE_SPEED;
 		game->player.pos.x -= game->player.dir.x * MOVE_SPEED;
 	}
-	else if (keysym == XK_w)
+	else if (game->keys.w && !game->keys.s)//(keysym == XK_w)
 	{
 		game->player.pos.x += game->player.dir.x * MOVE_SPEED;
 		game->player.pos.y += game->player.dir.y * MOVE_SPEED;
 	}
-	else if (keysym == XK_d)
+	else if (game->keys.d && !game->keys.a)//(keysym == XK_d)
 	{
 		game->player.pos.x -= game->player.dir.y * MOVE_SPEED;
 		game->player.pos.y += game->player.dir.x * MOVE_SPEED;
 	}
-	else if (keysym == XK_a)
+	else if (game->keys.a && !game->keys.d)//(keysym == XK_a)
 	{
 		game->player.pos.x += game->player.dir.y * MOVE_SPEED;
 		game->player.pos.y -= game->player.dir.x * MOVE_SPEED;
 	}
-	else if (keysym == XK_Right)
+	else if (game->keys.right && !game->keys.left)//(keysym == XK_Right)
 	{
 		game->player.dir = rotate(game->player.dir, ROT_SPEED);
 		game->player.plane = rotate(game->player.plane, ROT_SPEED);
 	}
-	else if (keysym == XK_Left)
+	else if (game->keys.left && !game->keys.right)//(keysym == XK_Left)
 	{
 		game->player.dir = rotate(game->player.dir, -ROT_SPEED);
 		game->player.plane = rotate(game->player.plane, -ROT_SPEED);
@@ -64,15 +72,50 @@ int	on_destroy(t_game *data)
 	return (0);
 }
 
+int	on_key_press(int keysym, t_game *game)
+{
+	if (keysym == XK_w)
+		game->keys.w = 1;
+	else if (keysym == XK_a)
+		game->keys.a = 1;
+	else if (keysym == XK_s)
+		game->keys.s = 1;
+	else if (keysym == XK_d)
+		game->keys.d = 1;
+	else if (keysym == XK_Left)
+		game->keys.left = 1;
+	else if (keysym == XK_Right)
+		game->keys.right = 1;
+	return (0);
+}
+
+int	on_key_release(int keysym, t_game *game)
+{
+	if (keysym == XK_w)
+		game->keys.w = 0;
+	else if (keysym == XK_a)
+		game->keys.a = 0;
+	else if (keysym == XK_s)
+		game->keys.s = 0;
+	else if (keysym == XK_d)
+		game->keys.d = 0;
+	else if (keysym == XK_Left)
+		game->keys.left = 0;
+	else if (keysym == XK_Right)
+		game->keys.right = 0;
+	return (0);
+}
+
 void	key_input(t_game *data)
 {
 	mlx_hook(data->win, KeyPress, KeyPressMask,
-		&on_esc, data);
-	// mlx_hook(data->win, KeyRelease, KeyReleaseMask,
-	// 	&on_esc, data);
+		&on_key_press, data);
+	mlx_hook(data->win, KeyRelease, KeyReleaseMask,
+	 	&on_key_release, data);
 	mlx_hook(data->win, DestroyNotify, StructureNotifyMask,
 		&on_destroy, data);
 	mlx_loop_hook(data->mlx, &render_images, data);
+	//mlx_loop_hook(data->win, &game_loop, data);
 	mlx_loop(data->mlx);
 }
 
@@ -107,4 +150,5 @@ int	main(int ac, char **av)
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	return (0);
+	
 }

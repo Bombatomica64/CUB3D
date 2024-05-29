@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   var_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 11:28:22 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:44:30 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,11 @@ t_game	*init_game(char *map_path)
 	get_texture_int(game);
 	check_map(game);
 	pixels_init(game);
+	game->keys.w = 0;
+	game->keys.s = 0;
+	game->keys.a = 0;
+	game->keys.d = 0;
+	game->keys.left = 0;
+	game->keys.right = 0;
 	return (game);
 }

@@ -4,6 +4,21 @@
 		"math.h": "c",
 		"libc-header-start.h": "c",
 		"fcntl.h": "c",
-		"random": "c"
+		"random": "c",
+		"climits": "c",
+		"cmath": "c",
+		"compare": "c",
+		"concepts": "c",
+		"cstdarg": "c",
+		"cstdio": "c",
+		"cstdlib": "c",
+		"exception": "c",
+		"type_traits": "c",
+		"limits": "c",
+		"new": "c",
+		"*.tcc": "c",
+		"cstdbool": "c",
+		"cstdint": "c",
+		"typeinfo": "c"
 	}
 }
