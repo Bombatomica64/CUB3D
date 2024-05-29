@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:20:37 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:22:50 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,6 @@ void	pixels_update(t_game *game, int x);
 
 //render.c
 
-void	render_images(t_game *game);
+int		render_images(t_game *game);
 
 #endif

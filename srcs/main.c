@@ -6,16 +6,55 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:57:22 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:33:38 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
+t_pos	rotate(t_pos pos, double angle)
+{
+	t_pos	new_pos;
+
+	new_pos.x = pos.x * cos(angle) - pos.y * sin(angle);
+	new_pos.y = pos.x * sin(angle) + pos.y * cos(angle);
+	return (new_pos);
+}
+
 int	on_esc(int keysym, t_game *game)
 {
 	if (keysym == XK_Escape)
 		err_exit("Exiting\n", game);
+	else if (keysym == XK_s)
+	{
+		game->player.pos.y -= game->player.dir.y * MOVE_SPEED;
+		game->player.pos.x -= game->player.dir.x * MOVE_SPEED;
+	}
+	else if (keysym == XK_w)
+	{
+		game->player.pos.x += game->player.dir.x * MOVE_SPEED;
+		game->player.pos.y += game->player.dir.y * MOVE_SPEED;
+	}
+	else if (keysym == XK_d)
+	{
+		game->player.pos.x -= game->player.dir.y * MOVE_SPEED;
+		game->player.pos.y += game->player.dir.x * MOVE_SPEED;
+	}
+	else if (keysym == XK_a)
+	{
+		game->player.pos.x += game->player.dir.y * MOVE_SPEED;
+		game->player.pos.y -= game->player.dir.x * MOVE_SPEED;
+	}
+	else if (keysym == XK_Right)
+	{
+		game->player.dir = rotate(game->player.dir, ROT_SPEED);
+		game->player.plane = rotate(game->player.plane, ROT_SPEED);
+	}
+	else if (keysym == XK_Left)
+	{
+		game->player.dir = rotate(game->player.dir, -ROT_SPEED);
+		game->player.plane = rotate(game->player.plane, -ROT_SPEED);
+	}
 	return (0);
 }
 
@@ -29,12 +68,11 @@ void	key_input(t_game *data)
 {
 	mlx_hook(data->win, KeyPress, KeyPressMask,
 		&on_esc, data);
-	// mlx_hook(data->data.win, ButtonPress, ButtonPressMask,
-	// 	&on_mouseclick, &data->data);
-	// mlx_hook(data->data.win, ButtonRelease, ButtonReleaseMask,
-	// 	&on_mouserelease, &data->data);
+	// mlx_hook(data->win, KeyRelease, KeyReleaseMask,
+	// 	&on_esc, data);
 	mlx_hook(data->win, DestroyNotify, StructureNotifyMask,
 		&on_destroy, data);
+	mlx_loop_hook(data->mlx, &render_images, data);
 	mlx_loop(data->mlx);
 }
 
@@ -65,7 +103,6 @@ int	main(int ac, char **av)
 	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[3].img.image, 300, 0);
 	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[4].img.image, 400, 0);
 	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[5].img.image, 500, 0);
-	render_images(game);
 	key_input(game);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);

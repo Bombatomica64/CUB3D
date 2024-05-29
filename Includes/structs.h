@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 11:34:33 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:33:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@
 # define SCREEN_WIDTH (double)720
 # define SCREEN_HEIGHT (double)480
 # define TILE_SIZE 100
+# define MOVE_SPEED (double)0.1
+# define ROT_SPEED (double)0.17
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
