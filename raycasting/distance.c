@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 11:28:56 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:24:20 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ static void	line_calc(t_game *game)
 	else
 		game->ray.dist = (game->ray.side_dist.y - game->ray.delta_dist.y);
 	game->ray.line_len = (SCREEN_HEIGHT / game->ray.dist);
-	printf("line_len: |%f|\n", game->ray.line_len);
-	printf("dist: |%f|\n", game->ray.dist);
 	game->ray.drw_start = -(game->ray.line_len) / 2 + SCREEN_HEIGHT / 2;
 	if (game->ray.drw_start < 0)
 		game->ray.drw_start = 0;

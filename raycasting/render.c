@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 11:28:22 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:26:03 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,16 @@ static void	render_frame(t_game *game)
 	mlx_destroy_image(game->mlx, image.img.image);
 }
 
-void	render_images(t_game *game)
+int	render_images(t_game *game)
 {
+	static int	frame = 0;
+
 	pixels_init(game);
 	cast_rays(game);
 	render_frame(game);
+	frame++;
+	printf("frame = %d\n", frame);
+	return (0);
 }
 
 	// if (BONUS)

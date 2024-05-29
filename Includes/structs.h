@@ -33,6 +33,8 @@
 # define SCREEN_WIDTH (double)720
 # define SCREEN_HEIGHT (double)480
 # define TILE_SIZE 128
+# define MOVE_SPEED (double)0.1
+# define ROT_SPEED (double)0.17
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
