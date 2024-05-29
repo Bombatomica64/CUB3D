@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 17:17:04 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:23:43 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 # define TILE_SIZE 128
 # define BACKGROUND_SIZE 512
 # define MOVE_SPEED (double)0.1
-# define ROT_SPEED (double)0.17
+# define ROT_SPEED (double)0.05
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
@@ -48,7 +48,7 @@
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
-# define FOV 90
+# define FOV 75
 
 /**
  * @brief 2D space vector
@@ -132,6 +132,16 @@ typedef struct s_curs
 	int		status;
 }	t_curs;
 
+typedef struct s_keys
+{
+	int		w;
+	int		s;
+	int		a;
+	int		d;
+	int		right;
+	int		left;
+}	t_keys;
+
 typedef struct s_game
 {
 	void		*mlx;
@@ -147,6 +157,7 @@ typedef struct s_game
 	t_player	player;
 	t_texture	txts;
 	double		fov_rd;
+	t_keys		keys;
 }	t_game;
 
 #endif
