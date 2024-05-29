@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:17:39 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:28:22 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ void	render_images(t_game *game)
 	pixels_init(game);
 	cast_rays(game);
 	render_frame(game);
-	// if (BONUS)
-	// 	render_minimap(game);
 }
 
+	// if (BONUS)
+	// 	render_minimap(game);
 // int	render(t_game *game)
 // {
 // 	game->player.has_moved += ft_movement(game);

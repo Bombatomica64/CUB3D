@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:12:57 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:39:37 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ t_img	get_floor(char *path, t_game *game, int nm)
 	int		start;
 	int		len;
 
-	if (ft_isdigit(path[0]))
+	i = skip_spaces2(path);
+	if (ft_isdigit(path[i]))
 	{
 		len = ft_strlen(path);
 		printf("path = %s\n", path);
-		i = 0;
 		start = 0;
 		while (i < len && path[i] != ',')
 			i++;
@@ -58,7 +58,7 @@ t_img	get_floor(char *path, t_game *game, int nm)
 	img = get_img(path + skip_spaces2(path), game);
 	if (!img.image)
 		return (err("Failed to load texture : "), err(path),
-			err_exit("", game), img);
+			err_exit(" \n", game), img);
 	return (img);
 }
 

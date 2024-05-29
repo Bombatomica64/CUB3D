@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter_v.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:09:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 09:55:17 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 // 	double	tan_angle;
 
 // 	tan_angle = fast_tan(angle);
-// 	game->ray.x_int = floor(game->player.x / TILE_SIZE) * TILE_SIZE;
+// 	game->ray.x_int = floor(game->player.x / (int)TILE_SIZE) * (int)TILE_SIZE;
 // 	if (angle > M_PI / 2 && angle < 3 * M_PI / 2)
-// 		game->ray.x_int += TILE_SIZE;
+// 		game->ray.x_int += (int)TILE_SIZE;
 // 	game->ray.y_int = game->player.y
 // 		+ (game->player.x - game->ray.x_int) * tan_angle;
 // 	return (tan_angle);
@@ -28,11 +28,11 @@
 // static void	calculate_steps(t_game *game, double tan_angle,
 // 	double *x_step, double *y_step)
 // {
-// 	*x_step = TILE_SIZE;
+// 	*x_step = (int)TILE_SIZE;
 // 	if (nor_angle(game->ray.angle) > M_PI / 2
 // 		&& nor_angle(game->ray.angle) < 3 * M_PI / 2)
 // 		*x_step *= -1;
-// 	*y_step = TILE_SIZE * tan_angle;
+// 	*y_step = (int)TILE_SIZE * tan_angle;
 // 	if (nor_angle(game->ray.angle) > M_PI
 // 		&& nor_angle(game->ray.angle) < 2 * M_PI)
 // 		*y_step *= -1;
@@ -47,7 +47,7 @@
 // 	x = game->ray.x_int;
 // 	y = game->ray.y_int;
 // 	fprintf(stderr, "x: %f, y: %f\n", x, y);
-// 	while (y >= 0 && y < game->map_height * TILE_SIZE)
+// 	while (y >= 0 && y < game->map_height * (int)TILE_SIZE)
 // 	{
 // 		if (is_wall(x, y, game) == 1)
 // 		{
@@ -71,15 +71,15 @@
 
 // 	if (game->ray.angle < M_PI / 2 || game->ray.angle > 3 * M_PI / 2)
 // 	{
-// 		x_step = TILE_SIZE;
-// 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE + TILE_SIZE;
+// 		x_step = (int)TILE_SIZE;
+// 		v_x = floor(game->player.x / (int)TILE_SIZE) * (int)TILE_SIZE + (int)TILE_SIZE;
 // 	}
 // 	else
 // 	{
-// 		x_step = -TILE_SIZE;
-// 		v_x = floor(game->player.x / TILE_SIZE) * TILE_SIZE - 1;
+// 		x_step = -(int)TILE_SIZE;
+// 		v_x = floor(game->player.x / (int)TILE_SIZE) * (int)TILE_SIZE - 1;
 // 	}
-// 	y_step = TILE_SIZE * tan(game->ray.angle);
+// 	y_step = (int)TILE_SIZE * tan(game->ray.angle);
 // 	if ((game->ray.angle > M_PI && game->ray.angle < 2 * M_PI && y_step > 0)
 // 		|| (game->ray.angle < M_PI && y_step < 0))
 // 	{

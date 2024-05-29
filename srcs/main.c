@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:17:03 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:57:22 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int	main(int ac, char **av)
 	if (ac != 2)
 	{
 		printf("Error\nWrong number of arguments\n");
+		return (1);
+	}
+	if (ft_strncmp(av[1] + ft_strlen(av[1]) - 4, ".cub", 4))
+	{
+		printf("Error\nWrong file extension\n");
 		return (1);
 	}
 	game = init_game(av[1]);

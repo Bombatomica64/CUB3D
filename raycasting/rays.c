@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:09:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 09:55:17 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ double	nor_angle(double angle)
 
 int	is_wall(double x, double y, t_game *game)
 {
-	int map_x = (int)(x / TILE_SIZE);
-	int map_y = (int)(y / TILE_SIZE);
+	int map_x = (int)(x / (int)TILE_SIZE);
+	int map_y = (int)(y / (int)TILE_SIZE);
 
     // Ensure the coordinates are within the map boundaries
 	if (map_x >= 0 && map_x < game->map_width

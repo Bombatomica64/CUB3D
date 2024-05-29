@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 12:20:14 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:34:33 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 # define A 0
 # define S 1
 # define D 2
-# define SCREEN_WIDTH 1900
-# define SCREEN_HEIGHT 1000
+# define SCREEN_WIDTH (double)720
+# define SCREEN_HEIGHT (double)480
 # define TILE_SIZE 100
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
@@ -45,7 +45,7 @@
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
-# define FOV 90
+# define FOV 120
 
 /**
  * @brief 2D space vector
@@ -87,7 +87,7 @@ typedef struct s_ray
 	double		dist; //distance to wall
 	double		wall_x; //x coordinate of the wall
 	int			side; // 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH
-	int			line_len; //lenght of the line to draw
+	double		line_len; //lenght of the line to draw
 	int			drw_start; //start of the line to draw
 	int			drw_end; //end of the line to draw
 	int			i_ray; //ray number
@@ -109,7 +109,6 @@ typedef struct s_texture
 	t_Myimg	imgs[6]; // 0 = NORTH, 1 = EAST, 2 = WEST, 3 = SOUTH, 4 = FLOOR, 5 = CEILING
 	int		x;
 	int		y;
-	int		size;
 	double	pos;
 	double	step;
 }	t_texture;

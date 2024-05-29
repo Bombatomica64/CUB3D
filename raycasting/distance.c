@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:51:05 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:28:56 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	reycast_init(int x, t_game *game)
 		+ game->player.plane.y * game->ray.camera_x;
 	game->ray.map.x = (int)game->player.pos.x;
 	game->ray.map.y = (int)game->player.pos.y;
-	game->ray.delta_dist.x = fabs(1 / game->ray.dir.x);
-	game->ray.delta_dist.y = fabs(1 / game->ray.dir.y);
+	game->ray.delta_dist.x = fabs(1.0 / game->ray.dir.x);
+	game->ray.delta_dist.y = fabs(1.0 / game->ray.dir.y);
 }
 
 /*
@@ -102,7 +102,9 @@ static void	line_calc(t_game *game)
 		game->ray.dist = (game->ray.side_dist.x - game->ray.delta_dist.x);
 	else
 		game->ray.dist = (game->ray.side_dist.y - game->ray.delta_dist.y);
-	game->ray.line_len = (int)(SCREEN_HEIGHT / game->ray.dist);
+	game->ray.line_len = (SCREEN_HEIGHT / game->ray.dist);
+	printf("line_len: |%f|\n", game->ray.line_len);
+	printf("dist: |%f|\n", game->ray.dist);
 	game->ray.drw_start = -(game->ray.line_len) / 2 + SCREEN_HEIGHT / 2;
 	if (game->ray.drw_start < 0)
 		game->ray.drw_start = 0;

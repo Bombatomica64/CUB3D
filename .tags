@@ -12,6 +12,10 @@ $(NAME)	minilibx/test/Makefile.mk	/^$(NAME): $(OBJ)$/;"	t
 $(OBJS)	libft/Makefile	/^$(OBJS): %.o: %.c$/;"	t
 $(OBJ_DIR)/%.o	minilibx/Makefile.mk	/^$(OBJ_DIR)\/%.o: %.c$/;"	t
 %.o	libft/Makefile	/^$(OBJS): %.o: %.c$/;"	t
+0	.vscode/launch.json	/^			{$/;"	o	array:configurations.0.setupCommands
+0	.vscode/launch.json	/^		"args": ["maps\/test.cub"],$/;"	s	array:configurations.0.args
+0	.vscode/launch.json	/^	{$/;"	o	array:configurations
+1	.vscode/launch.json	/^			{$/;"	o	array:configurations.0.setupCommands
 A	Includes/structs.h	/^# define A /;"	d
 AUTHOR	minilibx/man/man1/mlx.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
 AUTHOR	minilibx/man/man1/mlx_loop.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
@@ -114,6 +118,7 @@ LINKING	minilibx/man/man3/mlx.3	/^.SH LINKING MiniLibX$/;"	s	title:MiniLibX
 LOCALHOST	minilibx/mlx_int.h	/^# define LOCALHOST /;"	d
 MAGENTA	Includes/colours.h	/^# define MAGENTA /;"	d
 MAP Parsing	README.md	/^## MAP Parsing$/;"	s
+MIMode	.vscode/launch.json	/^		"MIMode": "gdb",$/;"	s	object:configurations.0
 MLX	Makefile	/^MLX = $(MLX_DIR)\/libmlx.a$/;"	m
 MLXFLAGS	Makefile	/^MLXFLAGS = -lX11 -lXext -lm$/;"	m
 MLX_DIR	Makefile	/^MLX_DIR = .\/minilibx$/;"	m
@@ -218,27 +223,27 @@ XPM	minilibx/man/man3/mlx_new_image.3	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
 X_ShmAttach	minilibx/mlx_new_image.c	/^#define	X_ShmAttach	/;"	d	file:
 YELLOW	Includes/colours.h	/^# define YELLOW /;"	d
 add_to_matrix	libft/matrix_utils.c	/^char	**add_to_matrix(char **matrix, char *line)$/;"	f	typeref:typename:char **
-addr	Includes/structs.h	/^	size_t	addr[6]; \/\/ 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F$/;"	m	struct:s_texture	typeref:typename:size_t[6]
 all	Makefile	/^all: $(NAME)$/;"	t
 all	libft/Makefile	/^all: $(NAME)$/;"	t
 all	minilibx/Makefile	/^all	: do_configure$/;"	t
 all	minilibx/Makefile.mk	/^all	: $(NAME)$/;"	t
 all	minilibx/test/Makefile.mk	/^all: $(NAME)$/;"	t
 all_to_trim	libft/ft_strtrim.c	/^static char	*all_to_trim(int start, int len, const char *s1)$/;"	f	typeref:typename:char *	file:
-angle	Includes/structs.h	/^	double		angle; \/\/angle of ray$/;"	m	struct:s_ray	typeref:typename:double
 angle	Includes/structs.h	/^	double		angle;$/;"	m	struct:s_player	typeref:typename:double
+args	.vscode/launch.json	/^		"args": ["maps\/test.cub"],$/;"	a	object:configurations.0
 at_exit	minilibx/test/run_tests.sh	/^at_exit() {$/;"	f
 b	Includes/structs.h	/^	char	*b;$/;"	m	struct:s_color	typeref:typename:char *
 better_pixel_put	raycasting/pixel_putting.c	/^void	better_pixel_put(t_game *game, int x, int y, int color)$/;"	f	typeref:typename:void
+bpp	Includes/structs.h	/^	int		bpp;$/;"	m	struct:s_chadimg	typeref:typename:int
 bpp	minilibx/mlx_int.h	/^	int				bpp;$/;"	m	struct:s_img	typeref:typename:int
 bpp1	minilibx/test/main.c	/^int	bpp1;$/;"	v	typeref:typename:int
 bpp2	minilibx/test/main.c	/^int	bpp2;$/;"	v	typeref:typename:int
 bpp3	minilibx/test/main.c	/^int	bpp3;$/;"	v	typeref:typename:int
 bpp4	minilibx/test/main.c	/^int	bpp4;$/;"	v	typeref:typename:int
-cast_rays	raycasting/distance.c	/^void	cast_rays(t_game *game)$/;"	f	typeref:typename:void
+camera_x	Includes/structs.h	/^	double		camera_x; \/\/x coordinate of the camera plane$/;"	m	struct:s_ray	typeref:typename:double
+cast_rays	raycasting/distance.c	/^int	cast_rays(t_game *game)$/;"	f	typeref:typename:int
 check	minilibx/Makefile.mk	/^check: all$/;"	t
 check_closed_space	parsing/map_check.c	/^void	check_closed_space(t_game *game, t_curs curs)$/;"	f	typeref:typename:void
-check_inter	raycasting/inter_h.c	/^int	check_inter(double angle, double *y, double *y_step, int flag)$/;"	f	typeref:typename:int
 check_map	parsing/map_check.c	/^void	check_map(t_game *game)$/;"	f	typeref:typename:void
 check_null	libft/ft_strtrim.c	/^static char	*check_null(char const *s1)$/;"	f	typeref:typename:char *	file:
 check_to_put	libft/ft_printf.c	/^int	check_to_put(char c, va_list lst)$/;"	f	typeref:typename:int
@@ -255,40 +260,50 @@ col	minilibx/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col	typeref:typename:int
 color	minilibx/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name	typeref:typename:int
 color_map_1	minilibx/test/main.c	/^int	color_map_1(void *win,int w,int h)$/;"	f	typeref:typename:int
 color_map_2	minilibx/test/main.c	/^int	color_map_2(unsigned char *data,int bpp,int sl,int w,int h,int endian, int type)$/;"	f	typeref:typename:int
+configurations	.vscode/launch.json	/^	"configurations": [$/;"	a
 content	libft/libft.h	/^	void			*content;$/;"	m	struct:s_list	typeref:typename:void *
 cos_table	Includes/structs.h	/^	double		cos_table[360];$/;"	m	struct:s_game	typeref:typename:double[360]
 create_color_file	parsing/color.c	/^char	*create_color_file(t_color color, t_game *game, int nm)$/;"	f	typeref:typename:char *
 create_sub_str	libft/ft_split.c	/^static char	*create_sub_str(int start, char const *s, char c)$/;"	f	typeref:typename:char *	file:
 cut_string	libft/str_utils3.c	/^char	*cut_string(int len, char *str)$/;"	f	typeref:typename:char *
+cwd	.vscode/launch.json	/^		"cwd": ".",$/;"	s	object:configurations.0
+data	Includes/structs.h	/^	int		*data;$/;"	m	struct:s_chadimg	typeref:typename:int *
 data	minilibx/mlx_int.h	/^	char			*data;$/;"	m	struct:s_img	typeref:typename:char *
 data1	minilibx/test/main.c	/^char	*data1;$/;"	v	typeref:typename:char *
 data2	minilibx/test/main.c	/^char	*data2;$/;"	v	typeref:typename:char *
 data3	minilibx/test/main.c	/^char	*data3;$/;"	v	typeref:typename:char *
 data4	minilibx/test/main.c	/^char	*data4;$/;"	v	typeref:typename:char *
+dda_exec	raycasting/distance.c	/^static void	dda_exec(t_game *game)$/;"	f	typeref:typename:void	file:
+dda_init	raycasting/distance.c	/^static void	dda_init(t_game *game)$/;"	f	typeref:typename:void	file:
 decrgb	minilibx/mlx_int.h	/^	int			decrgb[6];$/;"	m	struct:s_xvar	typeref:typename:int[6]
+delta_dist	Includes/structs.h	/^	t_pos		delta_dist; \/\/distance between two sides$/;"	m	struct:s_ray	typeref:typename:t_pos
 depth	minilibx/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar	typeref:typename:int
-dir	Includes/structs.h	/^	t_pos		dir; \/\/ 0, 50, 2$/;"	m	struct:s_player	typeref:typename:t_pos
+description	.vscode/launch.json	/^				"description": "Enable pretty-printing for gdb",$/;"	s	object:configurations.0.setupCommands.0
+description	.vscode/launch.json	/^				"description": "Set Disassembly Flavor to Intel",$/;"	s	object:configurations.0.setupCommands.1
+dir	Includes/structs.h	/^	t_pos		dir; \/\/direction of the ray$/;"	m	struct:s_ray	typeref:typename:t_pos
+dir	Includes/structs.h	/^	t_pos		dir;$/;"	m	struct:s_player	typeref:typename:t_pos
 display	minilibx/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar	typeref:typename:Display *
 dist	Includes/structs.h	/^	double		dist; \/\/distance to wall$/;"	m	struct:s_ray	typeref:typename:double
-dist_proj	Includes/structs.h	/^	double		dist_proj; \/\/ distance from player to projection plane$/;"	m	struct:s_player	typeref:typename:double
 do_configure	minilibx/Makefile	/^do_configure	:$/;"	t
 do_flush	minilibx/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar	typeref:typename:int
-draw_down	raycasting/walls.c	/^void	draw_down(t_game *game, double wall_h, double b_pix)$/;"	f	typeref:typename:void
-draw_up	raycasting/walls.c	/^void	draw_up(t_game *game, double wall_h, double t_pix)$/;"	f	typeref:typename:void
-draw_wall	raycasting/walls.c	/^void	draw_wall(t_game *game, double wall_h, double t_pix, double b_pix)$/;"	f	typeref:typename:void
+drw_end	Includes/structs.h	/^	int			drw_end; \/\/end of the line to draw$/;"	m	struct:s_ray	typeref:typename:int
+drw_start	Includes/structs.h	/^	int			drw_start; \/\/start of the line to draw$/;"	m	struct:s_ray	typeref:typename:int
 e_bool	libft/libft.h	/^typedef enum e_bool$/;"	g
+empty_myimg	raycasting/render.c	/^static t_Myimg	empty_myimg(t_game *game, int width, int height)$/;"	f	typeref:typename:t_Myimg	file:
 end_loop	minilibx/mlx_int.h	/^	int 		end_loop;$/;"	m	struct:s_xvar	typeref:typename:int
+endian	Includes/structs.h	/^	int		endian;$/;"	m	struct:s_chadimg	typeref:typename:int
 endian1	minilibx/test/main.c	/^int	endian1;$/;"	v	typeref:typename:int
 endian2	minilibx/test/main.c	/^int	endian2;$/;"	v	typeref:typename:int
 endian3	minilibx/test/main.c	/^int	endian3;$/;"	v	typeref:typename:int
 endian4	minilibx/test/main.c	/^int	endian4;$/;"	v	typeref:typename:int
-endians	Includes/structs.h	/^	int		endians[6];$/;"	m	struct:s_texture	typeref:typename:int[6]
+environment	.vscode/launch.json	/^		"environment": [],$/;"	a	object:configurations.0
 err	srcs/error_management.c	/^int	err(char *msg)$/;"	f	typeref:typename:int
 err_exit	srcs/error_management.c	/^void	err_exit(char *msg, t_game *game)$/;"	f	typeref:typename:void
 expose_hook	minilibx/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
 expose_param	minilibx/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list	typeref:typename:void *
 expose_win1	minilibx/test/main.c	/^int	expose_win1(void *p)$/;"	f	typeref:typename:int
 expose_win2	minilibx/test/main.c	/^int	expose_win2(void *p)$/;"	f	typeref:typename:int
+externalConsole	.vscode/launch.json	/^		"externalConsole": false,$/;"	b	object:configurations.0
 fast_cos	srcs/fast_trig.c	/^double	fast_cos(double angle, t_game *game)$/;"	f	typeref:typename:double
 fast_sin	srcs/fast_trig.c	/^double	fast_sin(double angle, t_game *game)$/;"	f	typeref:typename:double
 fast_tan	srcs/fast_trig.c	/^double	fast_tan(double angle, t_game *game)$/;"	f	typeref:typename:double
@@ -301,9 +316,9 @@ file_size	parsing/map_check.c	/^static void	file_size(char *map_path, t_game *ga
 files.associations	.vscode/settings.json	/^	"files.associations": {$/;"	o
 find_first	libft/str_utils2.c	/^int	find_first(char *str, char c)$/;"	f	typeref:typename:int
 find_last	libft/str_utils2.c	/^int	find_last(char *str, char c)$/;"	f	typeref:typename:int
-flag	Includes/structs.h	/^	int			flag; \/\/1 = vertical, 0 = horizontal$/;"	m	struct:s_ray	typeref:typename:int
 format	minilibx/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
 fov_rd	Includes/structs.h	/^	double		fov_rd;$/;"	m	struct:s_game	typeref:typename:double
+frame_set	raycasting/render.c	/^static void	frame_set(t_game *game, t_Myimg *image, int x, int y)$/;"	f	typeref:typename:void	file:
 free_strdup	libft/str_utils4.c	/^char	*free_strdup(char *str, char **freestr)$/;"	f	typeref:typename:char *
 free_strrchr	libft/str_utils3.c	/^char	*free_strrchr(char *str, char c, int **offset)$/;"	f	typeref:typename:char *
 ft_atoi	libft/ft_atoi.c	/^int	ft_atoi(const char *nptr)$/;"	f	typeref:typename:int
@@ -385,37 +400,37 @@ g	Includes/structs.h	/^	char	*g;$/;"	m	struct:s_color	typeref:typename:char *
 gc	minilibx/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list	typeref:typename:GC
 gc	minilibx/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img	typeref:typename:GC
 gere_mouse	minilibx/test/new_win.c	/^int gere_mouse(int x,int y,int button,void*toto)$/;"	f	typeref:typename:int
-get_angle	parsing/player.c	/^double	get_angle(int x, int y, t_game *game)$/;"	f	typeref:typename:double
 get_floor	parsing/textures.c	/^t_img	get_floor(char *path, t_game *game, int nm)$/;"	f	typeref:typename:t_img
 get_img	srcs/put_images.c	/^t_img	get_img(char *path, t_game *game)$/;"	f	typeref:typename:t_img
+get_index	raycasting/pixels.c	/^static t_Myimg	get_index(t_game *game)$/;"	f	typeref:typename:t_Myimg	file:
 get_next_line	libft/get_next_line_bonus.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
 get_next_line2	libft/get_next_line2.c	/^int	get_next_line2(int fd, char **line)$/;"	f	typeref:typename:int
-get_texture	raycasting/rays.c	/^t_img	get_texture(t_game *game)$/;"	f	typeref:typename:t_img
-get_texture_adresses	parsing/textures.c	/^void	get_texture_adresses(t_game *game)$/;"	f	typeref:typename:void
+get_texture_int	parsing/textures.c	/^void	get_texture_int(t_game *game)$/;"	f	typeref:typename:void
 get_textures	parsing/textures.c	/^void	get_textures(t_game *game)$/;"	f	typeref:typename:void
-get_wal	raycasting/smallsteps.c	/^t_pos	get_wal(t_game *game, t_pos first_step, t_pos steps)$/;"	f	typeref:typename:t_pos
-get_wall_dist	raycasting/distance.c	/^double	get_wall_dist(t_game *game)$/;"	f	typeref:typename:double
 get_xlib_include_path	minilibx/configure	/^get_xlib_include_path(){$/;"	f
-get_xo	raycasting/walls.c	/^double	get_xo(t_game *game, t_img texture, char type)$/;"	f	typeref:typename:double
 height	minilibx/mlx_int.h	/^	int				height;$/;"	m	struct:s_img	typeref:typename:int
 hook	minilibx/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list	typeref:typename:int (*)()
 hooks	minilibx/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list	typeref:typename:t_event_list[]
-horizontal_inter	raycasting/inter_h.c	/^double	horizontal_inter(t_game *game)$/;"	f	typeref:typename:double
 i	Includes/structs.h	/^	int		i;$/;"	m	struct:s_curs	typeref:typename:int
 i_ray	Includes/structs.h	/^	int			i_ray; \/\/ray number$/;"	m	struct:s_ray	typeref:typename:int
+ignoreFailures	.vscode/launch.json	/^				"ignoreFailures": true$/;"	b	object:configurations.0.setupCommands.0
+ignoreFailures	.vscode/launch.json	/^				"ignoreFailures": true$/;"	b	object:configurations.0.setupCommands.1
 im1	minilibx/test/main.c	/^void    *im1;$/;"	v	typeref:typename:void *
 im2	minilibx/test/main.c	/^void	*im2;$/;"	v	typeref:typename:void *
 im3	minilibx/test/main.c	/^void	*im3;$/;"	v	typeref:typename:void *
 im4	minilibx/test/main.c	/^void	*im4;$/;"	v	typeref:typename:void *
 image	minilibx/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
-imgs	Includes/structs.h	/^	t_img	imgs[6]; \/\/ 0 = NO, 1 = SO, 2 = WE, 3 = EA, 4 = C, 5 = F$/;"	m	struct:s_texture	typeref:typename:t_img[6]
+img	Includes/structs.h	/^	t_img	img;$/;"	m	struct:s_chadimg	typeref:typename:t_img
+imgs	Includes/structs.h	/^	t_Myimg	imgs[6]; \/\/ 0 = NORTH, 1 = EAST, 2 = WEST, 3 = SOUTH, 4 = FLOOR, 5 = CEILING$/;"	m	struct:s_texture	typeref:typename:t_Myimg[6]
 init_game	parsing/var_init.c	/^t_game	*init_game(char *map_path)$/;"	f	typeref:typename:t_game *
-init_player	parsing/player.c	/^void	init_player(t_game *game, int x, int y)$/;"	f	typeref:typename:void
+init_player	parsing/player.c	/^void	init_player(t_game *game, int y, int x)$/;"	f	typeref:typename:void
+init_player_east_west	parsing/player.c	/^static void	init_player_east_west(t_player *player)$/;"	f	typeref:typename:void	file:
+init_player_north_south	parsing/player.c	/^static void	init_player_north_south(t_player *player)$/;"	f	typeref:typename:void	file:
 init_trig	srcs/fast_trig.c	/^void	init_trig(t_game *game)$/;"	f	typeref:typename:void
 input	Includes/structs.h	/^	t_input		input;$/;"	m	struct:s_game	typeref:typename:t_input
 is_in_mtx	libft/matrix_utils.c	/^int	is_in_mtx(char *line, char **matrix)$/;"	f	typeref:typename:int
 is_wall	raycasting/rays.c	/^int	is_wall(double x, double y, t_game *game)$/;"	f	typeref:typename:int
-itoa_base_hex	parsing/color.c	/^static char	*itoa_base_hex(int n)$/;"	f	typeref:typename:char *	file:
+itoa_base_hex	parsing/color.c	/^char	*itoa_base_hex(int n)$/;"	f	typeref:typename:char *
 j	Includes/structs.h	/^	int		j;$/;"	m	struct:s_curs	typeref:typename:int
 join_char	libft/str_utils3.c	/^char	*join_char(char *str, char c)$/;"	f	typeref:typename:char *
 join_n_char	libft/str_utils4.c	/^char	*join_n_char(char *s1, char c, int n)$/;"	f	typeref:typename:char *
@@ -427,6 +442,8 @@ key_win1	minilibx/test/main.c	/^int	key_win1(int key,void *p)$/;"	f	typeref:type
 key_win2	minilibx/test/main.c	/^int	key_win2(int key,void *p)$/;"	f	typeref:typename:int
 key_win3	minilibx/test/main.c	/^int	key_win3(int key,void *p)$/;"	f	typeref:typename:int
 libc-header-start.h	.vscode/settings.json	/^		"libc-header-start.h": "c",$/;"	s	object:files.associations
+line_calc	raycasting/distance.c	/^static void	line_calc(t_game *game)$/;"	f	typeref:typename:void	file:
+line_len	Includes/structs.h	/^	int			line_len; \/\/lenght of the line to draw$/;"	m	struct:s_ray	typeref:typename:int
 local_endian	minilibx/test/main.c	/^int	local_endian;$/;"	v	typeref:typename:int
 log_error	minilibx/configure	/^log_error(){$/;"	f
 log_error	minilibx/test/run_tests.sh	/^log_error(){$/;"	f
@@ -444,6 +461,7 @@ main	srcs/main.c	/^int	main(int ac, char **av)$/;"	f	typeref:typename:int
 make_number	libft/ft_itoa.c	/^static char	*make_number(int num_len, long b)$/;"	f	typeref:typename:char *	file:
 make_number	libft/ft_unsigned_itoa.c	/^static char	*make_number(int num_len, long b)$/;"	f	typeref:typename:char *	file:
 map	Includes/structs.h	/^	char		**map;$/;"	m	struct:s_game	typeref:typename:char **
+map	Includes/structs.h	/^	t_pos		map; \/\/current map square$/;"	m	struct:s_ray	typeref:typename:t_pos
 map_and_txt	Includes/structs.h	/^	char	**map_and_txt;$/;"	m	struct:s_input	typeref:typename:char **
 map_height	Includes/structs.h	/^	int			map_height;$/;"	m	struct:s_game	typeref:typename:int
 map_str	Includes/structs.h	/^	t_bool	map_str;$/;"	m	struct:s_input	typeref:typename:t_bool
@@ -528,9 +546,10 @@ mouse_param	minilibx/mlx_int.h	/^	void				*mouse_param;$/;"	m	struct:s_win_list	
 mouse_win1	minilibx/test/main.c	/^int	mouse_win1(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
 mouse_win2	minilibx/test/main.c	/^int	mouse_win2(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
 mouse_win3	minilibx/test/main.c	/^int	mouse_win3(int x,int y, void *p)$/;"	f	typeref:typename:int
+name	.vscode/launch.json	/^		"name": "Basic C Launch",$/;"	s	object:configurations.0
+name	Includes/structs.h	/^	char		name;$/;"	m	struct:s_player	typeref:typename:char
 name	minilibx/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name	typeref:typename:char *
 name	minilibx/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col	typeref:typename:int
-next	Includes/structs.h	/^	t_pos		next; \/\/next intersection point$/;"	m	struct:s_ray	typeref:typename:t_pos
 next	libft/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
 next	minilibx/mlx_int.h	/^	struct s_win_list	*next;$/;"	m	struct:s_win_list	typeref:struct:s_win_list *
 nor_angle	raycasting/rays.c	/^double	nor_angle(double angle)$/;"	f	typeref:typename:double
@@ -542,11 +561,17 @@ parse_args	minilibx/configure	/^parse_args(){$/;"	f
 parse_line	parsing/splut.c	/^int	parse_line(char *line, t_game *game)$/;"	f	typeref:typename:int
 parse_map	parsing/map_check.c	/^char	**parse_map(char *map_path, t_game *game)$/;"	f	typeref:typename:char **
 pix	minilibx/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img	typeref:typename:Pixmap
+pixels	Includes/structs.h	/^	int			**pixels;$/;"	m	struct:s_game	typeref:typename:int **
+pixels_init	raycasting/pixels.c	/^void	pixels_init(t_game *game)$/;"	f	typeref:typename:void
+pixels_update	raycasting/pixels.c	/^void	pixels_update(t_game *game, int x)$/;"	f	typeref:typename:void
+plane	Includes/structs.h	/^	t_pos		plane;$/;"	m	struct:s_player	typeref:typename:t_pos
 play	Makefile	/^play:$/;"	t
 player	Includes/structs.h	/^	t_player	player;$/;"	m	struct:s_game	typeref:typename:t_player
-pos	Includes/structs.h	/^	t_pos		pos; \/\/ 0, 50, 0$/;"	m	struct:s_player	typeref:typename:t_pos
+pos	Includes/structs.h	/^	double	pos;$/;"	m	struct:s_texture	typeref:typename:double
+pos	Includes/structs.h	/^	t_pos		pos;$/;"	m	struct:s_player	typeref:typename:t_pos
 print_matrix	libft/space_utils.c	/^t_bool	print_matrix(char **mtx)$/;"	f	typeref:typename:t_bool
 private_cmap	minilibx/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typeref:typename:int
+program	.vscode/launch.json	/^		"program": "${workspaceFolder}\/cub3D",$/;"	s	object:configurations.0
 pshm_format	minilibx/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
 put_xmp	srcs/put_images.c	/^void	*put_xmp(void *mlx, char *filename, int *width, int *height)$/;"	f	typeref:typename:void *
 r	Includes/structs.h	/^	char	*r;$/;"	m	struct:s_color	typeref:typename:char *
@@ -557,9 +582,13 @@ re	libft/Makefile	/^re: fclean all$/;"	t
 re	minilibx/Makefile	/^re	: clean all$/;"	t
 re	minilibx/test/Makefile.mk	/^re: clean all$/;"	t
 rem_from_matrix	libft/matrix_utils.c	/^char	**rem_from_matrix(char **matrix, int index)$/;"	f	typeref:typename:char **
-render_wall	raycasting/walls.c	/^void	render_wall(t_game *game)$/;"	f	typeref:typename:void
+render_frame	raycasting/render.c	/^static void	render_frame(t_game *game)$/;"	f	typeref:typename:void	file:
+render_images	raycasting/render.c	/^void	render_images(t_game *game)$/;"	f	typeref:typename:void
+request	.vscode/launch.json	/^		"request": "launch",$/;"	s	object:configurations.0
 reverse_bit	raycasting/pixel_putting.c	/^int	reverse_bit(int c)$/;"	f	typeref:typename:int
+reycast_init	raycasting/distance.c	/^static void	reycast_init(int x, t_game *game)$/;"	f	typeref:typename:void	file:
 root	minilibx/mlx_int.h	/^	Window		root;$/;"	m	struct:s_xvar	typeref:typename:Window
+s_chadimg	Includes/structs.h	/^typedef struct s_chadimg$/;"	s
 s_col_name	minilibx/mlx_int.h	/^struct	s_col_name$/;"	s
 s_color	Includes/structs.h	/^typedef struct s_color$/;"	s
 s_curs	Includes/structs.h	/^typedef struct s_curs$/;"	s
@@ -577,15 +606,19 @@ s_xpm_col	minilibx/mlx_int.h	/^typedef	struct	s_xpm_col$/;"	s
 s_xvar	minilibx/mlx_int.h	/^typedef struct	s_xvar$/;"	s
 saved_mode	minilibx/mlx_ext_randr.c	/^RRMode	saved_mode = 0;$/;"	v	typeref:typename:RRMode
 screen	minilibx/mlx_int.h	/^	int			screen;$/;"	m	struct:s_xvar	typeref:typename:int
-shape	Includes/structs.h	/^	double		shape;$/;"	m	struct:s_game	typeref:typename:double
+set_pixel	raycasting/render.c	/^void	set_pixel(t_Myimg *image, int x, int y, int color)$/;"	f	typeref:typename:void
+setupCommands	.vscode/launch.json	/^		"setupCommands": [$/;"	a	object:configurations.0
 shm	minilibx/mlx_int.h	/^	XShmSegmentInfo	shm;$/;"	m	struct:s_img	typeref:typename:XShmSegmentInfo
 shm_att_pb	minilibx/mlx_new_image.c	/^int	shm_att_pb(Display *d,XErrorEvent *ev)$/;"	f	typeref:typename:int
 show	minilibx/Makefile.mk	/^show:$/;"	t
 show	minilibx/test/Makefile.mk	/^show:$/;"	t
 show_help	minilibx/configure	/^show_help(){$/;"	f
+side	Includes/structs.h	/^	int			side; \/\/ 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH$/;"	m	struct:s_ray	typeref:typename:int
+side_dist	Includes/structs.h	/^	t_pos		side_dist; \/\/distance to the next side$/;"	m	struct:s_ray	typeref:typename:t_pos
 sigint_handler	minilibx/test/run_tests.sh	/^sigint_handler(){$/;"	f
 sin_table	Includes/structs.h	/^	double		sin_table[360];$/;"	m	struct:s_game	typeref:typename:double[360]
-size	Includes/structs.h	/^	double		size;$/;"	m	struct:s_game	typeref:typename:double
+size	Includes/structs.h	/^	int		size;$/;"	m	struct:s_texture	typeref:typename:int
+size_line	Includes/structs.h	/^	int		size_line;$/;"	m	struct:s_chadimg	typeref:typename:int
 size_line	minilibx/mlx_int.h	/^	int				size_line;$/;"	m	struct:s_img	typeref:typename:int
 skip_spaces	libft/space_utils.c	/^void	skip_spaces(char **str)$/;"	f	typeref:typename:void
 skip_spaces2	libft/space_utils.c	/^int	skip_spaces2(char *str)$/;"	f	typeref:typename:int
@@ -593,16 +626,16 @@ sl1	minilibx/test/main.c	/^int	sl1;$/;"	v	typeref:typename:int
 sl2	minilibx/test/main.c	/^int	sl2;$/;"	v	typeref:typename:int
 sl3	minilibx/test/main.c	/^int	sl3;$/;"	v	typeref:typename:int
 sl4	minilibx/test/main.c	/^int	sl4;$/;"	v	typeref:typename:int
-smallstep_q1	raycasting/smallsteps.c	/^t_pos	smallstep_q1(t_game *game)$/;"	f	typeref:typename:t_pos
-smallstep_q2	raycasting/smallsteps.c	/^t_pos	smallstep_q2(t_game *game)$/;"	f	typeref:typename:t_pos
-smallstep_q3	raycasting/smallsteps.c	/^t_pos	smallstep_q3(t_game *game)$/;"	f	typeref:typename:t_pos
-smallstep_q4	raycasting/smallsteps.c	/^t_pos	smallstep_q4(t_game *game)$/;"	f	typeref:typename:t_pos
 split_map	parsing/splut.c	/^void	split_map(t_game *game)$/;"	f	typeref:typename:void
 stamp	libft/ft_putnbr_fd.c	/^static void	stamp(char nb, int fd)$/;"	f	typeref:typename:void	file:
 status	Includes/structs.h	/^	int		status;$/;"	m	struct:s_curs	typeref:typename:int
+step	Includes/structs.h	/^	double	step;$/;"	m	struct:s_texture	typeref:typename:double
+step	Includes/structs.h	/^	t_pos		step; \/\/lenght of the steps$/;"	m	struct:s_ray	typeref:typename:t_pos
+stopAtEntry	.vscode/launch.json	/^		"stopAtEntry": false,$/;"	b	object:configurations.0
 str_count	libft/ft_split.c	/^static int	str_count(const char *s, char c)$/;"	f	typeref:typename:int	file:
 strjoin_n_free1	libft/str_utils3.c	/^char	*strjoin_n_free1(char *line, char *buff, int index)$/;"	f	typeref:typename:char *
 strlcpy_is_not_posix	minilibx/mlx_xpm.c	/^unsigned int	strlcpy_is_not_posix(char *dest, char *src, unsigned int size)$/;"	f	typeref:typename:unsigned int
+t_Myimg	Includes/structs.h	/^}	t_Myimg;$/;"	t	typeref:struct:s_chadimg
 t_bool	libft/libft.h	/^}	t_bool;$/;"	t	typeref:enum:e_bool
 t_color	Includes/structs.h	/^}	t_color;$/;"	t	typeref:struct:s_color
 t_curs	Includes/structs.h	/^}	t_curs;$/;"	t	typeref:struct:s_curs
@@ -619,17 +652,20 @@ t_win_list	minilibx/mlx_int.h	/^}				t_win_list;$/;"	t	typeref:struct:s_win_list
 t_xpm_col	minilibx/mlx_int.h	/^}				t_xpm_col;$/;"	t	typeref:struct:s_xpm_col
 t_xvar	minilibx/mlx_int.h	/^}				t_xvar;$/;"	t	typeref:struct:s_xvar
 test_default_main	minilibx/test/run_tests.sh	/^test_default_main(){$/;"	f
+text	.vscode/launch.json	/^				"text": "-enable-pretty-printing",$/;"	s	object:configurations.0.setupCommands.0
+text	.vscode/launch.json	/^				"text": "-gdb-set disassembly-flavor intel",$/;"	s	object:configurations.0.setupCommands.1
 texture_names	parsing/textures.c	/^char	**texture_names(void)$/;"	f	typeref:typename:char **
 txt_nm	Includes/structs.h	/^	char	**txt_nm; \/\/alloced in var_init.c$/;"	m	struct:s_texture	typeref:typename:char **
 txts	Includes/structs.h	/^	char	**txts;$/;"	m	struct:s_texture	typeref:typename:char **
 txts	Includes/structs.h	/^	t_texture	txts;$/;"	m	struct:s_game	typeref:typename:t_texture
+type	.vscode/launch.json	/^		"type": "cppdbg",$/;"	s	object:configurations.0
 type	minilibx/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typename:int
 unit_circle	raycasting/rays.c	/^int	unit_circle(double angle, char c)$/;"	f	typeref:typename:int
 use_xshm	minilibx/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
 val	Makefile	/^val:$/;"	t
-vertical_inter	raycasting/inter_v.c	/^double	vertical_inter(t_game *game)$/;"	f	typeref:typename:double
 visual	minilibx/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
 wall_hit	Includes/structs.h	/^	int		wall_hit; \/\/ 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH$/;"	m	struct:s_pos	typeref:typename:int
+wall_x	Includes/structs.h	/^	double		wall_x; \/\/x coordinate of the wall$/;"	m	struct:s_ray	typeref:typename:double
 width	minilibx/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int
 win	Includes/structs.h	/^	void		*win;$/;"	m	struct:s_game	typeref:typename:void *
 win1	minilibx/test/main.c	/^void	*win1;$/;"	v	typeref:typename:void *
@@ -644,7 +680,9 @@ wm_delete_window	minilibx/mlx_int.h	/^	Atom		wm_delete_window;$/;"	m	struct:s_xv
 wm_protocols	minilibx/mlx_int.h	/^	Atom		wm_protocols;$/;"	m	struct:s_xvar	typeref:typename:Atom
 x	Includes/structs.h	/^	double		x;$/;"	m	struct:s_player	typeref:typename:double
 x	Includes/structs.h	/^	double	x;$/;"	m	struct:s_pos	typeref:typename:double
+x	Includes/structs.h	/^	int		x;$/;"	m	struct:s_texture	typeref:typename:int
 xpm1_x	minilibx/test/main.c	/^int	xpm1_x;$/;"	v	typeref:typename:int
 xpm1_y	minilibx/test/main.c	/^int	xpm1_y;$/;"	v	typeref:typename:int
 y	Includes/structs.h	/^	double		y;$/;"	m	struct:s_player	typeref:typename:double
 y	Includes/structs.h	/^	double	y;$/;"	m	struct:s_pos	typeref:typename:double
+y	Includes/structs.h	/^	int		y;$/;"	m	struct:s_texture	typeref:typename:int

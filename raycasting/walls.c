@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   walls.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:09:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:28:22 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 // 	if (type == 'w')
 // 	{
 // 		x_o = (int)fmodf((game->ray.next.x
-// 					* (texture.width / TILE_SIZE)), texture.width);
+// 					* (texture.width / (int)TILE_SIZE)), texture.width);
 // 	}
 // 	else
 // 	{
 // 		x_o = (int)fmodf((game->player.x
-// 					* (texture.width / TILE_SIZE)), texture.width);
+// 					* (texture.width / (int)TILE_SIZE)), texture.width);
 // 	}
 // 	return (x_o);
 // }
@@ -110,7 +110,7 @@
 // 	double	t_pix;
 
 // 	wall_h = fabs(((SCREEN_WIDTH / 2) / tan(FOV / 2))
-// 			* TILE_SIZE / (game->ray.dist * fast_cos(game->ray.angle, game)));
+// 			* (int)TILE_SIZE / (game->ray.dist * fast_cos(game->ray.angle, game)));
 // 	printf("wall_h: %f\n", wall_h);
 // 	if (wall_h > SCREEN_HEIGHT)
 // 		wall_h = SCREEN_HEIGHT;

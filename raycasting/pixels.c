@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:52:16 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:28:22 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ void	pixels_init(t_game *game)
 	}
 }
 
-static t_Myimg	get_index(t_game *game)
+static int	get_index(t_game *game)
 {
 	if (game->ray.side == 0)
 	{
 		if (game->ray.dir.x < 0)
-			return (game->txts.imgs[3]);
+			return (3);
 		else
-			return (game->txts.imgs[2]);
+			return (2);
 	}
 	else
 	{
 		if (game->ray.dir.y > 0)
-			return (game->txts.imgs[1]);
+			return (1);
 		else
-			return (game->txts.imgs[0]);
+			return (0);
 	}
 }
 
@@ -53,26 +53,27 @@ void	pixels_update(t_game *game, int x)
 {
 	int			y;
 	int			color;
-	t_Myimg		texture;
+	int			i;
 
-	texture = get_index(game);
-	game->txts.x = (int)(game->ray.wall_x * game->txts.size);
+	i = get_index(game);
+	game->txts.x = (int)(game->ray.wall_x * (int)TILE_SIZE);
 	if ((game->ray.side == 0 && game->ray.dir.x < 0)
 		|| (game->ray.side == 1 && game->ray.dir.y > 0))
-		game->txts.x = game->txts.size - game->txts.x - 1;
-	game->txts.step = 1.0 * game->txts.size / game->ray.line_len;
+		game->txts.x = (int)TILE_SIZE - game->txts.x - 1;
+	game->txts.step = 1.0 * (int)TILE_SIZE / game->ray.line_len;
 	game->txts.pos = (game->ray.drw_start - SCREEN_HEIGHT
 			/ 2 + game->ray.line_len / 2) * game->txts.step;
 	y = game->ray.drw_start;
+	printf("x: %d, y: %d\n", x, y);
 	while (y < game->ray.drw_end)
 	{
-		game->txts.y = (int)game->txts.pos & (game->txts.size - 1);
+		game->txts.y = (int)game->txts.pos & ((int)TILE_SIZE - 1);
 		game->txts.pos += game->txts.step;
-		color = texture.data[TILE_SIZE * game->txts.y + game->txts.x];
+		color = game->txts.imgs[i].data[(int)TILE_SIZE * game->txts.y
+			+ game->txts.x];
 		if (!color)
 			color += 1;
 		game->pixels[y][x] = color;
-		printf("color = %d\n", color);
 		y++;
 	}
 }
