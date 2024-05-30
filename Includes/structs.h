@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 12:21:05 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:56:12 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@
 # define A 0
 # define S 1
 # define D 2
-# define SCREEN_WIDTH (double)1900
-# define SCREEN_HEIGHT (double)1000
+# define SCREEN_WIDTH (double)720
+# define SCREEN_HEIGHT (double)480
 # define TILE_SIZE 128
 # define BACKGROUND_SIZE (double)512
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.1
 # define MROT_SPEED (double)0.005
-# define MINIMAP_SCALE 0.2
+# define MINIMAP_SCALE 20
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
@@ -150,7 +150,7 @@ typedef struct s_bonus
 {
 	int		height;
 	int		width;
-	int		**minimap;
+	char	**minimap;
 	t_Myimg	minimap_bg;
 }	t_bonus;
 typedef struct s_game

@@ -6,11 +6,13 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/30 12:02:41 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/30 16:02:15 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
+
+BONUS_NAME = cub3D_bonus
 
 CC = cc -Wall -Wextra -Werror -g -lm
 
@@ -70,6 +72,14 @@ fclean: clean
 	@echo "Fcleaned "$(NAME)" and fclean libft successfully!"
 	
 re: fclean all
+
+rebonus: fclean bonus
+
+bonus:
+	@make all -C $(FT_PRINTF)
+	@make all -C $(MLX_DIR)
+	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -D BONUS=1 -I $(INCLUDES) -o $(BONUS_NAME)
+	@echo "Compiled "$(BONUS_NAME)" successfully!" 
 
 play:
 	@rm -f $(NAME)

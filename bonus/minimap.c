@@ -6,11 +6,31 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:51:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 12:55:24 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:58:58 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
+
+void set_pixel_m(t_Myimg *image, int x, int y, int color)
+{
+	int pixel;
+	int i;
+	int j;
+
+	i = 0;
+	while (i < MINIMAP_SCALE)
+	{
+		j = 0;
+		while (j < MINIMAP_SCALE)
+		{
+			pixel = (y + i) * (image->size_line / 4) + (x + j);
+			image->data[pixel] = color;
+			j++;
+		}
+		i++;
+	}
+}
 
 void	minimap(t_game *game)
 {
@@ -27,16 +47,15 @@ void	minimap(t_game *game)
 		while (curs.j < game->map_width)
 		{
 			if (game->bonus.minimap[curs.i][curs.j] == '1')
-				set_pixel(&img, curs.j, curs.i, 0x000000);
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE, curs.i * MINIMAP_SCALE, 0x000000);
 			else if (game->bonus.minimap[curs.i][curs.j] == '0')
-				set_pixel(&img, curs.j, curs.i, 0xFFFFFF);
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE, curs.i * MINIMAP_SCALE, 0xFFFFFF);
 			else if (ft_isinset(game->bonus.minimap[curs.i][curs.j], "PNSWE"))
-				set_pixel(&img, curs.j, curs.i, 0xFF0000);
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE, curs.i * MINIMAP_SCALE, 0xFF0000);
 			curs.j++;
 		}
 		curs.i++;
 	}
-	fprintf(stderr, "minimap\n");
 	mlx_put_image_to_window(game->mlx, game->win, img.img.image, 0, 0);
 	mlx_destroy_image(game->mlx, img.img.image);
 }
