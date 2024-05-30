@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 10:50:04 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:26:07 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,22 @@ int	is_inbounds(t_game *game, t_pos new_pos)
 
 int	game_loop(t_game *game)
 {
-	t_pos	new_pos;
+	t_pos	new_pos_x;
+	t_pos	new_pos_y;
 
-	new_pos.x += game->player.dir.x * MOVE_SPEED * game->keys.w;
-	new_pos.y += game->player.dir.y * MOVE_SPEED * game->keys.w;
-	new_pos.x -= game->player.dir.x * MOVE_SPEED * game->keys.s;
-	new_pos.y -= game->player.dir.y * MOVE_SPEED * game->keys.s;
-	new_pos.x += game->player.dir.y * MOVE_SPEED * game->keys.a;
-	new_pos.y -= game->player.dir.x * MOVE_SPEED * game->keys.a;
-	new_pos.x -= game->player.dir.y * MOVE_SPEED * game->keys.d;
-	new_pos.y += game->player.dir.x * MOVE_SPEED * game->keys.d;
-	if (is_inbounds(game, new_pos))
-		game->player.pos = add(game->player.pos, new_pos);
+	new_pos_x.x = game->player.dir.x * MOVE_SPEED * (game->keys.w - game->keys.s);
+	new_pos_x.y = 0;
+	new_pos_y.x = 0;
+	new_pos_y.y = game->player.dir.y * MOVE_SPEED * (game->keys.w - game->keys.s);
+
+	new_pos_x.x += game->player.dir.y * MOVE_SPEED * (game->keys.a - game->keys.d);
+	new_pos_y.y -= game->player.dir.x * MOVE_SPEED * (game->keys.a - game->keys.d);
+
+	if (is_inbounds(game, new_pos_x))
+		game->player.pos = add(game->player.pos, new_pos_x);
+	if (is_inbounds(game, new_pos_y))
+		game->player.pos = add(game->player.pos, new_pos_y);
+
 	game->player.dir = rot(game->player.dir, ROT_SPEED * game->keys.right);
 	game->player.plane = rot(game->player.plane, ROT_SPEED * game->keys.right);
 	game->player.dir = rot(game->player.dir, -ROT_SPEED * game->keys.left);
