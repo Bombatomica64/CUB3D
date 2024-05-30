@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 18:10:52 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 10:32:02 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@
 # define A 0
 # define S 1
 # define D 2
-# define SCREEN_WIDTH (double)720
-# define SCREEN_HEIGHT (double)480
+# define SCREEN_WIDTH (double)1900
+# define SCREEN_HEIGHT (double)1000
 # define TILE_SIZE 128
-# define BACKGROUND_SIZE 512
+# define BACKGROUND_SIZE 128
 # define MOVE_SPEED (double)0.1
-# define ROT_SPEED (double)0.05
+# define ROT_SPEED (double)0.1
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
@@ -48,7 +48,7 @@
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
-# define FOV 75
+# define FOV 90
 
 /**
  * @brief 2D space vector
@@ -158,6 +158,7 @@ typedef struct s_game
 	t_texture	txts;
 	double		fov_rd;
 	t_keys		keys;
+	t_pos		mouse;
 }	t_game;
 
 #endif

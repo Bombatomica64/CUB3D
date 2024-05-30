@@ -6,13 +6,13 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 18:05:05 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 10:50:04 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-t_pos	rotate(t_pos pos, double angle)
+t_pos	rot(t_pos pos, double angle)
 {
 	t_pos	new_pos;
 
@@ -21,20 +21,38 @@ t_pos	rotate(t_pos pos, double angle)
 	return (new_pos);
 }
 
-int game_loop(t_game *game)
+int	is_inbounds(t_game *game, t_pos new_pos)
 {
-	game->player.pos.x += game->player.dir.x * MOVE_SPEED * game->keys.w;
-	game->player.pos.y += game->player.dir.y * MOVE_SPEED * game->keys.w;
-	game->player.pos.x -= game->player.dir.x * MOVE_SPEED * game->keys.s;
-	game->player.pos.y -= game->player.dir.y * MOVE_SPEED * game->keys.s;
-	game->player.pos.x += game->player.dir.y * MOVE_SPEED * game->keys.a;
-	game->player.pos.y -= game->player.dir.x * MOVE_SPEED * game->keys.a;
-	game->player.pos.x -= game->player.dir.y * MOVE_SPEED * game->keys.d;
-	game->player.pos.y += game->player.dir.x * MOVE_SPEED * game->keys.d;
-	game->player.dir = rotate(game->player.dir, ROT_SPEED * game->keys.right);
-	game->player.plane = rotate(game->player.plane, ROT_SPEED * game->keys.right);
-	game->player.dir = rotate(game->player.dir, -ROT_SPEED * game->keys.left);
-	game->player.plane = rotate(game->player.plane, -ROT_SPEED * game->keys.left);
+	int	x;
+	int	y;
+
+	x = (int)(game->player.pos.x + new_pos.x);
+	y = (int)(game->player.pos.y + new_pos.y);
+	return (!(game->map[y][x] == '1'
+		|| (game->map[y + 1][x] == '1' && game->player.pos.y + new_pos.y - y > 0.9)
+		|| (game->map[y - 1][x] == '1' && game->player.pos.y + new_pos.y - y < 0.1) 
+		|| (game->map[y][x + 1] == '1' && game->player.pos.x + new_pos.x - x > 0.9)
+		|| (game->map[y][x - 1] == '1' && game->player.pos.x + new_pos.x - x < 0.1)));
+}
+
+int	game_loop(t_game *game)
+{
+	t_pos	new_pos;
+
+	new_pos.x += game->player.dir.x * MOVE_SPEED * game->keys.w;
+	new_pos.y += game->player.dir.y * MOVE_SPEED * game->keys.w;
+	new_pos.x -= game->player.dir.x * MOVE_SPEED * game->keys.s;
+	new_pos.y -= game->player.dir.y * MOVE_SPEED * game->keys.s;
+	new_pos.x += game->player.dir.y * MOVE_SPEED * game->keys.a;
+	new_pos.y -= game->player.dir.x * MOVE_SPEED * game->keys.a;
+	new_pos.x -= game->player.dir.y * MOVE_SPEED * game->keys.d;
+	new_pos.y += game->player.dir.x * MOVE_SPEED * game->keys.d;
+	if (is_inbounds(game, new_pos))
+		game->player.pos = add(game->player.pos, new_pos);
+	game->player.dir = rot(game->player.dir, ROT_SPEED * game->keys.right);
+	game->player.plane = rot(game->player.plane, ROT_SPEED * game->keys.right);
+	game->player.dir = rot(game->player.dir, -ROT_SPEED * game->keys.left);
+	game->player.plane = rot(game->player.plane, -ROT_SPEED * game->keys.left);
 	return (0);
 }
 
@@ -85,11 +103,10 @@ void	key_input(t_game *data)
 	mlx_hook(data->win, KeyPress, KeyPressMask,
 		&on_key_press, data);
 	mlx_hook(data->win, KeyRelease, KeyReleaseMask,
-	 	&on_key_release, data);
+		&on_key_release, data);
 	mlx_hook(data->win, DestroyNotify, StructureNotifyMask,
 		&on_destroy, data);
 	mlx_loop_hook(data->mlx, &render_images, data);
-	//mlx_loop_hook(data->win, &game_loop, data);
 	mlx_loop(data->mlx);
 }
 
@@ -114,15 +131,10 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	printf("game.mlx[%p]\n", game->mlx);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[0].img.image, 0, 0);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[1].img.image, 100, 0);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[2].img.image, 200, 0);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[3].img.image, 300, 0);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[4].img.image, 400, 0);
-	mlx_put_image_to_window(game->mlx, game->win, game->txts.imgs[5].img.image, 500, 0);
+	mlx_mouse_move(game->mlx, game->win, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+	mlx_mouse_hide(game->mlx, game->win);
 	key_input(game);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	return (0);
-	
 }

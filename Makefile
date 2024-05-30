@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/29 16:56:05 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/30 10:41:52 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,6 @@ PARSING =	parsing/map_check.c \
 
 RAYCASTING =	raycasting/distance.c \
 				raycasting/rays.c \
-				raycasting/inter_h.c \
-				raycasting/inter_v.c \
 				raycasting/walls.c \
 				raycasting/pixel_putting.c \
 				raycasting/pixels.c \
@@ -40,8 +38,9 @@ SRCS =	srcs/main.c \
 		srcs/put_images.c \
 		srcs/error_management.c \
 		srcs/fast_trig.c \
-		srcs/vectors.c
-		
+		srcs/vectors.c \
+		srcs/mouse.c
+
 SRC = $(PARSING) $(SRCS) $(RAYCASTING)
 
 FT_PRINTF = libft
