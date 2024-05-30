@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/30 10:41:52 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/30 12:02:41 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,10 @@ SRCS =	srcs/main.c \
 		srcs/vectors.c \
 		srcs/mouse.c
 
-SRC = $(PARSING) $(SRCS) $(RAYCASTING)
+BONUS =	bonus/minimap.c \
+		bonus/bonus_init.c
+
+SRC = $(PARSING) $(SRCS) $(RAYCASTING) $(BONUS)
 
 FT_PRINTF = libft
 LIB = libft/libftprintf.a
@@ -51,7 +54,7 @@ all: $(NAME)
 $(NAME):
 	@make all -C $(FT_PRINTF)
 	@make all -C $(MLX_DIR)
-	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
+	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -D BONUS=0 -I $(INCLUDES) -o $(NAME)
 	@echo "Compiled "$(NAME)" successfully!"
 
 clean:

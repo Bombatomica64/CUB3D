@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 11:18:40 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:18:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	pixels_init(t_game *game)
 		ft_free_matrix((char **)game->pixels);
 	game->pixels = ft_calloc(SCREEN_HEIGHT + 1, sizeof(int *));
 	if (!game->pixels)
-		return (exit(1));
+		return (err_exit("Failed to allocate pixels", game));
 	i = 0;
 	while (i < SCREEN_HEIGHT)
 	{

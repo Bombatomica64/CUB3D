@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 11:41:32 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:21:05 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.1
 # define MROT_SPEED (double)0.005
+# define MINIMAP_SCALE 0.2
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
@@ -50,6 +51,9 @@
 #  define INT_MAX 2147483647
 # endif
 # define FOV 90
+# ifndef BONUS
+#  define BONUS 0
+# endif
 
 /**
  * @brief 2D space vector
@@ -142,7 +146,13 @@ typedef struct s_keys
 	int		right;
 	int		left;
 }	t_keys;
-
+typedef struct s_bonus
+{
+	int		height;
+	int		width;
+	int		**minimap;
+	t_Myimg	minimap_bg;
+}	t_bonus;
 typedef struct s_game
 {
 	void		*mlx;
@@ -160,6 +170,7 @@ typedef struct s_game
 	double		fov_rd;
 	t_keys		keys;
 	t_pos		mouse;
+	t_bonus		bonus;
 }	t_game;
 
 #endif

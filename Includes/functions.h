@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 10:16:08 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:31:30 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ void	pixels_update(t_game *game, int x);
 
 int		render_images(t_game *game);
 int		game_loop(t_game *game);
+t_Myimg	empty_myimg(t_game *game, int width, int height);
+void	set_pixel(t_Myimg *image, int x, int y, int color);
 
 //vectors.c
 
@@ -127,5 +129,13 @@ void	mouse(t_game *game);
 //rot.c
 
 t_pos	rot(t_pos a, double angle);
+
+//minimap.c
+
+void	minimap(t_game *game);
+
+//bonus_init.c
+
+void	bonus_init(t_game *game);
 
 #endif
