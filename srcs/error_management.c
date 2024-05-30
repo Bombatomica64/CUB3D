@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_management.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42firenze.it>   +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 11:09:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:57:57 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	err_exit(char *msg, t_game *game)
 	mlx_destroy_image(game->mlx, game->txts.imgs[2].img.image);
 	mlx_destroy_image(game->mlx, game->txts.imgs[3].img.image);
 	mlx_destroy_image(game->mlx, game->txts.imgs[4].img.image);
-	// mlx_destroy_image(game->mlx, game->txts.imgs[5].img.image);
+	mlx_destroy_image(game->mlx, game->txts.imgs[5].img.image);
 	ft_free_matrix(game->txts.txts);
 	ft_free_matrix(game->map);
 	ft_free_matrix((char **)game->pixels);
