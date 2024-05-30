@@ -125,6 +125,7 @@ void	pixels_update(t_game *game, int x)
 			+ game->txts.x];
 		if (!color)
 			color += 1;
+
 		game->pixels[y][x] = color;
 		y++;
 	}

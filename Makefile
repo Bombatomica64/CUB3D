@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/30 16:02:15 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/30 16:14:15 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ all: $(NAME)
 $(NAME):
 	@make all -C $(FT_PRINTF)
 	@make all -C $(MLX_DIR)
-	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -D BONUS=0 -I $(INCLUDES) -o $(NAME)
+	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -DBONUS=0 -I $(INCLUDES) -o $(NAME)
 	@echo "Compiled "$(NAME)" successfully!"
 
 clean:
@@ -69,16 +69,19 @@ fclean: clean
 	@make fclean -C $(FT_PRINTF)
 	@make clean -C $(MLX_DIR)
 	@rm -f $(NAME)
+	@rm -f $(BONUS_NAME)
 	@echo "Fcleaned "$(NAME)" and fclean libft successfully!"
 	
 re: fclean all
 
 rebonus: fclean bonus
 
-bonus:
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME):
 	@make all -C $(FT_PRINTF)
 	@make all -C $(MLX_DIR)
-	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -D BONUS=1 -I $(INCLUDES) -o $(BONUS_NAME)
+	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -DBONUS=1 -I $(INCLUDES) -o $(BONUS_NAME)
 	@echo "Compiled "$(BONUS_NAME)" successfully!" 
 
 play:
