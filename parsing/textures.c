@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 17:19:53 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:46:02 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@ char	**texture_names(void)
 {
 	char	**txt_nm;
 
-	txt_nm = malloc(sizeof(char *) * 7);
+	txt_nm = malloc(sizeof(char *) * 8);
 	txt_nm[0] = "NO";
 	txt_nm[1] = "SO";
 	txt_nm[2] = "WE";
 	txt_nm[3] = "EA";
 	txt_nm[4] = "C";
 	txt_nm[5] = "F";
-	txt_nm[6] = NULL;
+	txt_nm[6] = "DD";
+	txt_nm[7] = NULL;
 	return (txt_nm);
 }
 
@@ -100,6 +101,9 @@ void	get_textures(t_game *game)
 		else if (ft_strncmp(game->txts.txts[curs.i], "F", 1) == 0)
 			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
+		else if (ft_strncmp(game->txts.txts[curs.i], "DD", 1) == 0)
+			game->txts.imgs[6].img = get_img(game->txts.txts[curs.i]
+					+ curs.j + 3, game);
 		curs.i++;
 	}
 }
@@ -109,7 +113,7 @@ void	get_texture_int(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < 6)
+	while (i < 7)
 	{
 		game->txts.imgs[i].data
 			= (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
