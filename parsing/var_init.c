@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 12:31:55 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:53:21 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ t_game	*init_game(char *map_path)
 	game->keys.left = 0;
 	game->keys.right = 0;
 	bonus_init(game);
+	game->map[(int)game->player.pos.y][(int)game->player.pos.x] = '0';
 	return (game);
 }
