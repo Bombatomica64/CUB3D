@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 17:32:44 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 11:18:40 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,18 @@ void	pixel_sky(t_game *game, int x, int y_end)
 
 	curs = (t_pos){0, 0, 0};
 	i = 0;
-	step = 1.0 * BACKGROUND_SIZE / y_end;
+	step = 1.0 * BACKGROUND_SIZE / game->ray.line_len;
 	while (i < y_end)
 	{
 		color = 0;
-		curs.x = fmod((x * BACKGROUND_SIZE / SCREEN_WIDTH), BACKGROUND_SIZE);
-		curs.y = fmod((i * step), BACKGROUND_SIZE);
+		curs.x = (x * BACKGROUND_SIZE / SCREEN_WIDTH);
+		curs.y = (i * step);
 		if (curs.x < 0)
 			curs.x += BACKGROUND_SIZE;
 		if (curs.y < 0)
 			curs.y += BACKGROUND_SIZE;
-		color = game->txts.imgs[5]
-			.data[(int)fmod(curs.x * BACKGROUND_SIZE
-				+ curs.y, BACKGROUND_SIZE)];
+		color = game->txts.imgs[5].data[(int)fmod((int)(fmod(curs.x, BACKGROUND_SIZE)
+				+ (int)fmod(curs.y, BACKGROUND_SIZE) * BACKGROUND_SIZE), BACKGROUND_SIZE )];
 		game->pixels[i][x] = color;
 		i++;
 	}
