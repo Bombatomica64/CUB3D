@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 12:18:41 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:31:27 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,32 @@ void	pixel_sky(t_game *game, int x, int y_end)
 			curs.x += BACKGROUND_SIZE;
 		if (curs.y < 0)
 			curs.y += BACKGROUND_SIZE;
+		color = game->txts.imgs[4].data[(int)fmod((int)(fmod(curs.x, BACKGROUND_SIZE)
+				+ (int)fmod(curs.y, BACKGROUND_SIZE) * BACKGROUND_SIZE), BACKGROUND_SIZE )];
+		game->pixels[i][x] = color;
+		i++;
+	}
+}
+
+void pixel_floor(t_game *game, int x, int y)
+{
+	int		i;
+	t_pos	curs;
+	double	step;
+	int		color;
+
+	curs = (t_pos){0, 0, 0};
+	i = y;
+	step = 1.0 * BACKGROUND_SIZE / game->ray.line_len;
+	while (i < SCREEN_HEIGHT)
+	{
+		color = 0;
+		curs.x = (x * BACKGROUND_SIZE / SCREEN_WIDTH);
+		curs.y = (i * step);
+		if (curs.x < 0)
+			curs.x += BACKGROUND_SIZE;
+		if (curs.y < 0)
+			curs.y += BACKGROUND_SIZE;
 		color = game->txts.imgs[5].data[(int)fmod((int)(fmod(curs.x, BACKGROUND_SIZE)
 				+ (int)fmod(curs.y, BACKGROUND_SIZE) * BACKGROUND_SIZE), BACKGROUND_SIZE )];
 		game->pixels[i][x] = color;
@@ -91,7 +117,7 @@ void	pixels_update(t_game *game, int x)
 			/ 2 + game->ray.line_len / 2) * game->txts.step;
 	y = game->ray.drw_start;
 	pixel_sky(game, x, y);
-	while (y < game->ray.drw_end)
+	while (y < game->ray.drw_end + 1 && y < SCREEN_HEIGHT)
 	{
 		game->txts.y = (int)game->txts.pos & ((int)TILE_SIZE - 1);
 		game->txts.pos += game->txts.step;
@@ -102,7 +128,13 @@ void	pixels_update(t_game *game, int x)
 		game->pixels[y][x] = color;
 		y++;
 	}
+	pixel_floor(game, x, y);
 }
+
+
+
+
+
 
 		// if (game->txts.index == NORTH || game->txts.index == EAST) // for shadows
 		// 	color = (color >> 1) & 8355711;
