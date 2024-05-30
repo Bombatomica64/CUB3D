@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 12:26:07 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:11:30 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,12 @@ int	game_loop(t_game *game)
 	new_pos_x.y = 0;
 	new_pos_y.x = 0;
 	new_pos_y.y = game->player.dir.y * MOVE_SPEED * (game->keys.w - game->keys.s);
-
 	new_pos_x.x += game->player.dir.y * MOVE_SPEED * (game->keys.a - game->keys.d);
 	new_pos_y.y -= game->player.dir.x * MOVE_SPEED * (game->keys.a - game->keys.d);
-
 	if (is_inbounds(game, new_pos_x))
 		game->player.pos = add(game->player.pos, new_pos_x);
 	if (is_inbounds(game, new_pos_y))
 		game->player.pos = add(game->player.pos, new_pos_y);
-
 	game->player.dir = rot(game->player.dir, ROT_SPEED * game->keys.right);
 	game->player.plane = rot(game->player.plane, ROT_SPEED * game->keys.right);
 	game->player.dir = rot(game->player.dir, -ROT_SPEED * game->keys.left);
@@ -134,6 +131,7 @@ int	main(int ac, char **av)
 		printf("Error\nFailed to init mlx\n");
 		return (1);
 	}
+	printf("bonus = %d\n", BONUS);
 	printf("game.mlx[%p]\n", game->mlx);
 	mlx_mouse_move(game->mlx, game->win, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	mlx_mouse_hide(game->mlx, game->win);
