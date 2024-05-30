@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 16:31:27 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:48:52 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	pixel_sky(t_game *game, int x, int y_end)
 	}
 }
 
-void pixel_floor(t_game *game, int x, int y)
+void	pixel_floor(t_game *game, int x, int y)
 {
 	int		i;
 	t_pos	curs;
@@ -125,17 +125,10 @@ void	pixels_update(t_game *game, int x)
 			+ game->txts.x];
 		if (!color)
 			color += 1;
-
 		game->pixels[y][x] = color;
 		y++;
 	}
 	pixel_floor(game, x, y);
 }
-
-
-
-
-
-
 		// if (game->txts.index == NORTH || game->txts.index == EAST) // for shadows
 		// 	color = (color >> 1) & 8355711;
