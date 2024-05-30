@@ -30,13 +30,14 @@
 # define A 0
 # define S 1
 # define D 2
-# define SCREEN_WIDTH (double)1900
-# define SCREEN_HEIGHT (double)1000
-# define TILE_SIZE 256
+# define SCREEN_WIDTH (double)720
+# define SCREEN_HEIGHT (double)480
+# define TILE_SIZE 128
 # define BACKGROUND_SIZE (double)512
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.1
-# define MROT_SPEED (double)0.004
+# define MROT_SPEED (double)0.005
+# define MINIMAP_SCALE 20
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
@@ -50,6 +51,9 @@
 #  define INT_MAX 2147483647
 # endif
 # define FOV 90
+# ifndef BONUS
+#  define BONUS 0
+# endif
 
 /**
  * @brief 2D space vector
@@ -142,7 +146,13 @@ typedef struct s_keys
 	int		right;
 	int		left;
 }	t_keys;
-
+typedef struct s_bonus
+{
+	int		height;
+	int		width;
+	char	**minimap;
+	t_Myimg	minimap_bg;
+}	t_bonus;
 typedef struct s_game
 {
 	void		*mlx;
@@ -160,6 +170,7 @@ typedef struct s_game
 	double		fov_rd;
 	t_keys		keys;
 	t_pos		mouse;
+	t_bonus		bonus;
 }	t_game;
 
 #endif

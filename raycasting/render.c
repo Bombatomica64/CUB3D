@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 10:16:12 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:55:28 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	frame_set(t_game *game, t_Myimg *image, int x, int y)
 		set_pixel(image, x, y, 0x2F4F4F);
 }
 
-static t_Myimg	empty_myimg(t_game *game, int width, int height)
+t_Myimg	empty_myimg(t_game *game, int width, int height)
 {
 	t_Myimg	image;
 
@@ -73,6 +73,7 @@ int	render_images(t_game *game)
 	frame++;
 	//printf("frame = %d\n", frame);
 	game_loop(game);
+	minimap(game);
 	return (0);
 }
 
