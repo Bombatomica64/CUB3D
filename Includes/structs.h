@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 12:27:09 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:42:15 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define D 2
 # define SCREEN_WIDTH (double)1900
 # define SCREEN_HEIGHT (double)1000
-# define TILE_SIZE 128
+# define TILE_SIZE 256
 # define BACKGROUND_SIZE (double)512
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.1
