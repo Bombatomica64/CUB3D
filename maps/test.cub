@@ -1,5 +1,5 @@
-C assets/nether_brick.xpm
-F assets/end_bricks.xpm
+F 132,192,200
+C 195,224,244
 NO assets/end_bricks.xpm
 SO assets/stonebrick_mossy.xpm
 EA assets/stonebrick.xpm
