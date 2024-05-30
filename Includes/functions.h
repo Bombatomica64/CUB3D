@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 17:35:08 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/30 10:16:08 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,13 @@ t_pos	add(t_pos a, t_pos b);
 t_pos	sub(t_pos a, t_pos b);
 t_pos	mult(t_pos a, double b);
 t_pos	scale(t_pos a, double b);
+
+//mouse.c
+
+void	mouse(t_game *game);
+
+//rot.c
+
+t_pos	rot(t_pos a, double angle);
 
 #endif
