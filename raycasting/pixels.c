@@ -20,7 +20,7 @@ void	pixels_init(t_game *game)
 		ft_free_matrix((char **)game->pixels);
 	game->pixels = ft_calloc(SCREEN_HEIGHT + 1, sizeof(int *));
 	if (!game->pixels)
-		return (exit(1));
+		return (err_exit("Failed to allocate pixels", game));
 	i = 0;
 	while (i < SCREEN_HEIGHT)
 	{

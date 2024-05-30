@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 10:51:41 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:53:07 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,6 @@ void	check_map(t_game *game)
 			{
 				printf("cur.i = %d\ncur.j = %d\n", curs.i, curs.j);
 				init_player(game, curs.i, curs.j);
-				game->map[curs.i][curs.j] = '0';
 				curs.k++;
 			}
 			curs.j++;
