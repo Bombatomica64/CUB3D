@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 16:12:11 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 10:17:02 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	set_pixel(t_Myimg *image, int x, int y, int color)
 
 static void	frame_set(t_game *game, t_Myimg *image, int x, int y)
 {
-	if (game->pixels[y][x] > 0)
+	if (BONUS && x < MINIMAP_SCALE * game->map_width
+		&& y < MINIMAP_SCALE * game->map_height)
+		minimap(game, image, x, y);
+	else if (game->pixels[y][x] > 0)
 		set_pixel(image, x, y, game->pixels[y][x]);
 	else if (y < SCREEN_HEIGHT / 2)
 		set_pixel(image, x, y, 0x87CEEB);
@@ -73,8 +76,8 @@ int	render_images(t_game *game)
 	frame++;
 	//printf("frame = %d\n", frame);
 	game_loop(game);
-	if (BONUS)
-		minimap(game);
+	// if (BONUS)
+	// 	minimap(game);
 	return (0);
 }
 

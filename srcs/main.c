@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 18:01:50 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 10:24:37 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ int	is_inbounds(t_game *game, t_pos new_pos)
 
 	x = (int)(game->player.pos.x + new_pos.x);
 	y = (int)(game->player.pos.y + new_pos.y);
-	return (!(game->map[y][x] == '1'
-		|| (game->map[y + 1][x] == '1' && game->player.pos.y + new_pos.y - y > 0.9)
-		|| (game->map[y - 1][x] == '1' && game->player.pos.y + new_pos.y - y < 0.1) 
-		|| (game->map[y][x + 1] == '1' && game->player.pos.x + new_pos.x - x > 0.9)
-		|| (game->map[y][x - 1] == '1' && game->player.pos.x + new_pos.x - x < 0.1)));
+	return (!(game->map[y][x] == '1' || (game->map[y + 1][x] == '1'
+		&& game->player.pos.y + new_pos.y - y > 0.9) || (game->map[y
+				- 1][x] == '1' && game->player.pos.y + new_pos.y - y < 0.1)
+			|| (game->map[y][x + 1] == '1' && game->player.pos.x + new_pos.x
+				- x > 0.9) || (game->map[y][x - 1] == '1' && game->player.pos.x
+				+ new_pos.x - x < 0.1)));
 }
 
 int	game_loop(t_game *game)
@@ -40,12 +41,16 @@ int	game_loop(t_game *game)
 	t_pos	new_pos_x;
 	t_pos	new_pos_y;
 
-	new_pos_x.x = game->player.dir.x * MOVE_SPEED * (game->keys.w - game->keys.s);
+	new_pos_x.x = game->player.dir.x * MOVE_SPEED * (game->keys.w
+			- game->keys.s);
 	new_pos_x.y = 0;
 	new_pos_y.x = 0;
-	new_pos_y.y = game->player.dir.y * MOVE_SPEED * (game->keys.w - game->keys.s);
-	new_pos_x.x += game->player.dir.y * MOVE_SPEED * (game->keys.a - game->keys.d);
-	new_pos_y.y -= game->player.dir.x * MOVE_SPEED * (game->keys.a - game->keys.d);
+	new_pos_y.y = game->player.dir.y * MOVE_SPEED * (game->keys.w
+			- game->keys.s);
+	new_pos_x.x += game->player.dir.y * MOVE_SPEED * (game->keys.a
+			- game->keys.d);
+	new_pos_y.y -= game->player.dir.x * MOVE_SPEED * (game->keys.a
+			- game->keys.d);
 	if (is_inbounds(game, new_pos_x))
 		game->player.pos = add(game->player.pos, new_pos_x);
 	if (is_inbounds(game, new_pos_y))
@@ -103,12 +108,9 @@ int	on_key_release(int keysym, t_game *game)
 
 void	key_input(t_game *data)
 {
-	mlx_hook(data->win, KeyPress, KeyPressMask,
-		&on_key_press, data);
-	mlx_hook(data->win, KeyRelease, KeyReleaseMask,
-		&on_key_release, data);
-	mlx_hook(data->win, DestroyNotify, StructureNotifyMask,
-		&on_destroy, data);
+	mlx_hook(data->win, KeyPress, KeyPressMask, &on_key_press, data);
+	mlx_hook(data->win, KeyRelease, KeyReleaseMask, &on_key_release, data);
+	mlx_hook(data->win, DestroyNotify, StructureNotifyMask, &on_destroy, data);
 	mlx_loop_hook(data->mlx, &render_images, data);
 	mlx_loop(data->mlx);
 }
