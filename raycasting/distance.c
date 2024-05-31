@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 18:52:02 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 12:47:40 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,17 @@ static void	dda_exec(t_game *game)
 			|| game->ray.map.y > game->map_height - 0.25
 			|| game->ray.map.x > game->map_width - 1.25)
 			break ;
+		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == '1')
+		{
+			hit = true;
+			if (BONUS)
+				game->bonus.wall_hit = '1';
+		}
 		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'D')
 		{
 			hit = true;
 			game->bonus.wall_hit = 'D';
 		}
-		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] != '0')
-		{
-			hit = true;
-			game->bonus.wall_hit = '1';
-		}
-		//printf("wall: %c\n", game->bonus.wall_hit);
 	}
 }
 

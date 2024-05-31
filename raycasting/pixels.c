@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 18:25:55 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:05:01 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,28 @@ void	pixels_init(t_game *game)
 
 static int	get_index(t_game *game)
 {
-	if (game->bonus.wall_hit == 'D')
-		return (6);
-	else if (game->bonus.wall_hit == '1')
+	if (BONUS && game->bonus.wall_hit == 'D')
 	{
+		game->bonus.wall_hit = '1';
+		if (game->ray.side == 0)
+		{
+			if (game->ray.dir.x < 0)
+				return (6);
+			else
+				return (6);
+		}
+		else
+		{
+			if (game->ray.dir.y > 0)
+				return (6);
+			else
+				return (6);
+		}
+	}
+	else
+	{
+		if (BONUS)
+			game->bonus.wall_hit = '1';
 		if (game->ray.side == 0)
 		{
 			if (game->ray.dir.x < 0)

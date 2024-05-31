@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 15:57:09 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 12:34:09 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ void	minimap_init(t_game *game)
 
 	i = 0;
 	game->bonus.height = (double)game->map_height * MINIMAP_SCALE;
-	if (game->bonus.height > SCREEN_HEIGHT / 4)
-		game->bonus.height = SCREEN_HEIGHT / 4;
 	game->bonus.width = (double)game->map_width * MINIMAP_SCALE;
-	if (game->bonus.width > SCREEN_WIDTH / 4)
-		game->bonus.width = SCREEN_WIDTH / 4;
 	game->bonus.minimap = ft_calloc(game->map_height + 1, sizeof(char *));
 	while (i < game->map_height)
 	{
