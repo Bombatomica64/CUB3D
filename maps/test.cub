@@ -1,5 +1,6 @@
 F 132,192,200
 C 195,224,244
+X assets/end_bricks.xpm
 NO assets/end_bricks.xpm
 SO assets/stonebrick_mossy.xpm
 EA assets/stonebrick.xpm
@@ -13,7 +14,7 @@ DD assets/test_door.xpm
 10000E0000001
 1000000000001
 1000000000001
-1000000000001
+10000000X0001
 1000000000001
 111111D111111
 1000000000001

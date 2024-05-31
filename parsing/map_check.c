@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 12:30:12 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:11:57 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	file_size(char *map_path, t_game *game)
 	line = NULL;
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		err("Failed to open map file");
+		err_exit("Failed to open map file", game);
 	while (get_next_line2(fd, &line) > 0)
 		i++;
 	free(line);
@@ -43,10 +43,10 @@ char	**parse_map(char *map_path, t_game *game)
 	file_size(map_path, game);
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		err("Failed to open map file");
+		err_exit("Failed to open map file", game);
 	map_and_txt = malloc(sizeof(char *) * (game->input.file_len + 1));
 	if (!map_and_txt)
-		err("Failed to allocate map");
+		err_exit("Failed to allocate map", game);
 	while (get_next_line2(fd, &line) > 0)
 	{
 		map_and_txt[i] = ft_strdup(line);
@@ -147,7 +147,7 @@ void	check_map(t_game *game)
 		curs.j = 0;
 		while (game->map[curs.i][curs.j])
 		{
-			if (!ft_isinset(game->map[curs.i][curs.j], " 01NSEWD"))
+			if (!ft_isinset(game->map[curs.i][curs.j], " X01NSEWD"))
 				err_exit("Invalid character in map", game);
 			else if (ft_isinset(game->map[curs.i][curs.j], "0NSEW"))
 				check_closed_space(game, curs);

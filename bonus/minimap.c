@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:51:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 10:23:19 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:15:49 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	minimap(t_game *game, t_Myimg *img, int x, int y)
 		set_pixel_m(img, x, y, 0xAA3355);
 	else if (game->bonus.minimap[y / MINIMAP_SCALE][x / MINIMAP_SCALE] == 'D')
 		set_pixel_m(img, x, y, 0x2560CC);
+	else if (game->bonus.minimap[y / MINIMAP_SCALE][x / MINIMAP_SCALE] == 'X')
+		set_pixel_m(img, x, y, 0x544564);
 	else
 		set_pixel_m(img, x, y, 0x503C2D);
 }

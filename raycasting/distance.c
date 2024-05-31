@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:25:54 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:06:37 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ static void	dda_exec(t_game *game)
 			game->bonus.wall_hit = 'D';
 			game->bonus.door = 1;
 		}
-		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'S')
-			sesso;
+		// else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'S')
+		// 	sesso;
 	}
 }
 
@@ -128,7 +128,7 @@ static void	line_calc(t_game *game, int x)
 		game->ray.wall_x = game->player.pos.x
 			+ game->ray.dist * game->ray.dir.x;
 	game->ray.wall_x -= floor(game->ray.wall_x);
-	if (BONUS)
+	if (false)
 		game->bonus.sprite.zbuffer[x] = game->ray.dist;
 }
 
@@ -146,5 +146,7 @@ int	cast_rays(t_game *game)
 		pixels_update(game, x);
 		x++;
 	}
+	if (BONUS)
+		sprite_calc(game);
 	return (0);
 }

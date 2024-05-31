@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:22:11 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:23:08 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**texture_names(void)
 {
 	char	**txt_nm;
 
-	txt_nm = malloc(sizeof(char *) * 8);
+	txt_nm = ft_calloc(sizeof(char *), 9);
 	txt_nm[0] = "NO";
 	txt_nm[1] = "SO";
 	txt_nm[2] = "WE";
@@ -24,7 +24,7 @@ char	**texture_names(void)
 	txt_nm[4] = "C";
 	txt_nm[5] = "F";
 	txt_nm[6] = "DD";
-	txt_nm[7] = NULL;
+	txt_nm[7] = "X";
 	return (txt_nm);
 }
 
@@ -85,27 +85,32 @@ void	get_textures(t_game *game)
 			curs.i++;
 			continue ;
 		}
-		if (ft_strncmp(&game->txts.txts[curs.i][curs.j], "NO", 2) == 0)
+		if (ft_strncmp(&game->txts.txts[curs.i][curs.j], "NO ", 2) == 0)
 			game->txts.imgs[0].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "SO", 2) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "SO ", 2) == 0)
 			game->txts.imgs[1].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "WE", 2) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "WE ", 2) == 0)
 			game->txts.imgs[2].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "EA", 2) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "EA ", 2) == 0)
 			game->txts.imgs[3].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "C", 1) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "C ", 1) == 0)
 			game->txts.imgs[4].img = get_floor(game->txts.txts[curs.i] + 1,
 					game, curs.i);
-		else if (ft_strncmp(game->txts.txts[curs.i], "F", 1) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "F ", 1) == 0)
 			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
-		else if (ft_strncmp(game->txts.txts[curs.i], "DD", 1) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "DD ", 1) == 0)
 			game->txts.imgs[6].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
+		else if (ft_strncmp(game->txts.txts[curs.i], "X ", 1) == 0)
+			game->txts.imgs[7].img = get_img(game->txts.txts[curs.i]
+					+ curs.j + 2, game);
+		else
+			err_exit("Invalid texture", game);
 		curs.i++;
 	}
 }
