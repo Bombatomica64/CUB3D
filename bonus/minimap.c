@@ -6,17 +6,17 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:51:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 15:58:58 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:04:21 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-void set_pixel_m(t_Myimg *image, int x, int y, int color)
+void	set_pixel_m(t_Myimg *image, int x, int y, int color)
 {
-	int pixel;
-	int i;
-	int j;
+	int		pixel;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (i < MINIMAP_SCALE)
@@ -47,15 +47,32 @@ void	minimap(t_game *game)
 		while (curs.j < game->map_width)
 		{
 			if (game->bonus.minimap[curs.i][curs.j] == '1')
-				set_pixel_m(&img, curs.j * MINIMAP_SCALE, curs.i * MINIMAP_SCALE, 0x000000);
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE,
+					curs.i * MINIMAP_SCALE, 0x503C2D);
 			else if (game->bonus.minimap[curs.i][curs.j] == '0')
-				set_pixel_m(&img, curs.j * MINIMAP_SCALE, curs.i * MINIMAP_SCALE, 0xFFFFFF);
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE,
+					curs.i * MINIMAP_SCALE, 0x333333);
 			else if (ft_isinset(game->bonus.minimap[curs.i][curs.j], "PNSWE"))
-				set_pixel_m(&img, curs.j * MINIMAP_SCALE, curs.i * MINIMAP_SCALE, 0xFF0000);
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE,
+					curs.i * MINIMAP_SCALE, 0xAA3355);
+			else if (game->bonus.minimap[curs.i][curs.j] == 'D')
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE,
+					curs.i * MINIMAP_SCALE, 0x2560CC);
+			else
+				set_pixel_m(&img, curs.j * MINIMAP_SCALE,
+					curs.i * MINIMAP_SCALE, 0x503C2D);
 			curs.j++;
 		}
 		curs.i++;
 	}
 	mlx_put_image_to_window(game->mlx, game->win, img.img.image, 0, 0);
 	mlx_destroy_image(game->mlx, img.img.image);
+}
+
+void	move_player(t_game *game)
+{
+	game->bonus.minimap[(int)game->bonus.player.y]
+	[(int)game->bonus.player.x] = '0';
+	game->bonus.minimap[(int)game->player.pos.y][(int)game->player.pos.x] = 'P';
+	game->bonus.player = game->player.pos;
 }

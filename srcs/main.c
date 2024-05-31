@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 16:11:30 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:01:50 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	game_loop(t_game *game)
 	game->player.plane = rot(game->player.plane, ROT_SPEED * game->keys.right);
 	game->player.dir = rot(game->player.dir, -ROT_SPEED * game->keys.left);
 	game->player.plane = rot(game->player.plane, -ROT_SPEED * game->keys.left);
+	if (BONUS)
+		move_player(game);
 	return (0);
 }
 

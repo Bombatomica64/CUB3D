@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 16:10:52 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:14:25 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,7 @@ typedef struct s_bonus
 	int		height;
 	int		width;
 	char	**minimap;
+	t_pos	player;
 	t_Myimg	minimap_bg;
 }	t_bonus;
 typedef struct s_game
