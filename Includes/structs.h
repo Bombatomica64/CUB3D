@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 17:14:25 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 10:06:11 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.1
 # define MROT_SPEED (double)0.005
-# define MINIMAP_SCALE 20
+# define MINIMAP_SCALE 10
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
