@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:26:24 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:05:35 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ int	render_images(t_game *game)
 	frame++;
 	//printf("frame = %d\n", frame);
 	game_loop(game);
-	// if (BONUS)
-	// 	minimap(game);
 	return (0);
 }
 

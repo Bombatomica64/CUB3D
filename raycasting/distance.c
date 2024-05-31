@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:25:54 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:36:28 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,12 @@ static void	dda_exec(t_game *game)
 	bool	hit;
 
 	hit = false;
+	if (BONUS)
+	{
+		game->bonus.door_open = 0;
+		game->bonus.doorx = 0;
+		game->bonus.doory = 0;
+	}
 	while (hit == false)
 	{
 		if (game->ray.side_dist.x < game->ray.side_dist.y)
@@ -95,16 +101,44 @@ static void	dda_exec(t_game *game)
 		{
 			hit = true;
 			if (BONUS)
+			{
 				game->bonus.wall_hit = '1';
+				if (game->bonus.door_open == 1)
+				{
+					//printf("doorx = %d, doory = %d\n", game->bonus.doorx, game->bonus.doory);
+					if (game->ray.side == 0)
+						if ((int)game->ray.map.x == game->bonus.doorx  - 1 || (int)game->ray.map.x == game->bonus.doorx + 1)
+							{printf(GREEN"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
+							game->bonus.door_open = 1;}
+						else
+							{printf(RED"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
+							game->bonus.door_open = 0;}
+					else
+						if ((int)game->ray.map.y == game->bonus.doory  - 1 || (int)game->ray.map.y == game->bonus.doory + 1)
+							{printf(YELLOW"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
+							game->bonus.door_open = 1;}
+						else
+							{printf(PURPLE"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
+							game->bonus.door_open = 0;}
+				}
+					
+			}
 		}
 		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'D')
 		{
 			hit = true;
 			game->bonus.wall_hit = 'D';
-			game->bonus.door = 1;
+			//game->bonus.door = 1;
 		}
-		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'S')
-			sesso;
+		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'L')
+		{
+			game->bonus.door_open = 1;
+			game->bonus.doorx = (int)game->ray.map.x;
+			game->bonus.doory = (int)game->ray.map.y;
+			//game->bonus.wall_hit = 'L';
+		}
+		// else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'S')
+		// 	sesso;
 	}
 }
 
@@ -128,7 +162,7 @@ static void	line_calc(t_game *game, int x)
 		game->ray.wall_x = game->player.pos.x
 			+ game->ray.dist * game->ray.dir.x;
 	game->ray.wall_x -= floor(game->ray.wall_x);
-	if (BONUS)
+	if (false)
 		game->bonus.sprite.zbuffer[x] = game->ray.dist;
 }
 

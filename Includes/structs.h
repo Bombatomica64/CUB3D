@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:19:58 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:43:30 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,10 @@ typedef struct s_bonus
 	t_pos		player;
 	t_sprite	sprite;
 	int			door;
-	char	wall_hit;
+	char		wall_hit;
+	int			doorx;
+	int			doory;
+	int			door_open;
 }	t_bonus;
 typedef struct s_game
 {

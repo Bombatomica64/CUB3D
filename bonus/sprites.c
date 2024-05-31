@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 12:13:20 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:37:21 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-static int	compare(const void *first, const void *second)
+/*static int	compare(const void *first, const void *second)
 {
 	if (*(int *)first > *(int *)second)
 		return (1);
@@ -20,7 +20,7 @@ static int	compare(const void *first, const void *second)
 		return (-1);
 	else
 		return (0);
-}
+}*/
 
 void	sort_order(t_pair *orders, int amount)
 {

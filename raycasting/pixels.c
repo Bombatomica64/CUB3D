@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:26:16 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:22:41 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,36 @@ static int	get_index(t_game *game)
 		if (game->ray.side == 0)
 		{
 			if (game->ray.dir.x < 0)
-				return (3);
+			{
+				if (game->bonus.door_open == 1)
+					return (6);
+				else
+					return (3);
+			}
 			else
-				return (2);
+			{
+				if (game->bonus.door_open == 1)
+					return (6);
+				else
+					return (2);
+			}
 		}
 		else
 		{
 			if (game->ray.dir.y > 0)
-				return (1);
+			{
+				if (game->bonus.door_open == 1)
+					return (6);
+				else
+					return (1);
+			}
 			else
-				return (0);
+			{
+				if (game->bonus.door_open == 1)
+					return (6);
+				else
+					return (0);
+			}
 		}
 	}
 	return (0);
