@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 17:47:40 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:26:13 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,15 @@ void	sprite_init(t_game *game)
 		{
 			if (game->bonus.minimap[curs.i][curs.j] == 'X')
 			{
-				game->bonus.sprite.pos[curs.k] = (t_pos){curs.j + 0.5, curs.i + 0.5};
+				game->bonus.sprite.pos[curs.k] = (t_pos){curs.j + 0.5, curs.i + 0.5, 0};
 				curs.k++;
 			}
 			curs.j++;
 		}
 		curs.i++;
 	}
+	printf("sprite1 pos.x: %f\n", game->bonus.sprite.pos[0].x);
+	printf("sprite1 pos.y: %f\n", game->bonus.sprite.pos[0].y);
 }
 
 void	bonus_init(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 17:37:10 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:23:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,7 @@ void	sprite_calc(t_game *game)
 				curs.k = drw_start_y;
 				while (curs.k < drw_end_y)
 				{
+					printf("color = %d\n", color);
 					d = (curs.k - v_move_screen) * 256 - SCREEN_HEIGHT * 128
 						+ sprite_height * 128;
 					texy = ((d * TILE_SIZE) / sprite_height) / 256;
@@ -157,13 +158,15 @@ void	sprite_calc(t_game *game)
 			}
 			stripe++;
 		}
+		curs.j++;
 	}
+	printf("invdet = %f\n", invdet);
+	printf("drw_end_x = %d\n", drw_end_x);
+	printf("drw_start_y = %d\n", drw_start_y);
 	printf("sprite.x = %f\n", sprite.x);
 	printf("sprite.y = %f\n", sprite.y);
-	printf("drw_start_y = %d\n", drw_start_y);
 	printf("drw_end_y = %d\n", drw_end_y);
 	printf("drw_start_x = %d\n", drw_start_x);
-	printf("drw_end_x = %d\n", drw_end_x);
 	printf("sprite_screen_x = %d\n", sprite_screen_x);
 	printf("sprite_height = %d\n", sprite_height);
 	printf("sprite_width = %d\n", sprite_width);
