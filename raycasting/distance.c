@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 11:35:43 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:25:54 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,18 +91,20 @@ static void	dda_exec(t_game *game)
 			|| game->ray.map.y > game->map_height - 0.25
 			|| game->ray.map.x > game->map_width - 1.25)
 			break ;
-		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] != '0')
+		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == '1')
 		{
+			hit = true;
 			if (BONUS)
-			{
-				if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'D')
-					game->bonus.door = 1;
-				else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'S')
-					sesso;
-			}
-			else
-				hit = true;
+				game->bonus.wall_hit = '1';
 		}
+		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'D')
+		{
+			hit = true;
+			game->bonus.wall_hit = 'D';
+			game->bonus.door = 1;
+		}
+		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'S')
+			sesso;
 	}
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 11:45:30 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:19:58 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@
 # ifndef BONUS
 #  define BONUS 0
 # endif
-# define FOV 90
+# define FOV 75
 
 /**
  * @brief 2D space vector
@@ -114,7 +114,7 @@ typedef struct s_texture
 {
 	char	**txts;
 	char	**txt_nm; //alloced in var_init.c
-	t_Myimg	imgs[6]; // 0 = NORTH, 1 = EAST, 2 = WEST, 3 = SOUTH, 4 = FLOOR, 5 = CEILING
+	t_Myimg	imgs[7]; // 0 = NORTH, 1 = EAST, 2 = WEST, 3 = SOUTH, 4 = FLOOR, 5 = CEILING 6 = DOOR
 	int		x;
 	int		y;
 	double	pos;
@@ -172,6 +172,7 @@ typedef struct s_bonus
 	t_pos		player;
 	t_sprite	sprite;
 	int			door;
+	char	wall_hit;
 }	t_bonus;
 typedef struct s_game
 {

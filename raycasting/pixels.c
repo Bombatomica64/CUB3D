@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 11:28:24 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:26:16 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,44 @@ void	pixels_init(t_game *game)
 
 static int	get_index(t_game *game)
 {
-	if (game->ray.side == 0)
+	if (BONUS && game->bonus.wall_hit == 'D')
 	{
-		if (game->ray.dir.x < 0)
-			return (3);
+		game->bonus.wall_hit = '1';
+		if (game->ray.side == 0)
+		{
+			if (game->ray.dir.x < 0)
+				return (6);
+			else
+				return (6);
+		}
 		else
-			return (2);
+		{
+			if (game->ray.dir.y > 0)
+				return (6);
+			else
+				return (6);
+		}
 	}
 	else
 	{
-		if (game->ray.dir.y > 0)
-			return (1);
+		if (BONUS)
+			game->bonus.wall_hit = '1';
+		if (game->ray.side == 0)
+		{
+			if (game->ray.dir.x < 0)
+				return (3);
+			else
+				return (2);
+		}
 		else
-			return (0);
+		{
+			if (game->ray.dir.y > 0)
+				return (1);
+			else
+				return (0);
+		}
 	}
+	return (0);
 }
 
 void	pixel_sky(t_game *game, int x, int y_end)
