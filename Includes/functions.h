@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 12:31:30 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 10:17:10 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,9 @@ t_pos	rot(t_pos a, double angle);
 
 //minimap.c
 
-void	minimap(t_game *game);
+void	minimap(t_game *game, t_Myimg *img, int x, int y);
+void	move_player(t_game *game);
+void	set_pixel_m(t_Myimg *image, int x, int y, int color);
 
 //bonus_init.c
 

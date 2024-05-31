@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 18:11:44 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:19:58 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define MOVE_SPEED (double)0.1
 # define ROT_SPEED (double)0.1
 # define MROT_SPEED (double)0.005
-# define MINIMAP_SCALE 20
+# define MINIMAP_SCALE 10
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
 # endif
@@ -146,12 +146,32 @@ typedef struct s_keys
 	int		right;
 	int		left;
 }	t_keys;
+
+typedef struct s_pair
+{
+	double	first;
+	int		second;
+}			t_pair;
+
+typedef struct s_sprite
+{
+	double	*zbuffer;
+	double	*sprite_dist;
+	int		*sprite_order;
+	int		*sprite_ray;
+	t_pos	*sprite_pos;
+	int		nb_sprites;
+	t_Myimg	sprite;
+}	t_sprite;
+
 typedef struct s_bonus
 {
-	int		height;
-	int		width;
-	char	**minimap;
-	t_Myimg	minimap_bg;
+	int			height;
+	int			width;
+	char		**minimap;
+	t_pos		player;
+	t_sprite	sprite;
+	int			door;
 	char	wall_hit;
 }	t_bonus;
 typedef struct s_game

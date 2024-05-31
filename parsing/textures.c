@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 17:46:02 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:22:11 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ t_img	get_floor(char *path, t_game *game, int nm)
 			i++;
 		color.b = ft_substr(path, start, i - start);
 		path = create_color_file(color, game, nm);
+		free(color.r);
+		free(color.g);
+		free(color.b); // add free
 	}
-	fprintf(stderr, "path = |%s|\n", path);
 	img = get_img(path + skip_spaces2(path), game);
 	if (!img.image)
 		return (err("Failed to load texture : "), err(path),
@@ -96,8 +98,8 @@ void	get_textures(t_game *game)
 			game->txts.imgs[3].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "C", 1) == 0)
-			game->txts.imgs[4].img = get_floor(game->txts.txts[curs.i]
-					+ 1, game, curs.i);
+			game->txts.imgs[4].img = get_floor(game->txts.txts[curs.i] + 1,
+					game, curs.i);
 		else if (ft_strncmp(game->txts.txts[curs.i], "F", 1) == 0)
 			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
