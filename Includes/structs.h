@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 10:06:11 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 11:45:30 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,13 +146,32 @@ typedef struct s_keys
 	int		right;
 	int		left;
 }	t_keys;
+
+typedef struct s_pair
+{
+	double	first;
+	int		second;
+}			t_pair;
+
+typedef struct s_sprite
+{
+	double	*zbuffer;
+	double	*sprite_dist;
+	int		*sprite_order;
+	int		*sprite_ray;
+	t_pos	*sprite_pos;
+	int		nb_sprites;
+	t_Myimg	sprite;
+}	t_sprite;
+
 typedef struct s_bonus
 {
-	int		height;
-	int		width;
-	char	**minimap;
-	t_pos	player;
-	t_Myimg	minimap_bg;
+	int			height;
+	int			width;
+	char		**minimap;
+	t_pos		player;
+	t_sprite	sprite;
+	int			door;
 }	t_bonus;
 typedef struct s_game
 {

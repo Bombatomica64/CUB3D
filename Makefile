@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/05/30 16:14:15 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/05/31 11:17:44 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRCS =	srcs/main.c \
 		srcs/mouse.c
 
 BONUS =	bonus/minimap.c \
-		bonus/bonus_init.c
+		bonus/bonus_init.c \
+		bonus/sprites.c
 
 SRC = $(PARSING) $(SRCS) $(RAYCASTING) $(BONUS)
 
