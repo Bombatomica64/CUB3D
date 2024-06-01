@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 17:22:41 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:11:12 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static int	get_index(t_game *game)
 {
 	if (BONUS && game->bonus.wall_hit == 'D')
 	{
-		game->bonus.wall_hit = '1';
 		if (game->ray.side == 0)
 		{
 			if (game->ray.dir.x < 0)
@@ -51,43 +50,40 @@ static int	get_index(t_game *game)
 				return (6);
 		}
 	}
-	else
+	else if (BONUS && game->bonus.wall_hit == '1' && game->bonus.door_open == 1)
+	{	//side 0 = east, side 1 = south. non consentire che una porta si apra su un muro sennò il muro avrebbe la texture della porta. sennò dividi la porte in NS e EW
+		/*if (game->ray.side == 0 && ((game->bonus.wallx == game->bonus.doorx+1 && game->bonus.wally == game->bonus.doory)
+			|| (game->bonus.wallx == game->bonus.doorx-1 && game->bonus.wally == game->bonus.doory)))
+			return (6);
+		if (game->ray.side == 1 && ((game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory+1)
+			|| (game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory-1)))
+			return (6);*/
+		if ((game->bonus.wallx == game->bonus.doorx+1 && game->bonus.wally == game->bonus.doory)
+			|| (game->bonus.wallx == game->bonus.doorx-1 && game->bonus.wally == game->bonus.doory)
+			|| (game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory+1)
+			|| (game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory-1))
+			return (6);
+	}
+	if (game->ray.side == 0)
 	{
-		if (BONUS)
-			game->bonus.wall_hit = '1';
-		if (game->ray.side == 0)
+		if (game->ray.dir.x < 0)
 		{
-			if (game->ray.dir.x < 0)
-			{
-				if (game->bonus.door_open == 1)
-					return (6);
-				else
-					return (3);
-			}
-			else
-			{
-				if (game->bonus.door_open == 1)
-					return (6);
-				else
-					return (2);
-			}
+			return (3);
 		}
 		else
 		{
-			if (game->ray.dir.y > 0)
-			{
-				if (game->bonus.door_open == 1)
-					return (6);
-				else
-					return (1);
-			}
-			else
-			{
-				if (game->bonus.door_open == 1)
-					return (6);
-				else
-					return (0);
-			}
+			return (2);
+		}
+	}
+	else
+	{
+		if (game->ray.dir.y > 0)
+		{
+			return (1);
+		}
+		else
+		{
+			return (0);
 		}
 	}
 	return (0);

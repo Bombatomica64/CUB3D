@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 16:43:30 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:07:50 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,8 @@ typedef struct s_bonus
 	char		wall_hit;
 	int			doorx;
 	int			doory;
+	int			wallx;
+	int			wally;
 	int			door_open;
 }	t_bonus;
 typedef struct s_game

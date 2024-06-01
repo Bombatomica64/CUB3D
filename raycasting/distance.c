@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 18:36:28 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:08:15 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ static void	dda_exec(t_game *game)
 		game->bonus.door_open = 0;
 		game->bonus.doorx = 0;
 		game->bonus.doory = 0;
+		game->bonus.wall_hit = '0';
+		game->bonus.wallx = 0;
+		game->bonus.wally = 0;
 	}
 	while (hit == false)
 	{
@@ -105,23 +108,9 @@ static void	dda_exec(t_game *game)
 				game->bonus.wall_hit = '1';
 				if (game->bonus.door_open == 1)
 				{
-					//printf("doorx = %d, doory = %d\n", game->bonus.doorx, game->bonus.doory);
-					if (game->ray.side == 0)
-						if ((int)game->ray.map.x == game->bonus.doorx  - 1 || (int)game->ray.map.x == game->bonus.doorx + 1)
-							{printf(GREEN"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
-							game->bonus.door_open = 1;}
-						else
-							{printf(RED"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
-							game->bonus.door_open = 0;}
-					else
-						if ((int)game->ray.map.y == game->bonus.doory  - 1 || (int)game->ray.map.y == game->bonus.doory + 1)
-							{printf(YELLOW"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
-							game->bonus.door_open = 1;}
-						else
-							{printf(PURPLE"mapx = %d, mapy = %d\n"END, (int)game->ray.map.x, (int)game->ray.map.y);
-							game->bonus.door_open = 0;}
+					game->bonus.wallx = (int)game->ray.map.x;
+					game->bonus.wally = (int)game->ray.map.y;
 				}
-					
 			}
 		}
 		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'D')
