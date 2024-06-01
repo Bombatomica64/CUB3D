@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/01 20:07:50 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/01 22:32:13 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,6 +178,7 @@ typedef struct s_bonus
 	int			wallx;
 	int			wally;
 	int			door_open;
+	bool		insidedoor;
 }	t_bonus;
 typedef struct s_game
 {

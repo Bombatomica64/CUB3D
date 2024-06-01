@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/01 20:11:12 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/02 01:31:05 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,57 +34,36 @@ void	pixels_init(t_game *game)
 static int	get_index(t_game *game)
 {
 	if (BONUS && game->bonus.wall_hit == 'D')
-	{
-		if (game->ray.side == 0)
-		{
-			if (game->ray.dir.x < 0)
-				return (6);
-			else
-				return (6);
-		}
-		else
-		{
-			if (game->ray.dir.y > 0)
-				return (6);
-			else
-				return (6);
-		}
-	}
+		return (6);
 	else if (BONUS && game->bonus.wall_hit == '1' && game->bonus.door_open == 1)
 	{	//side 0 = east, side 1 = south. non consentire che una porta si apra su un muro sennò il muro avrebbe la texture della porta. sennò dividi la porte in NS e EW
-		/*if (game->ray.side == 0 && ((game->bonus.wallx == game->bonus.doorx+1 && game->bonus.wally == game->bonus.doory)
-			|| (game->bonus.wallx == game->bonus.doorx-1 && game->bonus.wally == game->bonus.doory)))
-			return (6);
-		if (game->ray.side == 1 && ((game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory+1)
-			|| (game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory-1)))
-			return (6);*/
 		if ((game->bonus.wallx == game->bonus.doorx+1 && game->bonus.wally == game->bonus.doory)
 			|| (game->bonus.wallx == game->bonus.doorx-1 && game->bonus.wally == game->bonus.doory)
 			|| (game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory+1)
 			|| (game->bonus.wallx == game->bonus.doorx && game->bonus.wally == game->bonus.doory-1))
 			return (6);
 	}
+	if (BONUS && game->bonus.insidedoor == true)
+	{
+		if (((int)game->ray.map.x == (int)game->player.pos.x && abs((int)game->ray.map.y - (int)game->player.pos.y) == 1) ||
+			((int)game->ray.map.y == (int)game->player.pos.y && abs((int)game->ray.map.x - (int)game->player.pos.x) == 1))
+		{
+			return (6);
+		}
+	}
 	if (game->ray.side == 0)
 	{
 		if (game->ray.dir.x < 0)
-		{
 			return (3);
-		}
 		else
-		{
 			return (2);
-		}
 	}
 	else
 	{
 		if (game->ray.dir.y > 0)
-		{
 			return (1);
-		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (0);
 }

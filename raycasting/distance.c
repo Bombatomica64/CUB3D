@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/01 20:08:15 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/02 01:08:59 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ static void	dda_exec(t_game *game)
 		game->bonus.wall_hit = '0';
 		game->bonus.wallx = 0;
 		game->bonus.wally = 0;
+		game->bonus.insidedoor = false;
 	}
 	while (hit == false)
 	{
@@ -100,7 +101,7 @@ static void	dda_exec(t_game *game)
 			|| game->ray.map.y > game->map_height - 0.25
 			|| game->ray.map.x > game->map_width - 1.25)
 			break ;
-		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == '1')
+		if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == '1')
 		{
 			hit = true;
 			if (BONUS)
@@ -110,6 +111,10 @@ static void	dda_exec(t_game *game)
 				{
 					game->bonus.wallx = (int)game->ray.map.x;
 					game->bonus.wally = (int)game->ray.map.y;
+				}
+				if (game->map[(int)game->player.pos.y][(int)game->player.pos.x] == 'L')
+				{
+					game->bonus.insidedoor = true;
 				}
 			}
 		}
