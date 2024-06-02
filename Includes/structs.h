@@ -57,6 +57,7 @@
 # define VDIV 10
 # define VMOVE 0.5
 # define FOV 75
+# define P_RADIUS 3.5
 
 /**
  * @brief 2D space vector

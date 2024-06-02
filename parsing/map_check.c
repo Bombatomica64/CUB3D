@@ -133,6 +133,7 @@ void	check_map(t_game *game)
 			{
 				printf("cur.i = %d\ncur.j = %d\n", curs.i, curs.j);
 				init_player(game, curs.i, curs.j);
+				game->map[curs.i][curs.j] = '0';
 				curs.k++;
 			}
 			curs.j++;

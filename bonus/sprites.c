@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 18:23:41 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/02 15:00:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,7 +160,7 @@ void	sprite_calc(t_game *game)
 		}
 		curs.j++;
 	}
-	printf("invdet = %f\n", invdet);
+	/*printf("invdet = %f\n", invdet);
 	printf("drw_end_x = %d\n", drw_end_x);
 	printf("drw_start_y = %d\n", drw_start_y);
 	printf("sprite.x = %f\n", sprite.x);
@@ -171,7 +171,7 @@ void	sprite_calc(t_game *game)
 	printf("sprite_height = %d\n", sprite_height);
 	printf("sprite_width = %d\n", sprite_width);
 	printf("transform.x = %f\n", transform.x);
-	printf("transform.y = %f\n", transform.y);
+	printf("transform.y = %f\n", transform.y);*/
 }
 
 // void	merge(t_pair *orders, int left, int mid, int right)

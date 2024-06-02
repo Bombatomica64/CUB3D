@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:26:24 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/02 16:03:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,42 @@ t_Myimg	empty_myimg(t_game *game, int width, int height)
 	return (image);
 }
 
+static void player_set(t_game *game, t_Myimg *img)
+{
+	double x;
+	double y;
+	double i;
+	double j;
+
+	y = game->bonus.player.y * MINIMAP_SCALE;
+	x = game->bonus.player.x * MINIMAP_SCALE;
+	i = -P_RADIUS;
+	while (i < P_RADIUS * 2)
+	{
+		j = -P_RADIUS;
+		while (j < P_RADIUS * 2)
+		{
+			int mapY = (int)floor(y + i) / MINIMAP_SCALE;
+			int mapX = (int)floor(x + j) / MINIMAP_SCALE;
+			// Check if the pixel is inside the minimap
+			if (mapY >= 0 && mapY < game->map_height && mapX >= 0 && mapX < game->map_width)
+			{
+				// Check if the pixel is inside the circle
+				if ((j - P_RADIUS) * (j - P_RADIUS) + (i - P_RADIUS) * (i - P_RADIUS) <= P_RADIUS * P_RADIUS)
+				{
+					// Check if the pixel is not inside a wall
+					if (!(game->bonus.minimap[mapY][mapX] == '1'))
+					{
+						set_pixel(img, x + j, y + i, 0xAA3355);
+					}
+				}
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
 static void	render_frame(t_game *game)
 {
 	t_Myimg	image;
@@ -61,6 +97,8 @@ static void	render_frame(t_game *game)
 		}
 		y++;
 	}
+	if (BONUS)
+		player_set(game, &image);
 	mlx_put_image_to_window(game->mlx, game->win, image.img.image, 0, 0);
 	mlx_destroy_image(game->mlx, image.img.image);
 }
