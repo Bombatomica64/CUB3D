@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 10:24:37 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/02 14:51:12 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ int	is_inbounds(t_game *game, t_pos new_pos)
 
 	x = (int)(game->player.pos.x + new_pos.x);
 	y = (int)(game->player.pos.y + new_pos.y);
-	return (!(game->map[y][x] == '1' || (game->map[y + 1][x] == '1'
-		&& game->player.pos.y + new_pos.y - y > 0.9) || (game->map[y
-				- 1][x] == '1' && game->player.pos.y + new_pos.y - y < 0.1)
-			|| (game->map[y][x + 1] == '1' && game->player.pos.x + new_pos.x
-				- x > 0.9) || (game->map[y][x - 1] == '1' && game->player.pos.x
-				+ new_pos.x - x < 0.1)));
+	return (!(game->map[y][x] == '1' || (game->map[y + 1][x] == '1' && game->player.pos.y + new_pos.y - y > 0.9) 
+		|| (game->map[y - 1][x] == '1' && game->player.pos.y + new_pos.y - y < 0.1)
+		|| (game->map[y][x + 1] == '1' && game->player.pos.x + new_pos.x - x > 0.9) 
+		|| (game->map[y][x - 1] == '1' && game->player.pos.x + new_pos.x - x < 0.1)
+		|| game->map[y][x] == 'D' || (game->map[y + 1][x] == 'D' && game->player.pos.y + new_pos.y - y > 0.9) 
+		|| (game->map[y - 1][x] == 'D' && game->player.pos.y + new_pos.y - y < 0.1)
+		|| (game->map[y][x + 1] == 'D' && game->player.pos.x + new_pos.x - x > 0.9) 
+		|| (game->map[y][x - 1] == 'D' && game->player.pos.x + new_pos.x - x < 0.1)));
 }
 
 int	game_loop(t_game *game)
@@ -70,10 +72,25 @@ int	on_destroy(t_game *data)
 	return (0);
 }
 
+void door_opening(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = (int)(game->player.pos.x + game->player.dir.x);
+	y = (int)(game->player.pos.y + game->player.dir.y);
+	if (game->map[y][x] == 'D')
+		game->map[y][x] = 'L';
+	else if (game->map[y][x] == 'L')
+		game->map[y][x] = 'D';
+}
+
 int	on_key_press(int keysym, t_game *game)
 {
 	if (keysym == XK_Escape)
 		err_exit("Exiting\n", game);
+	if (BONUS && keysym == XK_space)
+		door_opening(game);
 	if (keysym == XK_w)
 		game->keys.w = 1;
 	else if (keysym == XK_a)
