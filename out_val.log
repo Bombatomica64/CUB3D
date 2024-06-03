@@ -1,583 +1,1976 @@
-==41804== Memcheck, a memory error detector
-==41804== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==41804== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==41804== Command: ./cub3D_bonus maps/test.cub
-==41804== 
-Failed to load texture : F 0,153,51Failed to load texture : F 0,153,51 
-==41804== Invalid read of size 4
-==41804==    at 0x40B040: mlx_destroy_image (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x404E54: err_exit (error_management.c:25)
-==41804==    by 0x403814: get_floor (textures.c:65)
-==41804==    by 0x403D00: get_textures (textures.c:105)
-==41804==    by 0x402C80: init_game (var_init.c:31)
-==41804==    by 0x404C17: main (main.c:132)
-==41804==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
-==41804== 
-==41804== 
-==41804== Process terminating with default action of signal 11 (SIGSEGV)
-==41804==  Access not within mapped region at address 0x28
-==41804==    at 0x40B040: mlx_destroy_image (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x404E54: err_exit (error_management.c:25)
-==41804==    by 0x403814: get_floor (textures.c:65)
-==41804==    by 0x403D00: get_textures (textures.c:105)
-==41804==    by 0x402C80: init_game (var_init.c:31)
-==41804==    by 0x404C17: main (main.c:132)
-==41804==  If you believe this happened as a result of a stack
-==41804==  overflow in your program's main thread (unlikely but
-==41804==  possible), you can try to increase the size of the
-==41804==  main thread stack using the --main-stacksize= flag.
-==41804==  The main thread stack size used in this run was 8388608.
 NO
 SO
 WE
 EA
 C
 F
+DD
+X
 --------------------
-F 0,153,51
-C 255,255,204
+F 132,192,200
+C 195,224,244
+X assets/end_bricks.xpm
 NO assets/end_bricks.xpm
 SO assets/stonebrick_mossy.xpm
 EA assets/stonebrick.xpm
 WE assets/mud_bricks.xpm
+DD assets/test_door.xpm
 --------------------
-        1111111111111111111111111            
-        1000000000110000000000001            
-        1001000001110000000000001            
-        1001000000000000000000001            
-111111111011000001110000000100001            
-100000000011000001110111110111111            
-11110111111111011100000010001                
-111111111111111111111111111111               
-                                 11111111111 
-                                 111111111111
-                                  11111111   
-11111111111111111111111111111111             
-10000000000000000000000000000001             
-10000000000000000000000000000001             
-1000000000000000N000000000000001             
-10000000000000000000000000000001             
-10000000000000000000000000000001             
-10000000000000000000000000000001             
-11111111111111111111111111111111             
+1111111111111
+1111101111111
+1000101000001
+1000000010001
+10000E0000001
+1000000000001
+1000000000001
+10000000X0001
+1000000000001
+111111D111111
+1000000000001
+1000000000001
+1111111111111
 --------------------
-INFO:txts[0] = F 0,153,51
-==41804== 
-==41804== FILE DESCRIPTORS: 7 open at exit.
-==41804== Open AF_UNIX socket 3: <unknown>
-==41804==    at 0x4C259CB: socket (syscall-template.S:78)
-==41804==    by 0x4D0639D: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D0688B: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x49F0E69: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E14D8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
-==41804==    <inherited from parent>
-==41804== 
-==41804== Open file descriptor 40: /usr/share/code/resources/app/node_modules.asar
-==41804==    <inherited from parent>
-==41804== 
-==41804== Open file descriptor 38: /nfs/homes/lmicheli/.config/Code/logs/20240531T095716/ptyhost.log
-==41804==    <inherited from parent>
-==41804== 
-==41804== Open file descriptor 2: /nfs/homes/lmicheli/Documents/CUB3D/out_val.log
-==41804==    <inherited from parent>
-==41804== 
-==41804== Open file descriptor 1: /nfs/homes/lmicheli/Documents/CUB3D/out_val.log
-==41804==    <inherited from parent>
-==41804== 
-==41804== Open file descriptor 0: /dev/pts/0
-==41804==    <inherited from parent>
-==41804== 
-==41804== 
-==41804== HEAP SUMMARY:
-==41804==     in use at exit: 107,051 bytes in 90 blocks
-==41804==   total heap usage: 1,082 allocs, 992 frees, 734,309 bytes allocated
-==41804== 
-==41804== 3 bytes in 1 blocks are still reachable in loss record 1 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4BA438E: strdup (strdup.c:42)
-==41804==    by 0x49E14B5: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 8 bytes in 1 blocks are still reachable in loss record 2 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4BA438E: strdup (strdup.c:42)
-==41804==    by 0x49DB2BE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4AFE3F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 8 bytes in 1 blocks are still reachable in loss record 3 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4AFE144: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE1AE: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE5A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 10 bytes in 1 blocks are still reachable in loss record 4 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4BA438E: strdup (strdup.c:42)
-==41804==    by 0x49DB2BE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4A47E03: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E1F49: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 16 bytes in 1 blocks are still reachable in loss record 5 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4D05F81: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D043FB: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D028F5: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D06B72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x49F0E69: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E14D8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 21 bytes in 1 blocks are still reachable in loss record 6 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E196C: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 24 bytes in 1 blocks are still reachable in loss record 7 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4AFE351: XextCreateExtension (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFDE1C: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE19B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE5A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 24 bytes in 1 blocks are still reachable in loss record 8 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4BA438E: strdup (strdup.c:42)
-==41804==    by 0x49DB2BE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4AFE3F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFDE5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE19B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE5A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 24 bytes in 1 blocks are still reachable in loss record 9 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4AFE1CD: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE5A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 25 bytes in 1 blocks are still reachable in loss record 10 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x406E60: ft_strdup (ft_strdup.c:23)
-==41804==    by 0x408948: add_to_matrix (matrix_utils.c:87)
-==41804==    by 0x402E1C: parse_line (splut.c:28)
-==41804==    by 0x4030BA: split_map (splut.c:78)
-==41804==    by 0x402C77: init_game (var_init.c:30)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 29 bytes in 1 blocks are still reachable in loss record 11 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49DC27D: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49DC649: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x409256: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 32 bytes in 1 blocks are still reachable in loss record 12 of 51
-==41804==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4D05B9E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D05C2B: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D0313E: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D031B4: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x49E1E08: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 32 bytes in 1 blocks are still reachable in loss record 13 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4D050C5: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D02E9E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D0461E: ??? (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D04734: xcb_wait_for_reply (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D05C82: xcb_get_extension_data (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D0313E: xcb_prefetch_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D031B4: xcb_get_maximum_request_length (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x49E1E08: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 32 bytes in 1 blocks are still reachable in loss record 14 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4AFE3CF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 32 bytes in 1 blocks are still reachable in loss record 15 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4AFE3CF: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFDE5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE19B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE5A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 33 bytes in 1 blocks are still reachable in loss record 16 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49DC27D: _XUpdateAtomCache (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49DC649: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x40923F: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 40 bytes in 1 blocks are still reachable in loss record 17 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F2F11: _XPollfdCacheInit (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E179F: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 46 bytes in 1 blocks are still reachable in loss record 18 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x406E60: ft_strdup (ft_strdup.c:23)
-==41804==    by 0x408922: add_to_matrix (matrix_utils.c:84)
-==41804==    by 0x402E97: parse_line (splut.c:35)
-==41804==    by 0x4030BA: split_map (splut.c:78)
-==41804==    by 0x402C77: init_game (var_init.c:30)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 48 bytes in 1 blocks are still reachable in loss record 19 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F0DF1: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E14D8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 48 bytes in 1 blocks are still reachable in loss record 20 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F0E07: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E14D8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 56 bytes in 1 blocks are still reachable in loss record 21 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x403441: texture_names (textures.c:19)
-==41804==    by 0x402C0A: init_game (var_init.c:26)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 56 bytes in 1 blocks are still reachable in loss record 22 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x406D8D: ft_calloc (ft_calloc.c:19)
-==41804==    by 0x40889F: add_to_matrix (matrix_utils.c:73)
-==41804==    by 0x402E1C: parse_line (splut.c:28)
-==41804==    by 0x4030BA: split_map (splut.c:78)
-==41804==    by 0x402C77: init_game (var_init.c:30)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 72 bytes in 1 blocks are still reachable in loss record 23 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E1851: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 95 bytes in 4 blocks are still reachable in loss record 24 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x406E60: ft_strdup (ft_strdup.c:23)
-==41804==    by 0x408922: add_to_matrix (matrix_utils.c:84)
-==41804==    by 0x402E1C: parse_line (splut.c:28)
-==41804==    by 0x4030BA: split_map (splut.c:78)
-==41804==    by 0x402C77: init_game (var_init.c:30)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 104 bytes in 1 blocks are still reachable in loss record 25 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F0CF2: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E14D8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 112 bytes in 1 blocks are still reachable in loss record 26 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E1AD0: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 128 bytes in 1 blocks are still reachable in loss record 27 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E1A00: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 128 bytes in 1 blocks are still reachable in loss record 28 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49DB2AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4A47E03: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E1F49: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 128 bytes in 1 blocks are still reachable in loss record 29 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49DB2AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4AFE3F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 128 bytes in 1 blocks are still reachable in loss record 30 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49DB2AE: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4AFE3F0: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFDE5A: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE19B: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE5A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 136 bytes in 1 blocks are still reachable in loss record 31 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x40919F: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 149 bytes in 1 blocks are still reachable in loss record 32 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E1FB1: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 152 bytes in 1 blocks are still reachable in loss record 33 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4A47FFE: XkbUseExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E1F49: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 160 bytes in 1 blocks are still reachable in loss record 34 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49CF82F: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E1E78: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 160 bytes in 1 blocks are still reachable in loss record 35 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49CF82F: XCreateGC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4093DE: mlx_new_window (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402C48: init_game (var_init.c:28)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 160 bytes in 1 blocks are still reachable in loss record 36 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x406D8D: ft_calloc (ft_calloc.c:19)
-==41804==    by 0x40889F: add_to_matrix (matrix_utils.c:73)
-==41804==    by 0x402E97: parse_line (splut.c:35)
-==41804==    by 0x4030BA: split_map (splut.c:78)
-==41804==    by 0x402C77: init_game (var_init.c:30)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 168 bytes in 1 blocks are still reachable in loss record 37 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E1D67: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 208 bytes in 1 blocks are still reachable in loss record 38 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4AFE0F9: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE1AE: ??? (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AFE5A2: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x4AF97B2: XShmQueryVersion (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
-==41804==    by 0x408FC3: mlx_int_deal_shm (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x409265: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 208 bytes in 1 blocks are still reachable in loss record 39 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F467E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F11F6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F1C50: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F0179: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x409795: mlx_int_wait_first_expose (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x40941D: mlx_new_window (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402C48: init_game (var_init.c:28)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 416 bytes in 2 blocks are still reachable in loss record 40 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F467E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F11F6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F1C50: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F01B0: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x409795: mlx_int_wait_first_expose (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x40941D: mlx_new_window (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402C48: init_game (var_init.c:28)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 512 bytes in 1 blocks are still reachable in loss record 41 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49DC1EA: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49DC56E: XInternAtom (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x40923F: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 828 bytes in 18 blocks are still reachable in loss record 42 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4084E0: join_n_char (str_utils4.c:37)
-==41804==    by 0x40301C: pad_map (splut.c:60)
-==41804==    by 0x4030EE: split_map (splut.c:83)
-==41804==    by 0x402C77: init_game (var_init.c:30)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 936 bytes in 1 blocks are still reachable in loss record 43 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x409340: mlx_new_window (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402C48: init_game (var_init.c:28)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 1,456 bytes in 7 blocks are still reachable in loss record 44 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F467E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F11F6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F1C99: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F01B0: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x409795: mlx_int_wait_first_expose (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x40941D: mlx_new_window (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402C48: init_game (var_init.c:28)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 2,496 bytes in 12 blocks are still reachable in loss record 45 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49F467E: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F11F6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F1C99: _XReadEvents (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49F0179: XWindowEvent (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x409795: mlx_int_wait_first_expose (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x40941D: mlx_new_window (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402C48: init_game (var_init.c:28)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 4,688 bytes in 1 blocks are still reachable in loss record 46 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E14A1: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 6,912 bytes in 1 blocks are still reachable in loss record 47 of 51
-==41804==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x406D8D: ft_calloc (ft_calloc.c:19)
-==41804==    by 0x402BAA: init_game (var_init.c:19)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 14,612 bytes in 1 blocks are still reachable in loss record 48 of 51
-==41804==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4D02A62: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D06B72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x49F0E69: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E14D8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 16,384 bytes in 1 blocks are still reachable in loss record 49 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E17EF: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 21,168 bytes in 1 blocks are still reachable in loss record 50 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x4D02884: xcb_connect_to_fd (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x4D06B72: xcb_connect_to_display_with_auth_info (in /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0)
-==41804==    by 0x49F0E69: _XConnectXCB (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x49E14D8: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== 33,600 bytes in 2 blocks are still reachable in loss record 51 of 51
-==41804==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==41804==    by 0x49E1B54: XOpenDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
-==41804==    by 0x4091B7: mlx_init (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x402BB5: init_game (var_init.c:20)
-==41804==    by 0x404C17: main (main.c:132)
-==41804== 
-==41804== LEAK SUMMARY:
-==41804==    definitely lost: 0 bytes in 0 blocks
-==41804==    indirectly lost: 0 bytes in 0 blocks
-==41804==      possibly lost: 0 bytes in 0 blocks
-==41804==    still reachable: 107,051 bytes in 90 blocks
-==41804==         suppressed: 0 bytes in 0 blocks
-==41804== 
-==41804== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)
-==41804== 
-==41804== 1 errors in context 1 of 1:
-==41804== Invalid read of size 4
-==41804==    at 0x40B040: mlx_destroy_image (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
-==41804==    by 0x404E54: err_exit (error_management.c:25)
-==41804==    by 0x403814: get_floor (textures.c:65)
-==41804==    by 0x403D00: get_textures (textures.c:105)
-==41804==    by 0x402C80: init_game (var_init.c:31)
-==41804==    by 0x404C17: main (main.c:132)
-==41804==  Address 0x28 is not stack'd, malloc'd or (recently) free'd
-==41804== 
---41804-- 
---41804-- used_suppression:      1 X on SUSE11 writev uninit padding /usr/lib/x86_64-linux-gnu/valgrind/default.supp:397
-==41804== 
-==41804== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)
+INFO:txts[0] = F 132,192,200
+path =  132,192,200
+hex = 84
+hex = 84C0
+hex = 84C0C8
+INFO:txts[1] = C 195,224,244
+path =  195,224,244
+hex = C3
+hex = C3E0
+hex = C3E0F4
+INFO:txts[2] = X assets/end_bricks.xpm
+INFO:txts[3] = NO assets/end_bricks.xpm
+INFO:txts[4] = SO assets/stonebrick_mossy.xpm
+INFO:txts[5] = EA assets/stonebrick.xpm
+INFO:txts[6] = WE assets/mud_bricks.xpm
+INFO:txts[7] = DD assets/test_door.xpm
+cur.i = 4
+cur.j = 5
+name: |E|
+player.x: 5.500000
+player.y: 4.500000
+player.angle: 0.000000
+player.dir.x: 1.000000
+player.dir.y: 0.000000
+player.plane.x: 0.000000
+player.plane.y: 0.767327
+game->bonus.height: 130
+game->bonus.width: 130
+minimap
+game->bonus.minimap[y][x]: 69
+1111111111111
+1111101111111
+1000101000001
+1000000010001
+10000E0000001
+1000000000001
+1000000000001
+10000000X0001
+1000000000001
+111111D111111
+1000000000001
+1000000000001
+1111111111111
+sprite1 pos.x: 8.500000
+sprite1 pos.y: 7.500000
+bonus = 1
+game.mlx[0xbaf530]
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 821
+sprite_screen_x = 829
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.909676
+transform.y = 3.000000
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 825
+sprite_screen_x = 833
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.929176
+transform.y = 2.984963
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 825
+sprite_screen_x = 833
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.929176
+transform.y = 2.984963
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 825
+sprite_screen_x = 833
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.929176
+transform.y = 2.984963
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 825
+sprite_screen_x = 833
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.929176
+transform.y = 2.984963
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 232
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 248
+drw_start_x = 825
+sprite_screen_x = 833
+sprite_height = 16
+sprite_width = 16
+transform.x = 3.929176
+transform.y = 2.984963
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 803
+sprite_screen_x = 810
+sprite_height = 15
+sprite_width = 15
+transform.x = 3.830706
+transform.y = 3.059396
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 752
+sprite_screen_x = 759
+sprite_height = 14
+sprite_width = 14
+transform.x = 3.584731
+transform.y = 3.230149
+invdet = -1.303225
+drw_end_x = 694
+drw_start_y = 234
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 246
+drw_start_x = 682
+sprite_screen_x = 688
+sprite_height = 13
+sprite_width = 13
+transform.x = 3.169255
+transform.y = 3.476504
+invdet = -1.303225
+drw_end_x = 505
+drw_start_y = 235
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 245
+drw_start_x = 495
+sprite_screen_x = 500
+sprite_height = 11
+sprite_width = 11
+transform.x = 1.583173
+transform.y = 4.065001
+invdet = -1.303225
+drw_end_x = 424
+drw_start_y = 235
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 245
+drw_start_x = 414
+sprite_screen_x = 419
+sprite_height = 11
+sprite_width = 11
+transform.x = 0.691525
+transform.y = 4.209327
+invdet = -1.303225
+drw_end_x = 334
+drw_start_y = 235
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 245
+drw_start_x = 324
+sprite_screen_x = 329
+sprite_height = 11
+sprite_width = 11
+transform.x = -0.356943
+transform.y = 4.233791
+invdet = -1.303225
+drw_end_x = 240
+drw_start_y = 235
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 245
+drw_start_x = 230
+sprite_screen_x = 235
+sprite_height = 11
+sprite_width = 11
+transform.x = -1.419301
+transform.y = 4.100479
+invdet = -1.303225
+drw_end_x = 148
+drw_start_y = 234
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 246
+drw_start_x = 136
+sprite_screen_x = 142
+sprite_height = 12
+sprite_width = 12
+transform.x = -2.328031
+transform.y = 3.848235
+invdet = -1.303225
+drw_end_x = 27
+drw_start_y = 234
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 246
+drw_start_x = 15
+sprite_screen_x = 21
+sprite_height = 13
+sprite_width = 13
+transform.x = -3.233286
+transform.y = 3.441613
+invdet = -1.303225
+drw_end_x = 0
+drw_start_y = 233
+sprite.x Exiting
+= 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 0
+sprite_screen_x = -7
+sprite_height = 14
+sprite_width = 14
+transform.x = -3.410059
+transform.y = 3.339647
+invdet = -1.303225
+drw_end_x = -4
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 0
+sprite_screen_x = -11
+sprite_height = 14
+sprite_width = 14
+transform.x = -3.431778
+transform.y = 3.326522
+invdet = -1.303225
+drw_end_x = -4
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 0
+sprite_screen_x = -11
+sprite_height = 14
+sprite_width = 14
+transform.x = -3.431778
+transform.y = 3.326522
+invdet = -1.303225
+drw_end_x = -8
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 0
+sprite_screen_x = -15
+sprite_height = 14
+sprite_width = 14
+transform.x = -3.453411
+transform.y = 3.313314
+invdet = -1.303225
+drw_end_x = -8
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 0
+sprite_screen_x = -15
+sprite_height = 14
+sprite_width = 14
+transform.x = -3.453411
+transform.y = 3.313314
+invdet = -1.303225
+drw_end_x = -8
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 0
+sprite_screen_x = -15
+sprite_height = 14
+sprite_width = 14
+transform.x = -3.453411
+transform.y = 3.313314
+invdet = -1.303225
+drw_end_x = -8
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 0
+sprite_screen_x = -15
+sprite_height = 14
+sprite_width = 14
+transform.x = -3.453411
+transform.y = 3.313314
+invdet = -1.303225
+drw_end_x = 81
+drw_start_y = 234
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 246
+drw_start_x = 69
+sprite_screen_x = 75
+sprite_height = 13
+sprite_width = 13
+transform.x = -2.864511
+transform.y = 3.628873
+invdet = -1.303225
+drw_end_x = 209
+drw_start_y = 235
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 245
+drw_start_x = 199
+sprite_screen_x = 204
+sprite_height = 11
+sprite_width = 11
+transform.x = -1.737185
+transform.y = 4.027796
+invdet = -1.303225
+drw_end_x = 344
+drw_start_y = 235
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 245
+drw_start_x = 334
+sprite_screen_x = 339
+sprite_height = 11
+sprite_width = 11
+transform.x = -0.246527
+transform.y = 4.238421
+invdet = -1.303225
+drw_end_x = 507
+drw_start_y = 235
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 245
+drw_start_x = 497
+sprite_screen_x = 502
+sprite_height = 11
+sprite_width = 11
+transform.x = 1.609641
+transform.y = 4.058876
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 233
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 247
+drw_start_x = 724
+sprite_screen_x = 731
+sprite_height = 14
+sprite_width = 14
+transform.x = 3.435229
+transform.y = 3.324424
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 230
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 250
+drw_start_x = 1131
+sprite_screen_x = 1141
+sprite_height = 21
+sprite_width = 21
+transform.x = 4.741239
+transform.y = 2.182743
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 222
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 258
+drw_start_x = 1779
+sprite_screen_x = 1797
+sprite_height = 36
+sprite_width = 36
+transform.x = 5.256382
+transform.y = 1.316046
+invdet = -1.303225
+drw_end_x = 719
+drw_start_y = 102
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 382
+drw_start_x = 11827
+sprite_screen_x = 11967
+sprite_height = 280
+sprite_width = 280
+transform.x = 5.524606
+transform.y = 0.171348
+invdet = -1.303225
+drw_end_x = -15293
+drw_start_y = 46
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 428
+drw_start_x = 0
+sprite_screen_x = -15484
+sprite_height = 382
+sprite_width = 382
+transform.x = 5.526695
+transform.y = -0.125572
+invdet = -1.303225
+drw_end_x = -8976
+drw_start_y = 124
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 352
+drw_start_x = 0
+sprite_screen_x = -9090
+sprite_height = 228
+sprite_width = 228
+transform.x = 5.522317
+transform.y = -0.210356
+invdet = -1.303225
+drw_end_x = -8976
+drw_start_y = 124
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 352
+drw_start_x = 0
+sprite_screen_x = -9090
+sprite_height = 228
+sprite_width = 228
+transform.x = 5.522317
+transform.y = -0.210356
+invdet = -1.303225
+drw_end_x = -8976
+drw_start_y = 124
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 352
+drw_start_x = 0
+sprite_screen_x = -9090
+sprite_height = 228
+sprite_width = 228
+transform.x = 5.522317
+transform.y = -0.210356
+invdet = -1.303225
+drw_end_x = -8976
+drw_start_y = 124
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 352
+drw_start_x = 0
+sprite_screen_x = -9090
+sprite_height = 228
+sprite_width = 228
+transform.x = 5.522317
+transform.y = -0.210356
+invdet = -1.303225
+drw_end_x = -8976
+drw_start_y = 124
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 352
+drw_start_x = 0
+sprite_screen_x = -9090
+sprite_height = 228
+sprite_width = 228
+transform.x = 5.522317
+transform.y = -0.210356
+invdet = -1.303225
+drw_end_x = -8976
+drw_start_y = 124
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 352
+drw_start_x = 0
+sprite_screen_x = -9090
+sprite_height = 228
+sprite_width = 228
+transform.x = 5.522317
+transform.y = -0.210356
+invdet = -1.303225
+drw_end_x = -8976
+drw_start_y = 124
+sprite.x = 3.000000
+sprite.y = 3.000000
+drw_end_y = 352
+drw_start_x = 0
+sprite_screen_x = -9090
+sprite_height = 228
+sprite_width = 228
+transform.x = 5.522317
+transform.y = -0.210356

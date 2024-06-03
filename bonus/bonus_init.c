@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:18:58 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:10:09 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ void	minimap_init(t_game *game)
 
 	i = 0;
 	game->bonus.height = (double)game->map_height * MINIMAP_SCALE;
-	// if (game->bonus.height > SCREEN_HEIGHT / 4)
-	// 	game->bonus.height = SCREEN_HEIGHT / 4;
 	game->bonus.width = (double)game->map_width * MINIMAP_SCALE;
-	// if (game->bonus.width > SCREEN_WIDTH / 4)
-	// 	game->bonus.width = SCREEN_WIDTH / 4;
 	game->bonus.minimap = ft_calloc(game->map_height + 1, sizeof(char *));
 	while (i < game->map_height)
 	{
@@ -39,7 +35,58 @@ void	minimap_init(t_game *game)
 	print_matrix((char **)game->bonus.minimap);
 }
 
+void	sprite_init(t_game *game)
+{
+	t_curs	curs;
+
+	curs = (t_curs){0, 0, 0, 0};
+	game->bonus.sprite.nb_sprites = 0;
+	while (curs.i < game->map_height)
+	{
+		curs.j = 0;
+		while (curs.j < game->map_width)
+		{
+			if (game->bonus.minimap[curs.i][curs.j] == 'X')
+				game->bonus.sprite.nb_sprites++;
+			curs.j++;
+		}
+		curs.i++;
+	}
+	game->bonus.sprite.pos = ft_calloc(game->bonus.sprite.nb_sprites,
+			sizeof(t_pos));
+	game->bonus.sprite.sprite_dist = ft_calloc(game->bonus.sprite.nb_sprites,
+			sizeof(double));
+	game->bonus.sprite.sprite_order = ft_calloc(game->bonus.sprite.nb_sprites,
+			sizeof(int));
+	curs.i = 0;
+	while (curs.i < game->map_height)
+	{
+		curs.j = 0;
+		while (curs.j < game->map_width)
+		{
+			if (game->bonus.minimap[curs.i][curs.j] == 'X')
+			{
+				game->bonus.sprite.pos[curs.k] = (t_pos){curs.j + 0.5, curs.i + 0.5, 0};
+				curs.k++;
+			}
+			curs.j++;
+		}
+		curs.i++;
+	}
+	printf("sprite1 pos.x: %f\n", game->bonus.sprite.pos[0].x);
+	printf("sprite1 pos.y: %f\n", game->bonus.sprite.pos[0].y);
+}
+
+void	rand_init(t_game *game)
+{
+	srand(time(NULL));
+	game->bonus.sprite.text_nb = rand() % 2 + 6;
+	game->bonus.frame = 0;
+}
+
 void	bonus_init(t_game *game)
 {
 	minimap_init(game);
+	sprite_init(game);
+	rand_init(game);
 }

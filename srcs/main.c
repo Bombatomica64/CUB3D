@@ -157,7 +157,5 @@ int	main(int ac, char **av)
 	mlx_mouse_move(game->mlx, game->win, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	mlx_mouse_hide(game->mlx, game->win);
 	key_input(game);
-	mlx_destroy_display(game->mlx);
-	free(game->mlx);
 	return (0);
 }
