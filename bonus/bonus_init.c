@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:01:32 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:11:22 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void	sprite_init(t_game *game)
 		}
 		curs.i++;
 	}
-	game->bonus.sprite.pos = ft_calloc(game->bonus.sprite.nb_sprites,
+	game->bonus.sprite.pos = ft_calloc(game->bonus.sprite.nb_sprites + 1,
 			sizeof(t_pos));
-	game->bonus.sprite.sprite_dist = ft_calloc(game->bonus.sprite.nb_sprites,
-			sizeof(double));
-	game->bonus.sprite.sprite_order = ft_calloc(game->bonus.sprite.nb_sprites,
-			sizeof(int));
+	game->bonus.sprite.sprite_dist = ft_calloc(game->bonus.sprite.nb_sprites
+			+ 1, sizeof(double));
+	game->bonus.sprite.sprite_order = ft_calloc(game->bonus.sprite.nb_sprites
+			+ 1, sizeof(int));
 	curs.i = 0;
 	while (curs.i < game->map_height)
 	{

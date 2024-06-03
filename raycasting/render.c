@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 15:30:41 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:19:23 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,11 @@ int	render_images(t_game *game)
 	{
 		game->bonus.frame++;
 		current_time = get_time();
+		free(game->bonus.frames);
+		game->bonus.frames = NULL;
+		game->bonus.frames = ft_itoa(game->bonus.frame);
 		mlx_string_put(game->mlx, game->win, SCREEN_WIDTH - 10, 10, 0x000000,
-			ft_itoa(game->bonus.frame));
+			game->bonus.frames);
 		if (current_time >= game->bonus.time + 1000)
 		{
 			game->bonus.frame = 0;

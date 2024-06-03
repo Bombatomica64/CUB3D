@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   splut.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 12:30:47 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:10:03 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	parse_line(char *line, t_game *game)
 {
 	t_curs		curs;
-	char *tmp;
+	char		*tmp;
 
 	curs = (t_curs){0, 0, 0, 0};
 	curs.i += skip_spaces2(line);

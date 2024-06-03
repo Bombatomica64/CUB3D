@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:08:36 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:19:02 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ void	err_exit(char *msg, t_game *game)
 	if (BONUS)
 		ft_free_matrix(game->bonus.minimap);
 	free(game->txts.txt_nm);
-	ft_free_matrix(game->bonus.sprite.sprite_order);
-	ft_free_matrix(game->bonus.sprite.sprite_dist);
-	ft_free_matrix(game->bonus.sprite.pos);
+	free(game->bonus.sprite.sprite_order);
+	free(game->bonus.sprite.sprite_dist);
+	free(game->bonus.sprite.pos);
+	if (game->bonus.frames)
+		free(game->bonus.frames);
 	if (game->win)
 		mlx_destroy_window(game->mlx, game->win);
 	if (game->mlx)
