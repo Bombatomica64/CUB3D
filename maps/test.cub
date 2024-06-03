@@ -1,6 +1,7 @@
 F 132,192,200
 C 195,224,244
 X assets/armor_stand.xpm
+XL assets/steve.xpm
 NO assets/end_bricks4.xpm
 SO assets/stonebrick_mossy.xpm
 EA assets/stonebrick.xpm

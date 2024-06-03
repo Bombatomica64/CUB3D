@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 10:45:39 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:09:31 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@
 # define VMOVE 0.5
 # define FOV 75
 # define P_RADIUS 3.5
+# if BONUS
+#  include <time.h>
+#  include <sys/time.h>
+# endif
 
 /**
  * @brief 2D space vector
@@ -123,12 +127,13 @@ typedef struct s_chadimg
  * 5 = CEILING,
  * 6 = DOOR,
  * 7 = SPRITE
+ * 8 = SPRITE_animation
 */
 typedef struct s_texture
 {
 	char	**txts;
 	char	**txt_nm; //alloced in var_init.c
-	t_Myimg	imgs[8];
+	t_Myimg	imgs[9];
 	int		x;
 	int		y;
 	double	pos;
@@ -174,6 +179,7 @@ typedef struct s_sprite
 	int		*sprite_order;
 	t_pos	*pos;
 	int		nb_sprites;
+	int		text_nb;
 }	t_sprite;
 
 typedef struct s_bonus
@@ -185,6 +191,7 @@ typedef struct s_bonus
 	t_sprite	sprite;
 	int			door;
 	char		wall_hit;
+	int			frame;
 }	t_bonus;
 typedef struct s_game
 {

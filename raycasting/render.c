@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 10:36:42 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:13:27 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,17 +105,26 @@ static void	render_frame(t_game *game)
 
 int	render_images(t_game *game)
 {
-	static int	frame = 0;
+	static time_t	start_time = 0;
+	time_t			current_time;
 
 	mouse(game);
 	pixels_init(game);
 	cast_rays(game);
 	render_frame(game);
-	frame++;
-	// printf("frame = %d\n", frame);
+	game->bonus.frame++;
+	if (BONUS)
+	{
+		current_time = time(NULL);
+		mlx_string_put(game->mlx, game->win, SCREEN_WIDTH - 10, 10, 0x000000,
+			ft_itoa(game->bonus.frame));
+		if (current_time != start_time)
+		{
+			game->bonus.frame = 0;
+			start_time = current_time;
+		}
+	}
 	game_loop(game);
-	// if (BONUS)
-	// 	minimap(game);
 	return (0);
 }
 

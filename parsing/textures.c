@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 10:34:12 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:00:07 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,30 +85,33 @@ void	get_textures(t_game *game)
 			curs.i++;
 			continue ;
 		}
-		if (ft_strncmp(&game->txts.txts[curs.i][curs.j], "NO ", 2) == 0)
+		if (ft_strncmp(&game->txts.txts[curs.i][curs.j], "NO ", 3) == 0)
 			game->txts.imgs[0].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "SO ", 2) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "SO ", 3) == 0)
 			game->txts.imgs[1].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "WE ", 2) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "WE ", 3) == 0)
 			game->txts.imgs[2].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "EA ", 2) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "EA ", 3) == 0)
 			game->txts.imgs[3].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "C ", 1) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "C ", 2) == 0)
 			game->txts.imgs[4].img = get_floor(game->txts.txts[curs.i] + 1,
 					game, curs.i);
-		else if (ft_strncmp(game->txts.txts[curs.i], "F ", 1) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "F ", 2) == 0)
 			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i]
 					+ 1, game, curs.i);
-		else if (ft_strncmp(game->txts.txts[curs.i], "DD ", 1) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "DD ", 2) == 0)
 			game->txts.imgs[6].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
-		else if (ft_strncmp(game->txts.txts[curs.i], "X ", 1) == 0)
+		else if (ft_strncmp(game->txts.txts[curs.i], "X ", 2) == 0)
 			game->txts.imgs[7].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 2, game);
+		else if (ft_strncmp(game->txts.txts[curs.i], "XL ", 3) == 0)
+			game->txts.imgs[8].img = get_img(game->txts.txts[curs.i]
+					+ curs.j + 3, game);
 		else
 			err_exit("Invalid texture", game);
 		curs.i++;
@@ -120,7 +123,7 @@ void	get_texture_int(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < 8)
+	while (i < 9)
 	{
 		game->txts.imgs[i].data
 			= (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,

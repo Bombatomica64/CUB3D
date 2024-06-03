@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 18:26:13 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:10:09 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,16 @@ void	sprite_init(t_game *game)
 	printf("sprite1 pos.y: %f\n", game->bonus.sprite.pos[0].y);
 }
 
+void	rand_init(t_game *game)
+{
+	srand(time(NULL));
+	game->bonus.sprite.text_nb = rand() % 2 + 6;
+	game->bonus.frame = 0;
+}
+
 void	bonus_init(t_game *game)
 {
 	minimap_init(game);
 	sprite_init(game);
+	rand_init(game);
 }

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 10:37:45 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 10:54:02 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,11 @@ void	sortsprites(int *order, double *dist, int amount)
 	free(sprites);
 }
 
-void swap(int* a, int* b) {
-	int temp = *a;
+void	swap(int *a, int *b)
+{
+	int	temp;
+
+	temp = *a;
 	*a = *b;
 	*b = temp;
 }
@@ -112,11 +115,9 @@ void	sprite_calc(t_game *game)
 		game->bonus.sprite.nb_sprites);
 	while (curs.j < game->bonus.sprite.nb_sprites)
 	{
-		sprite.x = game->bonus.sprite.pos
-		[game->bonus.sprite.sprite_order[curs.j]].x
+		sprite.x = game->bonus.sprite.pos[game->bonus.sprite.sprite_order[curs.j]].x
 			- game->player.pos.x;
-		sprite.y = game->bonus.sprite.pos
-		[game->bonus.sprite.sprite_order[curs.j]].y
+		sprite.y = game->bonus.sprite.pos[game->bonus.sprite.sprite_order[curs.j]].y
 			- game->player.pos.y;
 		invdet = 1.0 / (game->player.plane.x * game->player.dir.y
 				- game->player.dir.x * game->player.plane.y);
@@ -155,7 +156,8 @@ void	sprite_calc(t_game *game)
 					d = (curs.k - v_move_screen) * 256 - SCREEN_HEIGHT * 128
 						+ sprite_height * 128;
 					texy = ((d * TILE_SIZE) / sprite_height) / 256;
-					color = game->txts.imgs[7].data[TILE_SIZE
+					color = game->txts.imgs
+					[game->bonus.sprite.text_nb].data[TILE_SIZE
 						* texy + texx];
 					if ((color & 0x00FFFFFF) != 0)
 						game->pixels[curs.k][stripe] = color;

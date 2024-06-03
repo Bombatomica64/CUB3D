@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 10:20:54 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:25:06 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 static void	reycast_init(int x, t_game *game)
 {
 	game->ray.camera_x = 2 * x / SCREEN_WIDTH - 1;
-	game->ray.dir.x = game->player.dir.x
-		+ game->player.plane.x * game->ray.camera_x;
-	game->ray.dir.y = game->player.dir.y
-		+ game->player.plane.y * game->ray.camera_x;
+	game->ray.dir.x = game->player.dir.x + game->player.plane.x
+		* game->ray.camera_x;
+	game->ray.dir.y = game->player.dir.y + game->player.plane.y
+		* game->ray.camera_x;
 	game->ray.map.x = (int)game->player.pos.x;
 	game->ray.map.y = (int)game->player.pos.y;
 	game->ray.delta_dist.x = fabs(1.0 / game->ray.dir.x);
@@ -63,7 +63,7 @@ static void	dda_init(t_game *game)
 }
 
 /*
-- We implement the DDA algorithm -> the loop will increment 1 square 
+- We implement the DDA algorithm -> the loop will increment 1 square
 -   until we hit a wall
 - If the sidedistx < sidedisty, x is the closest point from the ray
 */
@@ -122,11 +122,11 @@ static void	line_calc(t_game *game, int x)
 	if (game->ray.drw_end >= SCREEN_HEIGHT)
 		game->ray.drw_end = SCREEN_HEIGHT - 1;
 	if (game->ray.side == 0)
-		game->ray.wall_x = game->player.pos.y
-			+ game->ray.dist * game->ray.dir.y;
+		game->ray.wall_x = game->player.pos.y + game->ray.dist
+			* game->ray.dir.y;
 	else
-		game->ray.wall_x = game->player.pos.x
-			+ game->ray.dist * game->ray.dir.x;
+		game->ray.wall_x = game->player.pos.x + game->ray.dist
+			* game->ray.dir.x;
 	game->ray.wall_x -= floor(game->ray.wall_x);
 	if (BONUS)
 		game->bonus.sprite.zbuffer[x] = game->ray.dist;
@@ -134,7 +134,7 @@ static void	line_calc(t_game *game, int x)
 
 int	cast_rays(t_game *game)
 {
-	int		x;
+	int	x;
 
 	x = 0;
 	while (x < SCREEN_WIDTH)
@@ -147,6 +147,9 @@ int	cast_rays(t_game *game)
 		x++;
 	}
 	if (BONUS)
+	{
 		sprite_calc(game);
+		game->bonus.sprite.text_nb = (rand() % 2) + 7;
+	}
 	return (0);
 }
