@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   error_management.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
 /*   Updated: 2024/06/03 12:10:37 by lmicheli         ###   ########.fr       */
@@ -14,7 +14,8 @@
 
 int	err(char *msg)
 {
-	ft_putstr_fd(msg, 2);
+	perror(msg);
+	// ft_putstr_fd(msg, 2); 
 	return (1);
 }
 

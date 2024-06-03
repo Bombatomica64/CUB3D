@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 11:47:06 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:23:10 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ void	check_map(t_game *game)
 		{
 			if (!ft_isinset(game->map[curs.i][curs.j], " X01NSEWDL"))
 				err_exit("Error :\n Invalid character in map", game);
-			else if (ft_isinset(game->map[curs.i][curs.j], "0NSEW"))
+			else if (ft_isinset(game->map[curs.i][curs.j], "X0NSEWDL"))
 				check_closed_space(game, curs);
 			curs.j++;
 		}

@@ -1,9 +1,9 @@
-F 132,192,200
-C 195,224,244
+F 256,256,256
+C 255,255,255
 X assets/armor_stand.xpm
 XL assets/steve.xpm
 NO assets/end_bricks4.xpm
-SO assets/stonebrick_mossy.xpm
+SO assets/
 EA assets/stonebrick.xpm
 WE assets/mud_bricks.xpm
 DD assets/doors_dark_oak.xpm
@@ -12,8 +12,8 @@ DD assets/doors_dark_oak.xpm
 1111101111111
 1000101000001
 1000000010001
-10000E1L00X01
-111000L000001
+10000E1000X01
+1110000000001
 10L0000000001
 1011000000001
 111L11D1L1111

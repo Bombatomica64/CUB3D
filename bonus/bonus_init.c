@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 11:10:09 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:21:30 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,34 @@ void	rand_init(t_game *game)
 	game->bonus.frame = 0;
 }
 
+void porte_check(t_game *game)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < game->map_height)
+	{
+		j = 0;
+		while (j < game->map_width)
+		{
+			if (game->map[i][j] == 'D' || game->map[i][j] == 'L')
+			{
+				if (!((game->map[i][j - 1] == '1' && game->map[i][j + 1] == '1') || (game->map[i - 1][j] == '1' && game->map[i + 1][j] == '1')))
+					err_exit("Error: door between opposite walls", game);
+		
+			}
+			j++;
+		}
+		i++;
+	}
+
+}
+
 void	bonus_init(t_game *game)
 {
+	porte_check(game); //check if a door is between 2 opposite walls
 	minimap_init(game);
 	sprite_init(game);
 	rand_init(game);
