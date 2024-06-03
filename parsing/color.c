@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 16:20:09 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:24:06 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char	*create_color_file(t_color color, t_game *game, int nm)
 	printf("hex = %s\n", hex);
 	ft_putstr_fd(hex, fd);
 	ft_putstr_fd("\",\n", fd);
+	free(hex);
 	while (curs.i < 99)
 	{
 		curs.j = 0;

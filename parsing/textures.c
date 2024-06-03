@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:12:23 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:27:32 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ t_img	get_floor(char *path, t_game *game, int nm)
 	if (!img.image)
 		return (err("Failed to load texture : "), err(path),
 			err_exit(" \n", game), img);
+	free(path);
 	return (img);
 }
 
