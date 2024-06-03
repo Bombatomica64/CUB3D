@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 17:05:35 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/04 00:21:02 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,115 +23,6 @@ static void	reycast_init(int x, t_game *game)
 	game->ray.map.y = (int)game->player.pos.y;
 	game->ray.delta_dist.x = fabs(1.0 / game->ray.dir.x);
 	game->ray.delta_dist.y = fabs(1.0 / game->ray.dir.y);
-}
-
-/*
-- We are doing the initial set up for the dda
-- dda algorithm will jump one square in each loop eiter in a x or y dir
-- ray->side_dist.x or y = distance from the ray start pos to the
-	next x or y pos
-- if x or y < 0 go the next x or y to the left
-- if x or y > 0 go the next x or y to the right
-*/
-
-static void	dda_init(t_game *game)
-{
-	if (game->ray.dir.x < 0)
-	{
-		game->ray.step.x = -1;
-		game->ray.side_dist.x = (game->player.pos.x - game->ray.map.x)
-			* game->ray.delta_dist.x;
-	}
-	else
-	{
-		game->ray.step.x = 1;
-		game->ray.side_dist.x = (game->ray.map.x + 1.0 - game->player.pos.x)
-			* game->ray.delta_dist.x;
-	}
-	if (game->ray.dir.y < 0)
-	{
-		game->ray.step.y = -1;
-		game->ray.side_dist.y = (game->player.pos.y - game->ray.map.y)
-			* game->ray.delta_dist.y;
-	}
-	else
-	{
-		game->ray.step.y = 1;
-		game->ray.side_dist.y = (game->ray.map.y + 1.0 - game->player.pos.y)
-			* game->ray.delta_dist.y;
-	}
-}
-
-/*
-- We implement the DDA algorithm -> the loop will increment 1 square
--   until we hit a wall
-- If the sidedistx < sidedisty, x is the closest point from the ray
-*/
-
-static void	dda_exec(t_game *game)
-{
-	bool	hit;
-
-	hit = false;
-	if (BONUS)
-	{
-		game->bonus.door_open = 0;
-		game->bonus.doorx = 0;
-		game->bonus.doory = 0;
-		game->bonus.wall_hit = '0';
-		game->bonus.wallx = 0;
-		game->bonus.wally = 0;
-		game->bonus.insidedoor = false;
-	}
-	while (hit == false)
-	{
-		if (game->ray.side_dist.x < game->ray.side_dist.y)
-		{
-			game->ray.side_dist.x += game->ray.delta_dist.x;
-			game->ray.map.x += game->ray.step.x;
-			game->ray.side = 0;
-		}
-		else
-		{
-			game->ray.side_dist.y += game->ray.delta_dist.y;
-			game->ray.map.y += game->ray.step.y;
-			game->ray.side = 1;
-		}
-		if (game->ray.map.y < 0.25 || game->ray.map.x < 0.25
-			|| game->ray.map.y > game->map_height - 0.25
-			|| game->ray.map.x > game->map_width - 1.25)
-			break ;
-		if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == '1')
-		{
-			hit = true;
-			if (BONUS)
-			{
-				game->bonus.wall_hit = '1';
-				if (game->bonus.door_open == 1)
-				{
-					game->bonus.wallx = (int)game->ray.map.x;
-					game->bonus.wally = (int)game->ray.map.y;
-				}
-				if (game->map[(int)game->player.pos.y][(int)game->player.pos.x] == 'L')
-				{
-					game->bonus.insidedoor = true;
-				}
-			}
-		}
-		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'D')
-		{
-			hit = true;
-			game->bonus.wall_hit = 'D';
-			//game->bonus.door = 1;
-		}
-		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'L')
-		{
-			game->bonus.door_open = 1;
-			game->bonus.doorx = (int)game->ray.map.x;
-			game->bonus.doory = (int)game->ray.map.y;
-			//game->bonus.wall_hit = 'L';
-		}
-	}
 }
 
 static void	line_calc(t_game *game, int x)
@@ -158,21 +49,10 @@ static void	line_calc(t_game *game, int x)
 		game->bonus.sprite.zbuffer[x] = game->ray.dist;
 }
 
-int	cast_rays(t_game *game)
+void	sprite_animation(t_game *game)
 {
-	int		x;
 	long	time;
 
-	x = 0;
-	while (x < SCREEN_WIDTH)
-	{
-		reycast_init(x, game);
-		dda_init(game);
-		dda_exec(game);
-		line_calc(game, x);
-		pixels_update(game, x);
-		x++;
-	}
 	if (BONUS)
 	{
 		if (game->bonus.sprite.nb_sprites > 0)
@@ -186,5 +66,22 @@ int	cast_rays(t_game *game)
 		if (game->bonus.sprite.text_nb > 9)
 			game->bonus.sprite.text_nb = 7;
 	}
+}
+
+int	cast_rays(t_game *game)
+{
+	int		x;
+
+	x = 0;
+	while (x < SCREEN_WIDTH)
+	{
+		reycast_init(x, game);
+		dda_init(game);
+		dda_exec(game);
+		line_calc(game, x);
+		pixels_update(game, x);
+		x++;
+	}
+	sprite_animation(game);
 	return (0);
 }

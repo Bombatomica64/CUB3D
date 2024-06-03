@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   var_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/30 17:03:00 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:34:30 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_game	*init_game(char *map_path)
 	init_trig(game);
 	game->fov_rd = FOV * M_PI / 180;
 	game->txts.txt_nm = texture_names();
-	print_matrix(game->txts.txt_nm);
+	//print_matrix(game->txts.txt_nm);
 	game->win = mlx_new_window(game->mlx, SCREEN_WIDTH, SCREEN_HEIGHT, "Cub3D");
 	game->input.map_and_txt = parse_map(map_path, game);
 	split_map(game);

@@ -6,54 +6,49 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/02 01:34:41 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/03 23:11:03 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-void	pixels_init(t_game *game)
+int	get_index_bonus(t_game *game)
 {
-	int	i;
-
-	if (game->pixels)
-		ft_free_matrix((char **)game->pixels);
-	game->pixels = ft_calloc(SCREEN_HEIGHT + 1, sizeof(int *));
-	if (!game->pixels)
-		return (err_exit("Failed to allocate pixels", game));
-	i = 0;
-	while (i < SCREEN_HEIGHT)
+	if (BONUS && game->bonus.doors.wall_hit == 'D')
+		return (6);
+	else if (BONUS && game->bonus.doors.wall_hit == '1'
+		&& game->bonus.doors.door_open == 1)
 	{
-		game->pixels[i] = ft_calloc(SCREEN_WIDTH + 1, sizeof(int));
-		if (!game->pixels[i])
-			return (ft_free_matrix((char **)game->pixels), exit(1));
-		i++;
+		if ((game->bonus.doors.wallx == game->bonus.doors.doorx + 1
+				&& game->bonus.doors.wally == game->bonus.doors.doory)
+			|| (game->bonus.doors.wallx == game->bonus.doors.doorx - 1
+				&& game->bonus.doors.wally == game->bonus.doors.doory)
+			|| (game->bonus.doors.wallx == game->bonus.doors.doorx
+				&& game->bonus.doors.wally == game->bonus.doors.doory + 1)
+			|| (game->bonus.doors.wallx == game->bonus.doors.doorx
+				&& game->bonus.doors.wally == game->bonus.doors.doory - 1))
+			return (6);
 	}
+	if (BONUS && game->bonus.doors.insidedoor == true)
+	{
+		if (((int)game->ray.map.x == (int)game->player.pos.x
+				&& abs((int)game->ray.map.y - (int)game->player.pos.y) == 1)
+			|| ((int)game->ray.map.y == (int)game->player.pos.y
+				&& abs((int)game->ray.map.x - (int)game->player.pos.x) == 1))
+			return (6);
+	}
+	return (0);
 }
 
 static int	get_index(t_game *game)
 {
-	if (BONUS && game->bonus.wall_hit == 'D')
-		return (6);
-	else if (BONUS && game->bonus.wall_hit == '1' && game->bonus.door_open == 1)
-	{	//side 0 = east, side 1 = south. non consentire che una porta si apra su un muro sennò il muro avrebbe la texture della porta. sennò dividi la porte in NS e EW
-		if ((game->bonus.wallx == game->bonus.doorx+1 
-			&& game->bonus.wally == game->bonus.doory)
-			|| (game->bonus.wallx == game->bonus.doorx-1
-			&& game->bonus.wally == game->bonus.doory)
-			|| (game->bonus.wallx == game->bonus.doorx
-			&& game->bonus.wally == game->bonus.doory+1)
-			|| (game->bonus.wallx == game->bonus.doorx
-			&& game->bonus.wally == game->bonus.doory-1))
-			return (6);
-	}
-	if (BONUS && game->bonus.insidedoor == true)
+	int	index;
+
+	if (BONUS)
 	{
-		if (((int)game->ray.map.x == (int)game->player.pos.x
-			&& abs((int)game->ray.map.y - (int)game->player.pos.y) == 1)
-			|| ((int)game->ray.map.y == (int)game->player.pos.y
-			&& abs((int)game->ray.map.x - (int)game->player.pos.x) == 1))
-			return (6);
+		index = get_index_bonus(game);
+		if (index != 0)
+			return (index);
 	}
 	if (game->ray.side == 0)
 	{
@@ -108,6 +103,7 @@ void	pixel_floor(t_game *game, int x, int y)
 
 	curs = (t_pos){0, 0, 0};
 	i = y;
+	pixel_sky(game, x, game->ray.drw_start);
 	step = 1.0 * BACKGROUND_SIZE / game->ray.line_len;
 	while (i < SCREEN_HEIGHT)
 	{
@@ -141,7 +137,6 @@ void	pixels_update(t_game *game, int x)
 	game->txts.pos = (game->ray.drw_start - SCREEN_HEIGHT / 2
 			+ game->ray.line_len / 2) * game->txts.step;
 	y = game->ray.drw_start;
-	pixel_sky(game, x, y);
 	while (y < game->ray.drw_end + 1 && y < SCREEN_HEIGHT)
 	{
 		game->txts.y = (int)game->txts.pos & ((int)TILE_SIZE - 1);
