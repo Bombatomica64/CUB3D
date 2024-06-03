@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 17:10:19 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:31:14 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,11 @@ typedef struct s_color
 {
 	// char	*α;
 	char	*r;
+	int		r_value;
 	char	*g;
+	int		g_value;
 	char	*b;
+	int		b_value;
 }	t_color;
 
 typedef struct s_ray

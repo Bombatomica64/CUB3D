@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 17:36:07 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:21:58 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <structs.h>
 
-//var_init.c
+// var_init.c
 
 t_game	*init_game(char *map_path);
 char	**parse_map(char *map_path, t_game *game);
@@ -32,12 +32,14 @@ void	err_exit(char *msg, t_game *game);
 // splut.c
 
 void	split_map(t_game *game);
-int		parse_line(char *line, t_game *game);
+int		parse_line(char *line, t_game *game, t_curs curs);
 
 // color.c
 
 char	*itoa_base_hex(int n);
 char	*create_color_file(t_color color, t_game *game, int nm);
+
+void	color_fill(int fd);
 
 // map_check.c
 
@@ -45,56 +47,56 @@ char	**parse_map(char *map_path, t_game *game);
 void	check_map(t_game *game);
 void	check_closed_space(t_game *game, t_curs curs);
 
-//rays.c
+// rays.c
 
 double	nor_angle(double angle);
 int		is_wall(double x, double y, t_game *game);
 t_img	get_texture(t_game *game);
 int		unit_circle(double angle, char c);
 
-//inter_h.c
+// inter_h.c
 
 double	horizontal_inter(t_game *game);
 int		check_inter(double angle, double *y, double *y_step, int flag);
 
-//inter_v.c
+// inter_v.c
 
 double	vertical_inter(t_game *game);
 
-//pixel_putting.c
+// pixel_putting.c
 
 void	better_pixel_put(t_game *game, int x, int y, int color);
 int		reverse_bit(int c);
 
-//walls.c
+// walls.c
 
 void	render_wall(t_game *game);
 
-//distance.c
+// distance.c
 
 int		cast_rays(t_game *game);
 
-//textures.c
+// textures.c
 
 void	get_texture_int(t_game *game);
-char	**texture_names( void );
+char	**texture_names(void);
 t_img	get_floor(char *path, t_game *game, int nm);
 void	get_textures(t_game *game);
 void	get_texture_adresses(t_game *game);
 int		get_texture_id(t_game *game);
 
-//player.c
+// player.c
 
 void	init_player(t_game *game, int x, int y);
 
-//fast_trig.c
+// fast_trig.c
 
 void	init_trig(t_game *game);
 double	fast_cos(double angle, t_game *game);
 double	fast_sin(double angle, t_game *game);
 double	fast_tan(double angle, t_game *game);
 
-//smallsteps.c
+// smallsteps.c
 
 t_pos	get_wal(t_game *game, t_pos first_step, t_pos steps);
 t_pos	smallstep_q1(t_game *game);
@@ -103,19 +105,19 @@ t_pos	smallstep_q3(t_game *game);
 t_pos	smallstep_q4(t_game *game);
 t_pos	calculate_first_step_and_steps(t_game *game, double ray_angle);
 
-//pixels.c
+// pixels.c
 
 void	pixels_init(t_game *game);
 void	pixels_update(t_game *game, int x);
 
-//render.c
+// render.c
 
 int		render_images(t_game *game);
 int		game_loop(t_game *game);
 t_Myimg	empty_myimg(t_game *game, int width, int height);
 void	set_pixel(t_Myimg *image, int x, int y, int color);
 
-//vectors.c
+// vectors.c
 
 t_pos	add(t_pos a, t_pos b);
 t_pos	sub(t_pos a, t_pos b);
@@ -123,43 +125,51 @@ t_pos	mult(t_pos a, double b);
 t_pos	scale(t_pos a, double b);
 t_pos	rot(t_pos pos, double angle);
 
-//mouse.c
+// mouse.c
 
 void	mouse(t_game *game);
 
-//rot.c
+// rot.c
 
 t_pos	rot(t_pos a, double angle);
 
-//minimap.c
+// minimap.c
 
 void	minimap(t_game *game, t_Myimg *img, int x, int y);
 void	move_player(t_game *game);
 void	set_pixel_m(t_Myimg *image, int x, int y, int color);
 
-//bonus_init.c
+// bonus_init.c
 
 void	bonus_init(t_game *game);
 
-//sprites.c
+// sprites.c
 
 void	sprite_calc(t_game *game);
 void	sortsprites(int *order, double *dist, int amount);
 
-//animations.c
+// animations.c
 
 long	get_time(void);
 
-//doors.c
+// doors.c
 
 void	door_opening(t_game *game);
 
-//keyboard.c
+// keyboard.c
 
 int		is_inbounds(t_game *game, t_pos new_pos);
 int		game_loop(t_game *game);
 int		on_destroy(t_game *data);
 int		on_key_press(int keysym, t_game *game);
 int		on_key_release(int keysym, t_game *game);
+
+// char_checks.c
+
+void	check_closed_space(t_game *game, t_curs curs);
+void	checksmh(t_game *game);
+void	check_chars_bonus(t_game *game, t_curs curs);
+void	check_chars(t_game *game, t_curs curs);
+void	check_and_init_player(t_game *game);
 
 #endif
