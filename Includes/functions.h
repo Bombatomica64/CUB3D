@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 10:17:10 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:13:49 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,5 +139,10 @@ void	set_pixel_m(t_Myimg *image, int x, int y, int color);
 //bonus_init.c
 
 void	bonus_init(t_game *game);
+
+//sprites.c
+
+void	sprite_calc(t_game *game);
+void	sortsprites(int *order, double *dist, int amount);
 
 #endif

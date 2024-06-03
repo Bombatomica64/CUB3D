@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:19:58 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:09:31 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@
 # define A 0
 # define S 1
 # define D 2
-# define SCREEN_WIDTH (double)720
-# define SCREEN_HEIGHT (double)480
+# define SCREEN_WIDTH 720.0
+# define SCREEN_HEIGHT 480.0
 # define TILE_SIZE 256
-# define BACKGROUND_SIZE (double)512
-# define MOVE_SPEED (double)0.1
-# define ROT_SPEED (double)0.1
-# define MROT_SPEED (double)0.005
+# define BACKGROUND_SIZE 512
+# define MOVE_SPEED 0.1
+# define ROT_SPEED 0.1
+# define MROT_SPEED 0.005
 # define MINIMAP_SCALE 10
 # ifndef M_PI
 #  define M_PI	3.14159265358979323846
@@ -53,7 +53,15 @@
 # ifndef BONUS
 #  define BONUS 0
 # endif
+# define UDIV 1
+# define VDIV 1
+# define VMOVE 0.5
 # define FOV 75
+# define P_RADIUS 3.5
+# if BONUS
+#  include <time.h>
+#  include <sys/time.h>
+# endif
 
 /**
  * @brief 2D space vector
@@ -78,7 +86,7 @@ typedef struct s_player
 
 typedef struct s_color
 {
-	char	*α;
+	// char	*α;
 	char	*r;
 	char	*g;
 	char	*b;
@@ -110,11 +118,22 @@ typedef struct s_chadimg
 	int		*data;
 }	t_Myimg;
 
+/**
+ * 0 = NORTH, 
+ * 1 = EAST, 
+ * 2 = WEST, 
+ * 3 = SOUTH,
+ * 4 = FLOOR, 
+ * 5 = CEILING,
+ * 6 = DOOR,
+ * 7 = SPRITE
+ * 8 = SPRITE_animation
+*/
 typedef struct s_texture
 {
 	char	**txts;
 	char	**txt_nm; //alloced in var_init.c
-	t_Myimg	imgs[7]; // 0 = NORTH, 1 = EAST, 2 = WEST, 3 = SOUTH, 4 = FLOOR, 5 = CEILING 6 = DOOR
+	t_Myimg	imgs[9];
 	int		x;
 	int		y;
 	double	pos;
@@ -155,13 +174,12 @@ typedef struct s_pair
 
 typedef struct s_sprite
 {
-	double	*zbuffer;
+	double	zbuffer[(int)SCREEN_WIDTH];
 	double	*sprite_dist;
 	int		*sprite_order;
-	int		*sprite_ray;
-	t_pos	*sprite_pos;
+	t_pos	*pos;
 	int		nb_sprites;
-	t_Myimg	sprite;
+	int		text_nb;
 }	t_sprite;
 
 typedef struct s_bonus
@@ -172,7 +190,8 @@ typedef struct s_bonus
 	t_pos		player;
 	t_sprite	sprite;
 	int			door;
-	char	wall_hit;
+	char		wall_hit;
+	int			frame;
 }	t_bonus;
 typedef struct s_game
 {

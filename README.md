@@ -53,3 +53,8 @@ To rotate a vector, multiply it with the rotation matrix
 
 
 (0 , 0 , 0) * (0 , 0 , 1) -> FOV 90🟡  = (       )
+
+
+##TO CHECK##
+
+![Alt text](image.png)

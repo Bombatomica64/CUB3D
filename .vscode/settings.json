@@ -20,5 +20,6 @@
 		"cstdbool": "c",
 		"cstdint": "c",
 		"typeinfo": "c"
-	}
+	},
+	"files.eol": "\n"
 }
