@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 15:15:31 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:36:07 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ t_pos	add(t_pos a, t_pos b);
 t_pos	sub(t_pos a, t_pos b);
 t_pos	mult(t_pos a, double b);
 t_pos	scale(t_pos a, double b);
+t_pos	rot(t_pos pos, double angle);
 
 //mouse.c
 
@@ -148,5 +149,17 @@ void	sortsprites(int *order, double *dist, int amount);
 //animations.c
 
 long	get_time(void);
+
+//doors.c
+
+void	door_opening(t_game *game);
+
+//keyboard.c
+
+int		is_inbounds(t_game *game, t_pos new_pos);
+int		game_loop(t_game *game);
+int		on_destroy(t_game *data);
+int		on_key_press(int keysym, t_game *game);
+int		on_key_release(int keysym, t_game *game);
 
 #endif
