@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:00:46 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:26:45 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,22 @@ void	pixels_init(t_game *game)
 
 int	get_index_bonus(t_game *game)
 {
-	if (BONUS && game->bonus.wall_hit == 'D')
+	if (BONUS && game->bonus.doors.wall_hit == 'D')
 		return (6);
-	else if (BONUS && game->bonus.wall_hit == '1' && game->bonus.door_open == 1)
+	else if (BONUS && game->bonus.doors.wall_hit == '1'
+		&& game->bonus.doors.door_open == 1)
 	{
-		if ((game->bonus.wallx == game->bonus.doorx + 1
-				&& game->bonus.wally == game->bonus.doory)
-			|| (game->bonus.wallx == game->bonus.doorx - 1
-				&& game->bonus.wally == game->bonus.doory)
-			|| (game->bonus.wallx == game->bonus.doorx
-				&& game->bonus.wally == game->bonus.doory + 1)
-			|| (game->bonus.wallx == game->bonus.doorx
-				&& game->bonus.wally == game->bonus.doory - 1))
+		if ((game->bonus.doors.wallx == game->bonus.doors.doorx + 1
+				&& game->bonus.doors.wally == game->bonus.doors.doory)
+			|| (game->bonus.doors.wallx == game->bonus.doors.doorx - 1
+				&& game->bonus.doors.wally == game->bonus.doors.doory)
+			|| (game->bonus.doors.wallx == game->bonus.doors.doorx
+				&& game->bonus.doors.wally == game->bonus.doors.doory + 1)
+			|| (game->bonus.doors.wallx == game->bonus.doors.doorx
+				&& game->bonus.doors.wally == game->bonus.doors.doory - 1))
 			return (6);
 	}
-	if (BONUS && game->bonus.insidedoor == true)
+	if (BONUS && game->bonus.doors.insidedoor == true)
 	{
 		if (((int)game->ray.map.x == (int)game->player.pos.x
 				&& abs((int)game->ray.map.y - (int)game->player.pos.y) == 1)
