@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 15:37:21 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:09:21 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ void	sprite_calc(t_game *game)
 		}
 		curs.j++;
 	}
-	printf("drw_start_x = %d\n", drw_start_x);
+	/*printf("drw_start_x = %d\n", drw_start_x);
 	printf("drw_end_x = %d\n", drw_end_x);
 	printf("invdet = %f\n", invdet);
 	printf("drw_start_y = %d\n", drw_start_y);
@@ -179,7 +179,7 @@ void	sprite_calc(t_game *game)
 	printf("sprite_height = %d\n", sprite_height);
 	printf("sprite_width = %d\n", sprite_width);
 	printf("transform.x = %f\n", transform.x);
-	printf("transform.y = %f\n", transform.y);
+	printf("transform.y = %f\n", transform.y);*/
 }
 
 // void	merge(t_pair *orders, int left, int mid, int right)

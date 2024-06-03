@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/02 14:51:12 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/03 12:32:51 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,22 +138,21 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		printf("Error\nWrong number of arguments\n");
+		perror("Error\nWrong number of arguments\n");
 		return (1);
 	}
 	if (ft_strncmp(av[1] + ft_strlen(av[1]) - 4, ".cub", 4))
 	{
-		printf("Error\nWrong file extension\n");
+		perror("Error\nWrong file extension\n");
 		return (1);
 	}
 	game = init_game(av[1]);
 	if (!game->mlx)
 	{
-		printf("Error\nFailed to init mlx\n");
+		perror("Error\nFailed to init mlx\n");
 		return (1);
 	}
 	printf("bonus = %d\n", BONUS);
-	printf("game.mlx[%p]\n", game->mlx);
 	mlx_mouse_move(game->mlx, game->win, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	mlx_mouse_hide(game->mlx, game->win);
 	key_input(game);

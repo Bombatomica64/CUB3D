@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/28 12:07:38 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:30:47 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	split_map(t_game *game)
 		if (parse_line(line, game) != -1)
 			i++;
 		else
-			err("Failed to parse line");
+			err_exit("Error: invalid input", game);
 	}
 	pad_map(game);
 }
