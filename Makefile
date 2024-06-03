@@ -6,7 +6,7 @@
 #    By: marco <marco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/06/04 00:07:00 by marco            ###   ########.fr        #
+#    Updated: 2024/06/03 17:33:41 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,12 +42,14 @@ SRCS =	srcs/main.c \
 		srcs/error_management.c \
 		srcs/fast_trig.c \
 		srcs/vectors.c \
-		srcs/mouse.c
+		srcs/mouse.c \
+		srcs/keyboard.c
 
 BONUS =	bonus/minimap.c \
 		bonus/bonus_init.c \
 		bonus/sprites.c \
-		bonus/animations.c
+		bonus/animations.c \
+		bonus/doors.c
 
 SRC = $(PARSING) $(SRCS) $(RAYCASTING)
 
