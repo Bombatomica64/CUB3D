@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:46:55 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:50:48 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ t_img	get_floor(char *path, t_game *game, int nm)
 	}
 	img = get_img(path + skip_spaces2(path), game);
 	if (!img.image)
-		return (err("Failed to load texture : "), err(path),
-			err_exit(" \n", game), img);
+		return (err("Failed to load texture : "), err(path), err_exit(" \n",
+				game), img);
 	free(path);
 	return (img);
 }
@@ -90,35 +90,35 @@ void	get_textures(t_game *game)
 			continue ;
 		}
 		if (ft_strncmp(&game->txts.txts[curs.i][curs.j], "NO ", 3) == 0)
-			game->txts.imgs[0].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 3, game);
+			game->txts.imgs[0].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "SO ", 3) == 0)
-			game->txts.imgs[1].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 3, game);
+			game->txts.imgs[1].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "WE ", 3) == 0)
-			game->txts.imgs[2].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 3, game);
+			game->txts.imgs[2].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "EA ", 3) == 0)
-			game->txts.imgs[3].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 3, game);
+			game->txts.imgs[3].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "C ", 2) == 0)
 			game->txts.imgs[4].img = get_floor(game->txts.txts[curs.i] + 1,
 					game, curs.i);
 		else if (ft_strncmp(game->txts.txts[curs.i], "F ", 2) == 0)
-			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i]
-					+ 1, game, curs.i);
+			game->txts.imgs[5].img = get_floor(game->txts.txts[curs.i] + 1,
+					game, curs.i);
 		else if (ft_strncmp(game->txts.txts[curs.i], "DD ", 2) == 0)
-			game->txts.imgs[6].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 3, game);
+			game->txts.imgs[6].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "X ", 2) == 0)
-			game->txts.imgs[7].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 2, game);
+			game->txts.imgs[7].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 2, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "XL ", 3) == 0)
-			game->txts.imgs[8].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 3, game);
+			game->txts.imgs[8].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 3, game);
 		else if (ft_strncmp(game->txts.txts[curs.i], "XXL ", 4) == 0)
-			game->txts.imgs[9].img = get_img(game->txts.txts[curs.i]
-					+ curs.j + 4, game);
+			game->txts.imgs[9].img = get_img(game->txts.txts[curs.i] + curs.j
+					+ 4, game);
 		else
 			err_exit("Invalid texture", game);
 		curs.i++;
@@ -132,19 +132,19 @@ void	get_texture_int(t_game *game)
 	i = 0;
 	while (i < 10)
 	{
-		game->txts.imgs[i].data
-			= (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
+		game->txts.imgs[i].data = (int *)
+			mlx_get_data_addr(game->txts.imgs[i].img.image,
 				&game->txts.imgs[i].bpp, &game->txts.imgs[i].size_line,
 				&game->txts.imgs[i].endian);
 		i++;
 	}
 	i = 0;
-	while (i < 6)
+	while (i < 4)
 	{
 		if (game->txts.imgs[i].img.width != game->txts.imgs[i].img.height)
 			err_exit("Error: texture must be square", game);
 		else if (game->txts.imgs[i].img.width != TILE_SIZE)
-			err_exit("Error: texture must be the correct size", game);			
+			err_exit("Error: texture must be the correct size", game);
 		i++;
 	}
 }
