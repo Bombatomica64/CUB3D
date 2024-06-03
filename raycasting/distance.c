@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/02 01:08:59 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/03 11:49:12 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,8 +131,6 @@ static void	dda_exec(t_game *game)
 			game->bonus.doory = (int)game->ray.map.y;
 			//game->bonus.wall_hit = 'L';
 		}
-		// else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'S')
-		// 	sesso;
 	}
 }
 
@@ -156,7 +154,7 @@ static void	line_calc(t_game *game, int x)
 		game->ray.wall_x = game->player.pos.x + game->ray.dist
 			* game->ray.dir.x;
 	game->ray.wall_x -= floor(game->ray.wall_x);
-	if (false)
+	if (BONUS)
 		game->bonus.sprite.zbuffer[x] = game->ray.dist;
 }
 

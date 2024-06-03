@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 16:29:27 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:47:06 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ void	check_map(t_game *game)
 		while (game->map[curs.i][curs.j])
 		{
 			if (!ft_isinset(game->map[curs.i][curs.j], " X01NSEWDL"))
-				err_exit("Invalid character in map", game);
+				err_exit("Error :\n Invalid character in map", game);
 			else if (ft_isinset(game->map[curs.i][curs.j], "0NSEW"))
 				check_closed_space(game, curs);
 			curs.j++;
