@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/02 15:00:52 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/03 10:37:45 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,12 @@ void	sortsprites(int *order, double *dist, int amount)
 	free(sprites);
 }
 
+void swap(int* a, int* b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
 void	sprite_calc(t_game *game)
 {
 	t_curs	curs;
@@ -129,7 +135,7 @@ void	sprite_calc(t_game *game)
 		if (drw_end_y >= SCREEN_HEIGHT)
 			drw_end_y = SCREEN_HEIGHT - 1;
 		sprite_width = (int)fabs(SCREEN_HEIGHT / transform.y) / UDIV;
-		drw_start_x = -sprite_width / 2 + sprite_screen_x;
+		drw_start_x = ((sprite_width / 2) * -1) + sprite_screen_x;
 		if (drw_start_x < 0)
 			drw_start_x = 0;
 		drw_end_x = sprite_width / 2 + sprite_screen_x;
@@ -146,13 +152,13 @@ void	sprite_calc(t_game *game)
 				curs.k = drw_start_y;
 				while (curs.k < drw_end_y)
 				{
-					printf("color = %d\n", color);
 					d = (curs.k - v_move_screen) * 256 - SCREEN_HEIGHT * 128
 						+ sprite_height * 128;
 					texy = ((d * TILE_SIZE) / sprite_height) / 256;
 					color = game->txts.imgs[7].data[TILE_SIZE
 						* texy + texx];
-					game->pixels[curs.k][stripe] = color;
+					if ((color & 0x00FFFFFF) != 0)
+						game->pixels[curs.k][stripe] = color;
 					curs.k++;
 				}
 			}
@@ -160,18 +166,18 @@ void	sprite_calc(t_game *game)
 		}
 		curs.j++;
 	}
-	/*printf("invdet = %f\n", invdet);
+	printf("drw_start_x = %d\n", drw_start_x);
 	printf("drw_end_x = %d\n", drw_end_x);
+	printf("invdet = %f\n", invdet);
 	printf("drw_start_y = %d\n", drw_start_y);
+	printf("drw_end_y = %d\n", drw_end_y);
 	printf("sprite.x = %f\n", sprite.x);
 	printf("sprite.y = %f\n", sprite.y);
-	printf("drw_end_y = %d\n", drw_end_y);
-	printf("drw_start_x = %d\n", drw_start_x);
 	printf("sprite_screen_x = %d\n", sprite_screen_x);
 	printf("sprite_height = %d\n", sprite_height);
 	printf("sprite_width = %d\n", sprite_width);
 	printf("transform.x = %f\n", transform.x);
-	printf("transform.y = %f\n", transform.y);*/
+	printf("transform.y = %f\n", transform.y);
 }
 
 // void	merge(t_pair *orders, int left, int mid, int right)

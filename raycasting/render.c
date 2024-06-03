@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 09:55:09 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 10:36:42 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static void	frame_set(t_game *game, t_Myimg *image, int x, int y)
 		minimap(game, image, x, y);
 	else if (game->pixels[y][x] > 0)
 		set_pixel(image, x, y, game->pixels[y][x]);
-	else if (y < SCREEN_HEIGHT / 2)
-		set_pixel(image, x, y, 0x87CEEB);
-	else if (y < SCREEN_HEIGHT - 1)
-		set_pixel(image, x, y, 0x2F4F4F);
+	// else if (y < SCREEN_HEIGHT / 2)
+	// 	set_pixel(image, x, y, 0x87CEEB);
+	// else if (y < SCREEN_HEIGHT - 1)
+	// 	set_pixel(image, x, y, 0x2F4F4F);
 }
 
 t_Myimg	empty_myimg(t_game *game, int width, int height)

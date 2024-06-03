@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 16:06:37 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 10:20:54 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ static void	line_calc(t_game *game, int x)
 		game->ray.wall_x = game->player.pos.x
 			+ game->ray.dist * game->ray.dir.x;
 	game->ray.wall_x -= floor(game->ray.wall_x);
-	if (false)
+	if (BONUS)
 		game->bonus.sprite.zbuffer[x] = game->ray.dist;
 }
 

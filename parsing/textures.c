@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 17:23:08 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 10:34:12 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ void	get_texture_int(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < 7)
+	while (i < 8)
 	{
 		game->txts.imgs[i].data
 			= (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
