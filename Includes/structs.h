@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/01 22:32:13 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/03 12:14:23 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@
 # ifndef BONUS
 #  define BONUS 0
 # endif
-# define UDIV 1
-# define VDIV 1
-# define VMOVE 0.5
+# define UDIV 1.5
+# define VDIV 1.5
+# define VMOVE 100
 # define FOV 75
 # define P_RADIUS 3.5
 # if BONUS
@@ -128,16 +128,18 @@ typedef struct s_chadimg
  * 6 = DOOR,
  * 7 = SPRITE
  * 8 = SPRITE_animation
+ * 9 = SPRITE_animation2
 */
 typedef struct s_texture
 {
-	char	**txts;
-	char	**txt_nm; //alloced in var_init.c
-	t_Myimg	imgs[9];
-	int		x;
-	int		y;
-	double	pos;
-	double	step;
+	char		**txts;
+	char		**txt_nm; //alloced in var_init.c
+	u_int8_t	nb_txt;
+	t_Myimg		imgs[10];
+	int			x;
+	int			y;
+	double		pos;
+	double		step;
 }	t_texture;
 
 typedef struct s_input
