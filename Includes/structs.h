@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 12:14:23 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:51:36 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,7 @@ typedef struct s_bonus
 	int			door_open;
 	bool		insidedoor;
 	int			frame;
+	long		time;
 }	t_bonus;
 typedef struct s_game
 {

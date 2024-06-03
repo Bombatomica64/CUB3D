@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 12:32:51 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:10:14 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,17 @@ int	is_inbounds(t_game *game, t_pos new_pos)
 
 	x = (int)(game->player.pos.x + new_pos.x);
 	y = (int)(game->player.pos.y + new_pos.y);
-	return (!(game->map[y][x] == '1' || (game->map[y + 1][x] == '1' && game->player.pos.y + new_pos.y - y > 0.9) 
-		|| (game->map[y - 1][x] == '1' && game->player.pos.y + new_pos.y - y < 0.1)
-		|| (game->map[y][x + 1] == '1' && game->player.pos.x + new_pos.x - x > 0.9) 
-		|| (game->map[y][x - 1] == '1' && game->player.pos.x + new_pos.x - x < 0.1)
-		|| game->map[y][x] == 'D' || (game->map[y + 1][x] == 'D' && game->player.pos.y + new_pos.y - y > 0.9) 
-		|| (game->map[y - 1][x] == 'D' && game->player.pos.y + new_pos.y - y < 0.1)
-		|| (game->map[y][x + 1] == 'D' && game->player.pos.x + new_pos.x - x > 0.9) 
-		|| (game->map[y][x - 1] == 'D' && game->player.pos.x + new_pos.x - x < 0.1)));
+	return (!(game->map[y][x] == '1' || (game->map[y + 1][x] == '1'
+		&& game->player.pos.y + new_pos.y - y > 0.9) || (game->map[y
+				- 1][x] == '1' && game->player.pos.y + new_pos.y - y < 0.1)
+			|| (game->map[y][x + 1] == '1' && game->player.pos.x + new_pos.x
+				- x > 0.9) || (game->map[y][x - 1] == '1' && game->player.pos.x
+				+ new_pos.x - x < 0.1) || game->map[y][x] == 'D' || (game->map[y
+				+ 1][x] == 'D' && game->player.pos.y + new_pos.y - y > 0.9)
+			|| (game->map[y - 1][x] == 'D' && game->player.pos.y + new_pos.y
+				- y < 0.1) || (game->map[y][x + 1] == 'D' && game->player.pos.x
+				+ new_pos.x - x > 0.9) || (game->map[y][x - 1] == 'D'
+				&& game->player.pos.x + new_pos.x - x < 0.1)));
 }
 
 int	game_loop(t_game *game)
@@ -72,7 +75,7 @@ int	on_destroy(t_game *data)
 	return (0);
 }
 
-void door_opening(t_game *game)
+void	door_opening(t_game *game)
 {
 	int	x;
 	int	y;

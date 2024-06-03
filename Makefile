@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/06/02 14:33:59 by marvin           ###   ########.fr        #
+#    Updated: 2024/06/03 15:17:34 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,12 @@ SRCS =	srcs/main.c \
 
 BONUS =	bonus/minimap.c \
 		bonus/bonus_init.c \
-		bonus/sprites.c
+		bonus/sprites.c \
+		bonus/animations.c
 
-SRC = $(PARSING) $(SRCS) $(RAYCASTING) $(BONUS)
+SRC = $(PARSING) $(SRCS) $(RAYCASTING)
+
+SRC_BONUS = $(PARSING) $(SRCS) $(RAYCASTING) $(BONUS)
 
 FT_PRINTF = libft
 LIB = libft/libftprintf.a
@@ -82,7 +85,7 @@ bonus: $(BONUS_NAME)
 $(BONUS_NAME):
 	@make all -C $(FT_PRINTF)
 	@make all -C $(MLX_DIR)
-	@$(CC) $(SRC) $(LIB) $(MLX) $(MLXFLAGS) -DBONUS=1 -I $(INCLUDES) -o $(BONUS_NAME)
+	@$(CC) $(SRC_BONUS) $(LIB) $(MLX) $(MLXFLAGS) -DBONUS=1 -I $(INCLUDES) -o $(BONUS_NAME)
 	@echo "Compiled "$(BONUS_NAME)" successfully!" 
 
 play:

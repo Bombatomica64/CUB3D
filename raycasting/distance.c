@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 11:49:12 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:06:37 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,7 +160,8 @@ static void	line_calc(t_game *game, int x)
 
 int	cast_rays(t_game *game)
 {
-	int	x;
+	int		x;
+	long	time;
 
 	x = 0;
 	while (x < SCREEN_WIDTH)
@@ -174,8 +175,13 @@ int	cast_rays(t_game *game)
 	}
 	if (BONUS)
 	{
-		sprite_calc(game);
-		game->bonus.sprite.text_nb = (rand() % 2) + 7;
+		if (game->bonus.sprite.nb_sprites > 0)
+			sprite_calc(game);
+		time = get_time();
+		if (time - game->bonus.time > 100)
+			game->bonus.sprite.text_nb = game->bonus.sprite.text_nb + 1;
+		if (game->bonus.sprite.text_nb > 9)
+			game->bonus.sprite.text_nb = 7;
 	}
 	return (0);
 }

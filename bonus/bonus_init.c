@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 12:21:30 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:01:32 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,14 @@ void	sprite_init(t_game *game)
 		{
 			if (game->bonus.minimap[curs.i][curs.j] == 'X')
 			{
-				game->bonus.sprite.pos[curs.k] = (t_pos){curs.j + 0.5, curs.i + 0.5, 0};
+				game->bonus.sprite.pos[curs.k] = (t_pos){curs.j + 0.5, curs.i
+					+ 0.5, 0};
 				curs.k++;
 			}
 			curs.j++;
 		}
 		curs.i++;
 	}
-	printf("sprite1 pos.x: %f\n", game->bonus.sprite.pos[0].x);
-	printf("sprite1 pos.y: %f\n", game->bonus.sprite.pos[0].y);
 }
 
 void	rand_init(t_game *game)
@@ -82,12 +81,13 @@ void	rand_init(t_game *game)
 	srand(time(NULL));
 	game->bonus.sprite.text_nb = rand() % 2 + 6;
 	game->bonus.frame = 0;
+	game->bonus.time = get_time();
 }
 
-void porte_check(t_game *game)
+void	porte_check(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -98,21 +98,38 @@ void porte_check(t_game *game)
 		{
 			if (game->map[i][j] == 'D' || game->map[i][j] == 'L')
 			{
-				if (!((game->map[i][j - 1] == '1' && game->map[i][j + 1] == '1') || (game->map[i - 1][j] == '1' && game->map[i + 1][j] == '1')))
+				game->bonus.door = 1;
+				if (!((game->map[i][j - 1] == '1' && game->map[i][j + 1] == '1')
+						|| (game->map[i - 1][j] == '1' && game->map[i
+							+ 1][j] == '1')))
 					err_exit("Error: door between opposite walls", game);
-		
 			}
 			j++;
 		}
 		i++;
 	}
+}
 
+void	bonus_check(t_game *game)
+{
+	if (game->bonus.door > 0)
+	{
+		if (game->txts.imgs[6].img.image == NULL)
+			err_exit("Error: missing door texture", game);
+	}
+	if (game->bonus.sprite.nb_sprites > 0)
+	{
+		if (!game->txts.imgs[7].img.image || !game->txts.imgs[8].img.image
+			|| !game->txts.imgs[9].img.image)
+			err_exit("Error: missing sprite texture", game);
+	}
 }
 
 void	bonus_init(t_game *game)
 {
-	porte_check(game); //check if a door is between 2 opposite walls
+	porte_check(game);
 	minimap_init(game);
 	sprite_init(game);
 	rand_init(game);
+	bonus_check(game);
 }

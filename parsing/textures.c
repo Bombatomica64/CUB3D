@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 12:12:20 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:04:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,9 @@ void	get_textures(t_game *game)
 		else if (ft_strncmp(game->txts.txts[curs.i], "XL ", 3) == 0)
 			game->txts.imgs[8].img = get_img(game->txts.txts[curs.i]
 					+ curs.j + 3, game);
+		else if (ft_strncmp(game->txts.txts[curs.i], "XXL ", 4) == 0)
+			game->txts.imgs[9].img = get_img(game->txts.txts[curs.i]
+					+ curs.j + 4, game);
 		else
 			err_exit("Invalid texture", game);
 		curs.i++;
@@ -126,12 +129,25 @@ void	get_texture_int(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < 9)
+	while (i < 10)
 	{
 		game->txts.imgs[i].data
 			= (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
 				&game->txts.imgs[i].bpp, &game->txts.imgs[i].size_line,
 				&game->txts.imgs[i].endian);
+		i++;
+	}
+}
+
+void	texture_check(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	while (i < 6)
+	{
+		if (game->txts.imgs[i].img.image == NULL)
+			err_exit("Error: missing texture", game);
 		i++;
 	}
 }

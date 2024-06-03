@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/01 12:47:00 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/03 15:30:41 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ static void	frame_set(t_game *game, t_Myimg *image, int x, int y)
 		minimap(game, image, x, y);
 	else if (game->pixels[y][x] > 0)
 		set_pixel(image, x, y, game->pixels[y][x]);
-	// else if (y < SCREEN_HEIGHT / 2)
-	// 	set_pixel(image, x, y, 0x87CEEB);
-	// else if (y < SCREEN_HEIGHT - 1)
-	// 	set_pixel(image, x, y, 0x2F4F4F);
 }
 
 t_Myimg	empty_myimg(t_game *game, int width, int height)
@@ -105,23 +101,22 @@ static void	render_frame(t_game *game)
 
 int	render_images(t_game *game)
 {
-	static time_t	start_time = 0;
 	time_t			current_time;
 
 	mouse(game);
 	pixels_init(game);
 	cast_rays(game);
 	render_frame(game);
-	game->bonus.frame++;
 	if (BONUS)
 	{
-		current_time = time(NULL);
+		game->bonus.frame++;
+		current_time = get_time();
 		mlx_string_put(game->mlx, game->win, SCREEN_WIDTH - 10, 10, 0x000000,
 			ft_itoa(game->bonus.frame));
-		if (current_time != start_time)
+		if (current_time >= game->bonus.time + 1000)
 		{
 			game->bonus.frame = 0;
-			start_time = current_time;
+			game->bonus.time = current_time;
 		}
 	}
 	game_loop(game);
