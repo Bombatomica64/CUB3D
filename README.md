@@ -10,7 +10,7 @@ __ADD WORKFLOWS__
 PLZ CAZZO PLALLE
 
 ## MAP Parsing
-
+__CHECK TEXTURE ARE CORRECT NUMBER__
 0 spazio camminabile  
 1 muro  
 N, S, E, W personaggio (solo 1 di questi per mappa) cambia solo il verso in cui guarda quando spawna  
