@@ -6,7 +6,7 @@
 /*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 17:36:07 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 00:40:13 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	render_wall(t_game *game);
 int		cast_rays(t_game *game);
 void	sprite_animation(t_game *game);
 
-
 //textures.c
 
 void	get_texture_int(t_game *game);
@@ -122,7 +121,6 @@ void	player_set(t_game *game, t_Myimg *img);
 void	set_pixel(t_Myimg *image, int x, int y, int color);
 void	frame_set(t_game *game, t_Myimg *image, int x, int y);
 void	draw_circle(t_game *game, t_Myimg *img, t_pos pos, t_pos circle);
-
 
 //render.c
 
