@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:43:41 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 22:52:54 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,21 +148,10 @@ static void	line_calc(t_game *game, int x)
 		game->bonus.sprite.zbuffer[x] = game->ray.dist;
 }
 
-int	cast_rays(t_game *game)
+void	sprite_animation(t_game *game)
 {
-	int		x;
 	long	time;
 
-	x = 0;
-	while (x < SCREEN_WIDTH)
-	{
-		reycast_init(x, game);
-		dda_init(game);
-		dda_exec(game);
-		line_calc(game, x);
-		pixels_update(game, x);
-		x++;
-	}
 	if (BONUS)
 	{
 		if (game->bonus.sprite.nb_sprites > 0)
@@ -176,5 +165,22 @@ int	cast_rays(t_game *game)
 		if (game->bonus.sprite.text_nb > 9)
 			game->bonus.sprite.text_nb = 7;
 	}
+}
+
+int	cast_rays(t_game *game)
+{
+	int		x;
+
+	x = 0;
+	while (x < SCREEN_WIDTH)
+	{
+		reycast_init(x, game);
+		dda_init(game);
+		dda_exec(game);
+		line_calc(game, x);
+		pixels_update(game, x);
+		x++;
+	}
+	sprite_animation(game);
 	return (0);
 }
