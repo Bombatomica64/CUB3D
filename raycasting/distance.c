@@ -6,7 +6,7 @@
 /*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 17:05:35 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:02:25 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,8 @@ static void	dda_exec(t_game *game)
 					game->bonus.wallx = (int)game->ray.map.x;
 					game->bonus.wally = (int)game->ray.map.y;
 				}
-				if (game->map[(int)game->player.pos.y][(int)game->player.pos.x] == 'L')
+				if (game->map[(int)game->player.pos.y][(int)game->player.pos.x]
+					== 'L')
 				{
 					game->bonus.insidedoor = true;
 				}
@@ -122,14 +123,12 @@ static void	dda_exec(t_game *game)
 		{
 			hit = true;
 			game->bonus.wall_hit = 'D';
-			//game->bonus.door = 1;
 		}
 		else if (game->map[(int)game->ray.map.y][(int)game->ray.map.x] == 'L')
 		{
 			game->bonus.door_open = 1;
 			game->bonus.doorx = (int)game->ray.map.x;
 			game->bonus.doory = (int)game->ray.map.y;
-			//game->bonus.wall_hit = 'L';
 		}
 	}
 }

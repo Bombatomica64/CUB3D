@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/02 01:34:41 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/03 18:00:46 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,42 @@ void	pixels_init(t_game *game)
 	}
 }
 
-static int	get_index(t_game *game)
+int	get_index_bonus(t_game *game)
 {
 	if (BONUS && game->bonus.wall_hit == 'D')
 		return (6);
 	else if (BONUS && game->bonus.wall_hit == '1' && game->bonus.door_open == 1)
-	{	//side 0 = east, side 1 = south. non consentire che una porta si apra su un muro sennò il muro avrebbe la texture della porta. sennò dividi la porte in NS e EW
-		if ((game->bonus.wallx == game->bonus.doorx+1 
-			&& game->bonus.wally == game->bonus.doory)
-			|| (game->bonus.wallx == game->bonus.doorx-1
-			&& game->bonus.wally == game->bonus.doory)
+	{
+		if ((game->bonus.wallx == game->bonus.doorx + 1
+				&& game->bonus.wally == game->bonus.doory)
+			|| (game->bonus.wallx == game->bonus.doorx - 1
+				&& game->bonus.wally == game->bonus.doory)
 			|| (game->bonus.wallx == game->bonus.doorx
-			&& game->bonus.wally == game->bonus.doory+1)
+				&& game->bonus.wally == game->bonus.doory + 1)
 			|| (game->bonus.wallx == game->bonus.doorx
-			&& game->bonus.wally == game->bonus.doory-1))
+				&& game->bonus.wally == game->bonus.doory - 1))
 			return (6);
 	}
 	if (BONUS && game->bonus.insidedoor == true)
 	{
 		if (((int)game->ray.map.x == (int)game->player.pos.x
-			&& abs((int)game->ray.map.y - (int)game->player.pos.y) == 1)
+				&& abs((int)game->ray.map.y - (int)game->player.pos.y) == 1)
 			|| ((int)game->ray.map.y == (int)game->player.pos.y
-			&& abs((int)game->ray.map.x - (int)game->player.pos.x) == 1))
+				&& abs((int)game->ray.map.x - (int)game->player.pos.x) == 1))
 			return (6);
+	}
+	return (0);
+}
+
+static int	get_index(t_game *game)
+{
+	int	index;
+
+	if (BONUS)
+	{
+		index = get_index_bonus(game);
+		if (index != 0)
+			return (index);
 	}
 	if (game->ray.side == 0)
 	{
@@ -108,6 +121,7 @@ void	pixel_floor(t_game *game, int x, int y)
 
 	curs = (t_pos){0, 0, 0};
 	i = y;
+	pixel_sky(game, x, game->ray.drw_start);
 	step = 1.0 * BACKGROUND_SIZE / game->ray.line_len;
 	while (i < SCREEN_HEIGHT)
 	{
@@ -141,7 +155,6 @@ void	pixels_update(t_game *game, int x)
 	game->txts.pos = (game->ray.drw_start - SCREEN_HEIGHT / 2
 			+ game->ray.line_len / 2) * game->txts.step;
 	y = game->ray.drw_start;
-	pixel_sky(game, x, y);
 	while (y < game->ray.drw_end + 1 && y < SCREEN_HEIGHT)
 	{
 		game->txts.y = (int)game->txts.pos & ((int)TILE_SIZE - 1);
