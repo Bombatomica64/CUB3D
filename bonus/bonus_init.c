@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:11:22 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:45:16 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,12 +116,24 @@ void	bonus_check(t_game *game)
 	{
 		if (game->txts.imgs[6].img.image == NULL)
 			err_exit("Error: missing door texture", game);
+		if (game->txts.imgs[6].img.width != TILE_SIZE
+			|| game->txts.imgs[6].img.height != TILE_SIZE)
+			err_exit("Error: door texture must be the correct size", game);
 	}
 	if (game->bonus.sprite.nb_sprites > 0)
 	{
 		if (!game->txts.imgs[7].img.image || !game->txts.imgs[8].img.image
 			|| !game->txts.imgs[9].img.image)
 			err_exit("Error: missing sprite texture", game);
+		if (game->txts.imgs[7].img.width != TILE_SIZE
+			|| game->txts.imgs[7].img.height != TILE_SIZE)
+			err_exit("Error: sprite texture must be the correct size", game);
+		if (game->txts.imgs[8].img.width != TILE_SIZE
+			|| game->txts.imgs[8].img.height != TILE_SIZE)
+			err_exit("Error: sprite texture must be the correct size", game);
+		if (game->txts.imgs[9].img.width != TILE_SIZE
+			|| game->txts.imgs[9].img.height != TILE_SIZE)
+			err_exit("Error: sprite texture must be the correct size", game);
 	}
 }
 

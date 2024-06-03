@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 15:10:14 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:37:29 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,8 @@ int	main(int ac, char **av)
 	}
 	printf("bonus = %d\n", BONUS);
 	mlx_mouse_move(game->mlx, game->win, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	mlx_mouse_hide(game->mlx, game->win);
 	key_input(game);
 	return (0);
 }
+
+	// mlx_mouse_hide(game->mlx, game->win);

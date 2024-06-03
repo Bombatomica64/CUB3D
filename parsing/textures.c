@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:27:32 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:46:55 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**texture_names(void)
 {
 	char	**txt_nm;
 
-	txt_nm = ft_calloc(sizeof(char *), 11);
+	txt_nm = ft_calloc(sizeof(char *), 10);
 	txt_nm[0] = "NO";
 	txt_nm[1] = "SO";
 	txt_nm[2] = "WE";
@@ -27,6 +27,7 @@ char	**texture_names(void)
 	txt_nm[7] = "X";
 	txt_nm[8] = "XL";
 	txt_nm[9] = "XXL";
+	txt_nm[10] = NULL;
 	return (txt_nm);
 }
 
@@ -58,7 +59,7 @@ t_img	get_floor(char *path, t_game *game, int nm)
 		path = create_color_file(color, game, nm);
 		free(color.r);
 		free(color.g);
-		free(color.b); // add free
+		free(color.b);
 	}
 	img = get_img(path + skip_spaces2(path), game);
 	if (!img.image)
@@ -135,6 +136,15 @@ void	get_texture_int(t_game *game)
 			= (int *)mlx_get_data_addr(game->txts.imgs[i].img.image,
 				&game->txts.imgs[i].bpp, &game->txts.imgs[i].size_line,
 				&game->txts.imgs[i].endian);
+		i++;
+	}
+	i = 0;
+	while (i < 6)
+	{
+		if (game->txts.imgs[i].img.width != game->txts.imgs[i].img.height)
+			err_exit("Error: texture must be square", game);
+		else if (game->txts.imgs[i].img.width != TILE_SIZE)
+			err_exit("Error: texture must be the correct size", game);			
 		i++;
 	}
 }

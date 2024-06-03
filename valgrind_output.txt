@@ -1,0 +1,1432 @@
+==118117== Memcheck, a memory error detector
+==118117== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==118117== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==118117== Command: ./cub3D_bonus maps/test.cub
+==118117== 
+Exiting
+NO
+SO
+WE
+EA
+C
+F
+DD
+X
+XL
+XXL
+--------------------
+F 256,256,256
+C 255,255,255
+X assets/armor_stand.xpm
+XL assets/steve.xpm
+XXL assets/sky_powder.xpm
+NO assets/end_bricks4.xpm
+SO assets/stonebrick_mossy.xpm
+EA assets/stonebrick.xpm
+WE assets/mud_bricks.xpm
+DD assets/doors_dark_oak.xpm
+--------------------
+1111111111111
+1111101111111
+1000101000001
+1000000010001
+10000E1000X01
+11100000X0001
+10L0000000001
+1011000000001
+111L11D1L1111
+1000000000001
+1000000001001
+1010100000001
+1001010100011
+1000111010101
+100001X001001
+1111111111111
+--------------------
+INFO:txts[0] = F 256,256,256
+path =  256,256,256
+hex = 00
+hex = 0000
+hex = 000000
+INFO:txts[1] = C 255,255,255
+path =  255,255,255
+hex = FF
+hex = FFFF
+hex = FFFFFF
+INFO:txts[2] = X assets/armor_stand.xpm
+INFO:txts[3] = XL assets/steve.xpm
+INFO:txts[4] = XXL assets/sky_powder.xpm
+INFO:txts[5] = NO assets/end_bricks4.xpm
+INFO:txts[6] = SO assets/stonebrick_mossy.xpm
+INFO:txts[7] = EA assets/stonebrick.xpm
+INFO:txts[8] = WE assets/mud_bricks.xpm
+INFO:txts[9] = DD assets/doors_dark_oak.xpm
+cur.i = 4
+cur.j = 5
+name: |E|
+player.x: 5.500000
+player.y: 4.500000
+player.angle: 0.000000
+player.dir.x: 1.000000
+player.dir.y: 0.000000
+player.plane.x: 0.000000
+player.plane.y: 0.767327
+game->bonus.height: 160
+game->bonus.width: 130
+minimap
+game->bonus.minimap[y][x]: 48
+1111111111111
+1111101111111
+1000101000001
+1000000010001
+1000001000X01
+11100000X0001
+10L0000000001
+1011000000001
+111L11D1L1111
+1000000000001
+1000000001001
+1010100000001
+1001010100011
+1000111010101
+100001X001001
+1111111111111
+bonus = 1
+==118117== 
+==118117== HEAP SUMMARY:
+==118117==     in use at exit: 28,826 bytes in 297 blocks
+==118117==   total heap usage: 21,380 allocs, 21,083 frees, 53,921,692 bytes allocated
+==118117== 
+==118117== 7 bytes in 1 blocks are definitely lost in loss record 1 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x40961C: ft_strjoin_2free (str_utils.c:51)
+==118117==    by 0x4033C7: create_color_file (color.c:53)
+==118117==    by 0x40382C: get_floor (textures.c:58)
+==118117==    by 0x403DB8: get_textures (textures.c:106)
+==118117==    by 0x402D20: init_game (var_init.c:31)
+==118117==    by 0x405243: main (main.c:152)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin_2free
+   fun:create_color_file
+   fun:get_floor
+   fun:get_textures
+   fun:init_game
+   fun:main
+}
+==118117== 7 bytes in 1 blocks are definitely lost in loss record 2 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x40961C: ft_strjoin_2free (str_utils.c:51)
+==118117==    by 0x4033C7: create_color_file (color.c:53)
+==118117==    by 0x40382C: get_floor (textures.c:58)
+==118117==    by 0x403D26: get_textures (textures.c:103)
+==118117==    by 0x402D20: init_game (var_init.c:31)
+==118117==    by 0x405243: main (main.c:152)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin_2free
+   fun:create_color_file
+   fun:get_floor
+   fun:get_textures
+   fun:init_game
+   fun:main
+}
+==118117== 20 bytes in 1 blocks are definitely lost in loss record 3 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4097BC: ft_strjoin_2 (str_utils.c:80)
+==118117==    by 0x4032C3: create_color_file (color.c:42)
+==118117==    by 0x40382C: get_floor (textures.c:58)
+==118117==    by 0x403DB8: get_textures (textures.c:106)
+==118117==    by 0x402D20: init_game (var_init.c:31)
+==118117==    by 0x405243: main (main.c:152)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin_2
+   fun:create_color_file
+   fun:get_floor
+   fun:get_textures
+   fun:init_game
+   fun:main
+}
+==118117== 20 bytes in 1 blocks are definitely lost in loss record 4 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4097BC: ft_strjoin_2 (str_utils.c:80)
+==118117==    by 0x4032C3: create_color_file (color.c:42)
+==118117==    by 0x40382C: get_floor (textures.c:58)
+==118117==    by 0x403D26: get_textures (textures.c:103)
+==118117==    by 0x402D20: init_game (var_init.c:31)
+==118117==    by 0x405243: main (main.c:152)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:ft_strjoin_2
+   fun:create_color_file
+   fun:get_floor
+   fun:get_textures
+   fun:init_game
+   fun:main
+}
+==118117== 32 bytes in 1 blocks are still reachable in loss record 5 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x49F878E: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F905A: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D90: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x49D0290: XCreatePixmap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49CF0B2: XCreateBitmapFromData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x40CBD0: mlx_mouse_hide (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+   fun:XCreatePixmap
+   fun:XCreateBitmapFromData
+   fun:mlx_mouse_hide
+}
+==118117== 38 bytes in 1 blocks are still reachable in loss record 6 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x401F5DE: strdup (strdup.c:42)
+==118117==    by 0x4019A91: _dl_load_cache_lookup (dl-cache.c:338)
+==118117==    by 0x400A989: _dl_map_object (dl-load.c:2102)
+==118117==    by 0x4015D46: dl_open_worker (dl-open.c:513)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4015609: _dl_open (dl-open.c:837)
+==118117==    by 0x4D2434B: dlopen_doit (dlopen.c:66)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4C65C12: _dl_catch_error (dl-error-skeleton.c:227)
+==118117==    by 0x4D24B58: _dlerror_run (dlerror.c:170)
+==118117==    by 0x4D243D9: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_dl_load_cache_lookup
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+}
+==118117== 38 bytes in 1 blocks are still reachable in loss record 7 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x400D5B7: _dl_new_object (dl-object.c:196)
+==118117==    by 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+==118117==    by 0x400A61A: _dl_map_object (dl-load.c:2236)
+==118117==    by 0x4015D46: dl_open_worker (dl-open.c:513)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4015609: _dl_open (dl-open.c:837)
+==118117==    by 0x4D2434B: dlopen_doit (dlopen.c:66)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4C65C12: _dl_catch_error (dl-error-skeleton.c:227)
+==118117==    by 0x4D24B58: _dlerror_run (dlerror.c:170)
+==118117==    by 0x4D243D9: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+}
+==118117== 47 bytes in 5 blocks are still reachable in loss record 8 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A00FA8: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01207: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 9 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x49E73AB: _XrmInternalStringToQuark (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F94F3: XrmInitialize (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A7B: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x49D0290: XCreatePixmap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49CF0B2: XCreateBitmapFromData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x40CBD0: mlx_mouse_hide (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
+==118117==    by 0x4052B8: main (main.c:160)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XrmInternalStringToQuark
+   fun:XrmInitialize
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+   fun:XCreatePixmap
+   fun:XCreateBitmapFromData
+   fun:mlx_mouse_hide
+   fun:main
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 10 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01243: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 11 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01261: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 12 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0127F: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 13 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0129D: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 14 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A247EE: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 15 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A2480E: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 16 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A2482E: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 17 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A2484E: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 18 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A2486E: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 19 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A2488E: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 20 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A248AE: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 21 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A248CE: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 22 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A248EE: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 23 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A2490E: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 24 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A2492E: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 25 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0E1E4: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A24936: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcAddUtf8Converters
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 26 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0E204: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A24936: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcAddUtf8Converters
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 27 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0E224: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A24936: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcAddUtf8Converters
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 28 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0E244: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A24936: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcAddUtf8Converters
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 29 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0E264: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A24936: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcAddUtf8Converters
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 30 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0E284: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A24936: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcAddUtf8Converters
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+}
+==118117== 64 bytes in 1 blocks are still reachable in loss record 31 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01A02: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A24936: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+}
+==118117== 75 bytes in 2 blocks are still reachable in loss record 32 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x401F5DE: strdup (strdup.c:42)
+==118117==    by 0x4019A91: _dl_load_cache_lookup (dl-cache.c:338)
+==118117==    by 0x400A989: _dl_map_object (dl-load.c:2102)
+==118117==    by 0x400F514: openaux (dl-deps.c:64)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x400F962: _dl_map_object_deps (dl-deps.c:248)
+==118117==    by 0x4015DAF: dl_open_worker (dl-open.c:571)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4015609: _dl_open (dl-open.c:837)
+==118117==    by 0x4D2434B: dlopen_doit (dlopen.c:66)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_dl_load_cache_lookup
+   fun:_dl_map_object
+   fun:openaux
+   fun:_dl_catch_exception
+   fun:_dl_map_object_deps
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+}
+==118117== 75 bytes in 2 blocks are still reachable in loss record 33 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x400D5B7: _dl_new_object (dl-object.c:196)
+==118117==    by 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+==118117==    by 0x400A61A: _dl_map_object (dl-load.c:2236)
+==118117==    by 0x400F514: openaux (dl-deps.c:64)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x400F962: _dl_map_object_deps (dl-deps.c:248)
+==118117==    by 0x4015DAF: dl_open_worker (dl-open.c:571)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4015609: _dl_open (dl-open.c:837)
+==118117==    by 0x4D2434B: dlopen_doit (dlopen.c:66)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:openaux
+   fun:_dl_catch_exception
+   fun:_dl_map_object_deps
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+}
+==118117== 384 bytes in 3 blocks are still reachable in loss record 34 of 44
+==118117==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x401331C: _dl_check_map_versions (dl-version.c:274)
+==118117==    by 0x40160FC: dl_open_worker (dl-open.c:577)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4015609: _dl_open (dl-open.c:837)
+==118117==    by 0x4D2434B: dlopen_doit (dlopen.c:66)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4C65C12: _dl_catch_error (dl-error-skeleton.c:227)
+==118117==    by 0x4D24B58: _dlerror_run (dlerror.c:170)
+==118117==    by 0x4D243D9: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==118117==    by 0x49CFAC1: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49CFBEE: _XNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_check_map_versions
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XNoticeCreateBitmap
+}
+==118117== 633 bytes in 49 blocks are still reachable in loss record 35 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A015E1: _XlcCreateDefaultCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01182: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01207: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcCreateDefaultCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+}
+==118117== 800 bytes in 50 blocks are still reachable in loss record 36 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01379: _XlcAddCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01196: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01207: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcAddCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+}
+==118117== 1,028 bytes in 50 blocks are still reachable in loss record 37 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01574: _XlcCreateDefaultCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01182: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01207: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcCreateDefaultCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+}
+==118117== 1,200 bytes in 1 blocks are still reachable in loss record 38 of 44
+==118117==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x400D283: _dl_new_object (dl-object.c:89)
+==118117==    by 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+==118117==    by 0x400A61A: _dl_map_object (dl-load.c:2236)
+==118117==    by 0x4015D46: dl_open_worker (dl-open.c:513)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4015609: _dl_open (dl-open.c:837)
+==118117==    by 0x4D2434B: dlopen_doit (dlopen.c:66)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4C65C12: _dl_catch_error (dl-error-skeleton.c:227)
+==118117==    by 0x4D24B58: _dlerror_run (dlerror.c:170)
+==118117==    by 0x4D243D9: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+}
+==118117== 2,048 bytes in 1 blocks are still reachable in loss record 39 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A035E6: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A074FF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcCreateLocaleDataBase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+}
+==118117== 2,399 bytes in 2 blocks are still reachable in loss record 40 of 44
+==118117==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x400D283: _dl_new_object (dl-object.c:89)
+==118117==    by 0x4006E96: _dl_map_object_from_fd (dl-load.c:997)
+==118117==    by 0x400A61A: _dl_map_object (dl-load.c:2236)
+==118117==    by 0x400F514: openaux (dl-deps.c:64)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x400F962: _dl_map_object_deps (dl-deps.c:248)
+==118117==    by 0x4015DAF: dl_open_worker (dl-open.c:571)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117==    by 0x4015609: _dl_open (dl-open.c:837)
+==118117==    by 0x4D2434B: dlopen_doit (dlopen.c:66)
+==118117==    by 0x4C65B47: _dl_catch_exception (dl-error-skeleton.c:208)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:openaux
+   fun:_dl_catch_exception
+   fun:_dl_map_object_deps
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+}
+==118117== 2,631 bytes in 50 blocks are still reachable in loss record 41 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A00F0F: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01207: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A8C: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+}
+==118117== 3,600 bytes in 50 blocks are still reachable in loss record 42 of 44
+==118117==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x4A01546: _XlcCreateDefaultCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01182: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A01207: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A073B6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A06A96: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0729C: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A287E4: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0EAD5: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x4A0ECEE: _XrmInitParseInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F5844: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F9D62: XrmGetStringDatabase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XlcCreateDefaultCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XrmInitParseInfo
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XrmGetStringDatabase
+}
+==118117== 4,096 bytes in 1 blocks are still reachable in loss record 43 of 44
+==118117==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x49E71EC: _XrmInternalStringToQuark (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F94F3: XrmInitialize (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A7B: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x49D0290: XCreatePixmap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49CF0B2: XCreateBitmapFromData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x40CBD0: mlx_mouse_hide (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
+==118117==    by 0x4052B8: main (main.c:160)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XrmInternalStringToQuark
+   fun:XrmInitialize
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+   fun:XCreatePixmap
+   fun:XCreateBitmapFromData
+   fun:mlx_mouse_hide
+   fun:main
+}
+==118117== 8,176 bytes in 1 blocks are still reachable in loss record 44 of 44
+==118117==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==118117==    by 0x49E6FA5: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49E71CC: _XrmInternalStringToQuark (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49F94F3: XrmInitialize (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5A7B: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49D5D25: XGetDefault (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x5165262: _XcursorGetDisplayInfo (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x51652DC: XcursorSupportsARGB (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x5167D84: XcursorNoticeCreateBitmap (in /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2)
+==118117==    by 0x49D0290: XCreatePixmap (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x49CF0B2: XCreateBitmapFromData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==118117==    by 0x40CBD0: mlx_mouse_hide (in /nfs/homes/lmicheli/Documents/CUB3D/cub3D_bonus)
+==118117== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:_XrmInternalStringToQuark
+   fun:XrmInitialize
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+   fun:XGetDefault
+   fun:_XcursorGetDisplayInfo
+   fun:XcursorSupportsARGB
+   fun:XcursorNoticeCreateBitmap
+   fun:XCreatePixmap
+   fun:XCreateBitmapFromData
+   fun:mlx_mouse_hide
+}
+==118117== LEAK SUMMARY:
+==118117==    definitely lost: 54 bytes in 4 blocks
+==118117==    indirectly lost: 0 bytes in 0 blocks
+==118117==      possibly lost: 0 bytes in 0 blocks
+==118117==    still reachable: 28,772 bytes in 293 blocks
+==118117==         suppressed: 0 bytes in 0 blocks
+==118117== 
+==118117== For lists of detected and suppressed errors, rerun with: -s
+==118117== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 40 from 1)
