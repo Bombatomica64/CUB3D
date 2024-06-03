@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:37:29 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:24:52 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,15 @@ void	door_opening(t_game *game)
 	x = (int)(game->player.pos.x + game->player.dir.x);
 	y = (int)(game->player.pos.y + game->player.dir.y);
 	if (game->map[y][x] == 'D')
+	{
 		game->map[y][x] = 'L';
+		game->bonus.minimap[y][x] = 'L';
+	}
 	else if (game->map[y][x] == 'L')
+	{
 		game->map[y][x] = 'D';
+		game->bonus.minimap[y][x] = 'D';
+	}
 }
 
 int	on_key_press(int keysym, t_game *game)

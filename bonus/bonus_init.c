@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 12:02:11 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:45:16 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:57:28 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	rand_init(t_game *game)
 	game->bonus.sprite.text_nb = rand() % 2 + 6;
 	game->bonus.frame = 0;
 	game->bonus.time = get_time();
+	game->bonus.frame_time = get_time();
 }
 
 void	porte_check(t_game *game)

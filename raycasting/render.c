@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:19:23 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:19:18 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	player_set(t_game *game, t_Myimg *img)
 						- P_RADIUS) * (circle.y - P_RADIUS) <= P_RADIUS
 					* P_RADIUS)
 				{
-					if (!(game->bonus.minimap[map.i][map.j] == '1'))
+					if (!(ft_isinset(game->bonus.minimap[map.i][map.j], "1D")))
 					{
 						set_pixel(img, pos.x + circle.x, pos.y + circle.y,
 							0xAA3355);
@@ -116,10 +116,10 @@ int	render_images(t_game *game)
 		game->bonus.frames = ft_itoa(game->bonus.frame);
 		mlx_string_put(game->mlx, game->win, SCREEN_WIDTH - 10, 10, 0x000000,
 			game->bonus.frames);
-		if (current_time >= game->bonus.time + 1000)
+		if (current_time >= game->bonus.frame_time + 1000)
 		{
 			game->bonus.frame = 0;
-			game->bonus.time = current_time;
+			game->bonus.frame_time = current_time;
 		}
 	}
 	game_loop(game);

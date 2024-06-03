@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:51:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/31 17:15:49 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:17:35 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	minimap(t_game *game, t_Myimg *img, int x, int y)
 		set_pixel_m(img, x, y, 0x333333);
 	else if (game->bonus.minimap[y / MINIMAP_SCALE][x / MINIMAP_SCALE] == 'D')
 		set_pixel_m(img, x, y, 0x2560CC);
+	else if (game->bonus.minimap[y / MINIMAP_SCALE][x / MINIMAP_SCALE] == 'L')
+		set_pixel_m(img, x, y, 0x00BB00);
 	else if (game->bonus.minimap[y / MINIMAP_SCALE][x / MINIMAP_SCALE] == 'X')
 		set_pixel_m(img, x, y, 0x544564);
 	else
@@ -51,5 +53,7 @@ void	move_player(t_game *game)
 	/*game->bonus.minimap[(int)game->bonus.player.y]
 	[(int)game->bonus.player.x] = '0';
 	game->bonus.minimap[(int)game->player.pos.y][(int)game->player.pos.x] = 'P';*/
-	game->bonus.player = game->player.pos;
+	
+	game->bonus.player.x = game->player.pos.x - 0.3;
+	game->bonus.player.y = game->player.pos.y - 0.3;
 }

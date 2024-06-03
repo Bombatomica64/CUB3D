@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:18:20 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:10:19 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,8 +201,10 @@ typedef struct s_bonus
 	bool		insidedoor;
 	int			frame;
 	long		time;
+	long		frame_time;
 	char		*frames;
 }	t_bonus;
+
 typedef struct s_game
 {
 	void		*mlx;

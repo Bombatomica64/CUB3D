@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   distance.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:06:37 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:05:35 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,8 +178,11 @@ int	cast_rays(t_game *game)
 		if (game->bonus.sprite.nb_sprites > 0)
 			sprite_calc(game);
 		time = get_time();
-		if (time - game->bonus.time > 100)
+		if (time - game->bonus.time > 300)
+		{
 			game->bonus.sprite.text_nb = game->bonus.sprite.text_nb + 1;
+			game->bonus.time = time;
+		}
 		if (game->bonus.sprite.text_nb > 9)
 			game->bonus.sprite.text_nb = 7;
 	}
