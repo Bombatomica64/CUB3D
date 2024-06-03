@@ -3,33 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:26:45 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 23:11:03 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
-
-void	pixels_init(t_game *game)
-{
-	int	i;
-
-	if (game->pixels)
-		ft_free_matrix((char **)game->pixels);
-	game->pixels = ft_calloc(SCREEN_HEIGHT + 1, sizeof(int *));
-	if (!game->pixels)
-		return (err_exit("Failed to allocate pixels", game));
-	i = 0;
-	while (i < SCREEN_HEIGHT)
-	{
-		game->pixels[i] = ft_calloc(SCREEN_WIDTH + 1, sizeof(int));
-		if (!game->pixels[i])
-			return (ft_free_matrix((char **)game->pixels), exit(1));
-		i++;
-	}
-}
 
 int	get_index_bonus(t_game *game)
 {

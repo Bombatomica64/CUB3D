@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+         #
+#    By: marco <marco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/06/03 17:32:34 by mruggier         ###   ########.fr        #
+#    Updated: 2024/06/04 00:07:00 by marco            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,9 @@ RAYCASTING =	raycasting/distance.c \
 				raycasting/rays.c \
 				raycasting/pixel_putting.c \
 				raycasting/pixels.c \
-				raycasting/render.c
+				raycasting/render.c \
+				raycasting/frame_to_render.c \
+				raycasting/dda.c
 
 SRCS =	srcs/main.c \
 		srcs/put_images.c \

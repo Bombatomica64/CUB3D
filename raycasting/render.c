@@ -3,30 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:05:49 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/03 23:21:38 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-void	set_pixel(t_Myimg *image, int x, int y, int color)
+void	pixels_init(t_game *game)
 {
-	int	pixel;
+	int	i;
 
-	pixel = y * (image->size_line / 4) + x;
-	image->data[pixel] = color;
-}
-
-static void	frame_set(t_game *game, t_Myimg *image, int x, int y)
-{
-	if (BONUS && x < MINIMAP_SCALE * game->map_width && y < MINIMAP_SCALE
-		* game->map_height)
-		minimap(game, image, x, y);
-	else if (game->pixels[y][x] > 0)
-		set_pixel(image, x, y, game->pixels[y][x]);
+	if (game->pixels)
+		ft_free_matrix((char **)game->pixels);
+	game->pixels = ft_calloc(SCREEN_HEIGHT + 1, sizeof(int *));
+	if (!game->pixels)
+		return (err_exit("Failed to allocate pixels", game));
+	i = 0;
+	while (i < SCREEN_HEIGHT)
+	{
+		game->pixels[i] = ft_calloc(SCREEN_WIDTH + 1, sizeof(int));
+		if (!game->pixels[i])
+			return (ft_free_matrix((char **)game->pixels), exit(1));
+		i++;
+	}
 }
 
 t_Myimg	empty_myimg(t_game *game, int width, int height)
@@ -37,45 +39,6 @@ t_Myimg	empty_myimg(t_game *game, int width, int height)
 	image.data = (int *)mlx_get_data_addr(image.img.image, &image.img.bpp,
 			&image.size_line, &image.endian);
 	return (image);
-}
-
-static void	draw_circle(t_game *game, t_Myimg *img, t_pos pos, t_pos circle)
-{
-	t_curs	map;
-
-	map.i = (int)floor(pos.y + circle.y) / MINIMAP_SCALE;
-	map.j = (int)floor(pos.x + circle.x) / MINIMAP_SCALE;
-	if (map.i >= 0 && map.i < game->map_height && map.j >= 0
-		&& map.j < game->map_width)
-	{
-		if ((circle.x - P_RADIUS) * (circle.x - P_RADIUS)
-			+ (circle.y - P_RADIUS) * (circle.y - P_RADIUS)
-			<= P_RADIUS * P_RADIUS)
-		{
-			if (!(ft_isinset(game->bonus.minimap[map.i][map.j], "1D")))
-				set_pixel(img, pos.x + circle.x, pos.y + circle.y, 0xAA3355);
-		}
-	}
-}
-
-static void	player_set(t_game *game, t_Myimg *img)
-{
-	t_pos	pos;
-	t_pos	circle;
-
-	pos.y = game->bonus.player.y * MINIMAP_SCALE;
-	pos.x = game->bonus.player.x * MINIMAP_SCALE;
-	circle.y = -P_RADIUS;
-	while (circle.y < P_RADIUS * 2)
-	{
-		circle.x = -P_RADIUS;
-		while (circle.x < P_RADIUS * 2)
-		{
-			draw_circle(game, img, pos, circle);
-			circle.x++;
-		}
-		circle.y++;
-	}
 }
 
 static void	render_frame(t_game *game)
