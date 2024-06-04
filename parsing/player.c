@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/02 14:56:24 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/03 18:09:13 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,12 @@ void	init_player(t_game *game, int y, int x)
 	game->player.name = game->map[y][x];
 	init_player_north_south(&game->player);
 	init_player_east_west(&game->player);
-	printf("name: |%c|\n", game->player.name);
-	printf("player.x: %f\nplayer.y: %f\nplayer.angle: %f\n", game->player.pos.x, game->player.pos.y, game->player.angle);
-	printf("player.dir.x: %f\nplayer.dir.y: %f\nplayer.plane.x: %f\nplayer.plane.y: %f\n", game->player.dir.x, game->player.dir.y, game->player.plane.x, game->player.plane.y);
 }
+
+	// printf("name: |%c|\n", game->player.name);
+	// printf("player.x: %f\nplayer.y: %f\nplayer.angle:
+	//  %f\n", game->player.pos.x,
+	// 	game->player.pos.y, game->player.angle);
+	// printf("player.dir.x: %f\nplayer.dir.y: %f\nplayer.plane.x:
+	// 	%f\nplayer.plane.y: %f\n", game->player.dir.x, game->player.dir.y,
+	// 	game->player.plane.x, game->player.plane.y);

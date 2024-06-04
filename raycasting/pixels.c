@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   pixels.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
 /*   Updated: 2024/06/03 23:11:03 by marco            ###   ########.fr       */

@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 17:30:06 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:12:06 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_img	get_img(char *path, t_game *game)
 
 	img.image = mlx_xpm_file_to_image(game->mlx, path, &img.width, &img.height);
 	if (!img.image)
-		return (err("Failed to load texture : "), err(path), err_exit("\n",
+		return (err("Error: Failed to load texture "), err(path), err_exit("\n",
 				game), img);
 	return (img);
 }

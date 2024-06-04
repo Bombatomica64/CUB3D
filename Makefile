@@ -6,7 +6,7 @@
 #    By: marco <marco@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/06/03 17:33:41 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/06/04 12:38:30 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ PARSING =	parsing/map_check.c \
 			parsing/splut.c \
 			parsing/color.c \
 			parsing/textures.c \
-			parsing/player.c
+			parsing/player.c \
+			parsing/char_checks.c \
+			parsing/floor_ceiling.c \
+			parsing/get_textures.c
 
 RAYCASTING =	raycasting/distance.c \
 				raycasting/rays.c \

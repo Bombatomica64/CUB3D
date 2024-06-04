@@ -86,10 +86,19 @@ typedef struct s_player
 
 typedef struct s_color
 {
-	// char	*α;
 	char	*r;
+	int		r_value;
 	char	*g;
+	int		g_value;
 	char	*b;
+	int		b_value;
+	char	*color_str;
+	char	*path;
+	int		color_value;
+	char	*color_name;
+	int		i;
+	int		len;
+	int		start;
 }	t_color;
 
 typedef struct s_ray
@@ -115,6 +124,7 @@ typedef struct s_chadimg
 	int		bpp;
 	int		size_line;
 	int		endian;
+	int		nb_txt;
 	int		*data;
 }	t_Myimg;
 

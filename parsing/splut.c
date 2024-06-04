@@ -6,18 +6,16 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:10:03 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:16:07 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-int	parse_line(char *line, t_game *game)
+int	parse_line(char *line, t_game *game, t_curs curs)
 {
-	t_curs		curs;
 	char		*tmp;
 
-	curs = (t_curs){0, 0, 0, 0};
 	curs.i += skip_spaces2(line);
 	if (line[curs.i] == '\0')
 		return (free(line), 0);
@@ -75,7 +73,7 @@ void	split_map(t_game *game)
 	while (i < size)
 	{
 		line = ft_strdup(game->input.map_and_txt[i]);
-		if (parse_line(line, game) != -1)
+		if (parse_line(line, game, (t_curs){0, 0, 0, 0}) != -1)
 			i++;
 		else
 			err_exit("Error: invalid input", game);
