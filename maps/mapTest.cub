@@ -1,8 +1,7 @@
-NO asset_o/texture/txtr1.xpm
-SO asset_o/texture/txtr4.xpm
-WE asset_o/texture/txtr10.xpm
-EA asset_o/texture/txtr19.xpm
-
+NO assets/end_bricks4.xpm
+SO assets/stonebrick_mossy.xpm
+EA assets/stonebrick.xpm
+WE assets/mud_bricks.xpm
 F 132,192,200
 C 195,224,244
 
