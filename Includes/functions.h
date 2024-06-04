@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 00:40:13 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/04 12:57:48 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,4 +196,8 @@ char	*color_rgb(char *path, t_game *game, int nm);
 void	process_texture(t_game *game, t_curs *curs);
 void	process_texture2(t_game *game, t_curs *curs);
 
+// sprite_init.c
+
+void	sprite_init(t_game *game);
+void	rand_init(t_game *game);
 #endif
