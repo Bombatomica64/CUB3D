@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 16:40:30 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:17:54 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,17 @@ char	**texture_names(void)
 	return (txt_nm);
 }
 
-t_img	get_floor(char *path, t_game *game, int nm)
+t_img	get_floor(char *path, t_game *game, int nm, int check)
 {
 	t_img	img;
 	int		i;
 
+	if (game->txts.imgs[check].img.image != NULL)
+		mlx_destroy_image(game->mlx, game->txts.imgs[check].img.image);
 	i = skip_spaces2(path);
 	if (ft_isdigit(path[i]))
 		path = color_rgb(path, game, nm);
-	img = get_img(path + skip_spaces2(path), game);
+	img = get_img(path + skip_spaces2(path), game, check);
 	if (!img.image)
 		return (err("Error : Failed to load texture "), err(path),
 			err_exit(" \n", game), img);
@@ -53,6 +55,8 @@ void	get_textures(t_game *game)
 	t_curs	curs;
 
 	curs = (t_curs){0, 0, 0, 0};
+	if (game->txts.txts == NULL)
+		err_exit("Error: missing textures", game);
 	while (game->txts.txts[curs.i])
 	{
 		game->txts.txts[curs.i] = ft_freestrtrim(game->txts.txts[curs.i], "\n");

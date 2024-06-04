@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 11:49:53 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:19:00 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	destroy_images(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < 10)
+	while (i < 11)
 	{
 		if (game->txts.imgs[i].img.image != NULL)
 			mlx_destroy_image(game->mlx, game->txts.imgs[i].img.image);

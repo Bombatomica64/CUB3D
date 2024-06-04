@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 15:48:35 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:15:32 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**parse_map(char *map_path, t_game *game);
 
 // srcs/put_image.c
 void	*put_xmp(void *mlx, char *filename, int *width, int *height);
-t_img	get_img(char *path, t_game *game);
+t_img	get_img(char *path, t_game *game, int i);
 
 // error_management.c
 
@@ -82,7 +82,7 @@ void	sprite_animation(t_game *game);
 
 void	get_texture_int(t_game *game);
 char	**texture_names(void);
-t_img	get_floor(char *path, t_game *game, int nm);
+t_img	get_floor(char *path, t_game *game, int nm, int check);
 void	get_textures(t_game *game);
 void	get_texture_adresses(t_game *game);
 int		get_texture_id(t_game *game);

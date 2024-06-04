@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 16:35:52 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:02:34 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@
 # ifndef BONUS
 #  define BONUS 0
 # endif
-# define UDIV 1.5
-# define VDIV 1.5
-# define VMOVE 150
+# define UDIV 1.2
+# define VDIV 1.2
+# define VMOVE 60
 # define FOV 75
 # define P_RADIUS 3.5
 # if BONUS
