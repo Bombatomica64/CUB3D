@@ -6,13 +6,13 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:29:16 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 15:33:44 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:49:03 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functions.h>
 
-void	sort_order(t_norminette *spr, t_game *game)
+void	sort_ordering(t_norminette *spr, t_game *game)
 {
 	t_curs	curs;
 
@@ -29,6 +29,7 @@ void	sort_order(t_norminette *spr, t_game *game)
 	}
 	sortsprites(game->bonus.sprite.sprite_order, game->bonus.sprite.sprite_dist,
 		game->bonus.sprite.nb_sprites);
+	(void)spr;
 }
 
 void	calculate_sprite_transform(t_norminette *spr, t_game *game)

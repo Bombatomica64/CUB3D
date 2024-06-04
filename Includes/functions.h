@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 15:31:24 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:48:35 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,7 +203,7 @@ void	rand_init(t_game *game);
 
 // sprite_calcs.c
 
-void	sort_order(t_norminette *spr, t_game *game);
+void	sort_ordering(t_norminette *spr, t_game *game);
 void	calculate_sprite_transform(t_norminette *spr, t_game *game);
 void	calculate_draw_parameters(t_norminette *spr);
 void	get_draws(t_norminette *spr, t_game *game);

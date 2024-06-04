@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 15:29:57 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:49:21 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	sprite_calc(t_game *game)
 {
 	t_norminette	spr;
 
-	sort_order(&spr, game);
+	sort_ordering(&spr, game);
 	spr.curs.j = 0;
 	while (spr.curs.j < game->bonus.sprite.nb_sprites)
 	{
