@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 16:19:02 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:49:53 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,22 @@
 
 int	err(char *msg)
 {
-	perror(msg);
+	ft_putstr_fd(msg, 2);
 	return (1);
+}
+
+void	free_color(t_color *color)
+{
+	if (color->r)
+		free(color->r);
+	if (color->g)
+		free(color->g);
+	if (color->b)
+		free(color->b);
+	if (color->color_str)
+		free(color->color_str);
+	if (color->path)
+		free(color->path);
 }
 
 void	destroy_images(t_game *game)

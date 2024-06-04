@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:31:14 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:35:09 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,19 @@ typedef struct s_player
 
 typedef struct s_color
 {
-	// char	*α;
 	char	*r;
 	int		r_value;
 	char	*g;
 	int		g_value;
 	char	*b;
 	int		b_value;
+	char	*color_str;
+	char	*path;
+	int		color_value;
+	char	*color_name;
+	int		i;
+	int		len;
+	int		start;
 }	t_color;
 
 typedef struct s_ray
@@ -118,6 +124,7 @@ typedef struct s_chadimg
 	int		bpp;
 	int		size_line;
 	int		endian;
+	int		nb_txt;
 	int		*data;
 }	t_Myimg;
 

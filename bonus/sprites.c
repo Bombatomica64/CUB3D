@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:17:25 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 12:09:21 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/04 10:06:23 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,8 +156,7 @@ void	sprite_calc(t_game *game)
 					d = (curs.k - v_move_screen) * 256 - SCREEN_HEIGHT * 128
 						+ sprite_height * 128;
 					texy = ((d * TILE_SIZE) / sprite_height) / 256;
-					color = game->txts.imgs
-					[game->bonus.sprite.text_nb].data[TILE_SIZE
+					color = game->txts.imgs[game->bonus.sprite.text_nb].data[TILE_SIZE
 						* texy + texx];
 					if ((color & 0x00FFFFFF) != 0)
 						game->pixels[curs.k][stripe] = color;

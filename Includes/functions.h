@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:21:58 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:39:48 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_img	get_img(char *path, t_game *game);
 
 int		err(char *msg);
 void	err_exit(char *msg, t_game *game);
+void	free_color(t_color *color);
 
 // splut.c
 
@@ -171,5 +172,14 @@ void	checksmh(t_game *game);
 void	check_chars_bonus(t_game *game, t_curs curs);
 void	check_chars(t_game *game, t_curs curs);
 void	check_and_init_player(t_game *game);
+
+// floor_ceiling.c
+
+char	*color_rgb(char *path, t_game *game, int nm);
+
+// get_textures.c
+
+void	process_texture(t_game *game, t_curs *curs);
+void	process_texture2(t_game *game, t_curs *curs);
 
 #endif
