@@ -1,8 +1,8 @@
 F 256,256,256
 C 255,255,255
-X assets/armor_stand.xpm
-XL assets/steve.xpm
-XXL assets/end_bricks4.xpm
+X assets/steve1.xpm
+XL assets/steve2.xpm
+XXL assets/steve3.xpm
 NO assets/end_bricks4.xpm
 SO assets/stonebrick_mossy.xpm
 EA assets/stonebrick.xpm
