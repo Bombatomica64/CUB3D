@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:16:07 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:43:00 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ void	split_map(t_game *game)
 		else
 			err_exit("Error: invalid input", game);
 	}
+	if (game->map == NULL)
+		err_exit("Error: invalid map", game);
 	pad_map(game);
 }
