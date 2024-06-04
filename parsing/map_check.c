@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 18:14:26 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:41:29 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static void	file_size(char *map_path, t_game *game)
 	i++;
 	game->input.file_len = i;
 	close(fd);
+	if (game->input.file_len == 1)
+		err_exit("Error: Empty map file", game);
 }
 
 char	**parse_map(char *map_path, t_game *game)
