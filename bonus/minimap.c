@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 11:51:43 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 17:17:35 by mruggier         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:06:20 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ void	minimap(t_game *game, t_Myimg *img, int x, int y)
 
 void	move_player(t_game *game)
 {
-	/*game->bonus.minimap[(int)game->bonus.player.y]
-	[(int)game->bonus.player.x] = '0';
-	game->bonus.minimap[(int)game->player.pos.y][(int)game->player.pos.x] = 'P';*/
-	
 	game->bonus.player.x = game->player.pos.x - 0.3;
 	game->bonus.player.y = game->player.pos.y - 0.3;
 }
+
+	/*game->bonus.minimap[(int)game->bonus.player.y]
+	[(int)game->bonus.player.x] = '0';
+	game->bonus.minimap[(int)game->player.pos.y][(int)game-
+	>player.pos.x] = 'P';*/

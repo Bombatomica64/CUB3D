@@ -6,7 +6,7 @@
 #    By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 10:49:30 by lmicheli          #+#    #+#              #
-#    Updated: 2024/06/04 13:01:35 by lmicheli         ###   ########.fr        #
+#    Updated: 2024/06/04 15:29:32 by lmicheli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ BONUS =	bonus/minimap.c \
 		bonus/sprites.c \
 		bonus/animations.c \
 		bonus/doors.c \
-		bonus/sprite_init.c
+		bonus/sprite_init.c \
+		bonus/sprite_calcs.c
 
 SRC = $(PARSING) $(SRCS) $(RAYCASTING)
 
@@ -110,4 +111,4 @@ val:
 	./$(NAME) maps/test.cub
 
 
-.PHONY: all clean fclean re play val
+.PHONY: all clean fclean re play val bonus rebonus

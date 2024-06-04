@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 12:57:48 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:31:24 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,20 +112,20 @@ t_pos	calculate_first_step_and_steps(t_game *game, double ray_angle);
 void	pixels_init(t_game *game);
 void	pixels_update(t_game *game, int x);
 
-//dda.c
+// dda.c
 
 void	dda_init(t_game *game);
 t_bool	ray_hit(t_game *game);
 void	dda_exec(t_game *game);
 
-//frame_to_render.c
+// frame_to_render.c
 
 void	player_set(t_game *game, t_Myimg *img);
 void	set_pixel(t_Myimg *image, int x, int y, int color);
 void	frame_set(t_game *game, t_Myimg *image, int x, int y);
 void	draw_circle(t_game *game, t_Myimg *img, t_pos pos, t_pos circle);
 
-//render.c
+// render.c
 
 int		render_images(t_game *game);
 int		game_loop(t_game *game);
@@ -200,4 +200,13 @@ void	process_texture2(t_game *game, t_curs *curs);
 
 void	sprite_init(t_game *game);
 void	rand_init(t_game *game);
+
+// sprite_calcs.c
+
+void	sort_order(t_norminette *spr, t_game *game);
+void	calculate_sprite_transform(t_norminette *spr, t_game *game);
+void	calculate_draw_parameters(t_norminette *spr);
+void	get_draws(t_norminette *spr, t_game *game);
+void	assign_color(t_norminette *spr, t_game *game);
+
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 23:43:04 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/04 15:12:32 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,26 @@ typedef struct s_pos
 	int		wall_hit; // 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH
 }	t_pos;
 
+typedef struct s_norminette
+{
+	t_curs	curs;
+	t_pos	sprite;
+	t_pos	transform;
+	double	invdet;
+	int		sprite_screen_x;
+	int		v_move_screen;
+	int		sprite_height;
+	int		sprite_width;
+	int		drw_start_y;
+	int		drw_end_y;
+	int		drw_start_x;
+	int		drw_end_x;
+	int		stripe;
+	int		texx;
+	int		texy;
+	int		color;
+	int		d;
+}	t_norminette;
 typedef struct s_player
 {
 	double		x;
