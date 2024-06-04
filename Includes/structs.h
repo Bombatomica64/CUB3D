@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 15:12:32 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:34:25 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,14 @@ typedef struct s_pos
 	double	y;
 	int		wall_hit; // 0 = NORTH , 1 = EAST, 2 = WEST, 3 = SOUTH
 }	t_pos;
+
+typedef struct s_curs
+{
+	int		i;
+	int		j;
+	int		k;
+	int		status;
+}	t_curs;
 
 typedef struct s_norminette
 {
@@ -179,14 +187,6 @@ typedef struct s_input
 	t_bool	map_str;
 	char	**map_and_txt;
 }	t_input;
-
-typedef struct s_curs
-{
-	int		i;
-	int		j;
-	int		k;
-	int		status;
-}	t_curs;
 
 typedef struct s_keys
 {
