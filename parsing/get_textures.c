@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:38:10 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 12:39:55 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:50:00 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void	process_texture(t_game *game, t_curs *curs)
 
 void	process_texture2(t_game *game, t_curs *curs)
 {
+	int	i;
+
+	i = 10;
 	if (ft_strncmp(game->txts.txts[curs->i], "DD ", 2) == 0)
 		game->txts.imgs[6].img = get_img(game->txts.txts[curs->i] + curs->j + 3,
 				game);
@@ -49,6 +52,9 @@ void	process_texture2(t_game *game, t_curs *curs)
 				game);
 	else if (ft_strncmp(game->txts.txts[curs->i], "XXL ", 4) == 0)
 		game->txts.imgs[9].img = get_img(game->txts.txts[curs->i] + curs->j + 4,
+				game);
+	else if (ft_strncmp(game->txts.txts[curs->i], "L ", 2) == 0)
+		game->txts.imgs[i].img = get_img(game->txts.txts[curs->i] + curs->j + 2,
 				game);
 	else
 		err_exit("Error: Invalid texture", game);

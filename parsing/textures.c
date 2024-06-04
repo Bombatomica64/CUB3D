@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 15:42:57 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:40:30 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**texture_names(void)
 {
 	char	**txt_nm;
 
-	txt_nm = ft_calloc(sizeof(char *), 11);
+	txt_nm = ft_calloc(sizeof(char *), 12);
 	txt_nm[0] = "NO";
 	txt_nm[1] = "SO";
 	txt_nm[2] = "WE";
@@ -27,7 +27,8 @@ char	**texture_names(void)
 	txt_nm[7] = "X";
 	txt_nm[8] = "XL";
 	txt_nm[9] = "XXL";
-	txt_nm[10] = NULL;
+	txt_nm[10] = "L";
+	txt_nm[11] = NULL;
 	return (txt_nm);
 }
 
@@ -71,7 +72,7 @@ void	get_texture_int(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < 10)
+	while (i < 11)
 	{
 		if (game->txts.imgs[i].img.image != NULL)
 			game->txts.imgs[i].data = (int *)

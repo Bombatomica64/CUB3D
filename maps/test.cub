@@ -8,6 +8,7 @@ SO assets/stonebrick_mossy.xpm
 EA assets/stonebrick.xpm
 WE assets/mud_bricks.xpm
 DD assets/doors_dark_oak.xpm
+L assets/door_open.xpm
 
 
 
@@ -21,7 +22,7 @@ DD assets/doors_dark_oak.xpm
 11100000X0001
 10000N0000001
 1011000000001
-1110110101111
+111011D1L1111
 1000000000001
 1000000001001
 1010100000001

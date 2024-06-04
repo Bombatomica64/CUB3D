@@ -6,7 +6,7 @@
 /*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/03 23:11:03 by marco            ###   ########.fr       */
+/*   Updated: 2024/06/04 16:48:43 by lmicheli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	get_index_bonus(t_game *game)
 				&& game->bonus.doors.wally == game->bonus.doors.doory + 1)
 			|| (game->bonus.doors.wallx == game->bonus.doors.doorx
 				&& game->bonus.doors.wally == game->bonus.doors.doory - 1))
-			return (6);
+			return (10);
 	}
 	if (BONUS && game->bonus.doors.insidedoor == true)
 	{
@@ -35,7 +35,7 @@ int	get_index_bonus(t_game *game)
 				&& abs((int)game->ray.map.y - (int)game->player.pos.y) == 1)
 			|| ((int)game->ray.map.y == (int)game->player.pos.y
 				&& abs((int)game->ray.map.x - (int)game->player.pos.x) == 1))
-			return (6);
+			return (10);
 	}
 	return (0);
 }
