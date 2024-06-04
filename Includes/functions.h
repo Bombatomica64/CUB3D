@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marco <marco@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/06/04 12:39:48 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/04 00:40:13 by marco            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	render_wall(t_game *game);
 // distance.c
 
 int		cast_rays(t_game *game);
+void	sprite_animation(t_game *game);
 
 // textures.c
 
@@ -111,7 +112,20 @@ t_pos	calculate_first_step_and_steps(t_game *game, double ray_angle);
 void	pixels_init(t_game *game);
 void	pixels_update(t_game *game, int x);
 
-// render.c
+//dda.c
+
+void	dda_init(t_game *game);
+t_bool	ray_hit(t_game *game);
+void	dda_exec(t_game *game);
+
+//frame_to_render.c
+
+void	player_set(t_game *game, t_Myimg *img);
+void	set_pixel(t_Myimg *image, int x, int y, int color);
+void	frame_set(t_game *game, t_Myimg *image, int x, int y);
+void	draw_circle(t_game *game, t_Myimg *img, t_pos pos, t_pos circle);
+
+//render.c
 
 int		render_images(t_game *game);
 int		game_loop(t_game *game);

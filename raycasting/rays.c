@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmicheli <lmicheli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mruggier <mruggier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 1970/01/01 01:00:00 by lmicheli          #+#    #+#             */
-/*   Updated: 2024/05/29 09:55:17 by lmicheli         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:37:11 by mruggier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,6 @@ double	nor_angle(double angle)
 	while (angle >= 2 * M_PI)
 		angle -= 2 * M_PI;
 	return (angle);
-}
-
-int	is_wall(double x, double y, t_game *game)
-{
-	int map_x = (int)(x / (int)TILE_SIZE);
-	int map_y = (int)(y / (int)TILE_SIZE);
-
-    // Ensure the coordinates are within the map boundaries
-	if (map_x >= 0 && map_x < game->map_width
-			&& map_y >= 0 && map_y < game->map_height)
-	{
-        // Check if the tile is a wall
-		return (game->map[map_y][map_x] == '1') ? 1 : 0;
-	}
-	return (0);
 }
 
 // t_img	get_texture(t_game *game)
